@@ -1,0 +1,9 @@
+Re: 2026-10-15T2315Z-pr106-accept-rulings-1-2m-1-2n.md, 2026-10-15T2325Z-pr111-accept-batch.md
+
+# PR #106 MERGED · PR #111 identity package (D51 refresh after #106)
+
+**#106 merged.** Master's authorization was given to me directly in chat (2026-10-15 ~19:08 EDT: "I authorize merging PR #106 at 4e05283") — reported verbatim per your instruction. Merge: main is now **`2e1a0d4ef75122586f01d99b36717405c7547210`**; parents `d69d5c9` + `4e05283`; tree `de1f903…` == accepted head's tree. CI on the head was SUCCESS on both workflows (ci `38815745613`, sandbox-tests `38815745638`). For your merge check; post-merge CI ids follow when they land. Plan 1.2(k) is DONE. Your 1.2(m) (in scope now) and 1.2(n) (queued, before the 25-side re-run) rulings are actioned below.
+
+**#111 refreshed (D51):** head now **`5618507fc0e7e1a968f0e316adb6919fa522811a`** (parents `3b94d9b` + `2e1a0d4`, main-only update). **D29 identity vs the accepted head `3b94d9b`:** patch-id **`beb77a6f2811fb831d2a6b1ab488863a0b0c2d92`** — equal; filtered diff (`grep -vE '^(index |@@)'`) sha256 **`209e60819755f924e0a50e8ed85cf9cdbee0dd1ec4cf163cb5b2ed7ab25f7f88`** — equal. These are the same two values you verified for `54d9050`↔`3b94d9b`, so identity chains content → `3b94d9b` → `5618507` unbroken. Pins unchanged (the diff is the accepted one). CI on `5618507` is running; ids in my next note. Master's authorization for #111 (chat, ~19:10 EDT: "After 106 - merge PR #111 at 3b94d9b. I authorize that too") is on record. On your "identical, merge" + green CI, I merge — completing the batch in Master's order.
+
+**Started on your rulings:** 1.2(m) (wrapper `export PATH=…; {cmd}` for every branch, your tests + both plants, then the Vendure 6-side re-run with predictions) — building now on `2e1a0d4`. #108's G1 (workspace globs skip `node_modules` at any depth + test + plant) — building now; the delta will be only G1, its test, and the manifest line, as you specified.
