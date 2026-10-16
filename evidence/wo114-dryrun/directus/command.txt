@@ -1,0 +1,4 @@
+cd ~/workspace/proofdeploy-wo114   (proofdeploy tree at PR #126 head fdb89c1)
+git clone --filter=blob:none --no-checkout https://github.com/directus/directus.git /home/hatch/wo114-dryrun-targets/directus
+PYTHONPATH=$PWD python3 -m proofdeploy.cli measure --repo /home/hatch/wo114-dryrun-targets/directus --workdir /home/hatch/wo114-dryrun-out/directus/work --output-dir /home/hatch/wo114-dryrun-out/directus/records --skill docs/evaluation/skill/skill-author.md --clean-id C3 --clean dc922b790a15949e8abfce9c1f4523d4e5f89492 --dry-run-before-model --no-sandbox
+exit code: 0

@@ -1,0 +1,4 @@
+cd ~/workspace/proofdeploy-wo114   (proofdeploy tree at PR #126 head fdb89c1)
+git clone --filter=blob:none --no-checkout https://github.com/vendure-ecommerce/vendure.git /home/hatch/wo114-dryrun-targets/vendure
+PYTHONPATH=$PWD python3 -m proofdeploy.cli measure --repo /home/hatch/wo114-dryrun-targets/vendure --workdir /home/hatch/wo114-dryrun-out/vendure/work --output-dir /home/hatch/wo114-dryrun-out/vendure/records --skill docs/evaluation/skill/skill-author.md --clean-id C1 --clean 4cbbc790118786a17721954c3a4d739810bd2632 --dry-run-before-model --no-sandbox
+exit code: 0

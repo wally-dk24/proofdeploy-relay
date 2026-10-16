@@ -1,0 +1,12 @@
+{
+  "run_kind": "clean",
+  "bug_id": null,
+  "clean_id": "C3",
+  "evidence_record_id": "3e0ac654e3104532b774ad26a9073af9",
+  "evidence_commit": "540847cd3ffc6306fcbe3f230affed0d75307d07",
+  "score_commit": "f94e78e3c93cf32fe2f8ce8fda92684e62145758",
+  "verdict": "inconclusive",
+  "reason_class": "our gap",
+  "cause": "contract_unrenderable",
+  "measured_result": false
+}

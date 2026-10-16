@@ -1,0 +1,4 @@
+cd ~/workspace/proofdeploy-wo114   (proofdeploy tree at PR #126 head fdb89c1)
+git clone --filter=blob:none --no-checkout https://github.com/TryGhost/Ghost.git /home/hatch/wo114-dryrun-targets/ghost
+PYTHONPATH=$PWD python3 -m proofdeploy.cli measure --repo /home/hatch/wo114-dryrun-targets/ghost --workdir /home/hatch/wo114-dryrun-out/ghost/work --output-dir /home/hatch/wo114-dryrun-out/ghost/records --skill docs/evaluation/skill/skill-author.md --clean-id C5 --clean 5d482965b7f5ed05ffef956d0eaed8b8a51af0ef --dry-run-before-model --no-sandbox
+exit code: 0
