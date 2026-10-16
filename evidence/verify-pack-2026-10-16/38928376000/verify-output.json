@@ -1,0 +1,28 @@
+{
+  "verify_output_version": "1.0.0",
+  "verdict": "INCONCLUSIVE",
+  "exit_code": 2,
+  "typed_reason": "environment",
+  "cause": "model_transport",
+  "detail": "the model call failed: Groq API call failed: HTTP Error 429: Too Many Requests",
+  "probes": [],
+  "refs": {
+    "repo": "/tmp/verify-repo",
+    "from_ref": "621c28f7b27d9fa36cc2f74ef5d4935bf6c17552",
+    "to_ref": "645844b9fb6b0161719475c9e9ebbd9f4d1f7256",
+    "from_sha": "621c28f7b27d9fa36cc2f74ef5d4935bf6c17552",
+    "to_sha": "645844b9fb6b0161719475c9e9ebbd9f4d1f7256"
+  },
+  "model": "openai/gpt-oss-120b",
+  "probe_set_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "engine": "proofdeploy/0.1.0",
+  "isolation_mode": null,
+  "evidence_record": {
+    "path": "verify-records/runs.jsonl",
+    "record_id": "b8d172d65676484da21e0409b9b8fdde"
+  },
+  "record_schema_version": "1.5.0",
+  "timings": {
+    "bundle_s": 0.036
+  }
+}
