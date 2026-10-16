@@ -1,0 +1,372 @@
+sandbox provision fix-parent (664f111a4500)
+install plan: sha256 3493f00fb377850d... (adapter: node)
+sandbox image: docker.io/library/node:24.21.0-bookworm@sha256:3d27e5c11e5786e309ec3e03f93ae536eb36e6e5eb3714d5eb3300a36157add0 (runtime node)
+sandbox runtime version: 24.21.0 (digest sha256:3d27e5c11e5786e309ec3e03f93ae536eb36e6e5eb3714d5eb3300a36157add0)
+lockfile: pnpm-lock.yaml sha256: f3b9eaf9cf3bccf5...
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs unshare chown -R 1:1 /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-ghost-1/a1/snapshot-fix-parent /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-ghost-1/a1/snapshot-fix-parent.pd-home
+checkout ownership: transferred to the sandbox runtime uid (podman unshare chown 1:1; plan 1.2(g), home dir included under plan 1.2(k))
+install: ca_cert_used=False
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs network exists pd-build
+build network: pd-build (bridge, external route for proxy)
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-0 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-ghost-1/a1/snapshot-fix-parent:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-ghost-1/a1/snapshot-fix-parent.pd-home:/pd-home -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store -e npm_config_nodedir=/usr/local docker.io/library/node:24.21.0-bookworm@sha256:3d27e5c11e5786e309ec3e03f93ae536eb36e6e5eb3714d5eb3300a36157add0 bash -c npm install --prefix /checkout/.pd-tools --no-save --no-audit --no-fund corepack@0.36.0
+
+added 1 package in 359ms
+
+npm warn Unknown env config "store-dir". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown env config "nodedir". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm notice
+npm notice New major version of npm available! 11.19.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-1 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-ghost-1/a1/snapshot-fix-parent:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-ghost-1/a1/snapshot-fix-parent.pd-home:/pd-home -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store -e npm_config_nodedir=/usr/local -e COREPACK_ENABLE_DOWNLOAD_PROMPT=0 docker.io/library/node:24.21.0-bookworm@sha256:3d27e5c11e5786e309ec3e03f93ae536eb36e6e5eb3714d5eb3300a36157add0 bash -c /checkout/.pd-tools/node_modules/.bin/corepack pnpm@12.8.2+sha512.a5941679663d952c5f0ecc38ba98af98b4dc01b95780354f6894f2f873973cef2f7e2989d7db3ee5393938ae21f62fe06bcdf685d475ddad829a62095d2b8b11 install --frozen-lockfile
+Scope: all 52 workspace projects
+Update available! 12.8.2 → 12.11.2.
+Changelog: https://pnpm.io/v/12.11.2
+To update, run: curl -fsSL https://get.pnpm.io/install.sh | sh -
+. preinstall$ node ./scripts/enforce-package-manager.js
+. preinstall: Done
+? Verifying lockfile against supply-chain policies (4207 entries)...
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: /checkout/node_modules/.pnpm-store/v11
+  Virtual store is at:             node_modules/.pnpm
+Progress: resolved 4019, reused 0, downloaded 344, added 352
+Downloading storybook@10.4.6: 0.00 B/5.79 MB
+Downloading @typescript/typescript-linux-x64@7.0.2: 0.00 B/9.66 MB
+Downloading node@runtime:22.23.3: 0.00 B/56.79 MB
+Progress: resolved 4019, reused 0, downloaded 1454, added 1504
+Downloading @rolldown/binding-linux-x64-gnu@1.1.4: 0.00 B/7.78 MB
+Downloading @sentry/cli-linux-x64@2.58.6: 0.00 B/8.55 MB
+Progress: resolved 4019, reused 0, downloaded 1791, added 1824
+Downloading @emoji-mart/data@1.2.1: 0.00 B/5.38 MB
+Downloading @swc/core-linux-x64-gnu@1.15.43: 0.00 B/12.07 MB
+Downloading @img/sharp-libvips-linux-x64@1.3.4: 0.00 B/8.21 MB
+Progress: resolved 4019, reused 0, downloaded 2278, added 2336
+Downloading @nx/nx-linux-x64-gnu@23.2.0: 0.00 B/9.33 MB
+Progress: resolved 4019, reused 0, downloaded 2647, added 2689
+✓ Lockfile passes supply-chain policies (4207 entries in 10.4s)
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 4019, reused 0, downloaded 3357, added 3424
+Progress: resolved 4019, reused 0, downloaded 3857, added 3936
+Packages: +4019
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 4019, reused 0, downloaded 3940, added 4019, done
+.../core-js@2.6.12/node_modules/core-js postinstall$ node -e "try{require('./postinstall')}catch(e){}"
+.../esbuild@0.28.2/node_modules/esbuild postinstall$ node install.js
+.../node_modules/@swc/core postinstall$ node postinstall.js
+.../node_modules/better-sqlite3 install$ prebuild-install || node-gyp rebuild --release
+.../node_modules/dtrace-provider install$ node-gyp rebuild || node suppress-error.js
+.../core-js@2.6.12/node_modules/core-js postinstall: Thank you for using core-js ( https://github.com/zloirock/core-js ) for polyfilling JavaScript standard library!
+.../core-js@2.6.12/node_modules/core-js postinstall: 
+.../core-js@2.6.12/node_modules/core-js postinstall: The project needs your help! Please consider supporting of core-js on Open Collective or Patreon: 
+.../core-js@2.6.12/node_modules/core-js postinstall: > https://opencollective.com/core-js 
+[… 43 lines elided …]
+AD_FORCE_BUILD || node-gyp -j max rebuild
+.../node_modules/dtrace-provider install: gyp info spawn make
+.../node_modules/dtrace-provider install: gyp info spawn args [ 'BUILDTYPE=Release', '-C', 'build' ]
+.../node_modules/dtrace-provider install: make: Entering directory '/checkout/node_modules/.pnpm/dtrace-provider@0.8.8/node_modules/dtrace-provider/build'
+.../node_modules/dtrace-provider install:   TOUCH Release/obj.target/DTraceProviderStub.stamp
+.../esbuild@0.25.12/node_modules/esbuild postinstall: Done
+.../node_modules/dtrace-provider install: make: Leaving directory '/checkout/node_modules/.pnpm/dtrace-provider@0.8.8/node_modules/dtrace-provider/build'
+.../node_modules/dtrace-provider install: gyp info ok 
+.../node_modules/dtrace-provider install: Done
+.../node_modules/msw postinstall$ node -e "import('./config/scripts/postinstall.js').catch(() => void 0)"
+.../node_modules/nx postinstall$ node -e "try{require('./dist/bin/post-install')}catch(e){}"
+.../.pnpm/re2@1.26.1/node_modules/re2 install: Trying https://github.com/uhop/node-re2/releases/download/1.26.1/linux-x64-127.br ...
+.../node_modules/msw postinstall: Done
+.../node_modules/better-sqlite3 install: Done
+.../.pnpm/re2@1.26.1/node_modules/re2 install: Writing to build/Release/re2.node ...
+.../.pnpm/re2@1.26.1/node_modules/re2 install: Done.
+.../.pnpm/re2@1.26.1/node_modules/re2 install: Done
+.../node_modules/nx postinstall: Done
+. prepare$ husky .github/hooks
+. prepare: .git can't be found
+. prepare: Done
+
+devDependencies:
++ @playwright/test 1.61.1
++ @secretlint/secretlint-rule-pattern 13.0.4
++ @secretlint/secretlint-rule-preset-recommend 13.0.4
++ dependency-cruiser 18.1.1
++ eslint 9.39.4
++ husky 9.1.7
++ knip 6.32.1
++ lint-staged 17.3.0
++ markdownlint-cli2 0.23.2
++ node 22.23.3
++ nx 23.2.0
++ oxfmt 0.63.0
++ remark-cli 12.0.1
++ remark-validate-links 13.1.0
++ rimraf 6.1.3
++ secretlint 13.0.4
++ shell-quote 1.10.0
++ typescript <- @typescript/typescript6 6.0.2
++ vitest 4.1.11
+
+Done in 16.2s using pnpm v12.8.2
+
+Downloading the pnpm 12.8.2 binary for linux-x64...
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-2 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-ghost-1/a1/snapshot-fix-parent:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-ghost-1/a1/snapshot-fix-parent.pd-home:/pd-home -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store docker.io/library/node:24.21.0-bookworm@sha256:3d27e5c11e5786e309ec3e03f93ae536eb36e6e5eb3714d5eb3300a36157add0 bash -c export PATH=/checkout/.pd-tools/node_modules/.bin:/checkout/node_modules/.bin:$PATH; pnpm run build
+
+ NX   Running target build for 42 projects:
+
+- @tryghost/adapter-base-route-settings
+- @tryghost/adapter-base-scheduling
+- @tryghost/adapter-base-redirects
+- @tryghost/kg-markdown-html-renderer
+- @tryghost/kg-lexical-html-renderer
+- ghost-storage-base
+- @tryghost/adapter-base-cache
+- @tryghost/kg-default-transforms
+- @tryghost/parse-email-address
+- @tryghost/adapter-base-jobs
+- @tryghost/kg-unsplash-selector
+- @tryghost/adapter-base-sso
+- @tryghost/kg-clean-basic-html
+- @tryghost/admin-api-schema
+- @tryghost/kg-html-to-lexical
+- @tryghost/image-transform
+- @tryghost/metafield-types
+- @tryghost/kg-default-cards
+- @tryghost/kg-default-nodes
+- @tryghost/admin-x-framework
+- @tryghost/api-framework
+- @tryghost/app-contracts
+- @tryghost/kg-card-factory
+- @tryghost/limit-service
+- @tryghost/metafield-csv
+- @tryghost/announcement-bar
+- @tryghost/koenig-lexical
+- @tryghost/kg-converters
+- @tryghost/nql-string
+- @tryghost/admin-toolbar
+- @tryghost/checkout
+- @tryghost/activitypub
+- @tryghost/comments-ui
+- @tryghost/signup-form
+- @tryghost/sodo-search
+- ghost-admin
+- @tryghost/kg-utils
+[… 21 lines elided …]
+  [remote cache]
+✔  nx run @tryghost/adapter-base-jobs:build  [remote cache]
+✔  nx run @tryghost/adapter-base-sso:build  [remote cache]
+✔  nx run @tryghost/admin-api-schema:build  [remote cache]
+✔  nx run @tryghost/image-transform:build  [remote cache]
+✔  nx run @tryghost/api-framework:build  [remote cache]
+✔  nx run @tryghost/app-contracts:build  [remote cache]
+✔  nx run @tryghost/kg-card-factory:build  [remote cache]
+✔  nx run @tryghost/announcement-bar:build  [remote cache]
+✔  nx run @tryghost/admin-toolbar:build  [remote cache]
+✔  nx run @tryghost/kg-markdown-html-renderer:build  [remote cache]
+✔  nx run @tryghost/checkout:build  [remote cache]
+✔  nx run @tryghost/metafield-csv:build  [remote cache]
+✔  nx run @tryghost/comments-ui:build  [remote cache]
+✔  nx run @tryghost/signup-form:build  [remote cache]
+✔  nx run @tryghost/sodo-search:build  [remote cache]
+✔  nx run @tryghost/portal:build  [remote cache]
+✔  nx run @tryghost/kg-default-nodes:build  [remote cache]
+✔  nx run @tryghost/kg-default-cards:build  [remote cache]
+✔  nx run @tryghost/e2e:build  [remote cache]
+✔  nx run @tryghost/kg-default-transforms:build  [remote cache]
+✔  nx run @tryghost/koenig-lexical:build  [remote cache]
+✔  nx run @tryghost/kg-lexical-html-renderer:build  [remote cache]
+✔  nx run @tryghost/kg-html-to-lexical:build  [remote cache]
+✔  nx run @tryghost/admin-x-framework:build  [remote cache]
+✔  nx run @tryghost/activitypub:build  [remote cache]
+✔  nx run ghost-admin:build  [remote cache]
+✔  nx run @tryghost/admin:build  [remote cache]
+
+
+
+ NX   Successfully ran target build for 42 projects
+
+Nx read the output from the cache instead of running the command for 42 out of 42 tasks.
+
+Output of 42 successful tasks were not shown. Run with --verbose or --output-style=static to see it.
+
+Nx Cloud made it possible to reuse 42 tasks: https://cloud.nx.app/runs/3QhTiGmrKB
+
+  Run duration:      6.0s
+  Cache:             42/42 hit (100%)
+  Critical path:     23ms (8 tasks)
+  Recoverable time:  <1ms
+
+Scope: all 52 workspace projects
+. preinstall$ node ./scripts/enforce-package-manager.js
+. preinstall: Done
+✓ Lockfile passes supply-chain policies (verified 18s ago)
+.                                        | [WARN] deprecated eslint@9.39.4. 10.12.0 is not deprecated.
+Progress: resolved 0, reused 256, downloaded 0, added 0
+Progress: resolved 0, reused 396, downloaded 5, added 0
+Progress: resolved 0, reused 487, downloaded 7, added 0
+Progress: resolved 0, reused 523, downloaded 7, added 0
+Progress: resolved 0, reused 606, downloaded 7, added 0
+Progress: resolved 0, reused 702, downloaded 7, added 0
+apps/ember-admin                         | [WARN] deprecated @babel/plugin-proposal-class-properties@7.18.6
+apps/ember-admin                         | [WARN] deprecated ember-mocha@0.16.2
+apps/ember-admin                         | [WARN] deprecated ember-ajax@5.1.2
+apps/ember-admin                         | [WARN] deprecated ember-cli-shims@1.2.0
+Progress: resolved 0, reused 1458, downloaded 7, added 0
+Progress: resolved 0, reused 1667, downloaded 7, added 0
+apps/shade                               | [WARN] deprecated recharts@2.15.4. 3.11.0-canary.6 is not deprecated.
+Progress: resolved 0, reused 2009, downloaded 10, added 0
+Progress: resolved 0, reused 2102, downloaded 10, added 0
+ghost/core                               | [WARN] deprecated path-match@1.2.4
+Progress: resolved 0, reused 2459, downloaded 12, added 0
+Progress: resolved 0, reused 2494, downloaded 12, added 0
+packages/i18n                            | [WARN] deprecated i18next-parser@9.4.0
+Progress: resolved 0, reused 2599, downloaded 12, added 0
+Progress: resolved 0, reused 2618, downloaded 12, added 0
+Progress: resolved 0, reused 2662, downloaded 12, added 0
+[WARN] 66 deprecated subdependencies found: @babel/plugin-proposal-nullish-coalescing-operator@7.18.6, @babel/plugin-proposal-optional-chaining@7.21.0, @babel/plugin-proposal-private-methods@7.18.6, @babel/plugin-proposal-private-property-in-object@7.21.11, @babel/polyfill@7.12.1, @otplib/plugin-crypto@12.0.1, @otplib/plugin-thirty-two@12.0.1, @otplib/preset-default@12.0.1, @sinonjs/text-encoding@0.7.3, abab@2.0.6, acorn-dynamic-import@3.0.0, are-we-there-yet@1.1.7, charm@1.0.2, copy-concurrently@1.0.5, core-js@2.6.12, crypto@0.0.3, domexception@2.0.1, ee-argv@0.1.4, ee-types@2.2.1, ember-cli-htmlbars-inline-precompile@2.1.0, exists-sync@0.0.4, figgy-pudding@3.5.2, flatten@1.0.3, fs-write-stream-atomic@1.0.10, fsevents@1.2.13, gauge@2.7.4, glob@10.5.0, glob@3.2.11, glob@5.0.15, glob@6.0.4, glob@7.2.3, glob@9.3.5, inflight@1.0.6, intl-messageformat-parser@2.1.3, jade@0.26.3, lodash.get@4.4.2, lodash.template@4.18.1, mkdirp@0.3.0, mkdirp@0.5.1, move-concurrently@1.0.1, npmlog@4.1.2, osenv@0.1.5, path-dirname@1.0.2, popper.js@1.16.1, prebuild-install@7.1.3, prom-client@15.1.3, q@1.5.1, raw-body@1.1.7, rimraf@2.4.5, rimraf@2.6.3, rimraf@2.7.1, rimraf@3.0.2, sane@4.1.0, sinon@9.2.4, source-map-url@0.3.0, sourcemap-codec@1.4.8, stable@0.1.8, svgo@1.3.0, svgo@1.3.2, to-iso-string@0.0.2, tooltip.js@1.3.3, trim@0.0.3, uuid@8.3.2, w3c-hr-time@1.0.2, whatwg-encoding@1.0.5, whatwg-encoding@3.1.1
+Already up to date
+Progress: resolved 0, reused 2748, downloaded 12, added 0, done
+.../node_modules/@swc/core postinstall$ node postinstall.js
+.../node_modules/msw postinstall$ node -e "import('./config/scripts/postinstall.js').catch(() => void 0)"
+.../node_modules/msw postinstall$ node -e "import('./config/scripts/postinstall.js').catch(() => void 0)"
+.../node_modules/@swc/core postinstall: Done
+.../node_modules/protobufjs postinstall$ node scripts/postinstall
+.../node_modules/msw postinstall: Done
+.../node_modules/msw postinstall: Done
+.../node_modules/protobufjs postinstall: Done
+.../node_modules/msw postinstall$ node -e "import('./config/scripts/postinstall.js').catch(() => void 0)"
+.../node_modules/nx postinstall$ node -e "try{require('./dist/bin/post-install')}catch(e){}"
+[… 0 lines elided …]
+urrently@1.0.5, core-js@2.6.12, crypto@0.0.3, domexception@2.0.1, ee-argv@0.1.4, ee-types@2.2.1, ember-cli-htmlbars-inline-precompile@2.1.0, exists-sync@0.0.4, figgy-pudding@3.5.2, flatten@1.0.3, fs-write-stream-atomic@1.0.10, fsevents@1.2.13, gauge@2.7.4, glob@10.5.0, glob@3.2.11, glob@5.0.15, glob@6.0.4, glob@7.2.3, glob@9.3.5, inflight@1.0.6, intl-messageformat-parser@2.1.3, jade@0.26.3, lodash.get@4.4.2, lodash.template@4.18.1, mkdirp@0.3.0, mkdirp@0.5.1, move-concurrently@1.0.1, npmlog@4.1.2, osenv@0.1.5, path-dirname@1.0.2, popper.js@1.16.1, prebuild-install@7.1.3, prom-client@15.1.3, q@1.5.1, raw-body@1.1.7, rimraf@2.4.5, rimraf@2.6.3, rimraf@2.7.1, rimraf@3.0.2, sane@4.1.0, sinon@9.2.4, source-map-url@0.3.0, sourcemap-codec@1.4.8, stable@0.1.8, svgo@1.3.0, svgo@1.3.2, to-iso-string@0.0.2, tooltip.js@1.3.3, trim@0.0.3, uuid@8.3.2, w3c-hr-time@1.0.2, whatwg-encoding@1.0.5, whatwg-encoding@3.1.1
+Already up to date
+Progress: resolved 0, reused 2748, downloaded 12, added 0, done
+.../node_modules/@swc/core postinstall$ node postinstall.js
+.../node_modules/msw postinstall$ node -e "import('./config/scripts/postinstall.js').catch(() => void 0)"
+.../node_modules/msw postinstall$ node -e "import('./config/scripts/postinstall.js').catch(() => void 0)"
+.../node_modules/@swc/core postinstall: Done
+.../node_modules/protobufjs postinstall$ node scripts/postinstall
+.../node_modules/msw postinstall: Done
+.../node_modules/msw postinstall: Done
+.../node_modules/protobufjs postinstall: Done
+.../node_modules/msw postinstall$ node -e "import('./config/scripts/postinstall.js').catch(() => void 0)"
+.../node_modules/nx postinstall$ node -e "try{require('./dist/bin/post-install')}catch(e){}"
+.../node_modules/msw postinstall: Done
+.../node_modules/nx postinstall: Done
+. prepare$ husky .github/hooks
+. prepare: .git can't be found
+. prepare: Done
+[WARN] Issues with peer dependencies found. Run "pnpm peers check" to list them.
+Done in 21.4s using pnpm v12.8.2
+$ pnpm nx run-many -t build
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run -d --name pd-fix-parent-664f111a --net=none --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-ghost-1/a1/snapshot-fix-parent:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-ghost-1/a1/snapshot-fix-parent.pd-home:/pd-home -v /tmp/pd-o8ay3rkf:/pd-sock -e HOME=/pd-home -e PORT=60583 docker.io/library/node:24.21.0-bookworm@sha256:3d27e5c11e5786e309ec3e03f93ae536eb36e6e5eb3714d5eb3300a36157add0 bash -c (python3 /checkout/.pd-bridge.py /pd-sock/app.sock 60583 &); export PATH=/checkout/.pd-tools/node_modules/.bin:/checkout/node_modules/.bin:$PATH; cd ghost/core && server__host=0.0.0.0 server__port=$PORT node --conditions=source --import=tsx index.js
+8b43266e2712976dac4d5987d7c543c9170a6c230ced0858113535d76f8c7ee9
+
+bridge socket ready: /tmp/pd-o8ay3rkf/app.sock
+sandbox app: --net=none, Unix socket bridge, executor proxy at 127.0.0.1:46053
+app container log tail:
+[2026-10-16 12:27:24] [36mINFO[39m Model: Integration
+[2026-10-16 12:27:24] [36mINFO[39m Relation: Role to Permission
+[2026-10-16 12:27:24] [36mINFO[39m Relation: Post to Tag
+[2026-10-16 12:27:25] [36mINFO[39m Database is in a ready state.
+[2026-10-16 12:27:25] [36mINFO[39m Ghost database ready in 8.317s
+[2026-10-16 12:27:25] [36mINFO[39m Configured site_uuid was not found or invalid. Setting site_uuid to a new value: 8a33e6c4-3d04-4f9b-9c1a-0ca9001afb5a
+[2026-10-16 12:27:25] [31mERROR[39m Could not use the card asset manifest at /checkout/ghost/core/core/frontend/public/cards.manifest.json
+[31m
+[31mCould not use the card asset manifest at /checkout/ghost/core/core/frontend/public/cards.manifest.json[39m
+
+[37m"ENOENT: no such file or directory, open '/checkout/ghost/core/core/frontend/public/cards.manifest.json'"[39m
+[33m"Card assets ship with Ghost — reinstall, or run `pnpm build:assets` when running from source"[39m
+
+[1m[37mError ID:[39m[22m
+    [90m02fea333-8180-4609-bc6d-bc987c39d26f[39m
+
+[90m----------------------------------------[39m
+
+[90mInternalServerError: Could not use the card asset manifest at /checkout/ghost/core/core/frontend/public/cards.manifest.json
+    at CardAssets.readManifest (/checkout/ghost/core/core/frontend/services/assets-minification/card-assets.js:70:11)
+    at new CardAssets (/checkout/ghost/core/core/frontend/services/assets-minification/card-assets.js:38:26)
+    at get cardAssets (/checkout/ghost/core/core/frontend/services/assets-minification/index.js:11:32)
+    at Object.<anonymous> (/checkout/ghost/core/core/bridge.js:19:26)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object.transformer (/checkout/node_modules/.pnpm/tsx@4.23.12/node_modules/tsx/dist/register-C557imBs.cjs:9:3619)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    at Module.require (node:internal/modules/cjs/loader:1527:12)
+    at require (node:internal/modules/helpers:147:16)
+    at Object.<anonymous> (/checkout/ghost/core/core/server/services/themes/activation-bridge.js:2:16)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object.transformer (/checkout/node_modules/.pnpm/tsx@4.23.12/node_modules/tsx/dist/register-C557imBs.cjs:9:3619)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)[39m
+[39m
+[2026-10-16 12:27:25] [35mWARN[39m Ghost is shutting down
+[2026-10-16 12:27:25] [36mINFO[39m Shutdown: stopped HTTP server in 0ms
+[2026-10-16 12:27:25] [36mINFO[39m Shutdown: Prometheus client finished in 0ms
+[2026-10-16 12:27:25] [36mINFO[39m Shutdown: Jobs Service (in-memory) finished in 1ms
+[2026-10-16 12:27:25] [35mWARN[39m Ghost has shut down
+[2026-10-16 12:27:25] [35mWARN[39m Ghost was running for a few seconds
+EmbedNode must implement static "getType" method
+EmbedNode must implement static "clone" method
+EmbedNode must implement "decorate" method
+EmbedNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+EmbedNode should implement "exportJSON" method to ensure JSON and default HTML serialization works as expected
+EmailNode must implement static "getType" method
+EmailNode must implement static "clone" method
+EmailNode must implement "decorate" method
+EmailNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+EmailNode should implement "exportJSON" method to ensure JSON and default HTML serialization works as expected
+GalleryNode must implement static "getType" method
+GalleryNode must implement static "clone" method
+GalleryNode must implement "decorate" method
+GalleryNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+GalleryNode should implement "exportJSON" method to ensure JSON and default HTML serialization works as expected
+EmailCtaNode must implement static "getType" method
+EmailCtaNode must implement static "clone" method
+EmailCtaNode must implement "decorate" method
+EmailCtaNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+EmailCtaNode should implement "exportJSON" method to ensure JSON and default HTML serialization works as expected
+SignupNode must implement static "getType" method
+SignupNode must implement static "clone" method
+SignupNode must implement "decorate" method
+TransistorNode must implement static "getType" method
+TransistorNode must implement static "clone" method
+TransistorNode must implement "decorate" method
+TransistorNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+TransistorNode should implement "exportJSON" method to ensure JSON and default HTML serialization works as expected
+ZWNJNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+InternalServerError: Could not use the card asset manifest at /checkout/ghost/core/core/frontend/public/cards.manifest.json
+    at CardAssets.readManifest (/checkout/ghost/core/core/frontend/services/assets-minification/card-assets.js:70:11)
+    at new CardAssets (/checkout/ghost/core/core/frontend/services/assets-minification/card-assets.js:38:26)
+    at get cardAssets (/checkout/ghost/core/core/frontend/services/assets-minification/index.js:11:32)
+    at Object.<anonymous> (/checkout/ghost/core/core/bridge.js:19:26)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object.transformer (/checkout/node_modules/.pnpm/tsx@4.23.12/node_modules/tsx/dist/register-C557imBs.cjs:9:3619)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    at Module.require (node:internal/modules/cjs/loader:1527:12)
+    at require (node:internal/modules/helpers:147:16)
+    at Object.<anonymous> (/checkout/ghost/core/core/server/services/themes/activation-bridge.js:2:16)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object.transformer (/checkout/node_modules/.pnpm/tsx@4.23.12/node_modules/tsx/dist/register-C557imBs.cjs:9:3619)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12) {
+  statusCode: 500,
+  errorType: 'InternalServerError',
+  level: 'critical',
+  id: '02fea333-8180-4609-bc6d-bc987c39d26f',
+  context: "ENOENT: no such file or directory, open '/checkout/ghost/core/core/frontend/public/cards.manifest.json'",
+  help: 'Card assets ship with Ghost — reinstall, or run `pnpm build:assets` when running from source',
+  errorDetails: undefined,
+  code: null,
+  property: null,
+  redirect: null,
+  hideStack: false
+}
+
+sandbox app not ready
