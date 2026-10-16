@@ -1,0 +1,144 @@
+{
+ "kind": "readiness",
+ "repo": "TryGhost/Ghost",
+ "attempt": 2,
+ "network_mode": "none+socket",
+ "rows": [
+  {
+   "kind": "readiness",
+   "unit": "C5",
+   "repo": "TryGhost/Ghost",
+   "role": "C",
+   "registered_sha": "5d482965b7f5ed05ffef956d0eaed8b8a51af0ef",
+   "harness_sha": "7d5882c6822a09aaf2f66464a68f02c1b5aaf757",
+   "declared_runtime": "^22.23.1 || ^24.20.0",
+   "selected_runtime": "node",
+   "runtime_version": "24.21.0",
+   "package_manager": "pnpm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "BUILD_FAILED",
+   "typed_reason": "sandbox install failed: [ELIFECYCLE] Command failed with exit code 127.",
+   "last_error": "sandbox install failed: [ELIFECYCLE] Command failed with exit code 127.",
+   "install_plan_sha256": "724127fa0093b44577561600eaa154696064f3fe0b0c4506f482f3fcaf4f6c5b",
+   "network_mode": "none+socket",
+   "attempt": 2,
+   "submodules": [
+    {
+     "path": "ghost/core/content/themes/casper",
+     "url": "https://github.com/TryGhost/Casper.git",
+     "commit": "7f4adb690c40850382fed4312d90e21ff0313fdc",
+     "tree_sha": "d645bc4aec20b1ee739a6221583dcd15c2f8d4d8"
+    },
+    {
+     "path": "ghost/core/content/themes/source",
+     "url": "https://github.com/TryGhost/Source.git",
+     "commit": "219dc7dbe62bb6dfa8db9fd651528571eae6cfd3",
+     "tree_sha": "805457d7f7e89099691e37e9e2ac1a37c672bb48"
+    }
+   ]
+  },
+  {
+   "kind": "readiness",
+   "unit": "checkpoint-bug-ghost-1",
+   "repo": "TryGhost/Ghost",
+   "role": "fix^",
+   "registered_sha": "93e0084723cdaf22d656bcd4811b87433e6b3875",
+   "harness_sha": "9cae80a0b958e5d1a30f34872e290189b72319e7",
+   "declared_runtime": "^22.23.1 || ^24.20.0",
+   "selected_runtime": "node",
+   "runtime_version": "24.21.0",
+   "package_manager": "pnpm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "BUILD_FAILED",
+   "typed_reason": "sandbox install failed: [ELIFECYCLE] Command failed with exit code 127.",
+   "last_error": "sandbox install failed: [ELIFECYCLE] Command failed with exit code 127.",
+   "install_plan_sha256": "e99ec929a6724dfc61e3d4e4e6f9a500e82ad5862f0ad3806fc8bb7bc0b4fc30",
+   "network_mode": "none+socket",
+   "attempt": 2,
+   "submodules": [
+    {
+     "path": "ghost/core/content/themes/casper",
+     "url": "https://github.com/TryGhost/Casper.git",
+     "commit": "a3f491463f08d3be5315c516097831b6e9a4724d",
+     "tree_sha": "0f245ecc389bb3b07f9c461c0bed83645762166a"
+    },
+    {
+     "path": "ghost/core/content/themes/source",
+     "url": "https://github.com/TryGhost/Source.git",
+     "commit": "9d3414ec8c2b7f35a8e2e4b5bd09014620f21333",
+     "tree_sha": "d0c55d8b8e1f29b3dbbab83c90cfd281f3dec6ca"
+    }
+   ]
+  },
+  {
+   "kind": "readiness",
+   "unit": "checkpoint-bug-ghost-1",
+   "repo": "TryGhost/Ghost",
+   "role": "fix",
+   "registered_sha": "f67640b2c18c76abd9cd3f6d19d6ae93327b42fa",
+   "harness_sha": "df2293adefdc69e0dbc411b9885547edcb1124c3",
+   "declared_runtime": "^22.23.1 || ^24.20.0",
+   "selected_runtime": "node",
+   "runtime_version": "24.21.0",
+   "package_manager": "pnpm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "BUILD_FAILED",
+   "typed_reason": "sandbox install failed: [ELIFECYCLE] Command failed with exit code 127.",
+   "last_error": "sandbox install failed: [ELIFECYCLE] Command failed with exit code 127.",
+   "install_plan_sha256": "e99ec929a6724dfc61e3d4e4e6f9a500e82ad5862f0ad3806fc8bb7bc0b4fc30",
+   "network_mode": "none+socket",
+   "attempt": 2,
+   "submodules": [
+    {
+     "path": "ghost/core/content/themes/casper",
+     "url": "https://github.com/TryGhost/Casper.git",
+     "commit": "a3f491463f08d3be5315c516097831b6e9a4724d",
+     "tree_sha": "0f245ecc389bb3b07f9c461c0bed83645762166a"
+    },
+    {
+     "path": "ghost/core/content/themes/source",
+     "url": "https://github.com/TryGhost/Source.git",
+     "commit": "9d3414ec8c2b7f35a8e2e4b5bd09014620f21333",
+     "tree_sha": "d0c55d8b8e1f29b3dbbab83c90cfd281f3dec6ca"
+    }
+   ]
+  }
+ ],
+ "regd_summaries": []
+}
