@@ -23,7 +23,7 @@
 
 **Loader semantics.** `fixture` is optional: `yml.py:130` — `fixture = data.get("fixture") or {}`, type-checked at :131-134. A contract with no `fixture:` parses fine and yields `contract.fixture == {}`.
 
-**Render semantics (fail-closed, no fallback).** `render_description` (fixture.py:89) requires every field the selected template *uses* to be present and non-empty, else `ValueError("fixture mapping missing fields: …")` (fixture.py:112-131). The credential template uses all five fields (`fixture.py:28` `TEMPLATE_FIELDS`); the no-credential template uses four (no `{auth_scope}`). Template selection is mechanical (fixture.py:61): a top-level `auth:` mapping in the contract ⇒ `fixture_template.txt`; otherwise `fixture_template_nocredential.txt`.
+**Render semantics (fail-closed, no fallback).** `render_description` (fixture.py:89) requires every field the selected template *uses* to be present and non-empty, else `ValueError("fixture mapping missing fields: …")` (fixture.py:106-109). The credential template uses all five fields (`fixture.py:32` `TEMPLATE_FIELDS`); the no-credential template uses four (no `{auth_scope}`). Template selection is mechanical (fixture.py:61): a top-level `auth:` mapping in the contract ⇒ `fixture_template.txt`; otherwise `fixture_template_nocredential.txt`.
 
 **What the measured path does today for every unit in this audit — two failures, in order:**
 
