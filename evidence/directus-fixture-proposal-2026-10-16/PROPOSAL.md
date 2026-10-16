@@ -19,7 +19,7 @@ C4 `a5da59da94bb33c8d644df93a21403eca4c1a4e7`.
 ```yaml
 fixture:
   repo_name: "Directus"
-  seed_note: "Directus’s own bootstrap, run as the setup step, installed its system tables, ran its own migrations and created exactly one user — an administrator account whose email and password are generated fresh for each run — and exactly one role, 'Administrator', linked to one 'Administrator' policy granting full administrative access. Directus’s migrations also created its built-in 'Public' policy, which applies to requests without a token, and its settings record with a generated project id. No content collections, items or files were created, and no other settings were changed."
+  seed_note: "Directus's own bootstrap, run as the setup step, installed its system tables, ran its own migrations and created exactly one user — an administrator account whose email and password are generated fresh for each run — and exactly one role, 'Administrator', linked to one 'Administrator' policy granting full administrative access. Directus's migrations also created its built-in 'Public' policy, which applies to requests without a token, and its settings record with a generated project id. No content collections, items or files were created, and no other settings were changed."
   auth_mechanism: "the token is presented in the Authorization header in the form 'Bearer <token>'"
   auth_scope: "an access token belonging to the single administrator account the bootstrap created, obtained by signing in as that account with its per-run generated email and password and renewed by refresh before it expires; access tokens last 15 minutes and the refresh token 7 days. The token carries the account's full administrative access; the account has no static API token"
   flags_note: "no feature flags or experimental options were enabled or changed"
@@ -35,9 +35,10 @@ above) → `template_filename(contract.auth is not None)` →
 `REGISTERED_TEMPLATE_SHA256` (pin match). The parsed `fixture:` values
 round-tripped string-for-string. Rendered text: `rendered-fixture.txt`
 in this directory, **sha256
-`3a29646464facba9cfb9e689cc57ad8d4b5515e2550b504758e37bea338f8819`,
-1374 bytes** (re-rendered after the D113 corrections; the earlier render
-was `06ee0be7…`, 1225 bytes).
+`dbbdcfd4b8287be91918d2c2aaade11a4c9c7b8496ac16f0f9409b1f1656b610`,
+1370 bytes** (re-rendered after the D113 corrections and the D115
+apostrophe fix; earlier renders were `06ee0be7…`, 1225 bytes, and
+`3a296464…`, 1374 bytes — see the D115 section below).
 
 ## What `directus bootstrap` creates — verified per SHA
 
@@ -161,6 +162,21 @@ SHAs and issued TWO CORRECTIONS plus a ruling:
 
 The fixture is NOT committed yet: next come the fresh-agent check
 (REG-E item 3) and Master's checkpoint sign-off (REG-E item 5).
+
+## D115 correction (reviewer, 2026-10-16) — apostrophes
+
+The D113 re-render (`3a296464…`, 1374 bytes) was NOT byte-exact: the
+two apostrophes in "Directus's" had been picked up in transit as
+curly apostrophes (U+2019). The ruled text uses ASCII apostrophes.
+The fixture values above are corrected to ASCII, and the re-render
+with the engine's real code (same pipeline as before: scratch copy of
+the #122 contract + the corrected block, engine at main `b1b16e8`,
+template pin verified) is **sha256
+`dbbdcfd4b8287be91918d2c2aaade11a4c9c7b8496ac16f0f9409b1f1656b610`,
+1370 bytes** — exactly the reviewer's own render. No wording changed;
+the only difference from `3a296464…` is U+2019 → U+0027, twice
+(−4 bytes). The fixture remains NOT committed, pending the
+fresh-agent check and Master's checkpoint sign-off.
 
 ## Auth proof design (D113 item 4 — LATER step, after the fixture is committed; recorded here, NOT built)
 
