@@ -1,11 +1,23 @@
 # WO-1.14 Part 2 — Vendure REG-E fixture/provider PROPOSAL (report only)
 
 Status: PROPOSAL for the reviewer's ruling. Nothing is committed to the
-contract; no PR, no dispatch. **The provider question ends in a STOP**
-(see the verdict): no existing `CredentialProvider` mode can sign in as
-the Vendure superadmin and obtain the credential. No `fixture:` values
-are drafted and no render is filed — both presuppose a provider — and
-no new auth logic is designed here, per the work order.
+contract; no PR for the fixture, no dispatch. **The provider question
+ends in a STOP** (see the verdict): no existing `CredentialProvider`
+mode can sign in as the Vendure superadmin and obtain the credential.
+No `fixture:` values are drafted and no render is filed — both
+presuppose a provider — and no new auth logic is designed here, per
+the work order.
+
+**UPDATE (D120, 2026-10-16): the STOP is resolved.** The reviewer
+verified the verdict and ruled the engine change (D120): `login` mode
+gains `token_header`. That change is built as PR #130
+(`feat/auth-token-header`, head `4f10e24`). The addendum at the end of
+this file — "D120 resolution" — proposes the `auth:` block, drafts the
+five `fixture:` values from the seed facts below, files a render, and
+sets out the auth-proof plan. The STOP analysis above stands as the
+record of why the engine change was needed; the addendum's proposals
+take effect only through the REG-E flow (reviewer ruling, fresh-agent
+check, fixture PR after PR #130 merges).
 
 Basis: REG-E (merged on main `b1b16e8`, D105); D115 item 5 ("send the
 provider proposal (superadmin from dev-config.ts, existing modes
@@ -176,3 +188,130 @@ reviewed mechanism by which the existing modes can hold a Vendure
 session token. Not designed here, per the work order. Until then the
 Vendure contract stays without `auth:`/`fixture:` and its units stay
 out of measured runs that require a credential.
+
+---
+
+# ADDENDUM — D120 resolution (2026-10-16)
+
+## The engine change (PR #130)
+
+Ruling D120 (reviewer, within plan 1.14; the STOP above verified
+first-hand: `_login_exchange` discards the headers —
+`status, _, resp_body = _do_http(...)`): `login` mode gains ONE
+optional field, `token_header` (a response-header name,
+case-insensitive). Exactly one of `token_json_path` / `token_header`
+must be declared for login mode, validated at load (both or neither
+refused). When `token_header` is declared, the token is that header's
+value; a missing or empty header is INCONCLUSIVE `auth`; a 200
+without the header is an auth failure, never a token. Presentation
+unchanged; fully generic. Built as **PR #130** (branch
+`feat/auth-token-header`, head `4f10e246412e62d814a969df7e034ab668fda4ca`):
+8 new tests (one per ruled case + load validation + case-insensitivity),
+plant verified (ignoring `token_header` fails 2 tests), ruff/mypy
+clean, manifest 983/89, pins unchanged. Not merged — reviewer
+acceptance + Master's authorization gate it as usual.
+
+## Proposed `auth:` block (for the future fixture PR; NOT committed)
+
+```yaml
+auth:
+  mode: login
+  path: /admin-api
+  method: POST
+  body:
+    query: 'mutation { login(username: "superadmin", password: "superadmin") { ... on CurrentUser { id identifier } } }'
+  token_header: vendure-auth-token
+```
+
+- The Admin API login mutation is public (`auth.resolver.ts` L34–49 →
+  `base-auth.resolver.ts` L48–63, cited in the mode-by-mode analysis);
+  the response carries the session token in the `vendure-auth-token`
+  header (`set-session-token.ts`; the runtime config's `tokenMethod`
+  includes `'bearer'`, `dev-config.ts` L103–112), and the body is the
+  CurrentUser — exactly the D120 header case.
+- The credentials are upstream's published core defaults
+  (`default-config.ts` L118–121 + `shared-constants.ts` L9–10):
+  `dev-config.ts` declares no `superadminCredentials`, so identifier
+  and password are `superadmin`/`superadmin` on every instance. They
+  are written literally in the GraphQL query string because the
+  contract `body` is a flat string map (`yml.py` `_auth_str_map`) —
+  a nested `variables` object is not expressible. They are not per-run
+  secrets (D113 ruling: caller credentials, stated because the fixture
+  text turns on them).
+- The block was load-validated under the PR #130 engine
+  (`load_contract` normalizes it to mode/path/method/body/token_header,
+  no `token_json_path`).
+
+## The five fixture values (drafted; ASCII apostrophes only)
+
+```yaml
+fixture:
+  repo_name: "Vendure"
+  seed_note: "Vendure's own populate seed, run as the setup step, installed the initial data: five roles (SuperAdmin, Customer, administrator, order-manager and inventory-manager) and eleven users — the superadmin account and ten deterministic mock customers, each with an address and the password 'test'. It also created the default channel, the initial countries, zones, tax rates, shipping and payment methods and collections, and imported the product catalogue from the repository's own products.csv. It created no API keys."
+  auth_mechanism: "the token is presented in the Authorization header in the form 'Bearer <token>'"
+  auth_scope: "a session token belonging to the superadmin account, obtained by signing in to the admin API as that account; the account's username and password are upstream's published defaults, the same for every instance, because the instance config declares no others. The account holds the SuperAdmin role. At this version's default configuration a session lasts one year"
+  flags_note: "no feature flags or experimental options were enabled or changed"
+```
+
+Every statement traces to the per-SHA verified facts in "What the seed
+creates" above (all cited files byte-identical at the 6 registered
+SHAs): 5 roles and 11 users as named; the customers' password `'test'`
+(`populate-customers.ts` L16–35); the default channel, reference data
+and CSV catalogue (`initial-data.ts`, `populate.ts`, populate-dev-server
+L44); no API keys created anywhere in the seed path. Bearer
+presentation: `extract-session-token.ts` L27–40. Session duration
+`'1y'`: `default-config.ts` L114. The superadmin holding the
+SuperAdmin role: `administrator.service.ts` L59–61, L417–420 +
+`role.service.ts` L81–85. Fixed template sentences checked: "No other
+users, roles, or credentials exist beyond what the seed creates" —
+the seed note carries all 11 users and 5 roles, and both credentials
+the seed creates are disclosed (the customers' `'test'` in the seed
+note; the superadmin's published defaults in `auth_scope`); per the
+D113 ruling, the cookie secret `'abc'` in dev-config is configuration,
+not a caller credential. `flags_note` uses the D113-safe form (nothing
+enabled or changed) rather than claiming no flag system exists.
+
+## Render
+
+Rendered with the real engine code on PR #130's branch (fixture code
+identical to main `b1b16e8`; template `fixture_template.txt`, pin
+`0994d1e3…` verified) from a scratch copy of the contract plus the two
+blocks above — the real contract file was never edited:
+`rendered-fixture.txt` in this directory, **sha256
+`2aa369f15fa2bde9a480e1c01b8363376dda5a3da884a66b705098275573809f`**,
+1296 bytes.
+
+## Auth-proof plan (after the fixture is committed under REG-E)
+
+Ghost pattern (D87/D91/D106/D113) adapted, on all 6 sides, predictions
+filed before the first dispatch, D61 pack after:
+
+- Request: `POST /admin-api` with the GraphQL query
+  `{ me { id identifier } }` — an auth-required admin query (the `me`
+  query resolves the current administrator from the session).
+- Legs per side: (1) with the provider's token → 200, and the response
+  names the superadmin (`data.me.identifier` = `superadmin`); (2) a
+  second authenticated request whose credential comes from a **fresh
+  login** — login mode's semantics are one acquisition per run (the
+  session does not near expiry), so leg 2 runs a second provider
+  acquisition (a new login, not a refresh: Vendure has no refresh) →
+  200; acquisitions recorded **by kind: exactly 1 login per leg, 0
+  refreshes**; (3) no Authorization header → refused (non-2xx, or a
+  GraphQL errors-only body with no `data.me` — the exact refusal shape
+  is pinned from upstream's auth-guard behavior when the proof is
+  built, and stated in the predictions before dispatch).
+- Negative tests per D106, each yielding FAILED not PROVEN: the
+  unauthenticated leg returning success; wrong acquisition counts or
+  kinds; an authenticated leg returning non-200.
+- Uses the existing auth-proof driver with this declared request; if
+  the driver cannot express a POST GraphQL request, that step stops
+  and reports — no new proof machinery is built under this plan.
+
+## Sequence from here
+
+PR #130 merges (reviewer + Master) → the reviewer rules on these
+values → a fresh agent independently checks accuracy/neutrality
+(REG-E item 3) → the fixture PR commits `auth:` + `fixture:` byte-exact
+(render from the committed contract must equal `2aa369f1…`) → the auth
+proof above runs → Vendure's units become measurable.
+
