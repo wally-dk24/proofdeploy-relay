@@ -1,0 +1,335 @@
+sandbox provision fix (876c7587f655)
+install plan: sha256 e38fe2b810cede88... (adapter: node)
+sandbox image: docker.io/library/node:26.11.1-bookworm@sha256:f1233c415b41ffcf237c717b3dea92e9d4ea006e0e4c71edcb790605d74f5404 (runtime node)
+sandbox runtime version: 26.11.1 (digest sha256:f1233c415b41ffcf237c717b3dea92e9d4ea006e0e4c71edcb790605d74f5404)
+lockfile: bun.lock sha256: f9946b75ba1819c5...
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs unshare chown -R 1:1 /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-vendure-1/a1/snapshot-fix /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-vendure-1/a1/snapshot-fix.pd-home
+checkout ownership: transferred to the sandbox runtime uid (podman unshare chown 1:1; plan 1.2(g), home dir included under plan 1.2(k))
+install: ca_cert_used=False
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs network exists pd-build
+build network: pd-build (bridge, external route for proxy)
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-0 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-vendure-1/a1/snapshot-fix:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-vendure-1/a1/snapshot-fix.pd-home:/pd-home -e DB=sqlite -e RUN_JOB_QUEUE=1 -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store -e npm_config_nodedir=/usr/local docker.io/library/node:26.11.1-bookworm@sha256:f1233c415b41ffcf237c717b3dea92e9d4ea006e0e4c71edcb790605d74f5404 bash -c bash -c 'set -e; d=/pd-home/.pd-tools; mkdir -p $d/bin $d/.bun-dist; cacert=""; if [ -n "${SSL_CERT_FILE:-}" ] && [ -f "$SSL_CERT_FILE" ]; then cacert="--cacert $SSL_CERT_FILE"; fi; curl -fsSL $cacert https://github.com/oven-sh/bun/releases/download/bun-v1.4.3/bun-linux-x64.zip -o $d/bun.zip; echo "3e730528d89775f03f87f05c06787c4df4099d0a37f3f252e7b829cb23816e18  $d/bun.zip" | sha256sum -c -; unzip -o -q $d/bun.zip -d $d/.bun-dist; cp $d/.bun-dist/bun-linux-x64/bun $d/bin/bun; chmod +x $d/bin/bun; rm -rf $d/bun.zip $d/.bun-dist; $d/bin/bun --version'
+/pd-home/.pd-tools/bun.zip: OK
+1.4.3
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-1 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-vendure-1/a1/snapshot-fix:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-vendure-1/a1/snapshot-fix.pd-home:/pd-home -e DB=sqlite -e RUN_JOB_QUEUE=1 -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store -e npm_config_nodedir=/usr/local docker.io/library/node:26.11.1-bookworm@sha256:f1233c415b41ffcf237c717b3dea92e9d4ea006e0e4c71edcb790605d74f5404 bash -c /pd-home/.pd-tools/bin/bun install --frozen-lockfile
+bun install v1.4.3 (c6da4a4d3)
+
++ @commitlint/cli@19.8.1
++ @commitlint/config-conventional@21.2.2
++ @gql.tada/cli-utils@1.9.3
++ @graphql-codegen/add@6.0.0
++ @graphql-codegen/cli@6.0.0
++ @graphql-codegen/fragment-matcher@6.0.0
++ @graphql-codegen/typed-document-node@6.1.5
++ @graphql-codegen/typescript@5.0.1
++ @graphql-codegen/typescript-operations@5.0.1
++ @graphql-tools/schema@10.1.0
++ @swc/core@1.15.8
++ @types/node@20.19.27 (v26.6.5 available)
++ @vendure-io/docs-generator@0.1.1
++ concurrently@9.2.1 (v10.0.6 available)
++ conventional-changelog-core@7.0.0
++ cross-env@7.0.3 (v10.1.0 available)
++ find@0.3.0
++ gql.tada@1.11.3 (v1.11.4 available)
++ graphql@16.13.1 (v17.0.2 available)
++ husky@4.3.8
++ lerna@9.0.3
++ lint-staged@10.5.4
++ prettier@3.9.6
++ prettier-plugin-organize-imports@4.3.0
++ rollup@4.55.1 (v4.64.3 available)
++ tinybench@2.9.0
++ ts-node@10.9.2
++ typescript@5.8.2 (v7.0.2 available)
++ unplugin-swc@1.5.9
++ vite@7.3.1 (v8.3.4 available)
++ vitest@3.2.4 (v5.0.3 available)
++ @nx/nx-linux-x64-gnu@17.2.8
++ @rollup/rollup-linux-x64-gnu@4.63.1
++ @swc/core-linux-x64-gnu@1.16.1
++ @types/nodemailer@8.0.1 (v8.0.2 available)
++ @typescript-eslint/eslint-plugin@8.70.0 (v8.71.1 available)
++ @typescript-eslint/parser@8.70.0 (v8.71.1 available)
++ eslint@8.57.1 (v10.12.0 available)
+[… 0 lines elided …]
+bun install v1.4.3 (c6da4a4d3)
+
++ @commitlint/cli@19.8.1
++ @commitlint/config-conventional@21.2.2
++ @gql.tada/cli-utils@1.9.3
++ @graphql-codegen/add@6.0.0
++ @graphql-codegen/cli@6.0.0
++ @graphql-codegen/fragment-matcher@6.0.0
++ @graphql-codegen/typed-document-node@6.1.5
++ @graphql-codegen/typescript@5.0.1
++ @graphql-codegen/typescript-operations@5.0.1
++ @graphql-tools/schema@10.1.0
++ @swc/core@1.15.8
++ @types/node@20.19.27 (v26.6.5 available)
++ @vendure-io/docs-generator@0.1.1
++ concurrently@9.2.1 (v10.0.6 available)
++ conventional-changelog-core@7.0.0
++ cross-env@7.0.3 (v10.1.0 available)
++ find@0.3.0
++ gql.tada@1.11.3 (v1.11.4 available)
++ graphql@16.13.1 (v17.0.2 available)
++ husky@4.3.8
++ lerna@9.0.3
++ lint-staged@10.5.4
++ prettier@3.9.6
++ prettier-plugin-organize-imports@4.3.0
++ rollup@4.55.1 (v4.64.3 available)
++ tinybench@2.9.0
++ ts-node@10.9.2
++ typescript@5.8.2 (v7.0.2 available)
++ unplugin-swc@1.5.9
++ vite@7.3.1 (v8.3.4 available)
++ vitest@3.2.4 (v5.0.3 available)
++ @nx/nx-linux-x64-gnu@17.2.8
++ @rollup/rollup-linux-x64-gnu@4.63.1
++ @swc/core-linux-x64-gnu@1.16.1
++ @types/nodemailer@8.0.1 (v8.0.2 available)
++ @typescript-eslint/eslint-plugin@8.70.0 (v8.71.1 available)
++ @typescript-eslint/parser@8.70.0 (v8.71.1 available)
++ eslint@8.57.1 (v10.12.0 available)
++ eslint-config-prettier@8.10.2
++ eslint-plugin-import@2.32.0
++ eslint-plugin-jsdoc@45.0.0 (v65.2.2 available)
++ eslint-plugin-prefer-arrow@1.2.3
+
+2902 packages installed [26.57s]
+
+Resolving dependencies
+Resolved, downloaded and extracted [548]
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-2 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-vendure-1/a1/snapshot-fix:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-vendure-1/a1/snapshot-fix.pd-home:/pd-home -e DB=sqlite -e RUN_JOB_QUEUE=1 -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store docker.io/library/node:26.11.1-bookworm@sha256:f1233c415b41ffcf237c717b3dea92e9d4ea006e0e4c71edcb790605d74f5404 bash -c export PATH=/pd-home/.pd-tools/bin:/checkout/node_modules/.bin:$PATH; bun run build
+
+ Lerna (powered by Nx)   Running target build for 16 projects:
+
+- @vendure/admin-ui
+- @vendure/admin-ui-plugin
+- @vendure/asset-server-plugin
+- @vendure/cli
+- @vendure/common
+- @vendure/core
+- @vendure/create
+- @vendure/dashboard
+- dev-server
+- @vendure/email-plugin
+- @vendure/graphiql-plugin
+- @vendure/harden-plugin
+- @vendure/job-queue-plugin
+- @vendure/telemetry-plugin
+- @vendure/testing
+- @vendure/ui-devkit
+
+
+
+> @vendure/common:build
+
+[0m[2m[35m$[0m [2m[1mrimraf lib && tsc -p ./tsconfig.build.json[0m
+
+> @vendure/core:build
+
+[0m[2m[35m$[0m [2m[1mrimraf dist && tsc -p ./build/tsconfig.build.json && tsc -p ./build/tsconfig.cli.json && ts-node build/copy-static.ts build[0m
+Schemas copied successfully!
+I18n messages copied successfully!
+
+> @vendure/testing:build
+
+[0m[2m[35m$[0m [2m[1mtsc -p ./tsconfig.build.json[0m
+
+> @vendure/asset-server-plugin:build
+
+[0m[2m[35m$[0m [2m[1mrimraf lib && tsc -p ./tsconfig.build.json && node build.js[0m
+
+[… 1687 lines elided …]
+ kB[22m[1m[22m[2m │ gzip:  21.23 kB[22m
+[2mdist/bundle/[22m[36mchunks/ar-BSGvcaBF.js                     [39m[1m[2m   73.58 kB[22m[1m[22m[2m │ gzip:  22.30 kB[22m
+[2mdist/bundle/[22m[36mchunks/fa-VxceuMqw.js                     [39m[1m[2m   76.60 kB[22m[1m[22m[2m │ gzip:  22.04 kB[22m
+[2mdist/bundle/[22m[36mchunks/uk-ND5WEf7G.js                     [39m[1m[2m   84.90 kB[22m[1m[22m[2m │ gzip:  23.60 kB[22m
+[2mdist/bundle/[22m[36mchunks/ru-BAxU2Abc.js                     [39m[1m[2m   86.16 kB[22m[1m[22m[2m │ gzip:  23.92 kB[22m
+[2mdist/bundle/[22m[36mchunks/bg-B0kUM4AY.js                     [39m[1m[2m   88.97 kB[22m[1m[22m[2m │ gzip:  24.23 kB[22m
+[2mdist/bundle/[22m[36mchunks/ne-C9M1aYfo.js                     [39m[1m[2m  108.94 kB[22m[1m[22m[2m │ gzip:  23.52 kB[22m
+[2mdist/bundle/[22m[36mchunks/AP7HFJJL-mnviqjxY.js               [39m[1m[2m  438.18 kB[22m[1m[22m[2m │ gzip:  86.50 kB[22m
+[2mdist/bundle/[22m[36mlib.js                                    [39m[1m[33m  525.82 kB[39m[22m[2m │ gzip: 112.54 kB[22m
+[2mdist/bundle/[22m[36mchunks/main-iXcMFTgf.js                   [39m[1m[33m  912.66 kB[39m[22m[2m │ gzip: 155.38 kB[22m
+[2mdist/bundle/[22m[36mchunks/locale-D2wV9S0O.js                 [39m[1m[33m1,266.57 kB[39m[22m[2m │ gzip: 180.99 kB[22m
+[2mdist/bundle/[22m[36mchunks/use-job-queue-polling-Burro0i8.js  [39m[1m[33m4,725.84 kB[39m[22m[2m │ gzip: 977.41 kB[22m
+[32m✓ built in 28.49s[39m
+
+> dev-server:build
+
+[0m[2m[35m$[0m [2m[1mnode ../cli/dist/cli.js build all[0m
+Building dashboard with vite...
+[32mBuilt dashboard successfully in 23.0s.[39m
+[34m[server][39m Building server with tsc...
+[36m[worker][39m Building worker with tsc...
+[36m[worker][39m [32mBuilt worker successfully in 3.2s.[39m
+[34m[server][39m [32mBuilt server successfully in 3.3s.[39m
+
+
+
+ Lerna (powered by Nx)   Successfully ran target build for 16 projects
+
+
+
+$ lerna run build
+lerna notice cli v9.0.3
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-3 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-vendure-1/a1/snapshot-fix:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-vendure-1/a1/snapshot-fix.pd-home:/pd-home -e DB=sqlite -e RUN_JOB_QUEUE=1 -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store docker.io/library/node:26.11.1-bookworm@sha256:f1233c415b41ffcf237c717b3dea92e9d4ea006e0e4c71edcb790605d74f5404 bash -c export PATH=/pd-home/.pd-tools/bin:/checkout/node_modules/.bin:$PATH; cd packages/dev-server && bun run populate
+Using sqlite connection
+Clearing all tables...
+Done!
+info 10/16/26, 11:14 PM - [Vendure Server] Bootstrapping Vendure Server (pid: 4)... 
+warn 10/16/26, 11:14 PM - [Vendure Server] Insecure CORS configuration: `apiOptions.cors` reflects any `Origin` header (`origin: true`) and also allows credentials (`credentials: true`), so any website can make cross-origin requests to the Shop and Admin APIs. Set `apiOptions.cors.origin` to an explicit list of the origins you serve, e.g. `{ origin: ['https://storefront.example.com'], credentials: true }`. This is expected in local development. Do not deploy with it. 
+info 10/16/26, 11:14 PM - [Vendure Server] The plugin "ReadonlySettingsTestPlugin" does not specify a compatibility range, so it is not guaranteed to be compatible with this version of Vendure. 
+info 10/16/26, 11:14 PM - [Vendure Server] The plugin "ReviewsPlugin" does not specify a compatibility range, so it is not guaranteed to be compatible with this version of Vendure. 
+info 10/16/26, 11:14 PM - [Vendure Server] The plugin "NavModifierPlugin" does not specify a compatibility range, so it is not guaranteed to be compatible with this version of Vendure. 
+info 10/16/26, 11:14 PM - [NestFactory] Starting Nest application... 
+info 10/16/26, 11:14 PM - [InstanceLoader] ProcessContextModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] ServiceModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] ConnectionModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] ConnectionModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] TypeOrmModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] PluginModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] ConnectionModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] TypeOrmModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] ConnectionModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] ReviewsPlugin dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] PluginCommonModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] ConnectionModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] TypeOrmModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] PluginModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] NavModifierPlugin dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] DefaultJobQueuePlugin dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] ConfigModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] I18nModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] CacheModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] SchedulerModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] HealthCheckModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] AppModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] JobQueueModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] GraphiqlPlugin dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] AssetServerPlugin dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] GraphQLSchemaBuilderModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] TypeOrmCoreModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] ConnectionCoreModule dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] DefaultSchedulerPlugin dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] DashboardPlugin dependencies initialized 
+info 10/16/26, 11:14 PM - [InstanceLoader] EventBusModule dependencies initialized 
+[… 63 lines elided …]
+stomers...
+verbose 10/16/26, 11:14 PM - [Vendure Server] Processing 1 Collections 
+verbose 10/16/26, 11:14 PM - [DefaultSearchPlugin Worker] Updating 1 variants 
+verbose 10/16/26, 11:14 PM - [Vendure Server] Processing 1 Collections 
+verbose 10/16/26, 11:14 PM - [DefaultSearchPlugin Worker] Updating 1 variants 
+verbose 10/16/26, 11:14 PM - [Vendure Server] Processing 1 Collections 
+verbose 10/16/26, 11:14 PM - [DefaultSearchPlugin Worker] Updating 1 variants 
+verbose 10/16/26, 11:14 PM - [Vendure Server] Processing 1 Collections 
+verbose 10/16/26, 11:14 PM - [DefaultSearchPlugin Worker] Updating 1 variants 
+verbose 10/16/26, 11:14 PM - [Vendure Server] Processing 1 Collections 
+verbose 10/16/26, 11:14 PM - [DefaultSearchPlugin Worker] Updating 1 variants 
+verbose 10/16/26, 11:14 PM - [Vendure Server] Processing 1 Collections 
+verbose 10/16/26, 11:14 PM - [DefaultSearchPlugin Worker] Updating 1 variants 
+verbose 10/16/26, 11:14 PM - [Vendure Server] Processing 1 Collections 
+verbose 10/16/26, 11:14 PM - [DefaultSearchPlugin Worker] Updating 1 variants 
+verbose 10/16/26, 11:14 PM - [Vendure Server] Processing 1 Collections 
+verbose 10/16/26, 11:14 PM - [DefaultSearchPlugin Worker] Updating 1 variants 
+verbose 10/16/26, 11:14 PM - [DefaultSearchPlugin Worker] Updating 1 variants 
+verbose 10/16/26, 11:14 PM - [DefaultSearchPlugin Worker] Updating 1 variants 
+verbose 10/16/26, 11:14 PM - [DefaultSearchPlugin Worker] Updating 1 variants 
+verbose 10/16/26, 11:14 PM - [DefaultSearchPlugin Worker] Updating 1 variants 
+verbose 10/16/26, 11:14 PM - [DefaultSearchPlugin Worker] Updating 1 variants 
+verbose 10/16/26, 11:14 PM - [DefaultSearchPlugin Worker] Updating 1 variants 
+info 10/16/26, 11:14 PM - [Vendure Server] Stopped queue: apply-collection-filters 
+info 10/16/26, 11:14 PM - [Vendure Server] Stopped queue: clean-sessions 
+info 10/16/26, 11:14 PM - [Vendure Server] Stopped queue: update-search-index 
+info 10/16/26, 11:14 PM - [Vendure Server] Stopped queue: send-email 
+
+$ node -r ts-node/register -r dotenv/config populate-dev-server.ts
+
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run -d --name pd-fix-876c7587 --net=none --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-vendure-1/a1/snapshot-fix:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-vendure-1/a1/snapshot-fix.pd-home:/pd-home -v /tmp/pd-mt4pzk64:/pd-sock -e DB=sqlite -e RUN_JOB_QUEUE=1 -e HOME=/pd-home -e PORT=38009 docker.io/library/node:26.11.1-bookworm@sha256:f1233c415b41ffcf237c717b3dea92e9d4ea006e0e4c71edcb790605d74f5404 bash -c (python3 /checkout/.pd-bridge.py /pd-sock/app.sock 38009 &); export PATH=/pd-home/.pd-tools/bin:/checkout/node_modules/.bin:$PATH; cd packages/dev-server && bun run dev:server --no-reload
+63cb599de16848c582143c9d23c4cac745ca90ad95c8117f40ef509be5c90f27
+
+bridge socket ready: /tmp/pd-mt4pzk64/app.sock
+sandbox app: --net=none, Unix socket bridge, executor proxy at 127.0.0.1:46483
+app container log tail:
+:14 PM -[39m [36m[InstanceLoader][39m ConnectionModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m TypeOrmModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m PluginModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m NavModifierPlugin dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m DefaultJobQueuePlugin dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m ConfigModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m I18nModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m CacheModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m SchedulerModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m HealthCheckModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m AppModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m JobQueueModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m GraphiqlPlugin dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m AssetServerPlugin dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m GraphQLSchemaBuilderModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m TypeOrmCoreModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m ConnectionCoreModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m DefaultSchedulerPlugin dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m DashboardPlugin dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m EventBusModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m DashboardPluginDynamicAdminModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m TelemetryModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m EmailPlugin dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m ApiSharedModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m ReadonlySettingsTestPlugin dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m ReviewsPluginDynamicAdminModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m ReviewsPluginDynamicShopModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m DataImportModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m DefaultSearchPlugin dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m ServiceCoreModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m DefaultSearchPluginDynamicAdminModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m DefaultSearchPluginDynamicShopModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m ApiModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m AdminApiModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m ShopApiModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m GraphQLModule dependencies initialized 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[InstanceLoader][39m GraphQLModule dependencies initialized 
+[35mverbose[39m [90m10/16/26, 11:14 PM -[39m [36m[DashboardPlugin][39m Creating dashboard middleware 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[AssetServerPlugin][39m Creating asset server middleware 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[EmailPlugin][39m Creating dev mailbox middleware 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[RoutesResolver][39m HealthController {/health}: 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[RouterExplorer][39m Mapped {/health, GET} route 
+[33mwarn[39m [90m10/16/26, 11:14 PM -[39m [36m[Vendure Server][39m [33mDefault superadmin password is configured. This is INSECURE and must not be used in production. Set `authOptions.superadminCredentials` in your VendureConfig — typically wired from environment variables, e.g. `{ identifier: process.env.SUPERADMIN_USERNAME, password: process.env.SUPERADMIN_PASSWORD }`.[39m 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[GraphQLModule][39m Mapped {/shop-api, POST} route 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[GraphQLModule][39m Mapped {/admin-api, POST} route 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[NestApplication][39m Nest application successfully started 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[Vendure Server][39m ===================================================== 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[Vendure Server][39m   Vendure server (v3.7.3) now running on port 38009 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[Vendure Server][39m ----------------------------------------------------- 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[Vendure Server][39m Shop API:       http://localhost:38009/shop-api 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[Vendure Server][39m Admin API:      http://localhost:38009/admin-api 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[Vendure Server][39m Dashboard UI:   http://localhost:38009/dashboard 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[Vendure Server][39m GraphiQL Admin: http://localhost:38009/graphiql/admin 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[Vendure Server][39m GraphiQL Shop:  http://localhost:38009/graphiql/shop 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[Vendure Server][39m Asset server:   http://localhost:38009/assets 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[Vendure Server][39m Dev mailbox:    http://localhost:38009/mailbox 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[Vendure Server][39m ===================================================== 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[Vendure Server][39m Anonymous telemetry is enabled to help us improve Vendure. 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[Vendure Server][39m To disable, set VENDURE_DISABLE_TELEMETRY=true. 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[JobQueue][39m Starting queue: apply-collection-filters 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[JobQueue][39m Starting queue: clean-sessions 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[JobQueue][39m Starting queue: update-search-index 
+[34minfo[39m [90m10/16/26, 11:14 PM -[39m [36m[JobQueue][39m Starting queue: send-email 
+[35mverbose[39m [90m10/16/26, 11:14 PM -[39m [36m[DefaultSearchPlugin Worker][39m Updating 1 variants 
+[35mverbose[39m [90m10/16/26, 11:14 PM -[39m [36m[DefaultSearchPlugin Worker][39m Updating 1 variants 
+[35mverbose[39m [90m10/16/26, 11:14 PM -[39m [36m[DefaultSearchPlugin Worker][39m Updating 1 variants 
+$ node ../cli/dist/cli.js dev server --server-entry ./index.ts --no-reload
+
+sandbox app READY at http://127.0.0.1:46483
+auth proof: request 1 -> 200 (verdict pass, acquisitions 1 {'login': 1}); request 2 -> 200 (verdict pass, acquisitions 1 {'login': 1}); request 3 -> 200 (verdict pass, acquisitions 0 {}); seed key file present: None; sqlite files: ['packages/admin-ui/.angular/cache/19.2.19/vendure-admin/angular-compiler.db (6131712 bytes)', 'packages/admin-ui/.angular/cache/19.2.19/vendure-admin/angular-compiler.db-lock (8272 bytes)']
