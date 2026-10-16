@@ -1,0 +1,8 @@
+{
+ "kind": "readiness",
+ "repo": "TryGhost/Ghost",
+ "attempt": 2,
+ "network_mode": "none+socket",
+ "rows": [],
+ "regd_summaries": []
+}

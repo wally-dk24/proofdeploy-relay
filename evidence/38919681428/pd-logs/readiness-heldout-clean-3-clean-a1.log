@@ -1,0 +1,100 @@
+sandbox provision clean (b7bd14fcb8b6)
+install plan: sha256 96650e5f4594cb7a... (adapter: node)
+sandbox image: docker.io/library/node:26.11.1-bookworm@sha256:f1233c415b41ffcf237c717b3dea92e9d4ea006e0e4c71edcb790605d74f5404 (runtime node)
+sandbox runtime version: 26.11.1 (digest sha256:f1233c415b41ffcf237c717b3dea92e9d4ea006e0e4c71edcb790605d74f5404)
+lockfile: package-lock.json sha256: fee153c42e01b6c5...
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs unshare chown -R 1:1 /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/heldout-clean-3/a1/snapshot-clean /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/heldout-clean-3/a1/snapshot-clean.pd-home
+checkout ownership: transferred to the sandbox runtime uid (podman unshare chown 1:1; plan 1.2(g), home dir included under plan 1.2(k))
+install: ca_cert_used=False
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs network exists pd-build
+build network: pd-build (bridge, external route for proxy)
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-0 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/heldout-clean-3/a1/snapshot-clean:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/heldout-clean-3/a1/snapshot-clean.pd-home:/pd-home -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store -e npm_config_nodedir=/usr/local docker.io/library/node:26.11.1-bookworm@sha256:f1233c415b41ffcf237c717b3dea92e9d4ea006e0e4c71edcb790605d74f5404 bash -c npm ci --legacy-peer-deps --no-audit --no-fund
+npm warn Unknown env config "store-dir". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown env config "nodedir". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm error code EUSAGE
+npm error
+npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.
+npm error
+npm error Invalid: lock file's eventsource@4.1.1 does not satisfy eventsource@5.1.1
+npm error Invalid: lock file's oxlint@1.79.0 does not satisfy oxlint@1.80.0
+npm error Invalid: lock file's typescript-eslint@8.67.0 does not satisfy typescript-eslint@8.68.0
+npm error Invalid: lock file's eventsource-parser@3.0.6 does not satisfy eventsource-parser@4.1.2
+npm error Invalid: lock file's @oxlint/binding-android-arm-eabi@1.79.0 does not satisfy @oxlint/binding-android-arm-eabi@1.80.0
+npm error Invalid: lock file's @oxlint/binding-android-arm64@1.79.0 does not satisfy @oxlint/binding-android-arm64@1.80.0
+npm error Invalid: lock file's @oxlint/binding-darwin-arm64@1.79.0 does not satisfy @oxlint/binding-darwin-arm64@1.80.0
+npm error Invalid: lock file's @oxlint/binding-darwin-x64@1.79.0 does not satisfy @oxlint/binding-darwin-x64@1.80.0
+npm error Invalid: lock file's @oxlint/binding-freebsd-x64@1.79.0 does not satisfy @oxlint/binding-freebsd-x64@1.80.0
+npm error Invalid: lock file's @oxlint/binding-linux-arm-gnueabihf@1.79.0 does not satisfy @oxlint/binding-linux-arm-gnueabihf@1.80.0
+npm error Invalid: lock file's @oxlint/binding-linux-arm-musleabihf@1.79.0 does not satisfy @oxlint/binding-linux-arm-musleabihf@1.80.0
+npm error Invalid: lock file's @oxlint/binding-linux-arm64-gnu@1.79.0 does not satisfy @oxlint/binding-linux-arm64-gnu@1.80.0
+npm error Invalid: lock file's @oxlint/binding-linux-arm64-musl@1.79.0 does not satisfy @oxlint/binding-linux-arm64-musl@1.80.0
+npm error Invalid: lock file's @oxlint/binding-linux-ppc64-gnu@1.79.0 does not satisfy @oxlint/binding-linux-ppc64-gnu@1.80.0
+npm error Invalid: lock file's @oxlint/binding-linux-riscv64-gnu@1.79.0 does not satisfy @oxlint/binding-linux-riscv64-gnu@1.80.0
+npm error Invalid: lock file's @oxlint/binding-linux-riscv64-musl@1.79.0 does not satisfy @oxlint/binding-linux-riscv64-musl@1.80.0
+npm error Invalid: lock file's @oxlint/binding-linux-s390x-gnu@1.79.0 does not satisfy @oxlint/binding-linux-s390x-gnu@1.80.0
+npm error Invalid: lock file's @oxlint/binding-linux-x64-gnu@1.79.0 does not satisfy @oxlint/binding-linux-x64-gnu@1.80.0
+npm error Invalid: lock file's @oxlint/binding-linux-x64-musl@1.79.0 does not satisfy @oxlint/binding-linux-x64-musl@1.80.0
+npm error Invalid: lock file's @oxlint/binding-openharmony-arm64@1.79.0 does not satisfy @oxlint/binding-openharmony-arm64@1.80.0
+npm error Invalid: lock file's @oxlint/binding-win32-arm64-msvc@1.79.0 does not satisfy @oxlint/binding-win32-arm64-msvc@1.80.0
+npm error Invalid: lock file's @oxlint/binding-win32-ia32-msvc@1.79.0 does not satisfy @oxlint/binding-win32-ia32-msvc@1.80.0
+npm error Invalid: lock file's @oxlint/binding-win32-x64-msvc@1.79.0 does not satisfy @oxlint/binding-win32-x64-msvc@1.80.0
+npm error Invalid: lock file's @typescript-eslint/eslint-plugin@8.67.0 does not satisfy @typescript-eslint/eslint-plugin@8.68.0
+npm error Invalid: lock file's @typescript-eslint/parser@8.67.0 does not satisfy @typescript-eslint/parser@8.68.0
+npm error Invalid: lock file's @typescript-eslint/typescript-estree@8.67.0 does not satisfy @typescript-eslint/typescript-estree@8.68.0
+npm error Invalid: lock file's @typescript-eslint/utils@8.67.0 does not satisfy @typescript-eslint/utils@8.68.0
+npm error Invalid: lock file's @typescript-eslint/scope-manager@8.67.0 does not satisfy @typescript-eslint/scope-manager@8.68.0
+npm error Invalid: lock file's @typescript-eslint/type-utils@8.67.0 does not satisfy @typescript-es
+[… 51 lines elided …]
+
+npm error     Limits the ability for npm to fetch dependencies from git references.
+npm error
+npm error   --allow-remote
+npm error     Limits the ability for npm to fetch dependencies from urls.
+npm error
+npm error   --allow-scripts
+npm error     Comma-separated list of packages whose install-time lifecycle scripts
+npm error
+npm error   --strict-allow-scripts
+npm error     If `true`, turn the install-script policy from a warning into a hard
+npm error
+npm error   --dangerously-allow-all-scripts
+npm error     If `true`, bypass the `allowScripts` policy entirely and run every
+npm error
+npm error   --audit
+npm error     When "true" submit audit reports alongside the current npm command to the
+npm error
+npm error   --bin-links
+npm error     Tells npm to create symlinks (or `.cmd` shims on Windows) for package
+npm error
+npm error   --fund
+npm error     When "true" displays the message at the end of each `npm install`
+npm error
+npm error   --dry-run
+npm error     Indicates that you don't want npm to make any changes and that it should
+npm error
+npm error   -w|--workspace
+npm error     Enable running a command in the context of the configured workspaces of the
+npm error
+npm error   --workspaces
+npm error     Set to true to run the command in the context of **all** configured
+npm error
+npm error   --include-workspace-root
+npm error     Include the workspace root when workspaces are enabled for a command.
+npm error
+npm error   --install-links
+npm error     When set file: protocol dependencies will be packed and installed as
+npm error
+npm error
+npm error aliases: clean-install, ic, install-clean, isntall-clean
+npm error
+npm error Run "npm help ci" for more info
+npm notice
+npm notice New major version of npm available! 11.20.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+npm error A complete log of this run can be found in: /pd-home/.npm/_logs/2026-10-16T15_25_18_608Z-debug-0.log
+
+install step 0 (install) failed: exit 1
+not supported: lockfile out of sync with its manifest (npm): npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.

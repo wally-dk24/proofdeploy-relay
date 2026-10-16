@@ -1,0 +1,8 @@
+{
+ "kind": "readiness",
+ "repo": "django/django",
+ "attempt": 2,
+ "network_mode": "none+socket",
+ "rows": [],
+ "regd_summaries": []
+}

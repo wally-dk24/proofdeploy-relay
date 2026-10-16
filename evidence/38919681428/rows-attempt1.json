@@ -1,0 +1,434 @@
+{
+ "kind": "readiness",
+ "repo": "nestjs/nest",
+ "attempt": 1,
+ "network_mode": "none+socket",
+ "rows": [
+  {
+   "kind": "readiness",
+   "unit": "H1",
+   "repo": "nestjs/nest",
+   "role": "fix^",
+   "registered_sha": "1c4d9c42dd0815a4c0b30c149b1f88d440fda237",
+   "harness_sha": "629fd1bcf9afdc4e42af82abed9e7919fbadadcf",
+   "declared_runtime": ">= 20",
+   "selected_runtime": "node",
+   "runtime_version": "26.11.1",
+   "package_manager": "npm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [
+    "--legacy-peer-deps"
+   ],
+   "regd": {
+    "applied": true,
+    "sample_path": "sample/01-cats-app",
+    "cutoff": "2026-09-14T10:57:09Z",
+    "command": "npm --prefix sample/01-cats-app install --legacy-peer-deps --before=2026-09-14T10:57:09Z",
+    "tree_sha256": "d60a9bf36a61f7df94460c19bc0c0e9d6171d2d7145ce92d40bac8f325d4f466",
+    "tree_artifact": "pd-logs/regd-tree-H1-fix-parent-a1.json",
+    "tree_error": null,
+    "tree_npm_version": "10.9.9"
+   },
+   "status": "BUILD_FAILED",
+   "typed_reason": "not supported: lockfile out of sync with its manifest (npm): npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.",
+   "last_error": "not supported: lockfile out of sync with its manifest (npm): npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.",
+   "install_plan_sha256": "92224f87c4e3a72edcd11fd22ad293d109f8f784792be313c5ba9c046fa4c0ee",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": []
+  },
+  {
+   "kind": "readiness",
+   "unit": "H1",
+   "repo": "nestjs/nest",
+   "role": "fix",
+   "registered_sha": "02ee6d444cfe2a9b214228b940b7bc3d65f9b035",
+   "harness_sha": "b1b9170256da4e83422ae5c6db683aa103b7e687",
+   "declared_runtime": ">= 20",
+   "selected_runtime": "node",
+   "runtime_version": "26.11.1",
+   "package_manager": "npm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [
+    "--legacy-peer-deps"
+   ],
+   "regd": {
+    "applied": true,
+    "sample_path": "sample/01-cats-app",
+    "cutoff": "2026-09-14T10:57:09Z",
+    "command": "npm --prefix sample/01-cats-app install --legacy-peer-deps --before=2026-09-14T10:57:09Z",
+    "tree_sha256": "d60a9bf36a61f7df94460c19bc0c0e9d6171d2d7145ce92d40bac8f325d4f466",
+    "tree_artifact": "pd-logs/regd-tree-H1-fix-a1.json",
+    "tree_error": null,
+    "tree_npm_version": "10.9.9"
+   },
+   "status": "BUILD_FAILED",
+   "typed_reason": "not supported: lockfile out of sync with its manifest (npm): npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.",
+   "last_error": "not supported: lockfile out of sync with its manifest (npm): npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.",
+   "install_plan_sha256": "92224f87c4e3a72edcd11fd22ad293d109f8f784792be313c5ba9c046fa4c0ee",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": []
+  },
+  {
+   "kind": "readiness",
+   "unit": "H2",
+   "repo": "nestjs/nest",
+   "role": "fix^",
+   "registered_sha": "a0b14b583009d5387ac2bcadeeb2e7c80a4dbdf6",
+   "harness_sha": "ac4fba54e9bcb5cb14ccfd917f7cc59e02771144",
+   "declared_runtime": ">= 20",
+   "selected_runtime": "node",
+   "runtime_version": "26.11.1",
+   "package_manager": "npm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [
+    "--legacy-peer-deps"
+   ],
+   "regd": {
+    "applied": true,
+    "sample_path": "sample/01-cats-app",
+    "cutoff": "2026-09-14T10:52:48Z",
+    "command": "npm --prefix sample/01-cats-app install --legacy-peer-deps --before=2026-09-14T10:52:48Z",
+    "tree_sha256": "952f31c880478cacc57ae13fa9e0b24066bf8ab2278f0e0776a81a65f81840f7",
+    "tree_artifact": "pd-logs/regd-tree-H2-fix-parent-a1.json",
+    "tree_error": null,
+    "tree_npm_version": "10.9.9"
+   },
+   "status": "START_FAILED",
+   "typed_reason": "readiness timeout",
+   "last_error": "sandbox app not ready",
+   "install_plan_sha256": "81b0505d3ae1d1f3cb5ae9cfe9586cf37af09ec83dbfa380e550db50c16bbbb6",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": []
+  },
+  {
+   "kind": "readiness",
+   "unit": "H2",
+   "repo": "nestjs/nest",
+   "role": "fix",
+   "registered_sha": "1d1dbf7bd5d59f1a1035aab10636ba422047d115",
+   "harness_sha": "345dfbe1e260c31bdd92f6ca67c42a1c5bf6f58f",
+   "declared_runtime": ">= 20",
+   "selected_runtime": "node",
+   "runtime_version": "26.11.1",
+   "package_manager": "npm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [
+    "--legacy-peer-deps"
+   ],
+   "regd": {
+    "applied": true,
+    "sample_path": "sample/01-cats-app",
+    "cutoff": "2026-09-14T10:52:48Z",
+    "command": "npm --prefix sample/01-cats-app install --legacy-peer-deps --before=2026-09-14T10:52:48Z",
+    "tree_sha256": "8a6dad53c5382ab06c5e90e3bb3784bf5a35f133f63851e3aea57e8bf1884521",
+    "tree_artifact": "pd-logs/regd-tree-H2-fix-a1.json",
+    "tree_error": null,
+    "tree_npm_version": "10.9.9"
+   },
+   "status": "START_FAILED",
+   "typed_reason": "readiness timeout",
+   "last_error": "sandbox app not ready",
+   "install_plan_sha256": "81b0505d3ae1d1f3cb5ae9cfe9586cf37af09ec83dbfa380e550db50c16bbbb6",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": []
+  },
+  {
+   "kind": "readiness",
+   "unit": "H3",
+   "repo": "nestjs/nest",
+   "role": "fix^",
+   "registered_sha": "40d07dc62ccb41686859b804f8523ae0e2dd1984",
+   "harness_sha": "833889ec6d49e5c36fc00add1b74fcecd60f1382",
+   "declared_runtime": ">= 20",
+   "selected_runtime": "node",
+   "runtime_version": "26.11.1",
+   "package_manager": "npm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [
+    "--legacy-peer-deps"
+   ],
+   "regd": {
+    "applied": true,
+    "sample_path": "sample/01-cats-app",
+    "cutoff": "2026-09-23T06:13:19Z",
+    "command": "npm --prefix sample/01-cats-app install --legacy-peer-deps --before=2026-09-23T06:13:19Z",
+    "tree_sha256": "4ca68dfafd66c4cf271503d51ed69e0217e3ef80d5a115ab2096bf9a2d8c6451",
+    "tree_artifact": "pd-logs/regd-tree-H3-fix-parent-a1.json",
+    "tree_error": null,
+    "tree_npm_version": "10.9.9"
+   },
+   "status": "START_FAILED",
+   "typed_reason": "readiness timeout",
+   "last_error": "sandbox app not ready",
+   "install_plan_sha256": "d83d08ff57a1cb334245abb292854699f700995f90e3e07dfc7953f2c1c2cec5",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": []
+  },
+  {
+   "kind": "readiness",
+   "unit": "H3",
+   "repo": "nestjs/nest",
+   "role": "fix",
+   "registered_sha": "21648746d9ce499eeca21b86a503749be9172ae3",
+   "harness_sha": "e7f918469510624e19f3e1f8d34b336415876084",
+   "declared_runtime": ">= 20",
+   "selected_runtime": "node",
+   "runtime_version": "26.11.1",
+   "package_manager": "npm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [
+    "--legacy-peer-deps"
+   ],
+   "regd": {
+    "applied": true,
+    "sample_path": "sample/01-cats-app",
+    "cutoff": "2026-09-23T06:13:19Z",
+    "command": "npm --prefix sample/01-cats-app install --legacy-peer-deps --before=2026-09-23T06:13:19Z",
+    "tree_sha256": "6f775d935e667c1636a30e88bf63287f9d7ed1348f8a738d4f7eb312a740b2c2",
+    "tree_artifact": "pd-logs/regd-tree-H3-fix-a1.json",
+    "tree_error": null,
+    "tree_npm_version": "10.9.9"
+   },
+   "status": "START_FAILED",
+   "typed_reason": "readiness timeout",
+   "last_error": "sandbox app not ready",
+   "install_plan_sha256": "d83d08ff57a1cb334245abb292854699f700995f90e3e07dfc7953f2c1c2cec5",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": []
+  },
+  {
+   "kind": "readiness",
+   "unit": "H4",
+   "repo": "nestjs/nest",
+   "role": "fix^",
+   "registered_sha": "697ff89e0ecad2210b68ef8e0020730182a79e52",
+   "harness_sha": "0a9d681bfbfffc00474fde9fc791398b9ef22837",
+   "declared_runtime": ">= 20",
+   "selected_runtime": "node",
+   "runtime_version": "26.11.1",
+   "package_manager": "npm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [
+    "--legacy-peer-deps"
+   ],
+   "regd": {
+    "applied": true,
+    "sample_path": "sample/01-cats-app",
+    "cutoff": "2026-09-30T08:39:18Z",
+    "command": "npm --prefix sample/01-cats-app install --legacy-peer-deps --before=2026-09-30T08:39:18Z",
+    "tree_sha256": "8e38e3f970e9235dfd91e6143babbe5f3f6ab78d728f7bbe660e678411bacf57",
+    "tree_artifact": "pd-logs/regd-tree-H4-fix-parent-a1.json",
+    "tree_error": null,
+    "tree_npm_version": "10.9.9"
+   },
+   "status": "START_FAILED",
+   "typed_reason": "readiness timeout",
+   "last_error": "sandbox app not ready",
+   "install_plan_sha256": "542e533eb8e9373e461e132194f41acc1826f34367214acc8a3f4b53dd4d12f1",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": []
+  },
+  {
+   "kind": "readiness",
+   "unit": "H4",
+   "repo": "nestjs/nest",
+   "role": "fix",
+   "registered_sha": "1685a435b16dfc685dfa92defa03a9d1f3a8e42b",
+   "harness_sha": "734b49464d1cebfc1473b456335fc15cc7480217",
+   "declared_runtime": ">= 20",
+   "selected_runtime": "node",
+   "runtime_version": "26.11.1",
+   "package_manager": "npm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [
+    "--legacy-peer-deps"
+   ],
+   "regd": {
+    "applied": true,
+    "sample_path": "sample/01-cats-app",
+    "cutoff": "2026-09-30T08:39:18Z",
+    "command": "npm --prefix sample/01-cats-app install --legacy-peer-deps --before=2026-09-30T08:39:18Z",
+    "tree_sha256": "ce831a191b6e1c38148bb799de825985b9d4a662f074ad8bad0887632e139f21",
+    "tree_artifact": "pd-logs/regd-tree-H4-fix-a1.json",
+    "tree_error": null,
+    "tree_npm_version": "10.9.9"
+   },
+   "status": "START_FAILED",
+   "typed_reason": "readiness timeout",
+   "last_error": "sandbox app not ready",
+   "install_plan_sha256": "542e533eb8e9373e461e132194f41acc1826f34367214acc8a3f4b53dd4d12f1",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": []
+  },
+  {
+   "kind": "readiness",
+   "unit": "heldout-clean-1",
+   "repo": "nestjs/nest",
+   "role": "C",
+   "registered_sha": "a9bf20b6936f53a136bf845c480f19ae534a2d8b",
+   "harness_sha": "3f235623be1528c38d7f1a8bf4b5b61406a731ee",
+   "declared_runtime": ">= 20",
+   "selected_runtime": "node",
+   "runtime_version": "26.11.1",
+   "package_manager": "npm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [
+    "--legacy-peer-deps"
+   ],
+   "regd": {
+    "applied": true,
+    "sample_path": "sample/01-cats-app",
+    "cutoff": "2026-08-30T18:09:33Z",
+    "command": "npm --prefix sample/01-cats-app install --legacy-peer-deps --before=2026-08-30T18:09:33Z",
+    "tree_sha256": "bd8433caca1b168bb69da147c5f5c96a2b134820ba99ea7745ac1b145076b2a0",
+    "tree_artifact": "pd-logs/regd-tree-heldout-clean-1-clean-a1.json",
+    "tree_error": null,
+    "tree_npm_version": "10.9.9"
+   },
+   "status": "BUILD_FAILED",
+   "typed_reason": "not supported: lockfile out of sync with its manifest (npm): npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.",
+   "last_error": "not supported: lockfile out of sync with its manifest (npm): npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.",
+   "install_plan_sha256": "312cae7686e817b7f6ea671c425b6b9eaad5f97fd4d2d09f6c025948ef6a55ed",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": []
+  },
+  {
+   "kind": "readiness",
+   "unit": "heldout-clean-2",
+   "repo": "nestjs/nest",
+   "role": "C",
+   "registered_sha": "abce26ecc997b7021bbdf9bb78e10af598885121",
+   "harness_sha": "55e14bddd5299dc5a0407160cb4a775afe7f833c",
+   "declared_runtime": ">= 20",
+   "selected_runtime": "node",
+   "runtime_version": "26.11.1",
+   "package_manager": "npm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [
+    "--legacy-peer-deps"
+   ],
+   "regd": {
+    "applied": true,
+    "sample_path": "sample/01-cats-app",
+    "cutoff": "2026-08-29T17:41:17Z",
+    "command": "npm --prefix sample/01-cats-app install --legacy-peer-deps --before=2026-08-29T17:41:17Z",
+    "tree_sha256": "bd8433caca1b168bb69da147c5f5c96a2b134820ba99ea7745ac1b145076b2a0",
+    "tree_artifact": "pd-logs/regd-tree-heldout-clean-2-clean-a1.json",
+    "tree_error": null,
+    "tree_npm_version": "10.9.9"
+   },
+   "status": "BUILD_FAILED",
+   "typed_reason": "not supported: lockfile out of sync with its manifest (npm): npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.",
+   "last_error": "not supported: lockfile out of sync with its manifest (npm): npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.",
+   "install_plan_sha256": "6473b6f40a870180a2c087e0880e4e93529a9da8efecf2313da951a574eca709",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": []
+  },
+  {
+   "kind": "readiness",
+   "unit": "heldout-clean-3",
+   "repo": "nestjs/nest",
+   "role": "C",
+   "registered_sha": "45485b54210e06a517c1ebf86b42b1ea99fc3fe2",
+   "harness_sha": "b7bd14fcb8b627ac9d7af1f77a8f94cefc580751",
+   "declared_runtime": ">= 20",
+   "selected_runtime": "node",
+   "runtime_version": "26.11.1",
+   "package_manager": "npm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [
+    "--legacy-peer-deps"
+   ],
+   "regd": {
+    "applied": true,
+    "sample_path": "sample/01-cats-app",
+    "cutoff": "2026-08-25T11:02:32Z",
+    "command": "npm --prefix sample/01-cats-app install --legacy-peer-deps --before=2026-08-25T11:02:32Z",
+    "tree_sha256": "f000d36ff0be76e9ceaa8b738493361c8813598f4468dca2171a220c9bff3c7a",
+    "tree_artifact": "pd-logs/regd-tree-heldout-clean-3-clean-a1.json",
+    "tree_error": null,
+    "tree_npm_version": "10.9.9"
+   },
+   "status": "BUILD_FAILED",
+   "typed_reason": "not supported: lockfile out of sync with its manifest (npm): npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.",
+   "last_error": "not supported: lockfile out of sync with its manifest (npm): npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.",
+   "install_plan_sha256": "96650e5f4594cb7af5440ad3ab2f01d137f51a1465543465c589af30ace506f6",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": []
+  },
+  {
+   "kind": "readiness",
+   "unit": "heldout-clean-4",
+   "repo": "nestjs/nest",
+   "role": "C",
+   "registered_sha": "c921a60ea114c0e1a6e048c0bd52d6c9d92f8cb6",
+   "harness_sha": "b0e9cad3f59363a2530c9558d3c832966148c609",
+   "declared_runtime": ">= 20",
+   "selected_runtime": "node",
+   "runtime_version": "26.11.1",
+   "package_manager": "npm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [
+    "--legacy-peer-deps"
+   ],
+   "regd": {
+    "applied": true,
+    "sample_path": "sample/01-cats-app",
+    "cutoff": "2026-08-26T11:57:42Z",
+    "command": "npm --prefix sample/01-cats-app install --legacy-peer-deps --before=2026-08-26T11:57:42Z",
+    "tree_sha256": "8c145b5f56e456d403dcf33441c4bbef8fdf40dc3d0302f9f48d2822d570c72b",
+    "tree_artifact": "pd-logs/regd-tree-heldout-clean-4-clean-a1.json",
+    "tree_error": null,
+    "tree_npm_version": "10.9.9"
+   },
+   "status": "BUILD_FAILED",
+   "typed_reason": "not supported: lockfile out of sync with its manifest (npm): npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.",
+   "last_error": "not supported: lockfile out of sync with its manifest (npm): npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.",
+   "install_plan_sha256": "897e78f5535496994a02d64b3d3782df32b71834f7a3218436b18938946c4167",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": []
+  }
+ ],
+ "regd_summaries": [
+  {
+   "unit": "H1",
+   "regd_trees_identical": true
+  },
+  {
+   "unit": "H2",
+   "regd_trees_identical": true
+  },
+  {
+   "unit": "H3",
+   "regd_trees_identical": true
+  },
+  {
+   "unit": "H4",
+   "regd_trees_identical": true
+  }
+ ]
+}

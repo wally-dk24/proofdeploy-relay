@@ -1,0 +1,144 @@
+{
+ "kind": "readiness",
+ "repo": "TryGhost/Ghost",
+ "attempt": 1,
+ "network_mode": "none+socket",
+ "rows": [
+  {
+   "kind": "readiness",
+   "unit": "C5",
+   "repo": "TryGhost/Ghost",
+   "role": "C",
+   "registered_sha": "5d482965b7f5ed05ffef956d0eaed8b8a51af0ef",
+   "harness_sha": "d17c6577ac541d5e7c9765476f47d9a43d74bd73",
+   "declared_runtime": "^22.23.1 || ^24.20.0",
+   "selected_runtime": "node",
+   "runtime_version": "24.21.0",
+   "package_manager": "pnpm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "READY",
+   "typed_reason": null,
+   "last_error": null,
+   "install_plan_sha256": "91ba28875696101668c9fb731621c1645d56209916d16ae685e87d439bb424b1",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": [
+    {
+     "path": "ghost/core/content/themes/casper",
+     "url": "https://github.com/TryGhost/Casper.git",
+     "commit": "7f4adb690c40850382fed4312d90e21ff0313fdc",
+     "tree_sha": "d645bc4aec20b1ee739a6221583dcd15c2f8d4d8"
+    },
+    {
+     "path": "ghost/core/content/themes/source",
+     "url": "https://github.com/TryGhost/Source.git",
+     "commit": "219dc7dbe62bb6dfa8db9fd651528571eae6cfd3",
+     "tree_sha": "805457d7f7e89099691e37e9e2ac1a37c672bb48"
+    }
+   ]
+  },
+  {
+   "kind": "readiness",
+   "unit": "checkpoint-bug-ghost-1",
+   "repo": "TryGhost/Ghost",
+   "role": "fix^",
+   "registered_sha": "93e0084723cdaf22d656bcd4811b87433e6b3875",
+   "harness_sha": "d757d5c23420726fdcf66da7dcbcd3887e0a1d82",
+   "declared_runtime": "^22.23.1 || ^24.20.0",
+   "selected_runtime": "node",
+   "runtime_version": "24.21.0",
+   "package_manager": "pnpm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "READY",
+   "typed_reason": null,
+   "last_error": null,
+   "install_plan_sha256": "f0b2cb28b557facae88a09f47749932f11c4e26e5cb18382fdb90a688ea6cf89",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": [
+    {
+     "path": "ghost/core/content/themes/casper",
+     "url": "https://github.com/TryGhost/Casper.git",
+     "commit": "a3f491463f08d3be5315c516097831b6e9a4724d",
+     "tree_sha": "0f245ecc389bb3b07f9c461c0bed83645762166a"
+    },
+    {
+     "path": "ghost/core/content/themes/source",
+     "url": "https://github.com/TryGhost/Source.git",
+     "commit": "9d3414ec8c2b7f35a8e2e4b5bd09014620f21333",
+     "tree_sha": "d0c55d8b8e1f29b3dbbab83c90cfd281f3dec6ca"
+    }
+   ]
+  },
+  {
+   "kind": "readiness",
+   "unit": "checkpoint-bug-ghost-1",
+   "repo": "TryGhost/Ghost",
+   "role": "fix",
+   "registered_sha": "f67640b2c18c76abd9cd3f6d19d6ae93327b42fa",
+   "harness_sha": "31a751f18b03c3c24ac323fab2efb1f6ac545850",
+   "declared_runtime": "^22.23.1 || ^24.20.0",
+   "selected_runtime": "node",
+   "runtime_version": "24.21.0",
+   "package_manager": "pnpm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "READY",
+   "typed_reason": null,
+   "last_error": null,
+   "install_plan_sha256": "f0b2cb28b557facae88a09f47749932f11c4e26e5cb18382fdb90a688ea6cf89",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": [
+    {
+     "path": "ghost/core/content/themes/casper",
+     "url": "https://github.com/TryGhost/Casper.git",
+     "commit": "a3f491463f08d3be5315c516097831b6e9a4724d",
+     "tree_sha": "0f245ecc389bb3b07f9c461c0bed83645762166a"
+    },
+    {
+     "path": "ghost/core/content/themes/source",
+     "url": "https://github.com/TryGhost/Source.git",
+     "commit": "9d3414ec8c2b7f35a8e2e4b5bd09014620f21333",
+     "tree_sha": "d0c55d8b8e1f29b3dbbab83c90cfd281f3dec6ca"
+    }
+   ]
+  }
+ ],
+ "regd_summaries": []
+}

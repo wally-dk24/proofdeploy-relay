@@ -1,0 +1,113 @@
+sandbox provision fix (451bb4f63db2)
+install plan: sha256 854b676f26c7a59c... (adapter: python)
+sandbox image: docker.io/library/python:3.13.16-bookworm@sha256:073ffebb96ae4d0ed73ccad59f08c47bd84af8a79f5258130f8458ac50ad9ff4 (runtime python)
+sandbox runtime version: 3.13.16 (digest sha256:073ffebb96ae4d0ed73ccad59f08c47bd84af8a79f5258130f8458ac50ad9ff4)
+lockfile: pyproject.toml sha256: a165ba7add9be456...
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs unshare chown -R 1:1 /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T5/a1/snapshot-fix /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T5/a1/snapshot-fix.pd-home
+checkout ownership: transferred to the sandbox runtime uid (podman unshare chown 1:1; plan 1.2(g), home dir included under plan 1.2(k))
+install: ca_cert_used=False
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs network exists pd-build
+build network: pd-build (bridge, external route for proxy)
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-0 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T5/a1/snapshot-fix:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T5/a1/snapshot-fix.pd-home:/pd-home -e PIP_NO_CACHE_DIR=1 -e HOME=/pd-home docker.io/library/python:3.13.16-bookworm@sha256:073ffebb96ae4d0ed73ccad59f08c47bd84af8a79f5258130f8458ac50ad9ff4 bash -c python3 -m venv /pd-home/.venv
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-1 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T5/a1/snapshot-fix:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T5/a1/snapshot-fix.pd-home:/pd-home -e PIP_NO_CACHE_DIR=1 -e HOME=/pd-home docker.io/library/python:3.13.16-bookworm@sha256:073ffebb96ae4d0ed73ccad59f08c47bd84af8a79f5258130f8458ac50ad9ff4 bash -c python3 -m venv /pd-home/.pd-tools
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-2 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T5/a1/snapshot-fix:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T5/a1/snapshot-fix.pd-home:/pd-home -e PIP_NO_CACHE_DIR=1 -e HOME=/pd-home docker.io/library/python:3.13.16-bookworm@sha256:073ffebb96ae4d0ed73ccad59f08c47bd84af8a79f5258130f8458ac50ad9ff4 bash -c python3 -c 'import pathlib,sys; pathlib.Path(sys.argv[1]).write_bytes(sys.argv[2].encode())' /pd-home/.pd-tools/uv-requirements.txt '# REG-A resolver bootstrap (WO-8.1, Addendum 46): the pinned uv
+# resolver, installed BY HASH into the checkout'"'"'s .pd-tools before
+# a generated Python lock is resolved. The digest is the sha256 of
+# uv 0.13.0'"'"'s manylinux x86_64 wheel on PyPI
+# (uv-0.13.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl,
+# https://pypi.org/pypi/uv/0.13.0/json). Installed with
+# --require-hashes --no-deps --only-binary :all: — a substituted
+# wheel fails the install step.
+uv==0.13.0 \
+    --hash=sha256:52c7da0fd9056d9551124777ec77de53f0df7017daf8f98a19e947b7837416ed
+'
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-3 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T5/a1/snapshot-fix:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T5/a1/snapshot-fix.pd-home:/pd-home -e PIP_NO_CACHE_DIR=1 -e HOME=/pd-home docker.io/library/python:3.13.16-bookworm@sha256:073ffebb96ae4d0ed73ccad59f08c47bd84af8a79f5258130f8458ac50ad9ff4 bash -c /pd-home/.pd-tools/bin/pip install --require-hashes --no-deps --only-binary :all: -r /pd-home/.pd-tools/uv-requirements.txt
+Collecting uv==0.13.0 (from -r /pd-home/.pd-tools/uv-requirements.txt (line 9))
+  Downloading uv-0.13.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 17.9/17.9 MB 129.0 MB/s  0:00:00
+Installing collected packages: uv
+Successfully installed uv-0.13.0
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-4 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T5/a1/snapshot-fix:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T5/a1/snapshot-fix.pd-home:/pd-home -e PIP_NO_CACHE_DIR=1 -e HOME=/pd-home -e UV_NATIVE_TLS=true docker.io/library/python:3.13.16-bookworm@sha256:073ffebb96ae4d0ed73ccad59f08c47bd84af8a79f5258130f8458ac50ad9ff4 bash -c /pd-home/.pd-tools/bin/uv pip compile /checkout/pyproject.toml --generate-hashes --no-header --exclude-newer 2026-09-23T01:52:39Z --python-version 3.13.16 --python-platform x86_64-unknown-linux-gnu --index-url https://pypi.org/simple --output-file /checkout/.pd-generated-requirements.txt
+warning: The `UV_NATIVE_TLS` environment variable is deprecated and will be removed in a future release. Use `UV_SYSTEM_CERTS` instead.
+error: The build backend returned an error
+  cause: Call to `setuptools.build_meta.get_requires_for_build_wheel` failed (exit status: 1)
+
+         [stdout]
+         No profile explicitly selected, auto-detecting...
+
+         [stderr]
+         /pd-home/.cache/uv/builds-v0/.tmplWfrzl/lib/python3.13/site-packages/torch/_subclasses/functional_tensor.py:368: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+           cpu = _conversion_method_template(device=torch.device("cpu"))
+         warning: no profile detected, building without extensions
+         Traceback (most recent call last):
+           File "<string>", line 14, in <module>
+             requires = get_requires_for_build({})
+           File "/pd-home/.cache/uv/builds-v0/.tmplWfrzl/lib/python3.13/site-packages/setuptools/build_meta.py", line 333, in get_requires_for_build_wheel
+             return self._get_build_requires(config_settings, requirements=[])
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           File "/pd-home/.cache/uv/builds-v0/.tmplWfrzl/lib/python3.13/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
+             self.run_setup()
+             ~~~~~~~~~~~~~~^^
+           File "/pd-home/.cache/uv/builds-v0/.tmplWfrzl/lib/python3.13/site-packages/setuptools/build_meta.py", line 317, in run_setup
+             exec(code, locals())
+             ~~~~^^^^^^^^^^^^^^^^
+           File "<string>", line 95, in <module>
+           File "/pd-home/.cache/uv/builds-v0/.tmplWfrzl/lib/python3.13/site-packages/setuptools/__init__.py", line 117, in setup
+             return distutils.core.setup(**attrs)  # type: ignore[return-value]
+                    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+           File "/pd-home/.cache/uv/builds-v0/.tmplWfrzl/lib/python3.13/site-packages/setuptools/_distutils/core.py", line 148, in setup
+             _setup_distribution = dist = klass(attrs)
+                                          ~~~~~^^^^^^^
+           File "/pd-home/.cache/uv/builds-v0/.tmplWfrzl/lib/python3.13/site-packages/setuptools/dist.py", line 321, in __init__
+             _Distribution.__init__(self, dist_attrs)
+             ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+           File "/pd-home/.cache/uv/builds-v0/.tmplWfrzl/lib/python3.13/site-packages/setuptools/_distutils/dist.py", line 309, in __init__
+             self.finalize_options()
+             ~~~~~~~~~~~~~~~~~~~~~^^
+           File "/pd-home/.cache/uv/builds-v0/.tmplWfrzl/lib/python3.13/site-packages/setuptools/dist.py", line 790, in finalize_options
+             ep(self)
+             ~~^^^^^^
+           File "/usr/local/lib/python3.13/contextlib.py", line 85, in inner
+[… 0 lines elided …]
+n.__init__(self, dist_attrs)
+             ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+           File "/pd-home/.cache/uv/builds-v0/.tmplWfrzl/lib/python3.13/site-packages/setuptools/_distutils/dist.py", line 309, in __init__
+             self.finalize_options()
+             ~~~~~~~~~~~~~~~~~~~~~^^
+           File "/pd-home/.cache/uv/builds-v0/.tmplWfrzl/lib/python3.13/site-packages/setuptools/dist.py", line 790, in finalize_options
+             ep(self)
+             ~~^^^^^^
+           File "/usr/local/lib/python3.13/contextlib.py", line 85, in inner
+             return func(*args, **kwds)
+           File "/pd-home/.cache/uv/builds-v0/.tmplWfrzl/lib/python3.13/site-packages/setuptools_scm/_integration/setuptools.py", line 248, in infer_version
+             _infer_version_impl(
+             ~~~~~~~~~~~~~~~~~~~^
+                 dist,
+                 ^^^^^
+             ...<3 lines>...
+                 _get_version_inference_config=_get_version_inference_config,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+             )
+             ^
+           File "/pd-home/.cache/uv/builds-v0/.tmplWfrzl/lib/python3.13/site-packages/setuptools_scm/_integration/setuptools.py", line 281, in _infer_version_impl
+             result.apply(dist)
+             ~~~~~~~~~~~~^^^^^^
+           File "/pd-home/.cache/uv/builds-v0/.tmplWfrzl/lib/python3.13/site-packages/setuptools_scm/_integration/version_inference.py", line 185, in apply
+             data = infer_version_with_config(
+                 self.dist_name,
+             ...<2 lines>...
+                 env=self.env,
+             )
+           File "/pd-home/.cache/uv/builds-v0/.tmplWfrzl/lib/python3.13/site-packages/setuptools_scm/_integration/version_inference.py", line 125, in infer_version_with_config
+             _version_missing(config, tool=env.tool_names[0])
+             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         TypeError: _version_missing() got an unexpected keyword argument 'tool'
+
+install step 4 (install) failed: exit 2
+sandbox install failed: error: The build backend returned an error

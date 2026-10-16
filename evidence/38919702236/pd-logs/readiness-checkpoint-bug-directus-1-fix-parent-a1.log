@@ -1,0 +1,112 @@
+sandbox provision fix-parent (c83355adea92)
+install plan: sha256 75e48210076313c5... (adapter: node)
+sandbox image: docker.io/library/node:22.23.3-bookworm@sha256:0e5f906573693feaa1e21057ebdcfdb5bd5021f050b2dc7c9deceb629c7da2a8 (runtime node)
+sandbox runtime version: 22.23.3 (digest sha256:0e5f906573693feaa1e21057ebdcfdb5bd5021f050b2dc7c9deceb629c7da2a8)
+auth bootstrap: generated ADMIN_EMAIL, ADMIN_PASSWORD, SECRET
+lockfile: pnpm-lock.yaml sha256: 29b5f22ddaa39900...
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs unshare chown -R 1:1 /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-directus-1/a1/snapshot-fix-parent /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-directus-1/a1/snapshot-fix-parent.pd-home
+checkout ownership: transferred to the sandbox runtime uid (podman unshare chown 1:1; plan 1.2(g), home dir included under plan 1.2(k))
+install: ca_cert_used=False
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs network exists pd-build
+build network: pd-build (bridge, external route for proxy)
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-0 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-directus-1/a1/snapshot-fix-parent:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-directus-1/a1/snapshot-fix-parent.pd-home:/pd-home -e DB_CLIENT=sqlite3 -e DB_FILENAME=/checkout/data.db -e ADMIN_EMAIL=***REDACTED*** -e ADMIN_PASSWORD=***REDACTED*** -e SECRET=***REDACTED*** -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store -e npm_config_nodedir=/usr/local docker.io/library/node:22.23.3-bookworm@sha256:0e5f906573693feaa1e21057ebdcfdb5bd5021f050b2dc7c9deceb629c7da2a8 bash -c npm install --prefix /pd-home/.pd-tools --no-save --no-audit --no-fund corepack@0.36.0
+
+added 1 package in 468ms
+
+npm notice
+npm notice New major version of npm available! 10.9.9 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-1 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-directus-1/a1/snapshot-fix-parent:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-directus-1/a1/snapshot-fix-parent.pd-home:/pd-home -e DB_CLIENT=sqlite3 -e DB_FILENAME=/checkout/data.db -e ADMIN_EMAIL=***REDACTED*** -e ADMIN_PASSWORD=***REDACTED*** -e SECRET=***REDACTED*** -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store -e npm_config_nodedir=/usr/local -e COREPACK_ENABLE_DOWNLOAD_PROMPT=0 docker.io/library/node:22.23.3-bookworm@sha256:0e5f906573693feaa1e21057ebdcfdb5bd5021f050b2dc7c9deceb629c7da2a8 bash -c /pd-home/.pd-tools/node_modules/.bin/corepack pnpm@10.27.0 install --frozen-lockfile
+Scope: all 41 workspace projects
+ WARN  There are cyclic workspace dependencies: /checkout/api, /checkout/directus
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +2081
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+   ╭───────────────────────────────────────────────╮
+   │                                               │
+   │     Update available! 10.27.0 → 12.14.0.      │
+   │     Changelog: https://pnpm.io/v/12.14.0      │
+   │   To update, run: corepack use pnpm@12.14.0   │
+   │                                               │
+   ╰───────────────────────────────────────────────╯
+
+Progress: resolved 2081, reused 0, downloaded 31, added 5
+Progress: resolved 2081, reused 0, downloaded 178, added 58
+Progress: resolved 2081, reused 0, downloaded 246, added 75
+Progress: resolved 2081, reused 0, downloaded 299, added 86
+Progress: resolved 2081, reused 0, downloaded 424, added 137
+Progress: resolved 2081, reused 0, downloaded 672, added 298
+Progress: resolved 2081, reused 0, downloaded 771, added 344
+Progress: resolved 2081, reused 0, downloaded 914, added 430
+Progress: resolved 2081, reused 0, downloaded 1111, added 575
+Progress: resolved 2081, reused 0, downloaded 1236, added 682
+Progress: resolved 2081, reused 0, downloaded 1369, added 748
+Progress: resolved 2081, reused 0, downloaded 1622, added 934
+Progress: resolved 2081, reused 0, downloaded 1844, added 1032
+Progress: resolved 2081, reused 0, downloaded 2018, added 1124
+Progress: resolved 2081, reused 0, downloaded 2052, added 1341
+Progress: resolved 2081, reused 0, downloaded 2052, added 1466
+Progress: resolved 2081, reused 0, downloaded 2052, added 1630
+Progress: resolved 2081, reused 0, downloaded 2052, added 1903
+Progress: resolved 2081, reused 0, downloaded 2052, added 2079
+Progress: resolved 2081, reused 0, downloaded 2052, added 2081, done
+.../node_modules/@parcel/watcher install$ node scripts/build-from-source.js
+.../sqlite3@6.0.1/node_modules/sqlite3 install$ prebuild-install -r napi || node-gyp rebuild
+.../esbuild@0.28.2/node_modules/esbuild postinstall$ node install.js
+.../esbuild@0.28.1/node_modules/esbuild postinstall$ node install.js
+.../node_modules/@parcel/watcher install: Done
+[… 178 lines elided …]
+: SIL OFL 1.1, Code: MIT License)
+.../@fortawesome/free-solid-svg-icons postinstall: Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com
+.../@fortawesome/free-solid-svg-icons postinstall: License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+.../@fortawesome/fontawesome-svg-core postinstall: Done
+.../@fortawesome/free-solid-svg-icons postinstall: Done
+ WARN  Failed to create bin at /checkout/tests/e2e/node_modules/.bin/sandbox. ENOENT: no such file or directory, open '/checkout/tests/sandbox/dist/cli.js'
+
+devDependencies:
++ @changesets/cli 2.29.7
++ @directus/release-notes-generator 3.0.2 <- packages/release-notes-generator
++ @eslint/js 10.0.1
++ eslint 10.8.0
++ eslint-config-prettier 10.1.8
++ eslint-plugin-import-x 4.17.1
++ eslint-plugin-vue 10.10.0
++ globals 16.5.0
++ postcss-html 2.0.0
++ prettier 3.6.2
++ rimraf 6.1.0
++ stylelint 17.13.0
++ stylelint-config-standard 40.0.0
++ stylelint-config-standard-scss 17.0.0
++ stylelint-config-standard-vue 1.0.0
++ stylelint-use-logical 2.1.3
++ typescript 5.9.3
++ typescript-eslint 8.66.0
++ vue-eslint-parser 10.4.1
+
+ WARN  Failed to create bin at /checkout/tests/e2e/node_modules/.bin/sandbox. ENOENT: no such file or directory, open '/checkout/tests/e2e/node_modules/@directus/sandbox/dist/cli.js'
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: braintrust@3.27.0, protobufjs@7.6.6,                │
+│   unrs-resolver@1.12.2.                                                      │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 1m 30.2s using pnpm v10.27.0
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-2 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-directus-1/a1/snapshot-fix-parent:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-directus-1/a1/snapshot-fix-parent.pd-home:/pd-home -e DB_CLIENT=sqlite3 -e DB_FILENAME=/checkout/data.db -e ADMIN_EMAIL=***REDACTED*** -e ADMIN_PASSWORD=***REDACTED*** -e SECRET=***REDACTED*** -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store docker.io/library/node:22.23.3-bookworm@sha256:0e5f906573693feaa1e21057ebdcfdb5bd5021f050b2dc7c9deceb629c7da2a8 bash -c export PATH=/pd-home/.pd-tools/node_modules/.bin:/checkout/node_modules/.bin:$PATH; true
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-3 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-directus-1/a1/snapshot-fix-parent:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-directus-1/a1/snapshot-fix-parent.pd-home:/pd-home -e DB_CLIENT=sqlite3 -e DB_FILENAME=/checkout/data.db -e ADMIN_EMAIL=***REDACTED*** -e ADMIN_PASSWORD=***REDACTED*** -e SECRET=***REDACTED*** -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store docker.io/library/node:22.23.3-bookworm@sha256:0e5f906573693feaa1e21057ebdcfdb5bd5021f050b2dc7c9deceb629c7da2a8 bash -c export PATH=/pd-home/.pd-tools/node_modules/.bin:/checkout/node_modules/.bin:$PATH; directus bootstrap
+bash: line 1: directus: command not found
+
+install step 3 (migrate) failed: exit 127
+sandbox install failed: bash: line 1: directus: command not found

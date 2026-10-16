@@ -1,0 +1,52 @@
+sandbox provision fix (ef61c2be20c8)
+install plan: sha256 30a56bddf23e898f... (adapter: node)
+sandbox image: docker.io/library/node:26.11.1-bookworm@sha256:f1233c415b41ffcf237c717b3dea92e9d4ea006e0e4c71edcb790605d74f5404 (runtime node)
+sandbox runtime version: 26.11.1 (digest sha256:f1233c415b41ffcf237c717b3dea92e9d4ea006e0e4c71edcb790605d74f5404)
+lockfile: bun.lock sha256: c83c3031a3766cda...
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs unshare chown -R 1:1 /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T7/a1/snapshot-fix /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T7/a1/snapshot-fix.pd-home
+checkout ownership: transferred to the sandbox runtime uid (podman unshare chown 1:1; plan 1.2(g), home dir included under plan 1.2(k))
+install: ca_cert_used=False
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs network exists pd-build
+build network: pd-build (bridge, external route for proxy)
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-0 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T7/a1/snapshot-fix:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T7/a1/snapshot-fix.pd-home:/pd-home -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store -e npm_config_nodedir=/usr/local docker.io/library/node:26.11.1-bookworm@sha256:f1233c415b41ffcf237c717b3dea92e9d4ea006e0e4c71edcb790605d74f5404 bash -c bash -c 'set -e; d=/pd-home/.pd-tools; mkdir -p $d/bin $d/.bun-dist; cacert=""; if [ -n "${SSL_CERT_FILE:-}" ] && [ -f "$SSL_CERT_FILE" ]; then cacert="--cacert $SSL_CERT_FILE"; fi; curl -fsSL $cacert https://github.com/oven-sh/bun/releases/download/bun-v1.2.20/bun-linux-x64.zip -o $d/bun.zip; echo "4e9edc4cba0c7c1623a288be01e53bbde11a4d073f2cf339cab026627858b548  $d/bun.zip" | sha256sum -c -; unzip -o -q $d/bun.zip -d $d/.bun-dist; cp $d/.bun-dist/bun-linux-x64/bun $d/bin/bun; chmod +x $d/bin/bun; rm -rf $d/bun.zip $d/.bun-dist; $d/bin/bun --version'
+/pd-home/.pd-tools/bun.zip: OK
+1.2.20
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-1 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T7/a1/snapshot-fix:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T7/a1/snapshot-fix.pd-home:/pd-home -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store -e npm_config_nodedir=/usr/local docker.io/library/node:26.11.1-bookworm@sha256:f1233c415b41ffcf237c717b3dea92e9d4ea006e0e4c71edcb790605d74f5404 bash -c /pd-home/.pd-tools/bin/bun install --frozen-lockfile
+bun install v1.2.20 (6ad208bc)
+
++ @hono/eslint-config@2.1.1
++ @hono/node-server@2.0.12
++ @types/jsdom@21.1.7
++ @types/node@24.3.0
++ @types/ws@8.18.1
++ @typescript/native-preview@7.0.0-dev.20260210.1
++ @vitest/coverage-v8@4.1.7
++ bun-types@1.3.2
++ editorconfig-checker@6.2.0
++ esbuild@0.27.1
++ eslint@9.39.3
++ jsdom@22.1.0
++ msw@2.6.0
++ np@11.2.1
++ oxc-parser@0.96.0
++ pkg-pr-new@0.0.53
++ prettier@3.7.4
++ publint@0.3.15
++ typescript@6.0.3
++ vite-plugin-fastly-js-compute@0.4.2
++ vitest@4.1.9
++ wrangler@4.107.0
++ ws@8.21.0
++ zod@3.23.8
+
+781 packages installed [4.49s]
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-2 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T7/a1/snapshot-fix:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T7/a1/snapshot-fix.pd-home:/pd-home -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store docker.io/library/node:26.11.1-bookworm@sha256:f1233c415b41ffcf237c717b3dea92e9d4ea006e0e4c71edcb790605d74f5404 bash -c export PATH=/pd-home/.pd-tools/bin:/checkout/node_modules/.bin:$PATH; pnpm run build
+bash: line 1: pnpm: command not found
+
+install step 2 (build) failed: exit 127
+sandbox install failed: bash: line 1: pnpm: command not found

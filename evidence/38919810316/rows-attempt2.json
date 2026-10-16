@@ -1,0 +1,73 @@
+{
+ "kind": "readiness",
+ "repo": "codeigniter4/CodeIgniter4",
+ "attempt": 2,
+ "network_mode": "none+socket",
+ "rows": [
+  {
+   "kind": "readiness",
+   "unit": "T1",
+   "repo": "codeigniter4/CodeIgniter4",
+   "role": "fix^",
+   "registered_sha": "ecbf044666bed41d23f07518096d9843fe6c08b0",
+   "harness_sha": "de237dc6b7c66ab98389032a9637a48ad556d92d",
+   "declared_runtime": null,
+   "selected_runtime": null,
+   "runtime_version": null,
+   "package_manager": null,
+   "app_path": null,
+   "workspace_root": null,
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "BUILD_FAILED",
+   "typed_reason": "runtime not supported",
+   "last_error": "cannot detect runtime in /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T1/a2/snapshot-fix-parent: no package.json, pyproject.toml or requirements.txt",
+   "install_plan_sha256": null,
+   "network_mode": "none+socket",
+   "attempt": 2,
+   "submodules": []
+  },
+  {
+   "kind": "readiness",
+   "unit": "T1",
+   "repo": "codeigniter4/CodeIgniter4",
+   "role": "fix",
+   "registered_sha": "f5e463b9a3e986389ce285963e51a7f1fab6559f",
+   "harness_sha": "688e6ea054852e780910020afb029661d79b4166",
+   "declared_runtime": null,
+   "selected_runtime": null,
+   "runtime_version": null,
+   "package_manager": null,
+   "app_path": null,
+   "workspace_root": null,
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "BUILD_FAILED",
+   "typed_reason": "runtime not supported",
+   "last_error": "cannot detect runtime in /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T1/a2/snapshot-fix: no package.json, pyproject.toml or requirements.txt",
+   "install_plan_sha256": null,
+   "network_mode": "none+socket",
+   "attempt": 2,
+   "submodules": []
+  }
+ ],
+ "regd_summaries": []
+}

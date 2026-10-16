@@ -1,0 +1,5 @@
+sandbox provision clean (2e99756a8b13)
+install plan: sha256 549d300bb9c15855... (adapter: node)
+sandbox image: docker.io/library/node:22.23.3-bookworm@sha256:0e5f906573693feaa1e21057ebdcfdb5bd5021f050b2dc7c9deceb629c7da2a8 (runtime node)
+sandbox runtime version: 22.23.3 (digest sha256:0e5f906573693feaa1e21057ebdcfdb5bd5021f050b2dc7c9deceb629c7da2a8)
+not supported: no frozen lockfile found in snapshot for runtime 'node'

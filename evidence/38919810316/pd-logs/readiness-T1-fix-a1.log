@@ -1,0 +1,1 @@
+readiness provision raised: cannot detect runtime in /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/T1/a1/snapshot-fix: no package.json, pyproject.toml or requirements.txt

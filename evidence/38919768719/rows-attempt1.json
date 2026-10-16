@@ -1,0 +1,73 @@
+{
+ "kind": "readiness",
+ "repo": "bottlepy/bottle",
+ "attempt": 1,
+ "network_mode": "none+socket",
+ "rows": [
+  {
+   "kind": "readiness",
+   "unit": "T6",
+   "repo": "bottlepy/bottle",
+   "role": "fix^",
+   "registered_sha": "2a743a302a71460bfe4c0b8b7cb99a306b0328c6",
+   "harness_sha": "5d96adb7448361694226246400f7b8cea609f149",
+   "declared_runtime": ">=3.9",
+   "selected_runtime": "python",
+   "runtime_version": "3.14.8",
+   "package_manager": "pip",
+   "app_path": null,
+   "workspace_root": null,
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "READY",
+   "typed_reason": null,
+   "last_error": null,
+   "install_plan_sha256": "f1ca8c6b7a5ffc4ca86ecb592e5eedbfd7b83e5a562aa579b9f39216817c71d4",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": []
+  },
+  {
+   "kind": "readiness",
+   "unit": "T6",
+   "repo": "bottlepy/bottle",
+   "role": "fix",
+   "registered_sha": "b73bd1db5b7a915cf6a78656955c4059f58195ae",
+   "harness_sha": "4d86a7bc2aac4d8757679e3c463a72b3707d0963",
+   "declared_runtime": ">=3.9",
+   "selected_runtime": "python",
+   "runtime_version": "3.14.8",
+   "package_manager": "pip",
+   "app_path": null,
+   "workspace_root": null,
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "READY",
+   "typed_reason": null,
+   "last_error": null,
+   "install_plan_sha256": "f1ca8c6b7a5ffc4ca86ecb592e5eedbfd7b83e5a562aa579b9f39216817c71d4",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": []
+  }
+ ],
+ "regd_summaries": []
+}

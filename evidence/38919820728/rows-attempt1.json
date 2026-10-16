@@ -1,0 +1,73 @@
+{
+ "kind": "readiness",
+ "repo": "LMCache/LMCache",
+ "attempt": 1,
+ "network_mode": "none+socket",
+ "rows": [
+  {
+   "kind": "readiness",
+   "unit": "T5",
+   "repo": "LMCache/LMCache",
+   "role": "fix^",
+   "registered_sha": "3884c7f1f61ea49c776bf42e276fc968bb2a6ac6",
+   "harness_sha": "bcaba8d19435f5a29ab9690ab970efc2c8155e1f",
+   "declared_runtime": ">=3.10,<3.14",
+   "selected_runtime": "python",
+   "runtime_version": "3.13.16",
+   "package_manager": "pip",
+   "app_path": null,
+   "workspace_root": null,
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "BUILD_FAILED",
+   "typed_reason": "sandbox install failed: error: The build backend returned an error",
+   "last_error": "sandbox install failed: error: The build backend returned an error",
+   "install_plan_sha256": "854b676f26c7a59c31f73a7bf2f205af2b762cec4da3fb81518feb5160d8f756",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": []
+  },
+  {
+   "kind": "readiness",
+   "unit": "T5",
+   "repo": "LMCache/LMCache",
+   "role": "fix",
+   "registered_sha": "449b94c17f66973081308f6e050027ced3f0ab0f",
+   "harness_sha": "451bb4f63db2591463841d1c16c1c5cf61b2d901",
+   "declared_runtime": ">=3.10,<3.14",
+   "selected_runtime": "python",
+   "runtime_version": "3.13.16",
+   "package_manager": "pip",
+   "app_path": null,
+   "workspace_root": null,
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "BUILD_FAILED",
+   "typed_reason": "sandbox install failed: error: The build backend returned an error",
+   "last_error": "sandbox install failed: error: The build backend returned an error",
+   "install_plan_sha256": "854b676f26c7a59c31f73a7bf2f205af2b762cec4da3fb81518feb5160d8f756",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": []
+  }
+ ],
+ "regd_summaries": []
+}

@@ -1,0 +1,226 @@
+{
+ "kind": "readiness",
+ "repo": "nestjs/nest",
+ "attempt": 2,
+ "network_mode": "none+socket",
+ "rows": [
+  {
+   "kind": "readiness",
+   "unit": "H2",
+   "repo": "nestjs/nest",
+   "role": "fix^",
+   "registered_sha": "a0b14b583009d5387ac2bcadeeb2e7c80a4dbdf6",
+   "harness_sha": "833b4c8b908f9d183e0fae8765c8b4f061c8097b",
+   "declared_runtime": ">= 20",
+   "selected_runtime": "node",
+   "runtime_version": "26.11.1",
+   "package_manager": "npm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [
+    "--legacy-peer-deps"
+   ],
+   "regd": {
+    "applied": true,
+    "sample_path": "sample/01-cats-app",
+    "cutoff": "2026-09-14T10:52:48Z",
+    "command": "npm --prefix sample/01-cats-app install --legacy-peer-deps --before=2026-09-14T10:52:48Z",
+    "tree_sha256": "6e0d542338a068f3f9799d5da04e0869367ed5172e7f5a242f1e9fd8b53640e8",
+    "tree_artifact": "pd-logs/regd-tree-H2-fix-parent-a2.json",
+    "tree_error": null,
+    "tree_npm_version": "10.9.9"
+   },
+   "status": "START_FAILED",
+   "typed_reason": "readiness timeout",
+   "last_error": "sandbox app not ready",
+   "install_plan_sha256": "81b0505d3ae1d1f3cb5ae9cfe9586cf37af09ec83dbfa380e550db50c16bbbb6",
+   "network_mode": "none+socket",
+   "attempt": 2,
+   "submodules": []
+  },
+  {
+   "kind": "readiness",
+   "unit": "H2",
+   "repo": "nestjs/nest",
+   "role": "fix",
+   "registered_sha": "1d1dbf7bd5d59f1a1035aab10636ba422047d115",
+   "harness_sha": "f5b96ae287118f2d462eb2c66dbf742b071c818c",
+   "declared_runtime": ">= 20",
+   "selected_runtime": "node",
+   "runtime_version": "26.11.1",
+   "package_manager": "npm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [
+    "--legacy-peer-deps"
+   ],
+   "regd": {
+    "applied": true,
+    "sample_path": "sample/01-cats-app",
+    "cutoff": "2026-09-14T10:52:48Z",
+    "command": "npm --prefix sample/01-cats-app install --legacy-peer-deps --before=2026-09-14T10:52:48Z",
+    "tree_sha256": "e0db5cfce58744a1dc65f3e04ddc2ee3c23ac6bb1865eac6372c00793c824c90",
+    "tree_artifact": "pd-logs/regd-tree-H2-fix-a2.json",
+    "tree_error": null,
+    "tree_npm_version": "10.9.9"
+   },
+   "status": "START_FAILED",
+   "typed_reason": "readiness timeout",
+   "last_error": "sandbox app not ready",
+   "install_plan_sha256": "81b0505d3ae1d1f3cb5ae9cfe9586cf37af09ec83dbfa380e550db50c16bbbb6",
+   "network_mode": "none+socket",
+   "attempt": 2,
+   "submodules": []
+  },
+  {
+   "kind": "readiness",
+   "unit": "H3",
+   "repo": "nestjs/nest",
+   "role": "fix^",
+   "registered_sha": "40d07dc62ccb41686859b804f8523ae0e2dd1984",
+   "harness_sha": "1fd8809f08b12077c8425bf9d3be195c10be3170",
+   "declared_runtime": ">= 20",
+   "selected_runtime": "node",
+   "runtime_version": "26.11.1",
+   "package_manager": "npm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [
+    "--legacy-peer-deps"
+   ],
+   "regd": {
+    "applied": true,
+    "sample_path": "sample/01-cats-app",
+    "cutoff": "2026-09-23T06:13:19Z",
+    "command": "npm --prefix sample/01-cats-app install --legacy-peer-deps --before=2026-09-23T06:13:19Z",
+    "tree_sha256": "f34f03dddbd5213e8018eb06ae4a43e392d7f8c3c0190f5895cb7d0568e53a1f",
+    "tree_artifact": "pd-logs/regd-tree-H3-fix-parent-a2.json",
+    "tree_error": null,
+    "tree_npm_version": "10.9.9"
+   },
+   "status": "START_FAILED",
+   "typed_reason": "readiness timeout",
+   "last_error": "sandbox app not ready",
+   "install_plan_sha256": "d83d08ff57a1cb334245abb292854699f700995f90e3e07dfc7953f2c1c2cec5",
+   "network_mode": "none+socket",
+   "attempt": 2,
+   "submodules": []
+  },
+  {
+   "kind": "readiness",
+   "unit": "H3",
+   "repo": "nestjs/nest",
+   "role": "fix",
+   "registered_sha": "21648746d9ce499eeca21b86a503749be9172ae3",
+   "harness_sha": "d443e21a611ede9cf816c57b457580ec6cad4297",
+   "declared_runtime": ">= 20",
+   "selected_runtime": "node",
+   "runtime_version": "26.11.1",
+   "package_manager": "npm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [
+    "--legacy-peer-deps"
+   ],
+   "regd": {
+    "applied": true,
+    "sample_path": "sample/01-cats-app",
+    "cutoff": "2026-09-23T06:13:19Z",
+    "command": "npm --prefix sample/01-cats-app install --legacy-peer-deps --before=2026-09-23T06:13:19Z",
+    "tree_sha256": "71ba9b0dafef008ced0ed3cb715b368b6ace84f5b4378332d9e4c8864c11290f",
+    "tree_artifact": "pd-logs/regd-tree-H3-fix-a2.json",
+    "tree_error": null,
+    "tree_npm_version": "10.9.9"
+   },
+   "status": "START_FAILED",
+   "typed_reason": "readiness timeout",
+   "last_error": "sandbox app not ready",
+   "install_plan_sha256": "d83d08ff57a1cb334245abb292854699f700995f90e3e07dfc7953f2c1c2cec5",
+   "network_mode": "none+socket",
+   "attempt": 2,
+   "submodules": []
+  },
+  {
+   "kind": "readiness",
+   "unit": "H4",
+   "repo": "nestjs/nest",
+   "role": "fix^",
+   "registered_sha": "697ff89e0ecad2210b68ef8e0020730182a79e52",
+   "harness_sha": "258b089114fa0ec3311a8fcfc1d27869f34b3c0d",
+   "declared_runtime": ">= 20",
+   "selected_runtime": "node",
+   "runtime_version": "26.11.1",
+   "package_manager": "npm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [
+    "--legacy-peer-deps"
+   ],
+   "regd": {
+    "applied": true,
+    "sample_path": "sample/01-cats-app",
+    "cutoff": "2026-09-30T08:39:18Z",
+    "command": "npm --prefix sample/01-cats-app install --legacy-peer-deps --before=2026-09-30T08:39:18Z",
+    "tree_sha256": "d60f5be21e0b40ba14304507ec82a89fabce4c616be67287e58cff2d94ab1f53",
+    "tree_artifact": "pd-logs/regd-tree-H4-fix-parent-a2.json",
+    "tree_error": null,
+    "tree_npm_version": "10.9.9"
+   },
+   "status": "START_FAILED",
+   "typed_reason": "readiness timeout",
+   "last_error": "sandbox app not ready",
+   "install_plan_sha256": "542e533eb8e9373e461e132194f41acc1826f34367214acc8a3f4b53dd4d12f1",
+   "network_mode": "none+socket",
+   "attempt": 2,
+   "submodules": []
+  },
+  {
+   "kind": "readiness",
+   "unit": "H4",
+   "repo": "nestjs/nest",
+   "role": "fix",
+   "registered_sha": "1685a435b16dfc685dfa92defa03a9d1f3a8e42b",
+   "harness_sha": "4e2f60036015ba107f9f75e23c36d17f0cb9a82d",
+   "declared_runtime": ">= 20",
+   "selected_runtime": "node",
+   "runtime_version": "26.11.1",
+   "package_manager": "npm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [
+    "--legacy-peer-deps"
+   ],
+   "regd": {
+    "applied": true,
+    "sample_path": "sample/01-cats-app",
+    "cutoff": "2026-09-30T08:39:18Z",
+    "command": "npm --prefix sample/01-cats-app install --legacy-peer-deps --before=2026-09-30T08:39:18Z",
+    "tree_sha256": "59e59ae124c8d03f0919987d7bbcb6a23d8c88611e5131ce1ae2c9a13411f878",
+    "tree_artifact": "pd-logs/regd-tree-H4-fix-a2.json",
+    "tree_error": null,
+    "tree_npm_version": "10.9.9"
+   },
+   "status": "START_FAILED",
+   "typed_reason": "readiness timeout",
+   "last_error": "sandbox app not ready",
+   "install_plan_sha256": "542e533eb8e9373e461e132194f41acc1826f34367214acc8a3f4b53dd4d12f1",
+   "network_mode": "none+socket",
+   "attempt": 2,
+   "submodules": []
+  }
+ ],
+ "regd_summaries": [
+  {
+   "unit": "H2",
+   "regd_trees_identical": true
+  },
+  {
+   "unit": "H3",
+   "regd_trees_identical": true
+  },
+  {
+   "unit": "H4",
+   "regd_trees_identical": true
+  }
+ ]
+}
