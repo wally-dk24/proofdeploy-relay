@@ -1,0 +1,126 @@
+{
+  "verify_output_version": "1.0.0",
+  "verdict": "FAIL",
+  "exit_code": 1,
+  "typed_reason": null,
+  "cause": null,
+  "detail": null,
+  "probes": [
+    {
+      "schema_version": "1.5.0",
+      "probe_index": 0,
+      "verdict": "fail",
+      "reason": null,
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:46101/notes/1",
+        "headers": {
+          "Authorization": "Bearer ***REDACTED***"
+        },
+        "body": null
+      },
+      "setup_requests": [],
+      "http_status": 404,
+      "http_headers": {
+        "server": "Werkzeug/3.1.3 Python/3.13.16",
+        "date": "Fri, 16 Oct 2026 16:05:40 GMT",
+        "content-type": "application/json",
+        "content-length": "22",
+        "connection": "close"
+      },
+      "http_body": "{\"error\":\"not found\"}\n",
+      "http_body_truncated": false,
+      "writes": [
+        "write: POST http://127.0.0.1:46101/register -> 200"
+      ],
+      "details": [
+        "credential provider: POST /register (register)",
+        "write: POST http://127.0.0.1:46101/register -> 200",
+        "credential provider: registered user, token acquired",
+        "act: GET /notes/1 -> 404",
+        "status: got 404, expected 200 -> FAIL",
+        "body json_path 'done': not found"
+      ],
+      "sent": true,
+      "assertions_evaluated": true
+    },
+    {
+      "schema_version": "1.5.0",
+      "probe_index": 1,
+      "verdict": "pass",
+      "reason": null,
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:46101/notes/2",
+        "headers": {
+          "Authorization": "Bearer ***REDACTED***"
+        },
+        "body": null
+      },
+      "setup_requests": [
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1:46101/notes",
+          "headers": {
+            "Authorization": "Bearer ***REDACTED***"
+          },
+          "body": {
+            "title": "probe note"
+          }
+        }
+      ],
+      "http_status": 200,
+      "http_headers": {
+        "server": "Werkzeug/3.1.3 Python/3.13.16",
+        "date": "Fri, 16 Oct 2026 16:05:40 GMT",
+        "content-type": "application/json",
+        "content-length": "42",
+        "connection": "close"
+      },
+      "http_body": "{\"done\":true,\"id\":2,\"title\":\"probe note\"}\n",
+      "http_body_truncated": false,
+      "writes": [
+        "write: POST http://127.0.0.1:46101/register -> 200",
+        "write: POST http://127.0.0.1:46101/notes -> 200"
+      ],
+      "details": [
+        "credential provider: POST /register (register)",
+        "write: POST http://127.0.0.1:46101/register -> 200",
+        "credential provider: registered user, token acquired",
+        "write: POST http://127.0.0.1:46101/notes -> 200",
+        "setup[0]: captured ['NOTE_ID']",
+        "act: GET /notes/2 -> 200",
+        "status: got 200, expected 200 -> PASS",
+        "body json_path: got 'probe note' -> PASS",
+        "body json_path: got True -> PASS"
+      ],
+      "sent": true,
+      "assertions_evaluated": true
+    }
+  ],
+  "refs": {
+    "repo": "/tmp/verify-repo",
+    "from_ref": "d97164400796529f438a0c165665e8be475c1942",
+    "to_ref": "152472f179bd5730cc6de57833720cce19036ca3",
+    "from_sha": "d97164400796529f438a0c165665e8be475c1942",
+    "to_sha": "152472f179bd5730cc6de57833720cce19036ca3"
+  },
+  "model": "openai/gpt-oss-120b",
+  "probe_set_sha256": "be6fa094301d57d65181f56944b1aa413fc87f41c159fb0bb327f15d4081000e",
+  "engine": "proofdeploy/0.1.0",
+  "isolation_mode": "none+socket",
+  "evidence_record": {
+    "path": "verify-records/runs.jsonl",
+    "record_id": "4f49c3f6dd8e4de1b5c2e5555c25f6ba"
+  },
+  "record_schema_version": "1.5.0",
+  "timings": {
+    "bundle_s": 0.018,
+    "author_s": 2.855,
+    "provision_s": 95.028,
+    "execute_s": 0.02,
+    "total_s": 132.025
+  }
+}
+
+verify exit code: 1
