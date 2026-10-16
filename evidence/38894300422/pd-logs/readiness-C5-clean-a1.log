@@ -1,0 +1,300 @@
+sandbox provision clean (3e9e1c054bd9)
+install plan: sha256 33b2ce8313c423a1... (adapter: node)
+sandbox image: docker.io/library/node:24.21.0-bookworm@sha256:3d27e5c11e5786e309ec3e03f93ae536eb36e6e5eb3714d5eb3300a36157add0 (runtime node)
+sandbox runtime version: 24.21.0 (digest sha256:3d27e5c11e5786e309ec3e03f93ae536eb36e6e5eb3714d5eb3300a36157add0)
+lockfile: pnpm-lock.yaml sha256: d409f8c2eae7ac08...
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs unshare chown -R 1:1 /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/C5/a1/snapshot-clean /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/C5/a1/snapshot-clean.pd-home
+checkout ownership: transferred to the sandbox runtime uid (podman unshare chown 1:1; plan 1.2(g), home dir included under plan 1.2(k))
+install: ca_cert_used=False
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs network exists pd-build
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs network create pd-build
+pd-build
+
+build network: pd-build (bridge, external route for proxy)
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-0 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/C5/a1/snapshot-clean:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/C5/a1/snapshot-clean.pd-home:/pd-home -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store -e npm_config_nodedir=/usr/local docker.io/library/node:24.21.0-bookworm@sha256:3d27e5c11e5786e309ec3e03f93ae536eb36e6e5eb3714d5eb3300a36157add0 bash -c npm install --prefix /checkout/.pd-tools --no-save --no-audit --no-fund corepack@0.36.0
+
+added 1 package in 579ms
+
+npm warn Unknown env config "store-dir". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown env config "nodedir". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm notice
+npm notice New major version of npm available! 11.19.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-1 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/C5/a1/snapshot-clean:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/C5/a1/snapshot-clean.pd-home:/pd-home -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store -e npm_config_nodedir=/usr/local -e COREPACK_ENABLE_DOWNLOAD_PROMPT=0 docker.io/library/node:24.21.0-bookworm@sha256:3d27e5c11e5786e309ec3e03f93ae536eb36e6e5eb3714d5eb3300a36157add0 bash -c /checkout/.pd-tools/node_modules/.bin/corepack pnpm@12.4.0+sha512.37536c26ed40ab4134b6511e09f6b27f3ebb45687468f2406ca3805279a4e5ca158c1931350ad9774d6ab2108d71b3dbaeb39943159294375e4d053e8e05685c install --frozen-lockfile
+Scope: all 49 workspace projects
+Update available! 12.4.0 → 12.11.2.
+Changelog: https://pnpm.io/v/12.11.2
+To update, run: curl -fsSL https://get.pnpm.io/install.sh | sh -
+? Verifying lockfile against supply-chain policies (4403 entries)...
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: /checkout/node_modules/.pnpm-store/v11
+  Virtual store is at:             node_modules/.pnpm
+Downloading @emoji-mart/data@1.2.1: 0.00 B/5.38 MB
+Downloading @sentry/cli-linux-x64@2.58.6: 0.00 B/8.55 MB
+Downloading storybook@10.4.6: 0.00 B/5.79 MB
+Downloading @nx/nx-linux-x64-gnu@23.1.1: 0.00 B/8.67 MB
+Progress: resolved 4220, reused 0, downloaded 410, added 416
+Progress: resolved 4220, reused 0, downloaded 501, added 512
+Downloading @rolldown/binding-linux-x64-gnu@1.1.4: 0.00 B/7.78 MB
+Downloading @rolldown/binding-linux-x64-gnu@1.1.4: 2.76 MB/7.78 MB
+Progress: resolved 4220, reused 0, downloaded 762, added 794
+Progress: resolved 4220, reused 0, downloaded 888, added 918
+Progress: resolved 4220, reused 0, downloaded 1079, added 1104
+Downloading @img/sharp-libvips-linux-x64@1.3.2: 0.00 B/8.11 MB
+Progress: resolved 4220, reused 0, downloaded 1548, added 1568
+Downloading @swc/core-linux-x64-gnu@1.15.43: 0.00 B/12.07 MB
+Progress: resolved 4220, reused 0, downloaded 1740, added 1792
+Downloading @typescript/typescript-linux-x64@7.0.2: 0.00 B/9.66 MB
+Progress: resolved 4220, reused 0, downloaded 2041, added 2080
+Progress: resolved 4220, reused 0, downloaded 2271, added 2304
+Progress: resolved 4220, reused 0, downloaded 2431, added 2487
+✓ Lockfile passes supply-chain policies (4403 entries in 13.6s)
+Lockfile is up to date, resolution step is skipped
+Downloading node@runtime:22.23.1: 0.00 B/56.88 MB
+Progress: resolved 4220, reused 0, downloaded 2712, added 2752
+Progress: resolved 4220, reused 0, downloaded 2909, added 2976
+Progress: resolved 4220, reused 0, downloaded 3175, added 3232
+Progress: resolved 4220, reused 0, downloaded 3379, added 3429
+Progress: resolved 4220, reused 0, downloaded 3613, added 3680
+Progress: resolved 4220, reused 0, downloaded 3984, added 4044
+Packages: +4220
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 4220, reused 0, downloaded 4140, added 4220, done
+.../core-js@2.6.12/node_modules/core-js postinstall$ node -e "try{require('./postinstall')}catch(e){}"
+[… 52 lines elided …]
+esbuild postinstall: Done
+.../node_modules/msw postinstall$ node -e "import('./config/scripts/postinstall.js').catch(() => void 0)"
+.../node_modules/dtrace-provider install: gyp info spawn make
+.../node_modules/dtrace-provider install: gyp info spawn args [ 'BUILDTYPE=Release', '-C', 'build' ]
+.../node_modules/dtrace-provider install: make: Entering directory '/checkout/node_modules/.pnpm/dtrace-provider@0.8.8/node_modules/dtrace-provider/build'
+.../node_modules/dtrace-provider install:   TOUCH Release/obj.target/DTraceProviderStub.stamp
+.../node_modules/dtrace-provider install: make: Leaving directory '/checkout/node_modules/.pnpm/dtrace-provider@0.8.8/node_modules/dtrace-provider/build'
+.../node_modules/dtrace-provider install: gyp info ok 
+.../node_modules/dtrace-provider install: Done
+.../node_modules/nx postinstall$ node -e "try{require('./dist/bin/post-install')}catch(e){}"
+.../.pnpm/re2@1.26.1/node_modules/re2 install: Trying https://github.com/uhop/node-re2/releases/download/1.26.1/linux-x64-127.br ...
+.../node_modules/msw postinstall: Done
+.../node_modules/better-sqlite3 install: Done
+.../.pnpm/re2@1.26.1/node_modules/re2 install: Writing to build/Release/re2.node ...
+.../.pnpm/re2@1.26.1/node_modules/re2 install: Done.
+.../.pnpm/re2@1.26.1/node_modules/re2 install: Done
+.../node_modules/nx postinstall: Done
+. preinstall$ node ./scripts/enforce-package-manager.js
+. preinstall: Done
+. prepare$ husky .github/hooks
+. prepare: .git can't be found
+. prepare: Done
+
+devDependencies:
++ @playwright/test 1.61.1
++ @secretlint/secretlint-rule-pattern 13.0.4
++ @secretlint/secretlint-rule-preset-recommend 13.0.4
++ dependency-cruiser 18.1.1
++ eslint 9.39.4
++ husky 9.1.7
++ knip 6.32.1
++ lint-staged 17.3.0
++ markdownlint-cli2 0.23.2
++ node 22.23.1
++ nx 23.1.1
++ oxfmt 0.63.0
++ remark-cli 12.0.1
++ remark-validate-links 13.1.0
++ rimraf 6.1.3
++ secretlint 13.0.4
++ shell-quote 1.10.0
++ typescript <- @typescript/typescript6 6.0.2
++ vitest 4.1.10
+
+Done in 24.5s using pnpm v12.4.0
+
+Downloading the pnpm 12.4.0 binary for linux-x64...
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-2 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/C5/a1/snapshot-clean:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/C5/a1/snapshot-clean.pd-home:/pd-home -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store docker.io/library/node:24.21.0-bookworm@sha256:3d27e5c11e5786e309ec3e03f93ae536eb36e6e5eb3714d5eb3300a36157add0 bash -c export PATH=/checkout/.pd-tools/node_modules/.bin:/checkout/node_modules/.bin:$PATH; pnpm run build
+
+ NX   Running target build for 37 projects:
+
+- @tryghost/adapter-base-route-settings
+- @tryghost/adapter-base-scheduling
+- @tryghost/adapter-base-redirects
+- @tryghost/kg-markdown-html-renderer
+- @tryghost/kg-lexical-html-renderer
+- ghost-storage-base
+- @tryghost/adapter-base-cache
+- @tryghost/kg-default-transforms
+- @tryghost/parse-email-address
+- @tryghost/adapter-base-jobs
+- @tryghost/kg-unsplash-selector
+- @tryghost/adapter-base-sso
+- @tryghost/kg-clean-basic-html
+- @tryghost/admin-api-schema
+- @tryghost/kg-html-to-lexical
+- @tryghost/metafield-types
+- @tryghost/kg-default-cards
+- @tryghost/kg-default-nodes
+- @tryghost/admin-x-framework
+- @tryghost/kg-card-factory
+- @tryghost/announcement-bar
+- @tryghost/koenig-lexical
+- @tryghost/kg-converters
+- @tryghost/nql-string
+- @tryghost/admin-toolbar
+- @tryghost/checkout
+- @tryghost/activitypub
+- @tryghost/comments-ui
+- @tryghost/signup-form
+- @tryghost/sodo-search
+- ghost-admin
+- @tryghost/kg-utils
+- @tryghost/i18n
+- @tryghost/portal
+- @tryghost/admin
+- @tryghost/shade
+- @tryghost/e2e
+[… 1001 lines elided …]
+s                                [0m[1;2m  387.30 kB[0m[2m │ gzip: 102.76 kB[0m
+[2mdist/[0m[2massets/[0m[36mpreferences-cYZ2a1W-.js                          [0m[33;1m  527.60 kB[0m[2m │ gzip: 121.27 kB[0m
+[2mdist/[0m[2massets/[0m[36mbutton-DL-izoaB.js                               [0m[33;1m  633.79 kB[0m[2m │ gzip: 157.99 kB[0m
+[2mdist/[0m[2massets/[0m[36mdist-Cwu2daLF.js                                 [0m[33;1m  878.55 kB[0m[2m │ gzip:  71.61 kB[0m
+[2mdist/[0m[2massets/[0m[36mweb-nq9SOPhi.js                                  [0m[33;1m1,365.20 kB[0m[2m │ gzip: 442.26 kB[0m
+[2mdist/[0m[2massets/[0m[36mkoenig-lexical-DRFUUY2T.js                       [0m[33;1m2,906.99 kB[0m[2m │ gzip: 840.49 kB[0m
+
+[33m[33m[INEFFECTIVE_DYNAMIC_IMPORT] [0m../activitypub/src/components/layout/error/index.ts is dynamically imported by ../activitypub/src/routes.tsx but also statically imported by ../activitypub/src/routes.tsx, ../activitypub/src/views/feed/feed.tsx, ../activitypub/src/views/inbox/inbox.tsx, ../activitypub/src/views/notifications/notifications.tsx, ../activitypub/src/views/preferences/preferences.tsx, ..., dynamic import will not move module into another chunk.
+[39m
+[33m[plugin builtin:vite-reporter] [33;1m
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[0m[39m
+[32m✓ built in 1.53s[39m
+
+
+
+ NX   Successfully ran target build for 37 projects
+
+Nx read the output from the cache instead of running the command for 37 out of 37 tasks.
+
+Nx Cloud made it possible to reuse 37 tasks: https://cloud.nx.app/runs/rqONywmNJK
+
+  Run duration:      7.4s
+  Cache:             37/37 hit (100%)
+  Critical path:     26ms (9 tasks)
+  Recoverable time:  <1ms
+
+$ pnpm nx run-many -t build
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run -d --name pd-clean-3e9e1c05 --net=none --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/C5/a1/snapshot-clean:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/C5/a1/snapshot-clean.pd-home:/pd-home -v /tmp/pd-6cku2tkt:/pd-sock -e HOME=/pd-home -e PORT=33937 docker.io/library/node:24.21.0-bookworm@sha256:3d27e5c11e5786e309ec3e03f93ae536eb36e6e5eb3714d5eb3300a36157add0 bash -c (python3 /checkout/.pd-bridge.py /pd-sock/app.sock 33937 &); export PATH=/checkout/.pd-tools/node_modules/.bin:/checkout/node_modules/.bin:$PATH; cd ghost/core && server__host=0.0.0.0 server__port=$PORT node --conditions=source --import=tsx index.js
+fb15d629105b2532d87f7dbdcfadbf271cdf3a73d4970e6c256802743789f82c
+
+bridge socket ready: /tmp/pd-6cku2tkt/app.sock
+sandbox app: --net=none, Unix socket bridge, executor proxy at 127.0.0.1:43919
+app container log tail:
+[2026-10-16 11:35:51] [36mINFO[39m Model: Integration
+[2026-10-16 11:35:51] [36mINFO[39m Relation: Role to Permission
+[2026-10-16 11:35:51] [36mINFO[39m Relation: Post to Tag
+sqlite does not support inserting default values. Set the `useNullAsDefault` flag to hide this warning. (see docs https://knexjs.org/guide/query-builder.html#insert).
+[2026-10-16 11:35:51] [36mINFO[39m Database is in a ready state.
+[2026-10-16 11:35:51] [36mINFO[39m Ghost database ready in 7.931s
+[2026-10-16 11:35:51] [36mINFO[39m Configured site_uuid was not found or invalid. Setting site_uuid to a new value: e0f4c96c-ef88-4b9e-8a0f-93c886835501
+[2026-10-16 11:35:52] [31mERROR[39m Could not use the card asset manifest at /checkout/ghost/core/core/frontend/public/cards.manifest.json
+[31m
+[31mCould not use the card asset manifest at /checkout/ghost/core/core/frontend/public/cards.manifest.json[39m
+
+[37m"ENOENT: no such file or directory, open '/checkout/ghost/core/core/frontend/public/cards.manifest.json'"[39m
+[33m"Card assets ship with Ghost — reinstall, or run `pnpm build:assets` when running from source"[39m
+
+[1m[37mError ID:[39m[22m
+    [90meec75f98-2143-4abe-bf5b-7be55a60bfe5[39m
+
+[90m----------------------------------------[39m
+
+[90mInternalServerError: Could not use the card asset manifest at /checkout/ghost/core/core/frontend/public/cards.manifest.json
+    at CardAssets.readManifest (/checkout/ghost/core/core/frontend/services/assets-minification/card-assets.js:70:11)
+    at new CardAssets (/checkout/ghost/core/core/frontend/services/assets-minification/card-assets.js:38:26)
+    at get cardAssets (/checkout/ghost/core/core/frontend/services/assets-minification/index.js:11:32)
+    at Object.<anonymous> (/checkout/ghost/core/core/bridge.js:19:26)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object.transformer (/checkout/node_modules/.pnpm/tsx@4.23.12/node_modules/tsx/dist/register-C557imBs.cjs:9:3619)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    at Module.require (node:internal/modules/cjs/loader:1527:12)
+    at require (node:internal/modules/helpers:147:16)
+    at Object.<anonymous> (/checkout/ghost/core/core/server/services/themes/activation-bridge.js:2:16)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object.transformer (/checkout/node_modules/.pnpm/tsx@4.23.12/node_modules/tsx/dist/register-C557imBs.cjs:9:3619)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)[39m
+[39m
+[2026-10-16 11:35:52] [35mWARN[39m Ghost is shutting down
+[2026-10-16 11:35:52] [36mINFO[39m Shutdown: stopped HTTP server in 0ms
+[2026-10-16 11:35:52] [36mINFO[39m Shutdown: Prometheus client finished in 1ms
+[2026-10-16 11:35:52] [36mINFO[39m Shutdown: Jobs Service (in-memory) finished in 1ms
+[2026-10-16 11:35:52] [36mINFO[39m Shutdown: Job Service finished in 1ms
+[2026-10-16 11:35:52] [36mINFO[39m Shutdown: Mentions Job Service finished in 1ms
+[2026-10-16 11:35:52] [35mWARN[39m Ghost has shut down
+[2026-10-16 11:35:52] [35mWARN[39m Ghost was running for a few seconds
+EmbedNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+EmbedNode should implement "exportJSON" method to ensure JSON and default HTML serialization works as expected
+EmailNode must implement static "getType" method
+EmailNode must implement static "clone" method
+EmailNode must implement "decorate" method
+EmailNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+EmailNode should implement "exportJSON" method to ensure JSON and default HTML serialization works as expected
+GalleryNode must implement static "getType" method
+GalleryNode must implement static "clone" method
+GalleryNode must implement "decorate" method
+GalleryNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+GalleryNode should implement "exportJSON" method to ensure JSON and default HTML serialization works as expected
+EmailCtaNode must implement static "getType" method
+EmailCtaNode must implement static "clone" method
+EmailCtaNode must implement "decorate" method
+EmailCtaNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+EmailCtaNode should implement "exportJSON" method to ensure JSON and default HTML serialization works as expected
+SignupNode must implement static "getType" method
+SignupNode must implement static "clone" method
+SignupNode must implement "decorate" method
+TransistorNode must implement static "getType" method
+TransistorNode must implement static "clone" method
+TransistorNode must implement "decorate" method
+TransistorNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+TransistorNode should implement "exportJSON" method to ensure JSON and default HTML serialization works as expected
+ZWNJNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+InternalServerError: Could not use the card asset manifest at /checkout/ghost/core/core/frontend/public/cards.manifest.json
+    at CardAssets.readManifest (/checkout/ghost/core/core/frontend/services/assets-minification/card-assets.js:70:11)
+    at new CardAssets (/checkout/ghost/core/core/frontend/services/assets-minification/card-assets.js:38:26)
+    at get cardAssets (/checkout/ghost/core/core/frontend/services/assets-minification/index.js:11:32)
+    at Object.<anonymous> (/checkout/ghost/core/core/bridge.js:19:26)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object.transformer (/checkout/node_modules/.pnpm/tsx@4.23.12/node_modules/tsx/dist/register-C557imBs.cjs:9:3619)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    at Module.require (node:internal/modules/cjs/loader:1527:12)
+    at require (node:internal/modules/helpers:147:16)
+    at Object.<anonymous> (/checkout/ghost/core/core/server/services/themes/activation-bridge.js:2:16)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object.transformer (/checkout/node_modules/.pnpm/tsx@4.23.12/node_modules/tsx/dist/register-C557imBs.cjs:9:3619)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12) {
+  statusCode: 500,
+  errorType: 'InternalServerError',
+  level: 'critical',
+  id: 'eec75f98-2143-4abe-bf5b-7be55a60bfe5',
+  context: "ENOENT: no such file or directory, open '/checkout/ghost/core/core/frontend/public/cards.manifest.json'",
+  help: 'Card assets ship with Ghost — reinstall, or run `pnpm build:assets` when running from source',
+  errorDetails: undefined,
+  code: null,
+  property: null,
+  redirect: null,
+  hideStack: false
+}
+
+sandbox app not ready
