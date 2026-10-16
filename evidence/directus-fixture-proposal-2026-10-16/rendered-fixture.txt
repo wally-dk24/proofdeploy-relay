@@ -1,0 +1,6 @@
+Repository: Directus
+Seed data: Directus's own bootstrap, run as the setup step, installed its system tables and created exactly one user — an administrator account whose email and password are generated fresh for each run — and exactly one role, 'Administrator', linked to one 'Administrator' policy granting full administrative access. It created no content collections, items or files, and it changed no project settings.
+Authentication: the token is presented in the Authorization header in the form 'Bearer <token>'. Your token: ${AUTH_TOKEN}.
+Token scope: an access token belonging to the single administrator account the bootstrap created, obtained by signing in as that account with its per-run generated email and password and renewed by refresh before it expires; access tokens last 15 minutes and the refresh token 7 days. The token carries the account's full administrative access; the account has no static API token. No other users, roles, or credentials exist beyond what the seed creates.
+Feature flags: Directus has no feature-flag system; project settings are at this version's defaults and none were changed.
+You may create users, roles, data, or change settings in setup steps before your probes run.
