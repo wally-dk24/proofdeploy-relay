@@ -1,0 +1,760 @@
+{
+ "kind": "auth-proof",
+ "repo": "directus/directus",
+ "attempt": 1,
+ "network_mode": "none+socket",
+ "rows": [
+  {
+   "kind": "auth-proof",
+   "unit": "C3",
+   "repo": "directus/directus",
+   "role": "C",
+   "registered_sha": "dc922b790a15949e8abfce9c1f4523d4e5f89492",
+   "harness_sha": "b3116b87ccdd35e1e167bccb8ed579df5da34684",
+   "declared_runtime": "22",
+   "selected_runtime": "node",
+   "runtime_version": "22.23.3",
+   "package_manager": "pnpm",
+   "app_path": ".",
+   "app_port": null,
+   "workspace_root": ".",
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "READY",
+   "typed_reason": null,
+   "last_error": null,
+   "install_plan_sha256": "0459fe4846846bcb7e04771d4b8da3c0716f3bc1a9c27ab9b67a40ea6ad0921d",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": [],
+   "fixture_template": "fixture_template.txt",
+   "fixture_render_sha256": "dbbdcfd4b8287be91918d2c2aaade11a4c9c7b8496ac16f0f9409b1f1656b610",
+   "fixture_render_error": null,
+   "seed": {
+    "key_file_present": null,
+    "key_file": null,
+    "sqlite_files": [
+     "data.db (385024 bytes)"
+    ]
+   },
+   "auth": {
+    "endpoint": "/users/me",
+    "method": "GET",
+    "status": "PROVEN",
+    "reason": null,
+    "requests": [
+     {
+      "method": "GET",
+      "path": "/users/me",
+      "authorization": "Bearer <redacted:acquired_token>",
+      "http_status": 200,
+      "body": {
+       "data": {
+        "id": "c9e9f647-1db1-4aaf-9bd2-af2ac7bba44d",
+        "first_name": "Admin",
+        "last_name": "User",
+        "email": "<redacted:bootstrap_value>",
+        "password": "**********",
+        "location": null,
+        "title": null,
+        "description": null,
+        "tags": null,
+        "avatar": null,
+        "language": null,
+        "tfa_secret": null,
+        "status": "active",
+        "role": "1cb5cb41-b7ab-47ae-8cd1-b01cf6eb0434",
+        "token": null,
+        "last_access": "2026-10-16T22:37:16",
+        "last_page": null,
+        "provider": "default",
+        "external_identifier": null,
+        "auth_data": null,
+        "email_notifications": true,
+        "appearance": null,
+        "theme_dark": null,
+        "theme_light": null,
+        "theme_light_overrides": null,
+        "theme_dark_overrides": null,
+        "text_direction": "auto",
+        "policies": []
+       }
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 1,
+      "acquisition_kinds": {
+       "login": 1
+      },
+      "details": [
+       "credential provider: POST /auth/login (login)",
+       "write: POST http://127.0.0.1:39113/auth/login -> 200",
+       "credential provider: token acquired",
+       "act: GET /users/me -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "GET",
+      "path": "/users/me",
+      "authorization": "Bearer <redacted:acquired_token>",
+      "http_status": 200,
+      "body": {
+       "data": {
+        "id": "c9e9f647-1db1-4aaf-9bd2-af2ac7bba44d",
+        "first_name": "Admin",
+        "last_name": "User",
+        "email": "<redacted:bootstrap_value>",
+        "password": "**********",
+        "location": null,
+        "title": null,
+        "description": null,
+        "tags": null,
+        "avatar": null,
+        "language": null,
+        "tfa_secret": null,
+        "status": "active",
+        "role": "1cb5cb41-b7ab-47ae-8cd1-b01cf6eb0434",
+        "token": null,
+        "last_access": "2026-10-16T22:37:16",
+        "last_page": null,
+        "provider": "default",
+        "external_identifier": null,
+        "auth_data": null,
+        "email_notifications": true,
+        "appearance": null,
+        "theme_dark": null,
+        "theme_light": null,
+        "theme_light_overrides": null,
+        "theme_dark_overrides": null,
+        "text_direction": "auto",
+        "policies": []
+       }
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 1,
+      "acquisition_kinds": {
+       "login": 1
+      },
+      "details": [
+       "credential provider: POST /auth/login (login)",
+       "write: POST http://127.0.0.1:39113/auth/login -> 200",
+       "credential provider: token acquired",
+       "act: GET /users/me -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "GET",
+      "path": "/users/me",
+      "authorization": null,
+      "http_status": 401,
+      "body": {
+       "errors": [
+        {
+         "message": "Invalid user credentials.",
+         "extensions": {
+          "code": "INVALID_CREDENTIALS"
+         }
+        }
+       ]
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 0,
+      "acquisition_kinds": {},
+      "details": [
+       "act: GET /users/me -> 401",
+       "status: got 401, expected 401 -> PASS"
+      ]
+     }
+    ],
+    "acquisitions_after_two_authenticated": 2,
+    "acquisition_kinds": {
+     "login": 2
+    },
+    "passed": true
+   },
+   "redactions": {
+    "key_file": 0,
+    "bootstrap_value": 2,
+    "acquired_token": 0,
+    "jwt_shape": 0
+   }
+  },
+  {
+   "kind": "auth-proof",
+   "unit": "C4",
+   "repo": "directus/directus",
+   "role": "C",
+   "registered_sha": "a5da59da94bb33c8d644df93a21403eca4c1a4e7",
+   "harness_sha": "747019ea420eb0025e36f776bc9262ed9c66a63b",
+   "declared_runtime": "22",
+   "selected_runtime": "node",
+   "runtime_version": "22.23.3",
+   "package_manager": "pnpm",
+   "app_path": ".",
+   "app_port": null,
+   "workspace_root": ".",
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "READY",
+   "typed_reason": null,
+   "last_error": null,
+   "install_plan_sha256": "af32169b1667618825d21a5c85102b9cce5cf45bd49afc8d35d842b570f5ec64",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": [],
+   "fixture_template": "fixture_template.txt",
+   "fixture_render_sha256": "dbbdcfd4b8287be91918d2c2aaade11a4c9c7b8496ac16f0f9409b1f1656b610",
+   "fixture_render_error": null,
+   "seed": {
+    "key_file_present": null,
+    "key_file": null,
+    "sqlite_files": [
+     "data.db (385024 bytes)"
+    ]
+   },
+   "auth": {
+    "endpoint": "/users/me",
+    "method": "GET",
+    "status": "PROVEN",
+    "reason": null,
+    "requests": [
+     {
+      "method": "GET",
+      "path": "/users/me",
+      "authorization": "Bearer <redacted:acquired_token>",
+      "http_status": 200,
+      "body": {
+       "data": {
+        "id": "1eb980b9-99da-435a-9c47-f6fbdbb8a323",
+        "first_name": "Admin",
+        "last_name": "User",
+        "email": "<redacted:bootstrap_value>",
+        "password": "**********",
+        "location": null,
+        "title": null,
+        "description": null,
+        "tags": null,
+        "avatar": null,
+        "language": null,
+        "tfa_secret": null,
+        "status": "active",
+        "role": "8025a7cf-721c-45ea-8dac-b9de018457b4",
+        "token": null,
+        "last_access": "2026-10-16T22:41:17",
+        "last_page": null,
+        "provider": "default",
+        "external_identifier": null,
+        "auth_data": null,
+        "email_notifications": true,
+        "appearance": null,
+        "theme_dark": null,
+        "theme_light": null,
+        "theme_light_overrides": null,
+        "theme_dark_overrides": null,
+        "text_direction": "auto",
+        "policies": []
+       }
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 1,
+      "acquisition_kinds": {
+       "login": 1
+      },
+      "details": [
+       "credential provider: POST /auth/login (login)",
+       "write: POST http://127.0.0.1:40773/auth/login -> 200",
+       "credential provider: token acquired",
+       "act: GET /users/me -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "GET",
+      "path": "/users/me",
+      "authorization": "Bearer <redacted:acquired_token>",
+      "http_status": 200,
+      "body": {
+       "data": {
+        "id": "1eb980b9-99da-435a-9c47-f6fbdbb8a323",
+        "first_name": "Admin",
+        "last_name": "User",
+        "email": "<redacted:bootstrap_value>",
+        "password": "**********",
+        "location": null,
+        "title": null,
+        "description": null,
+        "tags": null,
+        "avatar": null,
+        "language": null,
+        "tfa_secret": null,
+        "status": "active",
+        "role": "8025a7cf-721c-45ea-8dac-b9de018457b4",
+        "token": null,
+        "last_access": "2026-10-16T22:41:18",
+        "last_page": null,
+        "provider": "default",
+        "external_identifier": null,
+        "auth_data": null,
+        "email_notifications": true,
+        "appearance": null,
+        "theme_dark": null,
+        "theme_light": null,
+        "theme_light_overrides": null,
+        "theme_dark_overrides": null,
+        "text_direction": "auto",
+        "policies": []
+       }
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 1,
+      "acquisition_kinds": {
+       "login": 1
+      },
+      "details": [
+       "credential provider: POST /auth/login (login)",
+       "write: POST http://127.0.0.1:40773/auth/login -> 200",
+       "credential provider: token acquired",
+       "act: GET /users/me -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "GET",
+      "path": "/users/me",
+      "authorization": null,
+      "http_status": 401,
+      "body": {
+       "errors": [
+        {
+         "message": "Invalid user credentials.",
+         "extensions": {
+          "code": "INVALID_CREDENTIALS"
+         }
+        }
+       ]
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 0,
+      "acquisition_kinds": {},
+      "details": [
+       "act: GET /users/me -> 401",
+       "status: got 401, expected 401 -> PASS"
+      ]
+     }
+    ],
+    "acquisitions_after_two_authenticated": 2,
+    "acquisition_kinds": {
+     "login": 2
+    },
+    "passed": true
+   },
+   "redactions": {
+    "key_file": 0,
+    "bootstrap_value": 2,
+    "acquired_token": 0,
+    "jwt_shape": 0
+   }
+  },
+  {
+   "kind": "auth-proof",
+   "unit": "checkpoint-bug-directus-1",
+   "repo": "directus/directus",
+   "role": "fix^",
+   "registered_sha": "7e9b03504c6094bac8dace713c11a6f909016057",
+   "harness_sha": "ecfe840986270d5a4083a0e2bd9923831488123f",
+   "declared_runtime": "22",
+   "selected_runtime": "node",
+   "runtime_version": "22.23.3",
+   "package_manager": "pnpm",
+   "app_path": ".",
+   "app_port": null,
+   "workspace_root": ".",
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "READY",
+   "typed_reason": null,
+   "last_error": null,
+   "install_plan_sha256": "2c3e33d0c99fbd17c3d0096c9e5998dc07e2b65f1490dd29431d951a9b845f07",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": [],
+   "fixture_template": "fixture_template.txt",
+   "fixture_render_sha256": "dbbdcfd4b8287be91918d2c2aaade11a4c9c7b8496ac16f0f9409b1f1656b610",
+   "fixture_render_error": null,
+   "seed": {
+    "key_file_present": null,
+    "key_file": null,
+    "sqlite_files": [
+     "data.db (393216 bytes)"
+    ]
+   },
+   "auth": {
+    "endpoint": "/users/me",
+    "method": "GET",
+    "status": "PROVEN",
+    "reason": null,
+    "requests": [
+     {
+      "method": "GET",
+      "path": "/users/me",
+      "authorization": "Bearer <redacted:acquired_token>",
+      "http_status": 200,
+      "body": {
+       "data": {
+        "id": "d7e8a8d0-45ae-4ec8-a580-af1619400dd7",
+        "first_name": "Admin",
+        "last_name": "User",
+        "email": "<redacted:bootstrap_value>",
+        "password": "**********",
+        "location": null,
+        "title": null,
+        "description": null,
+        "tags": null,
+        "avatar": null,
+        "language": null,
+        "tfa_secret": null,
+        "status": "active",
+        "role": "69917146-4750-46ad-86ac-bc9d54e21d87",
+        "token": null,
+        "last_access": "2026-10-16T22:45:27",
+        "last_page": null,
+        "provider": "default",
+        "external_identifier": null,
+        "auth_data": null,
+        "email_notifications": true,
+        "appearance": null,
+        "theme_dark": null,
+        "theme_light": null,
+        "theme_light_overrides": null,
+        "theme_dark_overrides": null,
+        "text_direction": "auto",
+        "policies": []
+       }
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 1,
+      "acquisition_kinds": {
+       "login": 1
+      },
+      "details": [
+       "credential provider: POST /auth/login (login)",
+       "write: POST http://127.0.0.1:41183/auth/login -> 200",
+       "credential provider: token acquired",
+       "act: GET /users/me -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "GET",
+      "path": "/users/me",
+      "authorization": "Bearer <redacted:acquired_token>",
+      "http_status": 200,
+      "body": {
+       "data": {
+        "id": "d7e8a8d0-45ae-4ec8-a580-af1619400dd7",
+        "first_name": "Admin",
+        "last_name": "User",
+        "email": "<redacted:bootstrap_value>",
+        "password": "**********",
+        "location": null,
+        "title": null,
+        "description": null,
+        "tags": null,
+        "avatar": null,
+        "language": null,
+        "tfa_secret": null,
+        "status": "active",
+        "role": "69917146-4750-46ad-86ac-bc9d54e21d87",
+        "token": null,
+        "last_access": "2026-10-16T22:45:27",
+        "last_page": null,
+        "provider": "default",
+        "external_identifier": null,
+        "auth_data": null,
+        "email_notifications": true,
+        "appearance": null,
+        "theme_dark": null,
+        "theme_light": null,
+        "theme_light_overrides": null,
+        "theme_dark_overrides": null,
+        "text_direction": "auto",
+        "policies": []
+       }
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 1,
+      "acquisition_kinds": {
+       "login": 1
+      },
+      "details": [
+       "credential provider: POST /auth/login (login)",
+       "write: POST http://127.0.0.1:41183/auth/login -> 200",
+       "credential provider: token acquired",
+       "act: GET /users/me -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "GET",
+      "path": "/users/me",
+      "authorization": null,
+      "http_status": 401,
+      "body": {
+       "errors": [
+        {
+         "message": "Invalid user credentials.",
+         "extensions": {
+          "code": "INVALID_CREDENTIALS"
+         }
+        }
+       ]
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 0,
+      "acquisition_kinds": {},
+      "details": [
+       "act: GET /users/me -> 401",
+       "status: got 401, expected 401 -> PASS"
+      ]
+     }
+    ],
+    "acquisitions_after_two_authenticated": 2,
+    "acquisition_kinds": {
+     "login": 2
+    },
+    "passed": true
+   },
+   "redactions": {
+    "key_file": 0,
+    "bootstrap_value": 2,
+    "acquired_token": 0,
+    "jwt_shape": 0
+   }
+  },
+  {
+   "kind": "auth-proof",
+   "unit": "checkpoint-bug-directus-1",
+   "repo": "directus/directus",
+   "role": "fix",
+   "registered_sha": "93a3f39342e171d3ae3017c2aa9a744b5e1c3f8a",
+   "harness_sha": "015eb51e3fe47cdea2a63c74c6449fa73f04f7ce",
+   "declared_runtime": "22",
+   "selected_runtime": "node",
+   "runtime_version": "22.23.3",
+   "package_manager": "pnpm",
+   "app_path": ".",
+   "app_port": null,
+   "workspace_root": ".",
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "READY",
+   "typed_reason": null,
+   "last_error": null,
+   "install_plan_sha256": "2c3e33d0c99fbd17c3d0096c9e5998dc07e2b65f1490dd29431d951a9b845f07",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": [],
+   "fixture_template": "fixture_template.txt",
+   "fixture_render_sha256": "dbbdcfd4b8287be91918d2c2aaade11a4c9c7b8496ac16f0f9409b1f1656b610",
+   "fixture_render_error": null,
+   "seed": {
+    "key_file_present": null,
+    "key_file": null,
+    "sqlite_files": [
+     "data.db (393216 bytes)"
+    ]
+   },
+   "auth": {
+    "endpoint": "/users/me",
+    "method": "GET",
+    "status": "PROVEN",
+    "reason": null,
+    "requests": [
+     {
+      "method": "GET",
+      "path": "/users/me",
+      "authorization": "Bearer <redacted:acquired_token>",
+      "http_status": 200,
+      "body": {
+       "data": {
+        "id": "b2c2075f-1118-4050-ab2b-6854f8e9c990",
+        "first_name": "Admin",
+        "last_name": "User",
+        "email": "<redacted:bootstrap_value>",
+        "password": "**********",
+        "location": null,
+        "title": null,
+        "description": null,
+        "tags": null,
+        "avatar": null,
+        "language": null,
+        "tfa_secret": null,
+        "status": "active",
+        "role": "4f39e338-3a5e-4559-a965-7bca19bc22dc",
+        "token": null,
+        "last_access": "2026-10-16T22:49:27",
+        "last_page": null,
+        "provider": "default",
+        "external_identifier": null,
+        "auth_data": null,
+        "email_notifications": true,
+        "appearance": null,
+        "theme_dark": null,
+        "theme_light": null,
+        "theme_light_overrides": null,
+        "theme_dark_overrides": null,
+        "text_direction": "auto",
+        "policies": []
+       }
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 1,
+      "acquisition_kinds": {
+       "login": 1
+      },
+      "details": [
+       "credential provider: POST /auth/login (login)",
+       "write: POST http://127.0.0.1:35843/auth/login -> 200",
+       "credential provider: token acquired",
+       "act: GET /users/me -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "GET",
+      "path": "/users/me",
+      "authorization": "Bearer <redacted:acquired_token>",
+      "http_status": 200,
+      "body": {
+       "data": {
+        "id": "b2c2075f-1118-4050-ab2b-6854f8e9c990",
+        "first_name": "Admin",
+        "last_name": "User",
+        "email": "<redacted:bootstrap_value>",
+        "password": "**********",
+        "location": null,
+        "title": null,
+        "description": null,
+        "tags": null,
+        "avatar": null,
+        "language": null,
+        "tfa_secret": null,
+        "status": "active",
+        "role": "4f39e338-3a5e-4559-a965-7bca19bc22dc",
+        "token": null,
+        "last_access": "2026-10-16T22:49:27",
+        "last_page": null,
+        "provider": "default",
+        "external_identifier": null,
+        "auth_data": null,
+        "email_notifications": true,
+        "appearance": null,
+        "theme_dark": null,
+        "theme_light": null,
+        "theme_light_overrides": null,
+        "theme_dark_overrides": null,
+        "text_direction": "auto",
+        "policies": []
+       }
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 1,
+      "acquisition_kinds": {
+       "login": 1
+      },
+      "details": [
+       "credential provider: POST /auth/login (login)",
+       "write: POST http://127.0.0.1:35843/auth/login -> 200",
+       "credential provider: token acquired",
+       "act: GET /users/me -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "GET",
+      "path": "/users/me",
+      "authorization": null,
+      "http_status": 401,
+      "body": {
+       "errors": [
+        {
+         "message": "Invalid user credentials.",
+         "extensions": {
+          "code": "INVALID_CREDENTIALS"
+         }
+        }
+       ]
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 0,
+      "acquisition_kinds": {},
+      "details": [
+       "act: GET /users/me -> 401",
+       "status: got 401, expected 401 -> PASS"
+      ]
+     }
+    ],
+    "acquisitions_after_two_authenticated": 2,
+    "acquisition_kinds": {
+     "login": 2
+    },
+    "passed": true
+   },
+   "redactions": {
+    "key_file": 0,
+    "bootstrap_value": 2,
+    "acquired_token": 0,
+    "jwt_shape": 0
+   }
+  }
+ ]
+}

@@ -1,0 +1,279 @@
+sandbox provision fix-parent (ecfe84098627)
+install plan: sha256 2c3e33d0c99fbd17... (adapter: node)
+sandbox image: docker.io/library/node:22.23.3-bookworm@sha256:0e5f906573693feaa1e21057ebdcfdb5bd5021f050b2dc7c9deceb629c7da2a8 (runtime node)
+sandbox runtime version: 22.23.3 (digest sha256:0e5f906573693feaa1e21057ebdcfdb5bd5021f050b2dc7c9deceb629c7da2a8)
+auth bootstrap: generated ADMIN_EMAIL, ADMIN_PASSWORD, SECRET
+lockfile: pnpm-lock.yaml sha256: 29b5f22ddaa39900...
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs unshare chown -R 1:1 /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-directus-1/a1/snapshot-fix-parent /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-directus-1/a1/snapshot-fix-parent.pd-home
+checkout ownership: transferred to the sandbox runtime uid (podman unshare chown 1:1; plan 1.2(g), home dir included under plan 1.2(k))
+install: ca_cert_used=False
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs network exists pd-build
+build network: pd-build (bridge, external route for proxy)
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-0 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-directus-1/a1/snapshot-fix-parent:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-directus-1/a1/snapshot-fix-parent.pd-home:/pd-home -e DB_CLIENT=sqlite3 -e DB_FILENAME=/checkout/data.db -e ADMIN_EMAIL=***REDACTED*** -e ADMIN_PASSWORD=***REDACTED*** -e SECRET=***REDACTED*** -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store -e npm_config_nodedir=/usr/local docker.io/library/node:22.23.3-bookworm@sha256:0e5f906573693feaa1e21057ebdcfdb5bd5021f050b2dc7c9deceb629c7da2a8 bash -c npm install --prefix /pd-home/.pd-tools --no-save --no-audit --no-fund corepack@0.36.0
+
+added 1 package in 472ms
+
+npm notice
+npm notice New major version of npm available! 10.9.9 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-1 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-directus-1/a1/snapshot-fix-parent:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-directus-1/a1/snapshot-fix-parent.pd-home:/pd-home -e DB_CLIENT=sqlite3 -e DB_FILENAME=/checkout/data.db -e ADMIN_EMAIL=***REDACTED*** -e ADMIN_PASSWORD=***REDACTED*** -e SECRET=***REDACTED*** -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store -e npm_config_nodedir=/usr/local -e COREPACK_ENABLE_DOWNLOAD_PROMPT=0 docker.io/library/node:22.23.3-bookworm@sha256:0e5f906573693feaa1e21057ebdcfdb5bd5021f050b2dc7c9deceb629c7da2a8 bash -c /pd-home/.pd-tools/node_modules/.bin/corepack pnpm@10.27.0 install --frozen-lockfile
+Scope: all 41 workspace projects
+ WARN  There are cyclic workspace dependencies: /checkout/api, /checkout/directus
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +2081
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+   ╭───────────────────────────────────────────────╮
+   │                                               │
+   │     Update available! 10.27.0 → 12.14.0.      │
+   │     Changelog: https://pnpm.io/v/12.14.0      │
+   │   To update, run: corepack use pnpm@12.14.0   │
+   │                                               │
+   ╰───────────────────────────────────────────────╯
+
+Progress: resolved 2081, reused 0, downloaded 40, added 11
+Progress: resolved 2081, reused 0, downloaded 205, added 66
+Progress: resolved 2081, reused 0, downloaded 300, added 111
+Progress: resolved 2081, reused 0, downloaded 357, added 125
+Progress: resolved 2081, reused 0, downloaded 491, added 161
+Progress: resolved 2081, reused 0, downloaded 611, added 220
+Progress: resolved 2081, reused 0, downloaded 761, added 303
+Progress: resolved 2081, reused 0, downloaded 887, added 355
+Progress: resolved 2081, reused 0, downloaded 1018, added 438
+Progress: resolved 2081, reused 0, downloaded 1215, added 603
+Progress: resolved 2081, reused 0, downloaded 1310, added 656
+Progress: resolved 2081, reused 0, downloaded 1553, added 855
+Progress: resolved 2081, reused 0, downloaded 1803, added 997
+Progress: resolved 2081, reused 0, downloaded 2005, added 1083
+Progress: resolved 2081, reused 0, downloaded 2052, added 1326
+Progress: resolved 2081, reused 0, downloaded 2052, added 1599
+Progress: resolved 2081, reused 0, downloaded 2052, added 1787
+Progress: resolved 2081, reused 0, downloaded 2052, added 1988
+Progress: resolved 2081, reused 0, downloaded 2052, added 2081, done
+.../node_modules/@parcel/watcher install$ node scripts/build-from-source.js
+.../sqlite3@6.0.1/node_modules/sqlite3 install$ prebuild-install -r napi || node-gyp rebuild
+.../esbuild@0.28.1/node_modules/esbuild postinstall$ node install.js
+.../esbuild@0.28.2/node_modules/esbuild postinstall$ node install.js
+.../node_modules/@parcel/watcher install: Done
+.../argon2@0.44.0/node_modules/argon2 install$ cross-env ZERO_AR_DATE=1 node-gyp-build
+[… 177 lines elided …]
+OFL 1.1, Code: MIT License)
+.../@fortawesome/free-regular-svg-icons postinstall: Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com
+.../@fortawesome/free-regular-svg-icons postinstall: License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+.../@fortawesome/fontawesome-svg-core postinstall: Done
+.../@fortawesome/free-regular-svg-icons postinstall: Done
+ WARN  Failed to create bin at /checkout/tests/e2e/node_modules/.bin/sandbox. ENOENT: no such file or directory, open '/checkout/tests/sandbox/dist/cli.js'
+
+devDependencies:
++ @changesets/cli 2.29.7
++ @directus/release-notes-generator 3.0.2 <- packages/release-notes-generator
++ @eslint/js 10.0.1
++ eslint 10.8.0
++ eslint-config-prettier 10.1.8
++ eslint-plugin-import-x 4.17.1
++ eslint-plugin-vue 10.10.0
++ globals 16.5.0
++ postcss-html 2.0.0
++ prettier 3.6.2
++ rimraf 6.1.0
++ stylelint 17.13.0
++ stylelint-config-standard 40.0.0
++ stylelint-config-standard-scss 17.0.0
++ stylelint-config-standard-vue 1.0.0
++ stylelint-use-logical 2.1.3
++ typescript 5.9.3
++ typescript-eslint 8.66.0
++ vue-eslint-parser 10.4.1
+
+ WARN  Failed to create bin at /checkout/tests/e2e/node_modules/.bin/sandbox. ENOENT: no such file or directory, open '/checkout/tests/e2e/node_modules/@directus/sandbox/dist/cli.js'
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: braintrust@3.27.0, protobufjs@7.6.6,                │
+│   unrs-resolver@1.12.2.                                                      │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 1m 29.2s using pnpm v10.27.0
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-2 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-directus-1/a1/snapshot-fix-parent:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-directus-1/a1/snapshot-fix-parent.pd-home:/pd-home -e DB_CLIENT=sqlite3 -e DB_FILENAME=/checkout/data.db -e ADMIN_EMAIL=***REDACTED*** -e ADMIN_PASSWORD=***REDACTED*** -e SECRET=***REDACTED*** -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store docker.io/library/node:22.23.3-bookworm@sha256:0e5f906573693feaa1e21057ebdcfdb5bd5021f050b2dc7c9deceb629c7da2a8 bash -c export PATH=/pd-home/.pd-tools/node_modules/.bin:/checkout/node_modules/.bin:$PATH; npm_config_workspace_concurrency=2 pnpm run build
+
+> directus-monorepo@ build /checkout
+> pnpm --recursive run build
+
+Scope: 40 of 41 workspace projects
+packages/ai build$ tsdown src/index.ts --dts
+packages/constants build$ tsdown src/index.ts --dts
+packages/ai build: ℹ tsdown v0.15.11 powered by rolldown v1.0.0-beta.45
+packages/constants build: ℹ tsdown v0.15.11 powered by rolldown v1.0.0-beta.45
+packages/ai build: ℹ entry: src/index.ts
+packages/ai build: ℹ tsconfig: tsconfig.json
+packages/ai build: ℹ Build start
+packages/constants build: ℹ entry: src/index.ts
+packages/constants build: ℹ tsconfig: tsconfig.json
+packages/constants build: ℹ Build start
+packages/ai build: ℹ dist/index.js    7.22 kB │ gzip: 1.04 kB
+packages/ai build: ℹ dist/index.d.ts  3.00 kB │ gzip: 1.02 kB
+packages/ai build: ℹ 2 files, total: 10.22 kB
+packages/ai build: ✔ Build complete in 264ms
+packages/constants build: ℹ dist/index.js    6.01 kB │ gzip: 1.97 kB
+packages/constants build: ℹ dist/index.d.ts  6.07 kB │ gzip: 1.79 kB
+packages/constants build: ℹ 2 files, total: 12.07 kB
+packages/constants build: ✔ Build complete in 278ms
+packages/ai build: Done
+packages/format-title build$ pnpm run '/^bundle|typecheck$/'
+packages/constants build: Done
+packages/release-notes-generator build$ tsdown --tsconfig tsconfig.prod.json
+packages/release-notes-generator build: ℹ tsdown v0.15.11 powered by rolldown v1.0.0-beta.45
+packages/release-notes-generator build: ℹ entry: src/index.ts
+packages/release-notes-generator build: ℹ tsconfig: tsconfig.prod.json
+packages/release-notes-generator build: ℹ Build start
+packages/release-notes-generator build: ℹ dist/index.js  17.59 kB │ gzip: 5.12 kB
+packages/release-notes-generator build: ℹ 1 files, total: 17.59 kB
+packages/release-notes-generator build: ✔ Build complete in 44ms
+packages/release-notes-generator build: Done
+packages/schema build$ tsdown src/index.ts --dts
+packages/schema build: ℹ tsdown v0.15.11 powered by rolldown v1.0.0-beta.45
+packages/format-title build: . bundle$ tsdown src/index.ts --dts
+packages/format-title build: . typecheck$ tsc --noEmit
+packages/schema build: ℹ entry: src/index.ts
+[… 2596 lines elided …]
+.03 kB
+api build: ℹ dist/permissions/types.js                                                                                   0.01 kB │ gzip:  0.03 kB
+api build: ℹ dist/telemetry/types/report.js                                                                              0.01 kB │ gzip:  0.03 kB
+api build: ℹ dist/types/ast.js                                                                                           0.01 kB │ gzip:  0.03 kB
+api build: ℹ dist/types/auth.js                                                                                          0.01 kB │ gzip:  0.03 kB
+api build: ℹ dist/types/collection.js                                                                                    0.01 kB │ gzip:  0.03 kB
+api build: ℹ dist/types/events.js                                                                                        0.01 kB │ gzip:  0.03 kB
+api build: ℹ dist/types/migration.js                                                                                     0.01 kB │ gzip:  0.03 kB
+api build: ℹ dist/types/revision.js                                                                                      0.01 kB │ gzip:  0.03 kB
+api build: ℹ dist/types/rolemap.js                                                                                       0.01 kB │ gzip:  0.03 kB
+api build: ℹ dist/websocket/collab/types.js                                                                              0.01 kB │ gzip:  0.03 kB
+api build: ℹ dist/websocket/types.js                                                                                     0.01 kB │ gzip:  0.03 kB
+api build: ℹ dist/packages/types/dist/index.js                                                                          10.87 kB │ gzip:  2.39 kB
+api build: ℹ dist/_virtual/rolldown_runtime.js                                                                           0.30 kB │ gzip:  0.22 kB
+api build: ℹ 818 files, total: 2084.73 kB
+api build: ✔ Build complete in 615ms
+api build: Done
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-3 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-directus-1/a1/snapshot-fix-parent:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-directus-1/a1/snapshot-fix-parent.pd-home:/pd-home -e DB_CLIENT=sqlite3 -e DB_FILENAME=/checkout/data.db -e ADMIN_EMAIL=***REDACTED*** -e ADMIN_PASSWORD=***REDACTED*** -e SECRET=***REDACTED*** -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store docker.io/library/node:22.23.3-bookworm@sha256:0e5f906573693feaa1e21057ebdcfdb5bd5021f050b2dc7c9deceb629c7da2a8 bash -c export PATH=/pd-home/.pd-tools/node_modules/.bin:/checkout/node_modules/.bin:$PATH; cd directus && node cli.js bootstrap
+[22:45:12.344] INFO: Initializing bootstrap...
+[22:45:12.348] INFO: Installing Directus system tables...
+[22:45:12.403] INFO: Running migrations...
+[22:45:12.407] INFO: Applying Remove Collection Foreign Keys...
+[22:45:12.457] INFO: Applying Remove System Relations...
+[22:45:12.463] INFO: Applying Remove System Collections...
+[22:45:12.469] INFO: Applying Remove System Fields...
+[22:45:12.472] INFO: Applying Add Cascade System Relations...
+[22:45:12.611] INFO: Applying Change Webhook URL Type...
+[22:45:12.621] INFO: Applying Add Relations Sort Field...
+[22:45:12.626] INFO: Applying Remove Locked Fields...
+[22:45:12.634] INFO: Applying Webhooks Collections Text...
+[22:45:12.640] INFO: Applying Add Refresh Interval...
+[22:45:12.644] INFO: Applying Make Filesize Nullable...
+[22:45:12.652] INFO: Applying Add Collections Accountability...
+[22:45:12.656] INFO: Applying Remove Files Interface...
+[22:45:12.659] INFO: Applying Rename Interfaces...
+[22:45:12.671] INFO: Applying Restructure Relations...
+[22:45:12.688] INFO: Applying Add Foreign Key Constraints...
+[22:45:12.695] INFO: Applying Add System Fk Triggers...
+[22:45:12.758] INFO: Applying Add Collections Icon Color...
+[22:45:12.762] INFO: Applying Add Insights...
+[22:45:12.767] INFO: Applying Add Deep Clone Config...
+[22:45:12.771] INFO: Applying Change Filesize Bigint...
+[22:45:12.777] INFO: Applying Add Conditions to Fields...
+[22:45:12.781] INFO: Applying Add Default Folder...
+[22:45:12.790] INFO: Applying Replace Groups...
+[22:45:12.792] INFO: Applying Add Required to Fields...
+[22:45:12.796] INFO: Applying Update Groups...
+[22:45:12.800] INFO: Applying Change Image Metadata Structure...
+[22:45:12.802] INFO: Applying Add Geometry Config...
+[22:45:12.806] INFO: Applying Remove Limit Column...
+[22:45:12.812] INFO: Applying Add Auth Provider...
+[22:45:12.827] INFO: Applying Webhooks Collections Not Null...
+[22:45:12.833] INFO: Applying Move Module Setup...
+[22:45:12.843] INFO: Applying Webhooks URL Not Null...
+[22:45:12.852] INFO: Applying Add Collection Organization...
+[22:45:12.864] INFO: Applying Replace Fields Group...
+[22:45:12.877] INFO: Applying Replace M2M Interface...
+[22:45:12.879] INFO: Applying Rename Login Action...
+[… 37 lines elided …]
+nge Useragent Type...
+[22:45:13.197] INFO: Applying Deprecate Webhooks...
+[22:45:13.208] INFO: Applying Public Registration...
+[22:45:13.220] INFO: Applying Add Session Window...
+[22:45:13.224] INFO: Applying Add Tus Data...
+[22:45:13.229] INFO: Applying Update Files Date Fields...
+[22:45:13.237] INFO: Applying Permissions Policies...
+[22:45:13.291] INFO: Applying Update Icon Fields Length...
+[22:45:13.324] INFO: Applying Separate Comments...
+[22:45:13.329] INFO: Applying Consolidate Content Versioning...
+[22:45:13.333] INFO: Applying Migrate Legacy Comments...
+[22:45:13.346] INFO: Applying Populate Versioning Deltas...
+[22:45:13.348] INFO: Applying Visual Editor...
+[22:45:13.352] INFO: Applying License Banner...
+[22:45:13.360] INFO: Applying Add Project ID...
+[22:45:13.366] INFO: Applying Add Direction...
+[22:45:13.369] INFO: Applying Add MCP...
+[22:45:13.380] INFO: Applying Add Field Searchable...
+[22:45:13.386] INFO: Applying Add Project Owner...
+[22:45:13.429] INFO: Applying Add Retention Indexes...
+[22:45:13.485] INFO: Applying Add AI Settings...
+[22:45:13.491] INFO: Applying Remove Webhooks...
+[22:45:13.493] INFO: Applying Add AI Provider Settings...
+[22:45:13.511] INFO: Applying Add Revisions Index...
+[22:45:13.522] INFO: Applying Add Collaborative Editing...
+[22:45:13.526] INFO: Applying Add Deployment...
+[22:45:13.534] INFO: Applying Add Deployment Webhooks...
+[22:45:13.550] INFO: Applying Null Item Versions...
+[22:45:13.557] INFO: Applying Add AI Translation Settings...
+[22:45:13.562] INFO: Applying Add Licensing...
+[22:45:13.569] INFO: Applying Add Autosave Revision Interval...
+[22:45:13.572] INFO: Applying Add MCP Oauth...
+[22:45:13.603] INFO: Applying Add Default Save Action...
+[22:45:13.606] INFO: Applying Add Flow Folders...
+[22:45:13.617] INFO: Applying Add Flows Module...
+[22:45:13.619] INFO: Applying Add Preview Base URL...
+[22:45:13.642] INFO: Setting up first admin role...
+[22:45:13.668] INFO: Adding first admin user...
+[22:45:13.731] INFO: Done
+
+
+   ╭───────────────────────────────────────────────────╮
+   │                                                   │
+   │                 Update available!                 │
+   │                                                   │
+   │                  12.4.1 → 12.5.0                  │
+   │                 1 version behind                  │
+   │                                                   │
+   │                 More information:                 │
+   │   https://github.com/directus/directus/releases   │
+   │                                                   │
+   ╰───────────────────────────────────────────────────╯
+
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run -d --name pd-fix-parent-ecfe8409 --net=none --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-directus-1/a1/snapshot-fix-parent:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/checkpoint-bug-directus-1/a1/snapshot-fix-parent.pd-home:/pd-home -v /tmp/pd-8ky2k1_d:/pd-sock -e DB_CLIENT=sqlite3 -e DB_FILENAME=/checkout/data.db -e ADMIN_EMAIL=***REDACTED*** -e ADMIN_PASSWORD=***REDACTED*** -e SECRET=***REDACTED*** -e HOME=/pd-home -e PORT=57907 docker.io/library/node:22.23.3-bookworm@sha256:0e5f906573693feaa1e21057ebdcfdb5bd5021f050b2dc7c9deceb629c7da2a8 bash -c (python3 /checkout/.pd-bridge.py /pd-sock/app.sock 57907 &); export PATH=/pd-home/.pd-tools/node_modules/.bin:/checkout/node_modules/.bin:$PATH; cd directus && node cli.js start
+e61c229a8e53e81f5f55ee4411ec4e6f33a870603e94cee1d47858f32e4d8308
+
+bridge socket ready: /tmp/pd-8ky2k1_d/app.sock
+sandbox app: --net=none, Unix socket bridge, executor proxy at 127.0.0.1:41183
+app container log tail:
+[22:45:23.605] INFO: Extensions loaded
+[22:45:23.614] WARN: "PUBLIC_URL" should be a full URL
+[22:45:23.615] WARN: Spatialite isn't installed. Geometry type support will be limited.
+[22:45:23.616] WARN: Upload directory (/checkout/directus/uploads) is not read/writeable!
+[22:45:23.617] WARN: Extensions directory (/checkout/directus/extensions) is not readable!
+[22:45:23.679] INFO: Server started at http://0.0.0.0:57907
+[22:45:26] GET /server/ping 200 3ms
+
+sandbox app READY at http://127.0.0.1:41183
+auth proof: request 1 -> 200 (verdict pass, acquisitions 1 {'login': 1}); request 2 -> 200 (verdict pass, acquisitions 1 {'login': 1}); request 3 -> 401 (verdict pass, acquisitions 0 {}); seed key file present: None; sqlite files: ['data.db (393216 bytes)']

@@ -1,0 +1,161 @@
+{
+ "kind": "auth-proof",
+ "repo": "vendure-ecommerce/vendure",
+ "attempt": 1,
+ "network_mode": "none+socket",
+ "rows": [
+  {
+   "kind": "auth-proof",
+   "unit": "checkpoint-bug-vendure-1",
+   "repo": "vendure-ecommerce/vendure",
+   "role": "fix",
+   "registered_sha": "4393199c077e5cd9399696d25b69c620b36c5cc2",
+   "harness_sha": "d53a1e9ef1857950c7602e0f1cc9b5b14ecc790e",
+   "declared_runtime": "^20.19.0 || >=22.12.0",
+   "selected_runtime": "node",
+   "runtime_version": "26.11.1",
+   "package_manager": "bun",
+   "app_path": ".",
+   "app_port": null,
+   "workspace_root": ".",
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "READY",
+   "typed_reason": null,
+   "last_error": null,
+   "install_plan_sha256": "e38fe2b810cede88878f48748a0868aa0f5a8a44881f49bd0c8d004f1c4debf7",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": [],
+   "fixture_template": "fixture_template.txt",
+   "fixture_render_sha256": "ca9e5e07e310337aee0ff1822efdcfb2f68a02f68ad3237b5a83144cbd5618ae",
+   "fixture_render_error": null,
+   "seed": {
+    "key_file_present": null,
+    "key_file": null,
+    "sqlite_files": [
+     "packages/admin-ui/.angular/cache/19.2.19/vendure-admin/angular-compiler.db (5398528 bytes)",
+     "packages/admin-ui/.angular/cache/19.2.19/vendure-admin/angular-compiler.db-lock (8272 bytes)"
+    ]
+   },
+   "auth": {
+    "endpoint": "/admin-api",
+    "method": "POST",
+    "status": "PROVEN",
+    "reason": null,
+    "requests": [
+     {
+      "method": "POST",
+      "path": "/admin-api",
+      "authorization": "Bearer <redacted:acquired_token>",
+      "http_status": 200,
+      "body": {
+       "data": {
+        "me": {
+         "id": "1",
+         "identifier": "superadmin"
+        }
+       }
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 1,
+      "acquisition_kinds": {
+       "login": 1
+      },
+      "details": [
+       "credential provider: POST /admin-api (login)",
+       "write: POST http://127.0.0.1:33513/admin-api -> 200",
+       "credential provider: token acquired",
+       "write: POST http://127.0.0.1:33513/admin-api -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "POST",
+      "path": "/admin-api",
+      "authorization": "Bearer <redacted:acquired_token>",
+      "http_status": 200,
+      "body": {
+       "data": {
+        "me": {
+         "id": "1",
+         "identifier": "superadmin"
+        }
+       }
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 1,
+      "acquisition_kinds": {
+       "login": 1
+      },
+      "details": [
+       "credential provider: POST /admin-api (login)",
+       "write: POST http://127.0.0.1:33513/admin-api -> 200",
+       "credential provider: token acquired",
+       "write: POST http://127.0.0.1:33513/admin-api -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "POST",
+      "path": "/admin-api",
+      "authorization": null,
+      "http_status": 200,
+      "body": {
+       "errors": [
+        {
+         "message": "You are not currently authorized to perform this action",
+         "locations": [
+          {
+           "line": 1,
+           "column": 9
+          }
+         ],
+         "path": [
+          "me"
+         ],
+         "extensions": {
+          "code": "FORBIDDEN"
+         }
+        }
+       ],
+       "data": {
+        "me": null
+       }
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 0,
+      "acquisition_kinds": {},
+      "details": [
+       "write: POST http://127.0.0.1:33513/admin-api -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     }
+    ],
+    "acquisitions_after_two_authenticated": 2,
+    "acquisition_kinds": {
+     "login": 2
+    },
+    "passed": true
+   },
+   "redactions": {
+    "key_file": 0,
+    "bootstrap_value": 0,
+    "acquired_token": 0,
+    "jwt_shape": 0
+   }
+  }
+ ]
+}
