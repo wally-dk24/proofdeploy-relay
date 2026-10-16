@@ -1,0 +1,335 @@
+{
+ "kind": "auth-proof",
+ "repo": "TryGhost/Ghost",
+ "attempt": 1,
+ "network_mode": "none+socket",
+ "rows": [
+  {
+   "kind": "auth-proof",
+   "unit": "C5",
+   "repo": "TryGhost/Ghost",
+   "role": "C",
+   "registered_sha": "5d482965b7f5ed05ffef956d0eaed8b8a51af0ef",
+   "harness_sha": "27ceb6f0c51074a70043dda0ce50dc5c5820f75d",
+   "declared_runtime": "^22.23.1 || ^24.20.0",
+   "selected_runtime": "node",
+   "runtime_version": "24.21.0",
+   "package_manager": "pnpm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "READY",
+   "typed_reason": null,
+   "last_error": null,
+   "install_plan_sha256": "e671b8305634d2cef1a8d4a933f10d782f99e9d03ff1848d0760517b838a7a93",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": [
+    {
+     "path": "ghost/core/content/themes/casper",
+     "url": "https://github.com/TryGhost/Casper.git",
+     "commit": "7f4adb690c40850382fed4312d90e21ff0313fdc",
+     "tree_sha": "d645bc4aec20b1ee739a6221583dcd15c2f8d4d8"
+    },
+    {
+     "path": "ghost/core/content/themes/source",
+     "url": "https://github.com/TryGhost/Source.git",
+     "commit": "219dc7dbe62bb6dfa8db9fd651528571eae6cfd3",
+     "tree_sha": "805457d7f7e89099691e37e9e2ac1a37c672bb48"
+    }
+   ],
+   "seed": {
+    "key_file_present": true,
+    "key_file": ".pd-auth/admin_key",
+    "sqlite_files": [
+     "ghost/core/content/data/ghost-dev.db (1499136 bytes)"
+    ]
+   },
+   "auth": {
+    "endpoint": "/ghost/api/admin/tags/",
+    "status": "PROVEN",
+    "reason": null,
+    "requests": [
+     {
+      "method": "GET",
+      "path": "/ghost/api/admin/tags/",
+      "authorization": "Ghost <redacted:minted_jwt>",
+      "http_status": 200,
+      "verdict": "pass",
+      "reason": null,
+      "mints": 1,
+      "details": [
+       "credential provider: minted ghost_jwt (ttl 300s)",
+       "act: GET /ghost/api/admin/tags/ -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "GET",
+      "path": "/ghost/api/admin/tags/",
+      "authorization": "Ghost <redacted:minted_jwt>",
+      "http_status": 200,
+      "verdict": "pass",
+      "reason": null,
+      "mints": 1,
+      "details": [
+       "credential provider: minted ghost_jwt (ttl 300s)",
+       "act: GET /ghost/api/admin/tags/ -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "GET",
+      "path": "/ghost/api/admin/tags/",
+      "authorization": null,
+      "http_status": 403,
+      "verdict": "pass",
+      "reason": null,
+      "mints": 1,
+      "details": [
+       "credential provider: minted ghost_jwt (ttl 300s)",
+       "act: GET /ghost/api/admin/tags/ -> 403",
+       "status: got 403, expected 403 -> PASS"
+      ]
+     }
+    ],
+    "mint_count_after_two_authenticated": 2,
+    "passed": true
+   },
+   "redactions": {
+    "admin_key": 0,
+    "bootstrap_value": 0,
+    "minted_jwt": 0,
+    "jwt_shape": 0
+   }
+  },
+  {
+   "kind": "auth-proof",
+   "unit": "checkpoint-bug-ghost-1",
+   "repo": "TryGhost/Ghost",
+   "role": "fix^",
+   "registered_sha": "93e0084723cdaf22d656bcd4811b87433e6b3875",
+   "harness_sha": "e772401aec4c6d157b3e8a942c42d45d263feb20",
+   "declared_runtime": "^22.23.1 || ^24.20.0",
+   "selected_runtime": "node",
+   "runtime_version": "24.21.0",
+   "package_manager": "pnpm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "READY",
+   "typed_reason": null,
+   "last_error": null,
+   "install_plan_sha256": "8db24dd055e029a5e42158eb86c7066abee89559cffc88cc24204e1977d8ee3c",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": [
+    {
+     "path": "ghost/core/content/themes/casper",
+     "url": "https://github.com/TryGhost/Casper.git",
+     "commit": "a3f491463f08d3be5315c516097831b6e9a4724d",
+     "tree_sha": "0f245ecc389bb3b07f9c461c0bed83645762166a"
+    },
+    {
+     "path": "ghost/core/content/themes/source",
+     "url": "https://github.com/TryGhost/Source.git",
+     "commit": "9d3414ec8c2b7f35a8e2e4b5bd09014620f21333",
+     "tree_sha": "d0c55d8b8e1f29b3dbbab83c90cfd281f3dec6ca"
+    }
+   ],
+   "seed": {
+    "key_file_present": true,
+    "key_file": ".pd-auth/admin_key",
+    "sqlite_files": [
+     "ghost/core/content/data/ghost-dev.db (1519616 bytes)"
+    ]
+   },
+   "auth": {
+    "endpoint": "/ghost/api/admin/tags/",
+    "status": "PROVEN",
+    "reason": null,
+    "requests": [
+     {
+      "method": "GET",
+      "path": "/ghost/api/admin/tags/",
+      "authorization": "Ghost <redacted:minted_jwt>",
+      "http_status": 200,
+      "verdict": "pass",
+      "reason": null,
+      "mints": 1,
+      "details": [
+       "credential provider: minted ghost_jwt (ttl 300s)",
+       "act: GET /ghost/api/admin/tags/ -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "GET",
+      "path": "/ghost/api/admin/tags/",
+      "authorization": "Ghost <redacted:minted_jwt>",
+      "http_status": 200,
+      "verdict": "pass",
+      "reason": null,
+      "mints": 1,
+      "details": [
+       "credential provider: minted ghost_jwt (ttl 300s)",
+       "act: GET /ghost/api/admin/tags/ -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "GET",
+      "path": "/ghost/api/admin/tags/",
+      "authorization": null,
+      "http_status": 403,
+      "verdict": "pass",
+      "reason": null,
+      "mints": 1,
+      "details": [
+       "credential provider: minted ghost_jwt (ttl 300s)",
+       "act: GET /ghost/api/admin/tags/ -> 403",
+       "status: got 403, expected 403 -> PASS"
+      ]
+     }
+    ],
+    "mint_count_after_two_authenticated": 2,
+    "passed": true
+   },
+   "redactions": {
+    "admin_key": 0,
+    "bootstrap_value": 0,
+    "minted_jwt": 0,
+    "jwt_shape": 0
+   }
+  },
+  {
+   "kind": "auth-proof",
+   "unit": "checkpoint-bug-ghost-1",
+   "repo": "TryGhost/Ghost",
+   "role": "fix",
+   "registered_sha": "f67640b2c18c76abd9cd3f6d19d6ae93327b42fa",
+   "harness_sha": "70518ef5df312197b03f82ccb351792cb99b47d6",
+   "declared_runtime": "^22.23.1 || ^24.20.0",
+   "selected_runtime": "node",
+   "runtime_version": "24.21.0",
+   "package_manager": "pnpm",
+   "app_path": ".",
+   "workspace_root": ".",
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "READY",
+   "typed_reason": null,
+   "last_error": null,
+   "install_plan_sha256": "8db24dd055e029a5e42158eb86c7066abee89559cffc88cc24204e1977d8ee3c",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": [
+    {
+     "path": "ghost/core/content/themes/casper",
+     "url": "https://github.com/TryGhost/Casper.git",
+     "commit": "a3f491463f08d3be5315c516097831b6e9a4724d",
+     "tree_sha": "0f245ecc389bb3b07f9c461c0bed83645762166a"
+    },
+    {
+     "path": "ghost/core/content/themes/source",
+     "url": "https://github.com/TryGhost/Source.git",
+     "commit": "9d3414ec8c2b7f35a8e2e4b5bd09014620f21333",
+     "tree_sha": "d0c55d8b8e1f29b3dbbab83c90cfd281f3dec6ca"
+    }
+   ],
+   "seed": {
+    "key_file_present": true,
+    "key_file": ".pd-auth/admin_key",
+    "sqlite_files": [
+     "ghost/core/content/data/ghost-dev.db (1519616 bytes)"
+    ]
+   },
+   "auth": {
+    "endpoint": "/ghost/api/admin/tags/",
+    "status": "PROVEN",
+    "reason": null,
+    "requests": [
+     {
+      "method": "GET",
+      "path": "/ghost/api/admin/tags/",
+      "authorization": "Ghost <redacted:minted_jwt>",
+      "http_status": 200,
+      "verdict": "pass",
+      "reason": null,
+      "mints": 1,
+      "details": [
+       "credential provider: minted ghost_jwt (ttl 300s)",
+       "act: GET /ghost/api/admin/tags/ -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "GET",
+      "path": "/ghost/api/admin/tags/",
+      "authorization": "Ghost <redacted:minted_jwt>",
+      "http_status": 200,
+      "verdict": "pass",
+      "reason": null,
+      "mints": 1,
+      "details": [
+       "credential provider: minted ghost_jwt (ttl 300s)",
+       "act: GET /ghost/api/admin/tags/ -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "GET",
+      "path": "/ghost/api/admin/tags/",
+      "authorization": null,
+      "http_status": 403,
+      "verdict": "pass",
+      "reason": null,
+      "mints": 1,
+      "details": [
+       "credential provider: minted ghost_jwt (ttl 300s)",
+       "act: GET /ghost/api/admin/tags/ -> 403",
+       "status: got 403, expected 403 -> PASS"
+      ]
+     }
+    ],
+    "mint_count_after_two_authenticated": 2,
+    "passed": true
+   },
+   "redactions": {
+    "admin_key": 0,
+    "bootstrap_value": 0,
+    "minted_jwt": 0,
+    "jwt_shape": 0
+   }
+  }
+ ]
+}
