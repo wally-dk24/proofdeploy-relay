@@ -1,0 +1,78 @@
+measure	Run measured unit	﻿2026-10-17T23:44:52.7466726Z ##[group]Run # The key is available to `proofdeploy measure` on the host only.
+measure	Run measured unit	2026-10-17T23:44:52.7467322Z ^[[36;1m# The key is available to `proofdeploy measure` on the host only.^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7467796Z ^[[36;1m# It never enters containers, never appears in prompts, and is^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7468183Z ^[[36;1m# redacted by value in records.^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7468532Z ^[[36;1m# Use set +e: if measure fails, we still write the SHAs (which^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7468949Z ^[[36;1m# may be empty) to GITHUB_OUTPUT, then exit with the code.^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7469809Z ^[[36;1mset +e^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7470053Z ^[[36;1mmkdir -p /tmp/workdir /tmp/output^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7470443Z ^[[36;1m# Provenance goes to `measure` itself via --provenance-* args,^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7470913Z ^[[36;1m# so the evidence record carries them (not via GITHUB_ENV after).^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7471597Z ^[[36;1mPROV_ARGS="--provenance-run-url $RUN_URL --provenance-run-id $RUN_ID --provenance-runner-image $ImageOS-$ImageVersion"^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7472222Z ^[[36;1mif [ "$ARM" = "skill" ]; then^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7472575Z ^[[36;1m  # The skill arm uses the registered skill file from the repo.^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7473083Z ^[[36;1m  SKILL_ARGS="--skill $GITHUB_WORKSPACE/docs/evaluation/skill/skill-author.md"^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7473500Z ^[[36;1melse^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7473717Z ^[[36;1m  SKILL_ARGS="--no-skill"^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7473965Z ^[[36;1mfi^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7474248Z ^[[36;1m# D154: --unit-repo names the contract-store slug. Empty for^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7474692Z ^[[36;1m# real-repo runs, which leaves their command line unchanged.^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7475053Z ^[[36;1mif [ -n "$UNIT_REPO" ]; then^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7475341Z ^[[36;1m  UNIT_ARGS="--unit-repo $UNIT_REPO"^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7475619Z ^[[36;1melse^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7475813Z ^[[36;1m  UNIT_ARGS=""^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7476037Z ^[[36;1mfi^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7476238Z ^[[36;1mif [ -n "$BUG_ID" ]; then^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7476557Z ^[[36;1m  OUTPUT=$(python -m proofdeploy.cli measure \^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7476898Z ^[[36;1m    --repo /tmp/target-repo \^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7477174Z ^[[36;1m    --workdir /tmp/workdir \^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7477449Z ^[[36;1m    --output-dir /tmp/output \^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7477722Z ^[[36;1m    $SKILL_ARGS \^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7477952Z ^[[36;1m    $UNIT_ARGS \^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7478182Z ^[[36;1m    --bug-id "$BUG_ID" \^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7478431Z ^[[36;1m    --base "$BASE" \^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7478676Z ^[[36;1m    --bug "$BUG" \^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7478913Z ^[[36;1m    --fix "$FIX" \^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7479142Z ^[[36;1m    $PROV_ARGS 2>&1)^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7479626Z ^[[36;1melse^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7479882Z ^[[36;1m  OUTPUT=$(python -m proofdeploy.cli measure \^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7480210Z ^[[36;1m    --repo /tmp/target-repo \^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7480493Z ^[[36;1m    --workdir /tmp/workdir \^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7480764Z ^[[36;1m    --output-dir /tmp/output \^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7481038Z ^[[36;1m    $SKILL_ARGS \^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7481267Z ^[[36;1m    $UNIT_ARGS \^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7481498Z ^[[36;1m    --clean-id "$CLEAN_ID" \^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7481758Z ^[[36;1m    --clean "$CLEAN" \^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7482008Z ^[[36;1m    $PROV_ARGS 2>&1)^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7482227Z ^[[36;1mfi^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7482414Z ^[[36;1mCODE=$?^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7482620Z ^[[36;1mecho "$OUTPUT"^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7482929Z ^[[36;1m# Take the evidence and score SHAs from measure's own output.^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7483389Z ^[[36;1m# Always write them (even if empty) so the push step can decide.^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7483926Z ^[[36;1mEVIDENCE_SHA=$(echo "$OUTPUT" | grep -oP 'evidence committed: \K[0-9a-f]{40}' | head -1)^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7502365Z ^[[36;1mSCORE_SHA=$(echo "$OUTPUT" | grep -oP 'score committed: \K[0-9a-f]{40}' | head -1)^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7503197Z ^[[36;1mecho "evidence_sha=$EVIDENCE_SHA" >> "$GITHUB_OUTPUT"^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7503846Z ^[[36;1mecho "score_sha=$SCORE_SHA" >> "$GITHUB_OUTPUT"^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7504172Z ^[[36;1mexit $CODE^[[0m
+measure	Run measured unit	2026-10-17T23:44:52.7574259Z shell: /usr/bin/bash -e {0}
+measure	Run measured unit	2026-10-17T23:44:52.7574517Z env:
+measure	Run measured unit	2026-10-17T23:44:52.7574784Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Run measured unit	2026-10-17T23:44:52.7575250Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+measure	Run measured unit	2026-10-17T23:44:52.7575696Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Run measured unit	2026-10-17T23:44:52.7576100Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Run measured unit	2026-10-17T23:44:52.7576671Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Run measured unit	2026-10-17T23:44:52.7577080Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+measure	Run measured unit	2026-10-17T23:44:52.7577685Z   GROQ_API_KEY: ***
+measure	Run measured unit	2026-10-17T23:44:52.7577921Z   ARM: skill
+measure	Run measured unit	2026-10-17T23:44:52.7578142Z   UNIT_REPO: 
+measure	Run measured unit	2026-10-17T23:44:52.7578364Z   BUG_ID: wo6-paperless-371c4f57
+measure	Run measured unit	2026-10-17T23:44:52.7578655Z   BASE: 3a34bdc7b078486bc85a97ce309a1c8180cdfc88
+measure	Run measured unit	2026-10-17T23:44:52.7578981Z   BUG: 7dca0bfa6af103b76185aada3ce736b0ac1abc01
+measure	Run measured unit	2026-10-17T23:44:52.7579686Z   FIX: 371c4f57d3ab208fc261e159fa86ca1dc80cb334
+measure	Run measured unit	2026-10-17T23:44:52.7579982Z   CLEAN_ID: 
+measure	Run measured unit	2026-10-17T23:44:52.7580167Z   CLEAN: 
+measure	Run measured unit	2026-10-17T23:44:52.7580485Z   RUN_URL: https://github.com/wally-dk24/proofdeploy/actions/runs/39080109626
+measure	Run measured unit	2026-10-17T23:44:52.7580894Z   RUN_ID: 39080109626
+measure	Run measured unit	2026-10-17T23:44:52.7581108Z ##[endgroup]
+measure	Run measured unit	2026-10-17T23:45:16.2032717Z proofdeploy: error: secret leak in bundle file pyproject.toml: 2 secret value(s) present; refusing to send to the model
+measure	Run measured unit	2026-10-17T23:45:16.2085339Z ##[error]Process completed with exit code 2.
