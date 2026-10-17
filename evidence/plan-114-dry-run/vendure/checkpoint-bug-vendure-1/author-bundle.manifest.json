@@ -1,0 +1,29 @@
+{
+  "assembled_at": "2026-10-17T01:10:02.234475+00:00",
+  "template_sha256": "0994d1e367ddb3c679e750451dd67eab3a3d974fc1620b7f750216cdcdf0323b",
+  "fixture_template": {
+    "file": "fixture_template.txt",
+    "sha256": "0994d1e367ddb3c679e750451dd67eab3a3d974fc1620b7f750216cdcdf0323b"
+  },
+  "allowlist": [
+    "diff.patch",
+    "snapshot",
+    "fixture-description.txt",
+    "skill-author.md"
+  ],
+  "snapshot_tree_sha256": "c5b188cf97a6e71c24f030f43ab9d06f185776019aebeef5348696ba066e3692",
+  "omitted_links": [
+    {
+      "path": "packages/dashboard/vite/tests/fixtures-pnpm-plugin/fake_node_modules/test-plugin",
+      "target": ".pnpm/test-plugin@1.0.0/node_modules/test-plugin"
+    }
+  ],
+  "files": {
+    "diff.patch": "917a18a5410ff1c754c550422584d8210e484d062a3cb764817299590053880e",
+    "fixture-description.txt": "ca9e5e07e310337aee0ff1822efdcfb2f68a02f68ad3237b5a83144cbd5618ae",
+    "skill-author.md": "e42f12d71ea9f5ceee0f6d13b553f7cb13426954053db684ae4e2a6a8d73f5f9"
+  },
+  "skill_sha256": "e42f12d71ea9f5ceee0f6d13b553f7cb13426954053db684ae4e2a6a8d73f5f9",
+  "source_sha": "44bad119bcbce87465f7eb67c143408037e75928",
+  "diff_range": "a99500d5bf30a6a7dc17e88bb4d55253f6b1c59c..44bad119bcbce87465f7eb67c143408037e75928"
+}

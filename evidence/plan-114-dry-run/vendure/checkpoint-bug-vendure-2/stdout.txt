@@ -1,0 +1,37 @@
+{
+  "run_kind": "bug",
+  "bug_id": "checkpoint-bug-vendure-2",
+  "clean_id": null,
+  "dry_run": true,
+  "stopped_before_model_call": true,
+  "contract_source": {
+    "store_path": "readiness/contracts/vendure-ecommerce__vendure.yml",
+    "sha256": "7d62949db5a4f66e8863b44b09d4d14f4e9f8e215d576d5c9a675eab47b8279f"
+  },
+  "rendered_fixture_sha256": "ca9e5e07e310337aee0ff1822efdcfb2f68a02f68ad3237b5a83144cbd5618ae",
+  "bundle_manifest_sha256": "419c1bd83c35e6120feaec828d594a9162721f9ee81c608ee09ff3c3e4fd7635",
+  "bundle_manifest": {
+    "assembled_at": "2026-10-17T01:12:02.670086+00:00",
+    "template_sha256": "0994d1e367ddb3c679e750451dd67eab3a3d974fc1620b7f750216cdcdf0323b",
+    "fixture_template": {
+      "file": "fixture_template.txt",
+      "sha256": "0994d1e367ddb3c679e750451dd67eab3a3d974fc1620b7f750216cdcdf0323b"
+    },
+    "allowlist": [
+      "diff.patch",
+      "snapshot",
+      "fixture-description.txt",
+      "skill-author.md"
+    ],
+    "snapshot_tree_sha256": "f760ee46579813e858140cec00c5e8f8166892adae1f0a12c68d0d5f676ca387",
+    "omitted_links": [],
+    "files": {
+      "diff.patch": "e9ee7e110100098d8598f3afbaec114466f203afee2c4e1e29ad873bc5b7165c",
+      "fixture-description.txt": "ca9e5e07e310337aee0ff1822efdcfb2f68a02f68ad3237b5a83144cbd5618ae",
+      "skill-author.md": "e42f12d71ea9f5ceee0f6d13b553f7cb13426954053db684ae4e2a6a8d73f5f9"
+    },
+    "skill_sha256": "e42f12d71ea9f5ceee0f6d13b553f7cb13426954053db684ae4e2a6a8d73f5f9",
+    "source_sha": "c4e0d9928a426773f54940953094eb322ec20a3d",
+    "diff_range": "842a7df0d8fecd1ec9070458b2b96eb1e8627b67..c4e0d9928a426773f54940953094eb322ec20a3d"
+  }
+}

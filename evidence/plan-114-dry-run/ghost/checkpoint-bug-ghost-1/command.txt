@@ -1,0 +1,5 @@
+cd /home/hatch/workspace/proofdeploy-dryrun   (proofdeploy tree at main 98e9c21dad1dcddeebf23d5351d0ec471f7f631b)
+env -u GROQ_API_KEY PYTHONPATH=/home/hatch/workspace/proofdeploy-dryrun python3 -m proofdeploy.cli measure --repo /home/hatch/plan114-dryrun-targets/ghost --workdir /home/hatch/plan114-dryrun-out/ghost/checkpoint-bug-ghost-1/work --output-dir /home/hatch/plan114-dryrun-out/ghost/checkpoint-bug-ghost-1/records --skill docs/evaluation/skill/skill-author.md --bug-id checkpoint-bug-ghost-1 --base 515c39b3abebe8d77941a6e7168ee74c0dce4933 --bug 1de328d8203cbfc81beadfea966982b049293fa2 --fix f67640b2c18c76abd9cd3f6d19d6ae93327b42fa --dry-run-before-model --no-sandbox
+started: 2026-10-17T00:59:46Z
+exit code: 2
+finished: 2026-10-17T01:00:57Z

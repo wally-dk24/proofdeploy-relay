@@ -1,0 +1,29 @@
+{
+  "assembled_at": "2026-10-17T01:01:29.012075+00:00",
+  "template_sha256": "0994d1e367ddb3c679e750451dd67eab3a3d974fc1620b7f750216cdcdf0323b",
+  "fixture_template": {
+    "file": "fixture_template.txt",
+    "sha256": "0994d1e367ddb3c679e750451dd67eab3a3d974fc1620b7f750216cdcdf0323b"
+  },
+  "allowlist": [
+    "diff.patch",
+    "snapshot",
+    "fixture-description.txt",
+    "skill-author.md"
+  ],
+  "snapshot_tree_sha256": "842996f9d20dcd20be168bca59dd037b5b13a18dbe2e799592bc2f2c083f4720",
+  "omitted_links": [
+    {
+      "path": "readme.md",
+      "target": "directus/readme.md"
+    }
+  ],
+  "files": {
+    "diff.patch": "4edb75ffec46df79e944093252cea0ec1b311bdc4d83717ab7cd466edb1fc44d",
+    "fixture-description.txt": "dbbdcfd4b8287be91918d2c2aaade11a4c9c7b8496ac16f0f9409b1f1656b610",
+    "skill-author.md": "e42f12d71ea9f5ceee0f6d13b553f7cb13426954053db684ae4e2a6a8d73f5f9"
+  },
+  "skill_sha256": "e42f12d71ea9f5ceee0f6d13b553f7cb13426954053db684ae4e2a6a8d73f5f9",
+  "source_sha": "dc922b790a15949e8abfce9c1f4523d4e5f89492",
+  "diff_range": "1c029a5612e6800eead82468b253ca3df12ad866..dc922b790a15949e8abfce9c1f4523d4e5f89492"
+}

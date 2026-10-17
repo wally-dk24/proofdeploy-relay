@@ -1,0 +1,42 @@
+{
+  "run_kind": "clean",
+  "bug_id": null,
+  "clean_id": "C1",
+  "dry_run": true,
+  "stopped_before_model_call": true,
+  "contract_source": {
+    "store_path": "readiness/contracts/vendure-ecommerce__vendure.yml",
+    "sha256": "7d62949db5a4f66e8863b44b09d4d14f4e9f8e215d576d5c9a675eab47b8279f"
+  },
+  "rendered_fixture_sha256": "ca9e5e07e310337aee0ff1822efdcfb2f68a02f68ad3237b5a83144cbd5618ae",
+  "bundle_manifest_sha256": "18a1d8667dbb17657e2b0b26476a0f1a8fc5c3ebcdf71ded01bf39aded692927",
+  "bundle_manifest": {
+    "assembled_at": "2026-10-17T01:06:35.085404+00:00",
+    "template_sha256": "0994d1e367ddb3c679e750451dd67eab3a3d974fc1620b7f750216cdcdf0323b",
+    "fixture_template": {
+      "file": "fixture_template.txt",
+      "sha256": "0994d1e367ddb3c679e750451dd67eab3a3d974fc1620b7f750216cdcdf0323b"
+    },
+    "allowlist": [
+      "diff.patch",
+      "snapshot",
+      "fixture-description.txt",
+      "skill-author.md"
+    ],
+    "snapshot_tree_sha256": "de77d1fa990bbf5e04396caf05e9e65fc67f53288d2009f8e962b0752418de21",
+    "omitted_links": [
+      {
+        "path": "CLAUDE.md",
+        "target": "AGENTS.md"
+      }
+    ],
+    "files": {
+      "diff.patch": "1e9d3e6251d7f97d19550c783a81e81e3b0fc225221178b1a89dffcd7d221159",
+      "fixture-description.txt": "ca9e5e07e310337aee0ff1822efdcfb2f68a02f68ad3237b5a83144cbd5618ae",
+      "skill-author.md": "e42f12d71ea9f5ceee0f6d13b553f7cb13426954053db684ae4e2a6a8d73f5f9"
+    },
+    "skill_sha256": "e42f12d71ea9f5ceee0f6d13b553f7cb13426954053db684ae4e2a6a8d73f5f9",
+    "source_sha": "4cbbc790118786a17721954c3a4d739810bd2632",
+    "diff_range": "523b57304c5850b86069de30a97b723a3f4da284..4cbbc790118786a17721954c3a4d739810bd2632"
+  }
+}

@@ -1,0 +1,6 @@
+Repository: Ghost
+Seed data: Ghost's own first boot and first-run setup created one owner account (the site title was set to 'ProofDeploy'), Ghost's built-in roles, its built-in integrations (some with their own API keys) and its default content; ProofDeploy's setup signed in as the owner once and added one custom integration. Nothing else was created or changed.
+Authentication: the token is presented in the Authorization header in the form 'Ghost <token>'. Your token: ${AUTH_TOKEN}.
+Token scope: a JWT signed with the custom integration's Admin API key (Ghost's 'Admin Integration' role), minted fresh for each request; it is not a staff user's session. No other users, roles, or credentials exist beyond what the seed creates.
+Feature flags: Labs feature flags are at this Ghost version's defaults; none were changed.
+You may create users, roles, data, or change settings in setup steps before your probes run.
