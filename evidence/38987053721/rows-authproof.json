@@ -1,0 +1,650 @@
+{
+ "kind": "auth-proof",
+ "repo": "TryGhost/Ghost",
+ "attempt": 1,
+ "network_mode": "none+socket",
+ "rows": [
+  {
+   "kind": "auth-proof",
+   "unit": "C5",
+   "repo": "TryGhost/Ghost",
+   "role": "C",
+   "registered_sha": "5d482965b7f5ed05ffef956d0eaed8b8a51af0ef",
+   "harness_sha": "c0495516e883f92775ade33f5e4a8383dd3d5587",
+   "declared_runtime": "^22.23.1 || ^24.20.0",
+   "selected_runtime": "node",
+   "runtime_version": "24.21.0",
+   "package_manager": "pnpm",
+   "app_path": ".",
+   "app_port": null,
+   "workspace_root": ".",
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "READY",
+   "typed_reason": null,
+   "last_error": null,
+   "install_plan_sha256": "e671b8305634d2cef1a8d4a933f10d782f99e9d03ff1848d0760517b838a7a93",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": [
+    {
+     "path": "ghost/core/content/themes/casper",
+     "url": "https://github.com/TryGhost/Casper.git",
+     "commit": "7f4adb690c40850382fed4312d90e21ff0313fdc",
+     "tree_sha": "d645bc4aec20b1ee739a6221583dcd15c2f8d4d8"
+    },
+    {
+     "path": "ghost/core/content/themes/source",
+     "url": "https://github.com/TryGhost/Source.git",
+     "commit": "219dc7dbe62bb6dfa8db9fd651528571eae6cfd3",
+     "tree_sha": "805457d7f7e89099691e37e9e2ac1a37c672bb48"
+    }
+   ],
+   "fixture_template": "fixture_template.txt",
+   "fixture_render_sha256": "ab955a3081fc9d293d1b84fd257299069c0340c59037a5a8aa09f6ef11afe7f0",
+   "fixture_render_error": null,
+   "seed": {
+    "key_file_present": true,
+    "key_file": ".pd-auth/admin_key",
+    "sqlite_files": [
+     ".nx/workspace-data/machine-v3.db (61440 bytes)",
+     "ghost/core/vitest.config.db.ts (12733 bytes)",
+     "ghost/core/content/data/ghost-dev.db (1499136 bytes)"
+    ]
+   },
+   "auth": {
+    "endpoint": "/ghost/api/admin/tags/",
+    "method": "GET",
+    "status": "PROVEN",
+    "reason": null,
+    "requests": [
+     {
+      "method": "GET",
+      "path": "/ghost/api/admin/tags/",
+      "authorization": "Ghost <redacted:acquired_token>",
+      "http_status": 200,
+      "body": {
+       "tags": [
+        {
+         "id": "6ad2c3b0b468270009996078",
+         "name": "News",
+         "slug": "news",
+         "description": null,
+         "feature_image": null,
+         "visibility": "public",
+         "og_image": null,
+         "og_title": null,
+         "og_description": null,
+         "twitter_image": null,
+         "twitter_title": null,
+         "twitter_description": null,
+         "meta_title": null,
+         "meta_description": null,
+         "codeinjection_head": null,
+         "codeinjection_foot": null,
+         "canonical_url": null,
+         "accent_color": null,
+         "created_at": "2026-10-17T00:39:12.000Z",
+         "updated_at": "2026-10-17T00:39:12.000Z",
+         "url": "http://localhost:2368/tag/news/"
+        }
+       ],
+       "meta": {
+        "pagination": {
+         "page": 1,
+         "limit": 15,
+         "pages": 1,
+         "total": 1,
+         "next": null,
+         "prev": null
+        }
+       }
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 1,
+      "acquisition_kinds": {
+       "mint": 1
+      },
+      "details": [
+       "credential provider: minted ghost_jwt (ttl 300s)",
+       "act: GET /ghost/api/admin/tags/ -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "GET",
+      "path": "/ghost/api/admin/tags/",
+      "authorization": "Ghost <redacted:acquired_token>",
+      "http_status": 200,
+      "body": {
+       "tags": [
+        {
+         "id": "6ad2c3b0b468270009996078",
+         "name": "News",
+         "slug": "news",
+         "description": null,
+         "feature_image": null,
+         "visibility": "public",
+         "og_image": null,
+         "og_title": null,
+         "og_description": null,
+         "twitter_image": null,
+         "twitter_title": null,
+         "twitter_description": null,
+         "meta_title": null,
+         "meta_description": null,
+         "codeinjection_head": null,
+         "codeinjection_foot": null,
+         "canonical_url": null,
+         "accent_color": null,
+         "created_at": "2026-10-17T00:39:12.000Z",
+         "updated_at": "2026-10-17T00:39:12.000Z",
+         "url": "http://localhost:2368/tag/news/"
+        }
+       ],
+       "meta": {
+        "pagination": {
+         "page": 1,
+         "limit": 15,
+         "pages": 1,
+         "total": 1,
+         "next": null,
+         "prev": null
+        }
+       }
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 1,
+      "acquisition_kinds": {
+       "mint": 1
+      },
+      "details": [
+       "credential provider: minted ghost_jwt (ttl 300s)",
+       "act: GET /ghost/api/admin/tags/ -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "GET",
+      "path": "/ghost/api/admin/tags/",
+      "authorization": null,
+      "http_status": 403,
+      "body": {
+       "errors": [
+        {
+         "message": "Authorization failed",
+         "context": "Unable to determine the authenticated user or integration. Check that cookies are being passed through if using session authentication.",
+         "type": "NoPermissionError",
+         "details": null,
+         "property": null,
+         "help": null,
+         "code": null,
+         "id": "b91ae57b-66d9-4eb0-afc6-de6edb0f1090",
+         "ghostErrorCode": null
+        }
+       ]
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 0,
+      "acquisition_kinds": {},
+      "details": [
+       "act: GET /ghost/api/admin/tags/ -> 403",
+       "status: got 403, expected 403 -> PASS"
+      ]
+     }
+    ],
+    "acquisitions_after_two_authenticated": 2,
+    "acquisition_kinds": {
+     "mint": 2
+    },
+    "passed": true
+   },
+   "redactions": {
+    "key_file": 0,
+    "bootstrap_value": 0,
+    "acquired_token": 0,
+    "jwt_shape": 0
+   }
+  },
+  {
+   "kind": "auth-proof",
+   "unit": "checkpoint-bug-ghost-1",
+   "repo": "TryGhost/Ghost",
+   "role": "fix^",
+   "registered_sha": "93e0084723cdaf22d656bcd4811b87433e6b3875",
+   "harness_sha": "06c9fa11c05d51e1b8d5b090a27e9a276698d12f",
+   "declared_runtime": "^22.23.1 || ^24.20.0",
+   "selected_runtime": "node",
+   "runtime_version": "24.21.0",
+   "package_manager": "pnpm",
+   "app_path": ".",
+   "app_port": null,
+   "workspace_root": ".",
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "READY",
+   "typed_reason": null,
+   "last_error": null,
+   "install_plan_sha256": "8db24dd055e029a5e42158eb86c7066abee89559cffc88cc24204e1977d8ee3c",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": [
+    {
+     "path": "ghost/core/content/themes/casper",
+     "url": "https://github.com/TryGhost/Casper.git",
+     "commit": "a3f491463f08d3be5315c516097831b6e9a4724d",
+     "tree_sha": "0f245ecc389bb3b07f9c461c0bed83645762166a"
+    },
+    {
+     "path": "ghost/core/content/themes/source",
+     "url": "https://github.com/TryGhost/Source.git",
+     "commit": "9d3414ec8c2b7f35a8e2e4b5bd09014620f21333",
+     "tree_sha": "d0c55d8b8e1f29b3dbbab83c90cfd281f3dec6ca"
+    }
+   ],
+   "fixture_template": "fixture_template.txt",
+   "fixture_render_sha256": "ab955a3081fc9d293d1b84fd257299069c0340c59037a5a8aa09f6ef11afe7f0",
+   "fixture_render_error": null,
+   "seed": {
+    "key_file_present": true,
+    "key_file": ".pd-auth/admin_key",
+    "sqlite_files": [
+     ".nx/workspace-data/machine-v3.db (61440 bytes)",
+     "ghost/core/vitest.config.db.ts (12068 bytes)",
+     "ghost/core/content/data/ghost-dev.db (1519616 bytes)"
+    ]
+   },
+   "auth": {
+    "endpoint": "/ghost/api/admin/tags/",
+    "method": "GET",
+    "status": "PROVEN",
+    "reason": null,
+    "requests": [
+     {
+      "method": "GET",
+      "path": "/ghost/api/admin/tags/",
+      "authorization": "Ghost <redacted:acquired_token>",
+      "http_status": 200,
+      "body": {
+       "tags": [
+        {
+         "id": "6ad2c4618a7f030009096367",
+         "name": "News",
+         "slug": "news",
+         "description": null,
+         "feature_image": null,
+         "visibility": "public",
+         "og_image": null,
+         "og_title": null,
+         "og_description": null,
+         "twitter_image": null,
+         "twitter_title": null,
+         "twitter_description": null,
+         "meta_title": null,
+         "meta_description": null,
+         "codeinjection_head": null,
+         "codeinjection_foot": null,
+         "canonical_url": null,
+         "accent_color": null,
+         "created_at": "2026-10-17T00:42:09.000Z",
+         "updated_at": "2026-10-17T00:42:09.000Z",
+         "url": "http://localhost:2368/tag/news/"
+        }
+       ],
+       "meta": {
+        "pagination": {
+         "page": 1,
+         "limit": 15,
+         "pages": 1,
+         "total": 1,
+         "next": null,
+         "prev": null
+        }
+       }
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 1,
+      "acquisition_kinds": {
+       "mint": 1
+      },
+      "details": [
+       "credential provider: minted ghost_jwt (ttl 300s)",
+       "act: GET /ghost/api/admin/tags/ -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "GET",
+      "path": "/ghost/api/admin/tags/",
+      "authorization": "Ghost <redacted:acquired_token>",
+      "http_status": 200,
+      "body": {
+       "tags": [
+        {
+         "id": "6ad2c4618a7f030009096367",
+         "name": "News",
+         "slug": "news",
+         "description": null,
+         "feature_image": null,
+         "visibility": "public",
+         "og_image": null,
+         "og_title": null,
+         "og_description": null,
+         "twitter_image": null,
+         "twitter_title": null,
+         "twitter_description": null,
+         "meta_title": null,
+         "meta_description": null,
+         "codeinjection_head": null,
+         "codeinjection_foot": null,
+         "canonical_url": null,
+         "accent_color": null,
+         "created_at": "2026-10-17T00:42:09.000Z",
+         "updated_at": "2026-10-17T00:42:09.000Z",
+         "url": "http://localhost:2368/tag/news/"
+        }
+       ],
+       "meta": {
+        "pagination": {
+         "page": 1,
+         "limit": 15,
+         "pages": 1,
+         "total": 1,
+         "next": null,
+         "prev": null
+        }
+       }
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 1,
+      "acquisition_kinds": {
+       "mint": 1
+      },
+      "details": [
+       "credential provider: minted ghost_jwt (ttl 300s)",
+       "act: GET /ghost/api/admin/tags/ -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "GET",
+      "path": "/ghost/api/admin/tags/",
+      "authorization": null,
+      "http_status": 403,
+      "body": {
+       "errors": [
+        {
+         "message": "Authorization failed",
+         "context": "Unable to determine the authenticated user or integration. Check that cookies are being passed through if using session authentication.",
+         "type": "NoPermissionError",
+         "details": null,
+         "property": null,
+         "help": null,
+         "code": null,
+         "id": "db892d9f-f1b8-4f9a-b5bb-51560488e1fc",
+         "ghostErrorCode": null
+        }
+       ]
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 0,
+      "acquisition_kinds": {},
+      "details": [
+       "act: GET /ghost/api/admin/tags/ -> 403",
+       "status: got 403, expected 403 -> PASS"
+      ]
+     }
+    ],
+    "acquisitions_after_two_authenticated": 2,
+    "acquisition_kinds": {
+     "mint": 2
+    },
+    "passed": true
+   },
+   "redactions": {
+    "key_file": 0,
+    "bootstrap_value": 0,
+    "acquired_token": 0,
+    "jwt_shape": 0
+   }
+  },
+  {
+   "kind": "auth-proof",
+   "unit": "checkpoint-bug-ghost-1",
+   "repo": "TryGhost/Ghost",
+   "role": "fix",
+   "registered_sha": "f67640b2c18c76abd9cd3f6d19d6ae93327b42fa",
+   "harness_sha": "86a497e8e74c6d80b4d3494c436878c15473b2d8",
+   "declared_runtime": "^22.23.1 || ^24.20.0",
+   "selected_runtime": "node",
+   "runtime_version": "24.21.0",
+   "package_manager": "pnpm",
+   "app_path": ".",
+   "app_port": null,
+   "workspace_root": ".",
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "READY",
+   "typed_reason": null,
+   "last_error": null,
+   "install_plan_sha256": "8db24dd055e029a5e42158eb86c7066abee89559cffc88cc24204e1977d8ee3c",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": [
+    {
+     "path": "ghost/core/content/themes/casper",
+     "url": "https://github.com/TryGhost/Casper.git",
+     "commit": "a3f491463f08d3be5315c516097831b6e9a4724d",
+     "tree_sha": "0f245ecc389bb3b07f9c461c0bed83645762166a"
+    },
+    {
+     "path": "ghost/core/content/themes/source",
+     "url": "https://github.com/TryGhost/Source.git",
+     "commit": "9d3414ec8c2b7f35a8e2e4b5bd09014620f21333",
+     "tree_sha": "d0c55d8b8e1f29b3dbbab83c90cfd281f3dec6ca"
+    }
+   ],
+   "fixture_template": "fixture_template.txt",
+   "fixture_render_sha256": "ab955a3081fc9d293d1b84fd257299069c0340c59037a5a8aa09f6ef11afe7f0",
+   "fixture_render_error": null,
+   "seed": {
+    "key_file_present": true,
+    "key_file": ".pd-auth/admin_key",
+    "sqlite_files": [
+     ".nx/workspace-data/machine-v3.db (61440 bytes)",
+     "ghost/core/vitest.config.db.ts (12068 bytes)",
+     "ghost/core/content/data/ghost-dev.db (1519616 bytes)"
+    ]
+   },
+   "auth": {
+    "endpoint": "/ghost/api/admin/tags/",
+    "method": "GET",
+    "status": "PROVEN",
+    "reason": null,
+    "requests": [
+     {
+      "method": "GET",
+      "path": "/ghost/api/admin/tags/",
+      "authorization": "Ghost <redacted:acquired_token>",
+      "http_status": 200,
+      "body": {
+       "tags": [
+        {
+         "id": "6ad2c511e02ef10009a647e0",
+         "name": "News",
+         "slug": "news",
+         "description": null,
+         "feature_image": null,
+         "visibility": "public",
+         "og_image": null,
+         "og_title": null,
+         "og_description": null,
+         "twitter_image": null,
+         "twitter_title": null,
+         "twitter_description": null,
+         "meta_title": null,
+         "meta_description": null,
+         "codeinjection_head": null,
+         "codeinjection_foot": null,
+         "canonical_url": null,
+         "accent_color": null,
+         "created_at": "2026-10-17T00:45:05.000Z",
+         "updated_at": "2026-10-17T00:45:05.000Z",
+         "url": "http://localhost:2368/tag/news/"
+        }
+       ],
+       "meta": {
+        "pagination": {
+         "page": 1,
+         "limit": 15,
+         "pages": 1,
+         "total": 1,
+         "next": null,
+         "prev": null
+        }
+       }
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 1,
+      "acquisition_kinds": {
+       "mint": 1
+      },
+      "details": [
+       "credential provider: minted ghost_jwt (ttl 300s)",
+       "act: GET /ghost/api/admin/tags/ -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "GET",
+      "path": "/ghost/api/admin/tags/",
+      "authorization": "Ghost <redacted:acquired_token>",
+      "http_status": 200,
+      "body": {
+       "tags": [
+        {
+         "id": "6ad2c511e02ef10009a647e0",
+         "name": "News",
+         "slug": "news",
+         "description": null,
+         "feature_image": null,
+         "visibility": "public",
+         "og_image": null,
+         "og_title": null,
+         "og_description": null,
+         "twitter_image": null,
+         "twitter_title": null,
+         "twitter_description": null,
+         "meta_title": null,
+         "meta_description": null,
+         "codeinjection_head": null,
+         "codeinjection_foot": null,
+         "canonical_url": null,
+         "accent_color": null,
+         "created_at": "2026-10-17T00:45:05.000Z",
+         "updated_at": "2026-10-17T00:45:05.000Z",
+         "url": "http://localhost:2368/tag/news/"
+        }
+       ],
+       "meta": {
+        "pagination": {
+         "page": 1,
+         "limit": 15,
+         "pages": 1,
+         "total": 1,
+         "next": null,
+         "prev": null
+        }
+       }
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 1,
+      "acquisition_kinds": {
+       "mint": 1
+      },
+      "details": [
+       "credential provider: minted ghost_jwt (ttl 300s)",
+       "act: GET /ghost/api/admin/tags/ -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "GET",
+      "path": "/ghost/api/admin/tags/",
+      "authorization": null,
+      "http_status": 403,
+      "body": {
+       "errors": [
+        {
+         "message": "Authorization failed",
+         "context": "Unable to determine the authenticated user or integration. Check that cookies are being passed through if using session authentication.",
+         "type": "NoPermissionError",
+         "details": null,
+         "property": null,
+         "help": null,
+         "code": null,
+         "id": "f2dc2778-90a1-4d55-ae58-91d9fc42700f",
+         "ghostErrorCode": null
+        }
+       ]
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 0,
+      "acquisition_kinds": {},
+      "details": [
+       "act: GET /ghost/api/admin/tags/ -> 403",
+       "status: got 403, expected 403 -> PASS"
+      ]
+     }
+    ],
+    "acquisitions_after_two_authenticated": 2,
+    "acquisition_kinds": {
+     "mint": 2
+    },
+    "passed": true
+   },
+   "redactions": {
+    "key_file": 0,
+    "bootstrap_value": 0,
+    "acquired_token": 0,
+    "jwt_shape": 0
+   }
+  }
+ ]
+}

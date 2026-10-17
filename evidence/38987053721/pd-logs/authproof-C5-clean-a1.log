@@ -1,0 +1,454 @@
+sandbox provision clean (c0495516e883)
+install plan: sha256 e671b8305634d2ce... (adapter: node)
+sandbox image: docker.io/library/node:24.21.0-bookworm@sha256:3d27e5c11e5786e309ec3e03f93ae536eb36e6e5eb3714d5eb3300a36157add0 (runtime node)
+sandbox runtime version: 24.21.0 (digest sha256:3d27e5c11e5786e309ec3e03f93ae536eb36e6e5eb3714d5eb3300a36157add0)
+auth bootstrap: generated ADMIN_EMAIL, ADMIN_PASSWORD
+lockfile: pnpm-lock.yaml sha256: d409f8c2eae7ac08...
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs unshare chown -R 1:1 /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/C5/a1/snapshot-clean /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/C5/a1/snapshot-clean.pd-home
+checkout ownership: transferred to the sandbox runtime uid (podman unshare chown 1:1; plan 1.2(g), home dir included under plan 1.2(k))
+install: ca_cert_used=False
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs network exists pd-build
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs network create pd-build
+pd-build
+
+build network: pd-build (bridge, external route for proxy)
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-0 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/C5/a1/snapshot-clean:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/C5/a1/snapshot-clean.pd-home:/pd-home -e ADMIN_EMAIL=***REDACTED*** -e ADMIN_PASSWORD=***REDACTED*** -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store -e npm_config_nodedir=/usr/local docker.io/library/node:24.21.0-bookworm@sha256:3d27e5c11e5786e309ec3e03f93ae536eb36e6e5eb3714d5eb3300a36157add0 bash -c npm install --prefix /pd-home/.pd-tools --no-save --no-audit --no-fund corepack@0.36.0
+
+added 1 package in 693ms
+
+npm warn Unknown env config "store-dir". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown env config "nodedir". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm notice
+npm notice New major version of npm available! 11.19.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-1 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/C5/a1/snapshot-clean:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/C5/a1/snapshot-clean.pd-home:/pd-home -e ADMIN_EMAIL=***REDACTED*** -e ADMIN_PASSWORD=***REDACTED*** -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store -e npm_config_nodedir=/usr/local -e COREPACK_ENABLE_DOWNLOAD_PROMPT=0 docker.io/library/node:24.21.0-bookworm@sha256:3d27e5c11e5786e309ec3e03f93ae536eb36e6e5eb3714d5eb3300a36157add0 bash -c /pd-home/.pd-tools/node_modules/.bin/corepack pnpm@12.4.0+sha512.37536c26ed40ab4134b6511e09f6b27f3ebb45687468f2406ca3805279a4e5ca158c1931350ad9774d6ab2108d71b3dbaeb39943159294375e4d053e8e05685c install --frozen-lockfile
+Scope: all 49 workspace projects
+Update available! 12.4.0 → 12.14.0.
+Changelog: https://pnpm.io/v/12.14.0
+To update, run: curl -fsSL https://get.pnpm.io/install.sh | sh -
+? Verifying lockfile against supply-chain policies (4403 entries)...
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: /checkout/node_modules/.pnpm-store/v11
+  Virtual store is at:             node_modules/.pnpm
+Progress: resolved 4220, reused 0, downloaded 361, added 352
+Progress: resolved 4220, reused 0, downloaded 656, added 672
+Progress: resolved 4220, reused 0, downloaded 888, added 896
+Progress: resolved 4220, reused 0, downloaded 1119, added 1120
+Progress: resolved 4220, reused 0, downloaded 1401, added 1440
+Downloading @swc/core-linux-x64-gnu@1.15.43: 0.00 B/12.07 MB
+Downloading @typescript/typescript-linux-x64@7.0.2: 0.00 B/9.66 MB
+Downloading storybook@10.4.6: 0.00 B/5.79 MB
+Downloading @sentry/cli-linux-x64@2.58.6: 0.00 B/8.55 MB
+Progress: resolved 4220, reused 0, downloaded 1952, added 2010
+Downloading @nx/nx-linux-x64-gnu@23.1.1: 0.00 B/8.67 MB
+Progress: resolved 4220, reused 0, downloaded 2543, added 2592
+Downloading @rolldown/binding-linux-x64-gnu@1.1.4: 0.00 B/7.78 MB
+Progress: resolved 4220, reused 0, downloaded 2946, added 3008
+Downloading @img/sharp-libvips-linux-x64@1.3.2: 0.00 B/8.11 MB
+Downloading @rolldown/binding-linux-x64-gnu@1.1.4: 2.71 MB/7.78 MB
+Downloading @emoji-mart/data@1.2.1: 0.00 B/5.38 MB
+Downloading node@runtime:22.23.1: 0.00 B/56.88 MB
+✓ Lockfile passes supply-chain policies (4403 entries in 12.8s)
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 4220, reused 0, downloaded 3813, added 3872
+Progress: resolved 4220, reused 0, downloaded 4133, added 4192
+Packages: +4220
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 4220, reused 0, downloaded 4140, added 4220, done
+.../core-js@2.6.12/node_modules/core-js postinstall$ node -e "try{require('./postinstall')}catch(e){}"
+.../node_modules/@swc/core postinstall$ node postinstall.js
+.../node_modules/better-sqlite3 install$ prebuild-install || node-gyp rebuild --release
+.../esbuild@0.28.2/node_modules/esbuild postinstall$ node install.js
+.../core-js@2.6.12/node_modules/core-js postinstall: Thank you for using core-js ( https://github.com/zloirock/core-js ) for polyfilling JavaScript standard library!
+.../core-js@2.6.12/node_modules/core-js postinstall: 
+.../core-js@2.6.12/node_modules/core-js postinstall: The project needs your help! Please consider supporting of core-js on Open Collective or Patreon: 
+[… 46 lines elided …]
+ max rebuild
+.../node_modules/msw postinstall$ node -e "import('./config/scripts/postinstall.js').catch(() => void 0)"
+.../esbuild@0.25.12/node_modules/esbuild postinstall: Done
+.../node_modules/dtrace-provider install: gyp info spawn make
+.../node_modules/dtrace-provider install: gyp info spawn args [ 'BUILDTYPE=Release', '-C', 'build' ]
+.../node_modules/dtrace-provider install: make: Entering directory '/checkout/node_modules/.pnpm/dtrace-provider@0.8.8/node_modules/dtrace-provider/build'
+.../node_modules/dtrace-provider install:   TOUCH Release/obj.target/DTraceProviderStub.stamp
+.../node_modules/dtrace-provider install: make: Leaving directory '/checkout/node_modules/.pnpm/dtrace-provider@0.8.8/node_modules/dtrace-provider/build'
+.../node_modules/dtrace-provider install: gyp info ok 
+.../node_modules/dtrace-provider install: Done
+.../node_modules/nx postinstall$ node -e "try{require('./dist/bin/post-install')}catch(e){}"
+.../node_modules/msw postinstall: Done
+.../.pnpm/re2@1.26.1/node_modules/re2 install: Trying https://github.com/uhop/node-re2/releases/download/1.26.1/linux-x64-127.br ...
+.../.pnpm/re2@1.26.1/node_modules/re2 install: Writing to build/Release/re2.node ...
+.../.pnpm/re2@1.26.1/node_modules/re2 install: Done.
+.../.pnpm/re2@1.26.1/node_modules/re2 install: Done
+.../node_modules/nx postinstall: Done
+. preinstall$ node ./scripts/enforce-package-manager.js
+. preinstall: Done
+. prepare$ husky .github/hooks
+. prepare: .git can't be found
+. prepare: Done
+
+devDependencies:
++ @playwright/test 1.61.1
++ @secretlint/secretlint-rule-pattern 13.0.4
++ @secretlint/secretlint-rule-preset-recommend 13.0.4
++ dependency-cruiser 18.1.1
++ eslint 9.39.4
++ husky 9.1.7
++ knip 6.32.1
++ lint-staged 17.3.0
++ markdownlint-cli2 0.23.2
++ node 22.23.1
++ nx 23.1.1
++ oxfmt 0.63.0
++ remark-cli 12.0.1
++ remark-validate-links 13.1.0
++ rimraf 6.1.3
++ secretlint 13.0.4
++ shell-quote 1.10.0
++ typescript <- @typescript/typescript6 6.0.2
++ vitest 4.1.10
+
+Done in 18.3s using pnpm v12.4.0
+
+Downloading the pnpm 12.4.0 binary for linux-x64...
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-2 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/C5/a1/snapshot-clean:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/C5/a1/snapshot-clean.pd-home:/pd-home -e ADMIN_EMAIL=***REDACTED*** -e ADMIN_PASSWORD=***REDACTED*** -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store docker.io/library/node:24.21.0-bookworm@sha256:3d27e5c11e5786e309ec3e03f93ae536eb36e6e5eb3714d5eb3300a36157add0 bash -c export PATH=/pd-home/.pd-tools/node_modules/.bin:/checkout/node_modules/.bin:$PATH; pnpm run build && pnpm --filter ghost run build:assets
+
+ NX   Running target build for 37 projects:
+
+- @tryghost/adapter-base-route-settings
+- @tryghost/adapter-base-scheduling
+- @tryghost/adapter-base-redirects
+- @tryghost/kg-markdown-html-renderer
+- @tryghost/kg-lexical-html-renderer
+- ghost-storage-base
+- @tryghost/adapter-base-cache
+- @tryghost/kg-default-transforms
+- @tryghost/parse-email-address
+- @tryghost/adapter-base-jobs
+- @tryghost/kg-unsplash-selector
+- @tryghost/adapter-base-sso
+- @tryghost/kg-clean-basic-html
+- @tryghost/admin-api-schema
+- @tryghost/kg-html-to-lexical
+- @tryghost/metafield-types
+- @tryghost/kg-default-cards
+- @tryghost/kg-default-nodes
+- @tryghost/admin-x-framework
+- @tryghost/kg-card-factory
+- @tryghost/announcement-bar
+- @tryghost/koenig-lexical
+- @tryghost/kg-converters
+- @tryghost/nql-string
+- @tryghost/admin-toolbar
+- @tryghost/checkout
+- @tryghost/activitypub
+- @tryghost/comments-ui
+- @tryghost/signup-form
+- @tryghost/sodo-search
+- ghost-admin
+- @tryghost/kg-utils
+- @tryghost/i18n
+- @tryghost/portal
+- @tryghost/admin
+- @tryghost/shade
+- @tryghost/e2e
+[… 1003 lines elided …]
+[0m[33;1m  633.79 kB[0m[2m │ gzip: 157.99 kB[0m
+[2mdist/[0m[2massets/[0m[36mdist-Cwu2daLF.js                                 [0m[33;1m  878.55 kB[0m[2m │ gzip:  71.61 kB[0m
+[2mdist/[0m[2massets/[0m[36mweb-nq9SOPhi.js                                  [0m[33;1m1,365.20 kB[0m[2m │ gzip: 442.26 kB[0m
+[2mdist/[0m[2massets/[0m[36mkoenig-lexical-DRFUUY2T.js                       [0m[33;1m2,906.99 kB[0m[2m │ gzip: 840.49 kB[0m
+
+[33m[33m[INEFFECTIVE_DYNAMIC_IMPORT] [0m../activitypub/src/components/layout/error/index.ts is dynamically imported by ../activitypub/src/routes.tsx but also statically imported by ../activitypub/src/routes.tsx, ../activitypub/src/views/feed/feed.tsx, ../activitypub/src/views/inbox/inbox.tsx, ../activitypub/src/views/notifications/notifications.tsx, ../activitypub/src/views/preferences/preferences.tsx, ..., dynamic import will not move module into another chunk.
+[39m
+[33m[plugin builtin:vite-reporter] [33;1m
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[0m[39m
+[32m✓ built in 1.53s[39m
+
+
+
+ NX   Successfully ran target build for 37 projects
+
+Nx read the output from the cache instead of running the command for 37 out of 37 tasks.
+
+Nx Cloud made it possible to reuse 37 tasks: https://cloud.nx.app/runs/b6CElmWZMG
+
+  Run duration:      5.5s
+  Cache:             37/37 hit (100%)
+  Critical path:     28ms (9 tasks)
+  Recoverable time:  <1ms
+. build:assets:js$ node scripts/minify-assets.mjs
+. build:assets:css$ postcss core/frontend/public/ghost.css --no-map --use cssnano -o core/frontend/public/ghost.min.css
+. build:assets:cards$ node scripts/build-card-assets.mjs
+. build:assets:js: Done
+. build:assets:cards: Done
+. build:assets:css: Done
+
+$ pnpm nx run-many -t build
+$ pnpm run '/^build:assets:/'
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run --rm --name sandbox-install-3 --net pd-build --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/C5/a1/snapshot-clean:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/C5/a1/snapshot-clean.pd-home:/pd-home -e ADMIN_EMAIL=***REDACTED*** -e ADMIN_PASSWORD=***REDACTED*** -e HOME=/pd-home -e npm_config_store_dir=/pd-home/.pnpm-store docker.io/library/node:24.21.0-bookworm@sha256:3d27e5c11e5786e309ec3e03f93ae536eb36e6e5eb3714d5eb3300a36157add0 bash -c export PATH=/pd-home/.pd-tools/node_modules/.bin:/checkout/node_modules/.bin:$PATH; node ghost-seed.js
+[2026-10-17 00:39:12] [36mINFO[39m Ghost is running in development...
+[2026-10-17 00:39:12] [36mINFO[39m Listening on: 127.0.0.1:3999
+[2026-10-17 00:39:12] [36mINFO[39m Url configured as: http://localhost:2368/
+[2026-10-17 00:39:12] [36mINFO[39m Ctrl+C to shut down
+[2026-10-17 00:39:12] [36mINFO[39m Ghost server started in 1.354s
+sqlite does not support inserting default values. Set the `useNullAsDefault` flag to hide this warning. (see docs https://knexjs.org/guide/query-builder.html#insert).
+[2026-10-17 00:39:12] [35mWARN[39m Database state requires initialisation.
+sqlite does not support inserting default values. Set the `useNullAsDefault` flag to hide this warning. (see docs https://knexjs.org/guide/query-builder.html#insert).
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: newsletters
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: posts
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: posts_meta
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: gift_links
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: post_gift_links
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: users
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: posts_authors
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: roles
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: roles_users
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: permissions
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: permissions_users
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: permissions_roles
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: settings
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: tags
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: posts_tags
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: invites
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: brute
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: sessions
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: integrations
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: webhooks
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: api_keys
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: mobiledoc_revisions
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: post_revisions
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: members
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: products
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: offers
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: benefits
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: products_benefits
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: members_products
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: posts_products
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: members_created_events
+[2026-10-17 00:39:12] [36mINFO[39m Creating table: members_cancel_events
+[… 94 lines elided …]
++0000 (Coordinated Universal Time)
+[2026-10-17 00:39:17] [31mERROR[39m Could not get webhook secret for ActivityPub TypeError: fetch failed
+[2026-10-17 00:39:17] [31mERROR[39m No webhook secret found - cannot initialise
+[2026-10-17 00:39:19] [36mINFO[39m "GET /ghost/api/admin/site/" [32m200[39m 179ms
+[2026-10-17 00:39:20] [36mINFO[39m [Background Job] send-webmentions started
+[2026-10-17 00:39:20] [36mINFO[39m [Background Job] send-webmentions completed in 6ms
+[2026-10-17 00:39:20] [36mINFO[39m [Background Job] send-webmentions started
+[2026-10-17 00:39:20] [36mINFO[39m [Background Job] send-webmentions completed in 2ms
+[2026-10-17 00:39:20] [36mINFO[39m "POST /ghost/api/admin/authentication/setup/" [32m201[39m 401ms
+[2026-10-17 00:39:20] [31mERROR[39m Failed to send email. Reason: connect ECONNREFUSED 127.0.0.1:1025.
+[31m
+[31mFailed to send email. Reason: connect ECONNREFUSED 127.0.0.1:1025.[39m
+
+[37m"Unable to send welcome email, your site will continue to function."[39m
+[33m"Please see https://docs.ghost.org/config/#mail for instructions on configuring email."[39m
+
+[1m[37mError ID:[39m[22m
+    [90me080a8c9-1412-4d5f-96d2-496f2151c22b[39m
+
+[1m[37mError Code: [39m[22m
+    [90mESOCKET[39m
+
+[90m----------------------------------------[39m
+
+[90mError: connect ECONNREFUSED 127.0.0.1:1025
+    at createMailError (/checkout/ghost/core/core/server/services/mail/ghost-mailer.js:109:10)
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1638:16)[39m
+[39m
+[2026-10-17 00:39:20] [36mINFO[39m "POST /ghost/api/admin/session/" [32m201[39m 140ms
+[2026-10-17 00:39:20] [36mINFO[39m "POST /ghost/api/admin/integrations/?include=api_keys" [32m201[39m 31ms
+ghost seed: setup complete, admin key written
+ghost seed: database files in checkout: ghost/core/content/data/ghost-dev.db (1474560 bytes)
+[2026-10-17 00:39:20] [35mWARN[39m Ghost is shutting down
+[2026-10-17 00:39:20] [36mINFO[39m Shutdown: stopped HTTP server in 0ms
+
+CodeBlockNode must implement static "getType" method
+CodeBlockNode must implement static "clone" method
+CodeBlockNode must implement "decorate" method
+CodeBlockNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+CodeBlockNode should implement "exportJSON" method to ensure JSON and default HTML serialization works as expected
+ImageNode must implement static "getType" method
+ImageNode must implement static "clone" method
+ImageNode must implement "decorate" method
+ImageNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+MarkdownNode must implement static "getType" method
+MarkdownNode must implement static "clone" method
+MarkdownNode must implement "decorate" method
+MarkdownNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+MarkdownNode should implement "exportJSON" method to ensure JSON and default HTML serialization works as expected
+VideoNode must implement static "getType" method
+VideoNode must implement static "clone" method
+VideoNode must implement "decorate" method
+VideoNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+AudioNode must implement static "getType" method
+AudioNode must implement static "clone" method
+AudioNode must implement "decorate" method
+AudioNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+AudioNode should implement "exportJSON" method to ensure JSON and default HTML serialization works as expected
+CalloutNode must implement static "getType" method
+CalloutNode must implement static "clone" method
+CalloutNode must implement "decorate" method
+CalloutNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+CalloutNode should implement "exportJSON" method to ensure JSON and default HTML serialization works as expected
+CallToActionNode must implement static "getType" method
+CallToActionNode must implement static "clone" method
+CallToActionNode must implement "decorate" method
+CallToActionNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+CallToActionNode should implement "exportJSON" method to ensure JSON and default HTML serialization works as expected
+HorizontalRuleNode must implement static "getType" method
+HorizontalRuleNode must implement static "clone" method
+HorizontalRuleNode must implement "decorate" method
+HorizontalRuleNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+HorizontalRuleNode should implement "exportJSON" method to ensure JSON and default HTML serialization works as expected
+HtmlNode must implement static "getType" method
+HtmlNode must implement static "clone" method
+[… 345 lines elided …]
+ust implement "decorate" method
+EmbedNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+EmbedNode should implement "exportJSON" method to ensure JSON and default HTML serialization works as expected
+EmailNode must implement static "getType" method
+EmailNode must implement static "clone" method
+EmailNode must implement "decorate" method
+EmailNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+EmailNode should implement "exportJSON" method to ensure JSON and default HTML serialization works as expected
+GalleryNode must implement static "getType" method
+GalleryNode must implement static "clone" method
+GalleryNode must implement "decorate" method
+GalleryNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+GalleryNode should implement "exportJSON" method to ensure JSON and default HTML serialization works as expected
+EmailCtaNode must implement static "getType" method
+EmailCtaNode must implement static "clone" method
+EmailCtaNode must implement "decorate" method
+EmailCtaNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+EmailCtaNode should implement "exportJSON" method to ensure JSON and default HTML serialization works as expected
+SignupNode must implement static "getType" method
+SignupNode must implement static "clone" method
+SignupNode must implement "decorate" method
+TransistorNode must implement static "getType" method
+TransistorNode must implement static "clone" method
+TransistorNode must implement "decorate" method
+TransistorNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+TransistorNode should implement "exportJSON" method to ensure JSON and default HTML serialization works as expected
+ZWNJNode should implement "importJSON" method to ensure JSON and default HTML serialization works as expected
+
+userns remapping: --uidmap 0:1:65536
+$ podman --storage-driver vfs --cgroup-manager=cgroupfs run -d --name pd-clean-c0495516 --net=none --uidmap 0:1:65536 --cap-drop=ALL --security-opt=no-new-privileges -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/C5/a1/snapshot-clean:/checkout -w /checkout -v /home/runner/work/proofdeploy/proofdeploy/readiness-work/units/C5/a1/snapshot-clean.pd-home:/pd-home -v /tmp/pd-x6yzdr92:/pd-sock -e ADMIN_EMAIL=***REDACTED*** -e ADMIN_PASSWORD=***REDACTED*** -e HOME=/pd-home -e PORT=35623 docker.io/library/node:24.21.0-bookworm@sha256:3d27e5c11e5786e309ec3e03f93ae536eb36e6e5eb3714d5eb3300a36157add0 bash -c (python3 /checkout/.pd-bridge.py /pd-sock/app.sock 35623 &); export PATH=/pd-home/.pd-tools/node_modules/.bin:/checkout/node_modules/.bin:$PATH; cd ghost/core && server__host=0.0.0.0 server__port=$PORT node --conditions=source --import=tsx index.js
+0295dc05a61c31c1b16d477bd069b786e545b2e71530adcbff048b79dca46ff9
+
+bridge socket ready: /tmp/pd-x6yzdr92/app.sock
+sandbox app: --net=none, Unix socket bridge, executor proxy at 127.0.0.1:33771
+app container log tail:
+    [90me3af9af5-cc82-4a46-9bdb-b4f1ad0953ef[39m
+
+[1m[37mError Code: [39m[22m
+    [90mIMAGE_SIZE_URL[39m
+
+[90m----------------------------------------[39m
+
+[90mInternalServerError: URL empty or invalid.
+    at /checkout/ghost/core/core/server/lib/image/image-size.js:210:13
+    at async CachedImageSizeFromUrl.getCachedImageSizeFromUrl (/checkout/ghost/core/core/server/lib/image/cached-image-size-from-url.js:68:19)
+    at async Promise.all (index 4)
+    at async getImageDimensions (/checkout/ghost/core/core/frontend/meta/image-dimensions.js:25:66)
+    at async Object.ghost_head (/checkout/ghost/core/core/frontend/helpers/ghost_head.js:392:18)
+    at async Object.returnAsync (/checkout/ghost/core/core/frontend/services/helpers/handlebars.js:16:24)[39m
+[39m
+[2026-10-17 00:39:36] [31mERROR[39m Unknown Request error.
+[31m
+[31mUnknown Request error.[39m
+
+[37m"https://static.ghost.org/v5.0.0/images/publication-cover.jpg"[39m
+
+[1m[37mError ID:[39m[22m
+    [90mc2333dab-dfc7-4e74-a5e0-f113e1ed16cf[39m
+
+[1m[37mError Code: [39m[22m
+    [90mIMAGE_SIZE_URL[39m
+
+[90m----------------------------------------[39m
+
+[90mRequestError: getaddrinfo EAI_AGAIN static.ghost.org
+    at /checkout/ghost/core/core/server/lib/image/image-size.js:246:13
+    at emitRequestError (/checkout/node_modules/.pnpm/got@15.1.0/node_modules/got/dist/source/core/index.js:1171:120)
+    at ClientRequest.<anonymous> (/checkout/node_modules/.pnpm/got@15.1.0/node_modules/got/dist/source/core/index.js:1194:13)
+    at Object.onceWrapper (node:events:634:26)
+    at ClientRequest.emit (node:events:531:35)
+    at emitErrorEvent (node:_http_client:108:11)
+    at TLSSocket.socketErrorListener (node:_http_client:575:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)[39m
+[39m
+[2026-10-17 00:39:36] [31mERROR[39m Unknown Request error.
+[31m
+[31mUnknown Request error.[39m
+
+[37m"https://static.ghost.org/v5.0.0/images/publication-cover.jpg"[39m
+
+[1m[37mError ID:[39m[22m
+    [90mc2333dab-dfc7-4e74-a5e0-f113e1ed16cf[39m
+
+[1m[37mError Code: [39m[22m
+    [90mIMAGE_SIZE_URL[39m
+
+[90m----------------------------------------[39m
+
+[90mRequestError: getaddrinfo EAI_AGAIN static.ghost.org
+    at /checkout/ghost/core/core/server/lib/image/image-size.js:246:13
+    at emitRequestError (/checkout/node_modules/.pnpm/got@15.1.0/node_modules/got/dist/source/core/index.js:1171:120)
+    at ClientRequest.<anonymous> (/checkout/node_modules/.pnpm/got@15.1.0/node_modules/got/dist/source/core/index.js:1194:13)
+    at Object.onceWrapper (node:events:634:26)
+    at ClientRequest.emit (node:events:531:35)
+    at emitErrorEvent (node:_http_client:108:11)
+    at TLSSocket.socketErrorListener (node:_http_client:575:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)[39m
+[39m
+[2026-10-17 00:39:36] [31mERROR[39m Unknown Request error.
+[31m
+[31mUnknown Request error.[39m
+
+[37m"https://static.ghost.org/v5.0.0/images/publication-cover.jpg"[39m
+
+[1m[37mError ID:[39m[22m
+    [90mc2333dab-dfc7-4e74-a5e0-f113e1ed16cf[39m
+
+[1m[37mError Code: [39m[22m
+    [90mIMAGE_SIZE_URL[39m
+
+[90m----------------------------------------[39m
+
+[90mRequestError: getaddrinfo EAI_AGAIN static.ghost.org
+    at /checkout/ghost/core/core/server/lib/image/image-size.js:246:13
+    at emitRequestError (/checkout/node_modules/.pnpm/got@15.1.0/node_modules/got/dist/source/core/index.js:1171:120)
+    at ClientRequest.<anonymous> (/checkout/node_modules/.pnpm/got@15.1.0/node_modules/got/dist/source/core/index.js:1194:13)
+    at Object.onceWrapper (node:events:634:26)
+    at ClientRequest.emit (node:events:531:35)
+    at emitErrorEvent (node:_http_client:108:11)
+    at TLSSocket.socketErrorListener (node:_http_client:575:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)[39m
+[39m
+[2026-10-17 00:39:36] [36mINFO[39m "GET /" [32m200[39m 251ms
+
+sandbox app READY at http://127.0.0.1:33771
+auth proof: request 1 -> 200 (verdict pass, acquisitions 1 {'mint': 1}); request 2 -> 200 (verdict pass, acquisitions 1 {'mint': 1}); request 3 -> 403 (verdict pass, acquisitions 0 {}); seed key file present: True; sqlite files: ['.nx/workspace-data/machine-v3.db (61440 bytes)', 'ghost/core/vitest.config.db.ts (12733 bytes)', 'ghost/core/content/data/ghost-dev.db (1499136 bytes)']
