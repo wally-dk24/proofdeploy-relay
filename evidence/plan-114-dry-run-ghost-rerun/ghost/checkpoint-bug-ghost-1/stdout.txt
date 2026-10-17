@@ -1,0 +1,76 @@
+{
+  "run_kind": "bug",
+  "bug_id": "checkpoint-bug-ghost-1",
+  "clean_id": null,
+  "dry_run": true,
+  "stopped_before_model_call": true,
+  "contract_source": {
+    "store_path": "readiness/contracts/TryGhost__Ghost.yml",
+    "sha256": "30788f8dbc99d529d6605e7b1fbc54300f8c8156f20fca0cf7e20a5feb4dbe37"
+  },
+  "rendered_fixture_sha256": "ab955a3081fc9d293d1b84fd257299069c0340c59037a5a8aa09f6ef11afe7f0",
+  "bundle_manifest_sha256": "f3b933f6af2c2cf160bf91c169d8209348c342cf31a642be89fb7d812f2f4a00",
+  "bundle_manifest": {
+    "assembled_at": "2026-10-17T02:22:52.927902+00:00",
+    "template_sha256": "0994d1e367ddb3c679e750451dd67eab3a3d974fc1620b7f750216cdcdf0323b",
+    "fixture_template": {
+      "file": "fixture_template.txt",
+      "sha256": "0994d1e367ddb3c679e750451dd67eab3a3d974fc1620b7f750216cdcdf0323b"
+    },
+    "allowlist": [
+      "diff.patch",
+      "snapshot",
+      "fixture-description.txt",
+      "skill-author.md"
+    ],
+    "snapshot_tree_sha256": "c40f9a003f68983ee5c64f9d5187d35225dac14dc32170b6213093523dc69de8",
+    "omitted_links": [
+      {
+        "path": ".claude/skills/add-admin-api-endpoint",
+        "target": "../../.agents/skills/add-admin-api-endpoint"
+      },
+      {
+        "path": ".claude/skills/add-private-feature-flag",
+        "target": "../../.agents/skills/add-private-feature-flag"
+      },
+      {
+        "path": ".claude/skills/commit",
+        "target": "../../.agents/skills/commit"
+      },
+      {
+        "path": ".claude/skills/create-database-migration",
+        "target": "../../.agents/skills/create-database-migration"
+      },
+      {
+        "path": ".claude/skills/format-number",
+        "target": "../../.agents/skills/format-number"
+      },
+      {
+        "path": "CLAUDE.md",
+        "target": "AGENTS.md"
+      },
+      {
+        "path": "e2e/CLAUDE.md",
+        "target": "AGENTS.md"
+      }
+    ],
+    "omitted_gitlinks": [
+      {
+        "path": "ghost/core/content/themes/casper",
+        "commit": "bb3d0de3c7065677bb18b38d8185a8a980b163bd"
+      },
+      {
+        "path": "ghost/core/content/themes/source",
+        "commit": "3a5643b42a4700e961e65ebda92f6a6c56bf8c86"
+      }
+    ],
+    "files": {
+      "diff.patch": "420ebb46eaaa9b028586cce331c7f80ec055d1907e611c9ca4df3f55d5ca1091",
+      "fixture-description.txt": "ab955a3081fc9d293d1b84fd257299069c0340c59037a5a8aa09f6ef11afe7f0",
+      "skill-author.md": "e42f12d71ea9f5ceee0f6d13b553f7cb13426954053db684ae4e2a6a8d73f5f9"
+    },
+    "skill_sha256": "e42f12d71ea9f5ceee0f6d13b553f7cb13426954053db684ae4e2a6a8d73f5f9",
+    "source_sha": "1de328d8203cbfc81beadfea966982b049293fa2",
+    "diff_range": "515c39b3abebe8d77941a6e7168ee74c0dce4933..1de328d8203cbfc81beadfea966982b049293fa2"
+  }
+}

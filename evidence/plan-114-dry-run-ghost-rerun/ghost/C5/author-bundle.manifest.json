@@ -1,0 +1,123 @@
+{
+  "assembled_at": "2026-10-17T02:20:20.679749+00:00",
+  "template_sha256": "0994d1e367ddb3c679e750451dd67eab3a3d974fc1620b7f750216cdcdf0323b",
+  "fixture_template": {
+    "file": "fixture_template.txt",
+    "sha256": "0994d1e367ddb3c679e750451dd67eab3a3d974fc1620b7f750216cdcdf0323b"
+  },
+  "allowlist": [
+    "diff.patch",
+    "snapshot",
+    "fixture-description.txt",
+    "skill-author.md"
+  ],
+  "snapshot_tree_sha256": "604868e3b698af7a14c5d1897f17a701c88433f31d9c7ee48b52e6898d491f35",
+  "omitted_links": [
+    {
+      "path": ".claude/skills/add-admin-api-endpoint",
+      "target": "../../.agents/skills/add-admin-api-endpoint"
+    },
+    {
+      "path": ".claude/skills/add-private-feature-flag",
+      "target": "../../.agents/skills/add-private-feature-flag"
+    },
+    {
+      "path": ".claude/skills/commit",
+      "target": "../../.agents/skills/commit"
+    },
+    {
+      "path": ".claude/skills/convert-internal-package-to-typescript",
+      "target": "../../.agents/skills/convert-internal-package-to-typescript"
+    },
+    {
+      "path": ".claude/skills/create-database-migration",
+      "target": "../../.agents/skills/create-database-migration"
+    },
+    {
+      "path": ".claude/skills/format-number",
+      "target": "../../.agents/skills/format-number"
+    },
+    {
+      "path": ".claude/skills/migrate-internal-package",
+      "target": "../../.agents/skills/migrate-internal-package"
+    },
+    {
+      "path": ".claude/skills/shade-component-decision",
+      "target": "../../.agents/skills/shade-component-decision"
+    },
+    {
+      "path": ".claude/skills/shade-dropdown-surface-contract",
+      "target": "../../.agents/skills/shade-dropdown-surface-contract"
+    },
+    {
+      "path": ".claude/skills/shade-imports",
+      "target": "../../.agents/skills/shade-imports"
+    },
+    {
+      "path": ".claude/skills/shade-input-surface-recipe",
+      "target": "../../.agents/skills/shade-input-surface-recipe"
+    },
+    {
+      "path": ".claude/skills/shade-new-component",
+      "target": "../../.agents/skills/shade-new-component"
+    },
+    {
+      "path": ".claude/skills/shade-no-dark-variants",
+      "target": "../../.agents/skills/shade-no-dark-variants"
+    },
+    {
+      "path": ".claude/skills/shade-page-templates",
+      "target": "../../.agents/skills/shade-page-templates"
+    },
+    {
+      "path": ".claude/skills/shade-shadcn-install",
+      "target": "../../.agents/skills/shade-shadcn-install"
+    },
+    {
+      "path": ".claude/skills/shade-tokens-not-hex",
+      "target": "../../.agents/skills/shade-tokens-not-hex"
+    },
+    {
+      "path": ".claude/skills/shade-use-primitives",
+      "target": "../../.agents/skills/shade-use-primitives"
+    },
+    {
+      "path": ".claude/skills/tinybird",
+      "target": "../../.agents/skills/tinybird"
+    },
+    {
+      "path": ".claude/skills/tinybird-cli-guidelines",
+      "target": "../../.agents/skills/tinybird-cli-guidelines"
+    },
+    {
+      "path": "CLAUDE.md",
+      "target": "AGENTS.md"
+    },
+    {
+      "path": "e2e/CLAUDE.md",
+      "target": "AGENTS.md"
+    },
+    {
+      "path": "koenig/koenig-lexical/CLAUDE.md",
+      "target": "AGENTS.md"
+    }
+  ],
+  "omitted_gitlinks": [
+    {
+      "path": "ghost/core/content/themes/casper",
+      "commit": "7f4adb690c40850382fed4312d90e21ff0313fdc"
+    },
+    {
+      "path": "ghost/core/content/themes/source",
+      "commit": "219dc7dbe62bb6dfa8db9fd651528571eae6cfd3"
+    }
+  ],
+  "files": {
+    "diff.patch": "eb2a0c5f4568376af7011347c2e95970834be6ee11b0fe51f9b2c6de50847f24",
+    "fixture-description.txt": "ab955a3081fc9d293d1b84fd257299069c0340c59037a5a8aa09f6ef11afe7f0",
+    "skill-author.md": "e42f12d71ea9f5ceee0f6d13b553f7cb13426954053db684ae4e2a6a8d73f5f9"
+  },
+  "skill_sha256": "e42f12d71ea9f5ceee0f6d13b553f7cb13426954053db684ae4e2a6a8d73f5f9",
+  "source_sha": "5d482965b7f5ed05ffef956d0eaed8b8a51af0ef",
+  "diff_range": "89d21290d8e18e311509f3262936da6397c43e39..5d482965b7f5ed05ffef956d0eaed8b8a51af0ef"
+}

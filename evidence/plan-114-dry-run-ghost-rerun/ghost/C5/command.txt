@@ -1,0 +1,5 @@
+cd /home/hatch/workspace/proofdeploy-dryrun   (proofdeploy tree at main 6dc1a4df3230578c88549a05f93070d1ab487f60)
+env -u GROQ_API_KEY PYTHONPATH=/home/hatch/workspace/proofdeploy-dryrun python3 -m proofdeploy.cli measure --repo /home/hatch/plan114-dryrun-targets/ghost --workdir /home/hatch/plan114-dryrun-ghost-rerun-out/ghost/C5/work --output-dir /home/hatch/plan114-dryrun-ghost-rerun-out/ghost/C5/records --skill docs/evaluation/skill/skill-author.md --clean-id C5 --clean 5d482965b7f5ed05ffef956d0eaed8b8a51af0ef --dry-run-before-model --no-sandbox
+started: 2026-10-17T02:19:42Z
+exit code: 0
+finished: 2026-10-17T02:22:20Z
