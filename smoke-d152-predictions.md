@@ -41,3 +41,30 @@ alternatives named in advance for each line:
 - M4 measure.yml unit_repo golden/python-flask-sqlite, clean run → no false
   alarm. Alternatives: false alarm (the clean unit is flagged);
   INCONCLUSIVE probe.
+
+---
+
+## Revised V4 prediction (D176, appended 2026-10-17 ~15:41 EDT, BEFORE Master approves V4)
+
+V3 is recorded as a MISS, cause: single-side verify takes the change as the
+intent (D101(3), D175). Master decision (D176, verbatim: "Ok, agreed. Lets
+move on and fix this in v1.") — verify's intent input goes to Product v1
+(plan 2.6); the smoke test continues.
+
+Revised prediction: "V4 verify python-flask-sqlite bug side → likely PASS
+exit 0 (a miss, same single-side cause as V3, D175); alternative: FAIL
+exit 1 if the author uses the fixture truth as the oracle."
+
+V4's predicted miss is no longer a stop. The stop rule now applies to
+M1–M4: any miss, false alarm or INCONCLUSIVE → stop, classify, report first.
+
+## M1–M4 dispatch inputs (D174, recorded before M1 is dispatched)
+
+- arm: skill
+- bug_id / clean_id: smoke-d152-<app>-bug / smoke-d152-<app>-clean
+  (M1 smoke-d152-node-express-sqlite-bug; M2 smoke-d152-python-flask-sqlite-bug;
+  M3 smoke-d152-node-express-sqlite-clean; M4 smoke-d152-python-flask-sqlite-clean)
+- unit_repo: golden/<app>; target_repo: "golden" (literal)
+- base / bug / fix / clean inputs: empty (inert for golden units; the
+  materialize step's outputs govern)
+- Predictions for M1–M4 unchanged from the original block above.
