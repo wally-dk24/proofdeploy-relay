@@ -1,0 +1,6 @@
+Repository: node-express-sqlite
+Seed data: seed user seeduser/seedpass owns note id 1 (done=false) after seed
+Authentication: Bearer token from POST /register or /login in the Authorization header. Your token: ${AUTH_TOKEN}.
+Token scope: a regular user token. No other users, roles, or credentials exist beyond what the seed creates.
+Feature flags: no feature flags.
+You may create users, roles, data, or change settings in setup steps before your probes run.
