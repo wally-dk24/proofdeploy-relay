@@ -1,0 +1,520 @@
+verify	Set up job	﻿2026-10-17T19:23:16.3627318Z Current runner version: '2.337.0'
+verify	Set up job	2026-10-17T19:23:16.3652430Z ##[group]Runner Image Provisioner
+verify	Set up job	2026-10-17T19:23:16.3653290Z Hosted Compute Agent
+verify	Set up job	2026-10-17T19:23:16.3653974Z Version: 20261012.601
+verify	Set up job	2026-10-17T19:23:16.3654624Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+verify	Set up job	2026-10-17T19:23:16.3655389Z Build Date: 2026-10-12T17:48:21Z
+verify	Set up job	2026-10-17T19:23:16.3656178Z Worker ID: {f386441e-df13-4dae-8405-38807da234b7}
+verify	Set up job	2026-10-17T19:23:16.3656950Z Region: eastus
+verify	Set up job	2026-10-17T19:23:16.3657515Z Cloud: Azure
+verify	Set up job	2026-10-17T19:23:16.3658337Z ##[endgroup]
+verify	Set up job	2026-10-17T19:23:16.3659900Z ##[group]Operating System
+verify	Set up job	2026-10-17T19:23:16.3660683Z Ubuntu
+verify	Set up job	2026-10-17T19:23:16.3661281Z 24.04.5
+verify	Set up job	2026-10-17T19:23:16.3661827Z LTS
+verify	Set up job	2026-10-17T19:23:16.3662354Z ##[endgroup]
+verify	Set up job	2026-10-17T19:23:16.3662941Z ##[group]Runner Image
+verify	Set up job	2026-10-17T19:23:16.3663594Z Image: ubuntu-24.04
+verify	Set up job	2026-10-17T19:23:16.3664534Z Version: 20261012.334.1
+verify	Set up job	2026-10-17T19:23:16.3665741Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+verify	Set up job	2026-10-17T19:23:16.3667533Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+verify	Set up job	2026-10-17T19:23:16.3668719Z ##[endgroup]
+verify	Set up job	2026-10-17T19:23:16.3669938Z ##[group]GITHUB_TOKEN Permissions
+verify	Set up job	2026-10-17T19:23:16.3672003Z Contents: read
+verify	Set up job	2026-10-17T19:23:16.3672797Z Metadata: read
+verify	Set up job	2026-10-17T19:23:16.3673445Z ##[endgroup]
+verify	Set up job	2026-10-17T19:23:16.3675527Z Secret source: Actions
+verify	Set up job	2026-10-17T19:23:16.3676573Z Cache mode: write
+verify	Set up job	2026-10-17T19:23:16.3677483Z Prepare workflow directory
+verify	Set up job	2026-10-17T19:23:16.4005311Z Prepare all required actions
+verify	Set up job	2026-10-17T19:23:16.4053954Z Getting action download info
+verify	Set up job	2026-10-17T19:23:16.6245716Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+verify	Set up job	2026-10-17T19:23:16.7272740Z Download action repository 'actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97' (SHA:5fda3b95a4ea91299a34e894583c3862153e4b97)
+verify	Set up job	2026-10-17T19:23:16.8087419Z Download action repository 'actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9' (SHA:cf430e030ddbb5b0abf93d22962f4752f3646cd9)
+verify	Set up job	2026-10-17T19:23:17.1035388Z Complete job name: verify
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	﻿2026-10-17T19:23:17.1732354Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.1733442Z with:
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.1733904Z   repository: wally-dk24/proofdeploy
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.1737904Z   token: ***
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.1738548Z   ssh-strict: true
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.1738980Z   ssh-user: git
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.1739424Z   persist-credentials: true
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.1739907Z   clean: true
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.1740341Z   sparse-checkout-cone-mode: true
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.1740857Z   fetch-depth: 1
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.1741281Z   fetch-tags: false
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.1741718Z   show-progress: true
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.1742161Z   lfs: false
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.1742572Z   submodules: false
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.1743021Z   set-safe-directory: true
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.1743532Z   allow-unsafe-pr-checkout: false
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.1744322Z ##[endgroup]
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.2698908Z Syncing repository: wally-dk24/proofdeploy
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.2700931Z ##[group]Getting Git version info
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.2702058Z Working directory is '/home/runner/work/proofdeploy/proofdeploy'
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.2703297Z [command]/usr/bin/git version
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.2815524Z git version 2.55.0
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.2836691Z ##[endgroup]
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.2850319Z Temporarily overriding HOME='/home/runner/work/_temp/3c9e4574-2625-42a8-a2c2-e23bffbee534' before making global git config changes
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.2853033Z Adding repository directory to the temporary git global config as a safe directory
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.2857172Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/proofdeploy/proofdeploy
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.2930869Z Deleting the contents of '/home/runner/work/proofdeploy/proofdeploy'
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.2934137Z ##[group]Determining repository object format
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.2936178Z ##[endgroup]
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.2937461Z ##[group]Initializing the repository
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.2940445Z [command]/usr/bin/git init /home/runner/work/proofdeploy/proofdeploy
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3087522Z hint: Using 'master' as the name for the initial branch. This default branch name
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3090063Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3091711Z hint: to use in all of your new repositories, which will suppress this warning,
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3093168Z hint: call:
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3093886Z hint:
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3103741Z hint: 	git config --global init.defaultBranch <name>
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3104878Z hint:
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3105837Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3107351Z hint: 'development'. The just-created branch can be renamed via this command:
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3108782Z hint:
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3109330Z hint: 	git branch -m <name>
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3110327Z hint:
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3111435Z hint: Disable this message with "git config set advice.defaultBranchName false"
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3113148Z Initialized empty Git repository in /home/runner/work/proofdeploy/proofdeploy/.git/
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3116007Z [command]/usr/bin/git remote add origin https://github.com/wally-dk24/proofdeploy
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3164101Z ##[endgroup]
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3165390Z ##[group]Disabling automatic garbage collection
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3176238Z [command]/usr/bin/git config --local gc.auto 0
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3204620Z ##[endgroup]
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3205850Z ##[group]Setting up auth
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3206773Z Removing SSH command configuration
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3211027Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3244651Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3696296Z Removing HTTP extra header
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3704668Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.3746425Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.4005332Z Removing includeIf entries pointing to credentials config files
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.4013285Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.4060024Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.4329311Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-c7d91873-0223-4236-add5-cf507fdfc553.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.4369386Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git.path /home/runner/work/_temp/git-credentials-c7d91873-0223-4236-add5-cf507fdfc553.config
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.4404468Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-c7d91873-0223-4236-add5-cf507fdfc553.config
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.4445516Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-c7d91873-0223-4236-add5-cf507fdfc553.config
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.4485788Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-c7d91873-0223-4236-add5-cf507fdfc553.config
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.4520237Z ##[endgroup]
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.4521610Z ##[group]Fetching the repository
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.4529570Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +d9fa4acb6dd65beef2583e1c8d6d0740d7a736e9:refs/remotes/origin/main
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.7838512Z From https://github.com/wally-dk24/proofdeploy
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.7840693Z  * [new ref]         d9fa4acb6dd65beef2583e1c8d6d0740d7a736e9 -> origin/main
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.7847969Z [command]/usr/bin/git branch --list --remote origin/main
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.7878473Z   origin/main
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.7891245Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.7920855Z d9fa4acb6dd65beef2583e1c8d6d0740d7a736e9
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.7925604Z ##[endgroup]
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.7926632Z ##[group]Determining the checkout info
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.7927983Z ##[endgroup]
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.7931043Z [command]/usr/bin/git sparse-checkout disable
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.7993134Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.8026934Z ##[group]Checking out the ref
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.8031152Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.8509450Z Switched to a new branch 'main'
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.8516460Z branch 'main' set up to track 'origin/main'.
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.8568221Z ##[endgroup]
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.8572668Z [command]/usr/bin/git log -1 --format=%H
+verify	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:23:17.8601853Z d9fa4acb6dd65beef2583e1c8d6d0740d7a736e9
+verify	Set up Python	﻿2026-10-17T19:23:17.8974055Z ##[group]Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+verify	Set up Python	2026-10-17T19:23:17.8975149Z with:
+verify	Set up Python	2026-10-17T19:23:17.8975614Z   python-version: 3.12
+verify	Set up Python	2026-10-17T19:23:17.8976120Z   cache: pip
+verify	Set up Python	2026-10-17T19:23:17.8976614Z   cache-dependency-path: pyproject.toml
+verify	Set up Python	2026-10-17T19:23:17.8977270Z   check-latest: false
+verify	Set up Python	2026-10-17T19:23:17.8982684Z   token: ***
+verify	Set up Python	2026-10-17T19:23:17.8983176Z   update-environment: true
+verify	Set up Python	2026-10-17T19:23:17.8983751Z   allow-prereleases: false
+verify	Set up Python	2026-10-17T19:23:17.8984308Z   freethreaded: false
+verify	Set up Python	2026-10-17T19:23:17.8984819Z ##[endgroup]
+verify	Set up Python	2026-10-17T19:23:18.0139425Z ##[group]Installed versions
+verify	Set up Python	2026-10-17T19:23:18.0234168Z Successfully set up CPython (3.12.15)
+verify	Set up Python	2026-10-17T19:23:18.0236105Z ##[endgroup]
+verify	Set up Python	2026-10-17T19:23:18.0554503Z [command]/opt/hostedtoolcache/Python/3.12.15/x64/bin/pip cache dir
+verify	Set up Python	2026-10-17T19:23:18.4046543Z /home/runner/.cache/pip
+verify	Set up Python	2026-10-17T19:23:18.4840222Z Cache hit for: setup-python-Linux-x64-24.04-Ubuntu-python-3.12.15-pip-937055db21854b88a010aadb872385f7f0011330da2ee4036f4940e224b4455f
+verify	Set up Python	2026-10-17T19:23:19.0282158Z Received 34062686 of 34062686 (100.0%), 108.6 MBs/sec
+verify	Set up Python	2026-10-17T19:23:19.0283535Z Cache Size: ~32 MB (34062686 B)
+verify	Set up Python	2026-10-17T19:23:19.0325748Z [command]/usr/bin/tar -xf /home/runner/work/_temp/efc1d17e-9a6a-441d-bf77-cf9d63e31efc/cache.tzst -P -C /home/runner/work/proofdeploy/proofdeploy --use-compress-program unzstd
+verify	Set up Python	2026-10-17T19:23:19.0917958Z Cache restored successfully
+verify	Set up Python	2026-10-17T19:23:19.0942850Z Cache restored from key: setup-python-Linux-x64-24.04-Ubuntu-python-3.12.15-pip-937055db21854b88a010aadb872385f7f0011330da2ee4036f4940e224b4455f
+verify	Install podman	﻿2026-10-17T19:23:19.1125894Z ##[group]Run sudo apt-get update
+verify	Install podman	2026-10-17T19:23:19.1126325Z ^[[36;1msudo apt-get update^[[0m
+verify	Install podman	2026-10-17T19:23:19.1126633Z ^[[36;1msudo apt-get install -y podman^[[0m
+verify	Install podman	2026-10-17T19:23:19.1420626Z shell: /usr/bin/bash -e {0}
+verify	Install podman	2026-10-17T19:23:19.1420972Z env:
+verify	Install podman	2026-10-17T19:23:19.1421302Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Install podman	2026-10-17T19:23:19.1421852Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+verify	Install podman	2026-10-17T19:23:19.1422373Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Install podman	2026-10-17T19:23:19.1422868Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Install podman	2026-10-17T19:23:19.1423321Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Install podman	2026-10-17T19:23:19.1423769Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+verify	Install podman	2026-10-17T19:23:19.1424174Z ##[endgroup]
+verify	Install podman	2026-10-17T19:23:19.2293528Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+verify	Install podman	2026-10-17T19:23:19.2606576Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+verify	Install podman	2026-10-17T19:23:19.2619600Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+verify	Install podman	2026-10-17T19:23:19.2652758Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+verify	Install podman	2026-10-17T19:23:19.2657689Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+verify	Install podman	2026-10-17T19:23:19.2670514Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+verify	Install podman	2026-10-17T19:23:19.3939244Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1397 kB]
+verify	Install podman	2026-10-17T19:23:19.4080955Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [308 kB]
+verify	Install podman	2026-10-17T19:23:19.4101255Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1704 kB]
+verify	Install podman	2026-10-17T19:23:19.4221970Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [342 kB]
+verify	Install podman	2026-10-17T19:23:19.4252360Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1805 kB]
+verify	Install podman	2026-10-17T19:23:19.4353706Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [411 kB]
+verify	Install podman	2026-10-17T19:23:19.4433068Z Get:13 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.4 kB]
+verify	Install podman	2026-10-17T19:23:19.4479332Z Get:14 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [618 kB]
+verify	Install podman	2026-10-17T19:23:19.4553494Z Get:15 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [557 kB]
+verify	Install podman	2026-10-17T19:23:19.5598527Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1144 kB]
+verify	Install podman	2026-10-17T19:23:19.5668858Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [231 kB]
+verify	Install podman	2026-10-17T19:23:19.5693289Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1222 kB]
+verify	Install podman	2026-10-17T19:23:19.5765558Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [246 kB]
+verify	Install podman	2026-10-17T19:23:19.6220694Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1713 kB]
+verify	Install podman	2026-10-17T19:23:19.6318273Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [392 kB]
+verify	Install podman	2026-10-17T19:23:22.6567448Z Fetched 12.5 MB in 1s (9826 kB/s)
+verify	Install podman	2026-10-17T19:23:23.6006912Z Reading package lists...
+verify	Install podman	2026-10-17T19:23:23.6317273Z Reading package lists...
+verify	Install podman	2026-10-17T19:23:23.8529546Z Building dependency tree...
+verify	Install podman	2026-10-17T19:23:23.8538434Z Reading state information...
+verify	Install podman	2026-10-17T19:23:24.0228331Z podman is already the newest version (4.9.3+ds1-1ubuntu0.2).
+verify	Install podman	2026-10-17T19:23:24.0229422Z 0 upgraded, 0 newly installed, 0 to remove and 44 not upgraded.
+verify	Install package and dev dependencies	﻿2026-10-17T19:23:24.0283820Z ##[group]Run python -m pip install --upgrade pip
+verify	Install package and dev dependencies	2026-10-17T19:23:24.0284260Z ^[[36;1mpython -m pip install --upgrade pip^[[0m
+verify	Install package and dev dependencies	2026-10-17T19:23:24.0284597Z ^[[36;1mpip install -e ".[dev]"^[[0m
+verify	Install package and dev dependencies	2026-10-17T19:23:24.0350717Z shell: /usr/bin/bash -e {0}
+verify	Install package and dev dependencies	2026-10-17T19:23:24.0350978Z env:
+verify	Install package and dev dependencies	2026-10-17T19:23:24.0351273Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Install package and dev dependencies	2026-10-17T19:23:24.0351722Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+verify	Install package and dev dependencies	2026-10-17T19:23:24.0352176Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Install package and dev dependencies	2026-10-17T19:23:24.0352575Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Install package and dev dependencies	2026-10-17T19:23:24.0352964Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Install package and dev dependencies	2026-10-17T19:23:24.0353371Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+verify	Install package and dev dependencies	2026-10-17T19:23:24.0353708Z ##[endgroup]
+verify	Install package and dev dependencies	2026-10-17T19:23:24.6911820Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages (26.2.1)
+verify	Install package and dev dependencies	2026-10-17T19:23:25.1747228Z Obtaining file:///home/runner/work/proofdeploy/proofdeploy
+verify	Install package and dev dependencies	2026-10-17T19:23:25.1765099Z   Installing build dependencies: started
+verify	Install package and dev dependencies	2026-10-17T19:23:25.7828497Z   Installing build dependencies: finished with status 'done'
+verify	Install package and dev dependencies	2026-10-17T19:23:25.7834982Z   Checking if build backend supports build_editable: started
+verify	Install package and dev dependencies	2026-10-17T19:23:26.0977138Z   Checking if build backend supports build_editable: finished with status 'done'
+verify	Install package and dev dependencies	2026-10-17T19:23:26.0986874Z   Getting requirements to build editable: started
+verify	Install package and dev dependencies	2026-10-17T19:23:26.4499816Z   Getting requirements to build editable: finished with status 'done'
+verify	Install package and dev dependencies	2026-10-17T19:23:26.4508701Z   Preparing editable metadata (pyproject.toml): started
+verify	Install package and dev dependencies	2026-10-17T19:23:26.6486581Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+verify	Install package and dev dependencies	2026-10-17T19:23:26.7498713Z Collecting pyyaml>=6.0 (from proofdeploy==0.1.0)
+verify	Install package and dev dependencies	2026-10-17T19:23:26.7514344Z   Using cached pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:26.7916437Z Collecting pytest>=8 (from proofdeploy==0.1.0)
+verify	Install package and dev dependencies	2026-10-17T19:23:26.7929751Z   Using cached pytest-9.1.1-py3-none-any.whl.metadata (7.6 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:26.8122158Z Collecting pytest-cov>=5 (from proofdeploy==0.1.0)
+verify	Install package and dev dependencies	2026-10-17T19:23:26.8134298Z   Using cached pytest_cov-7.1.0-py3-none-any.whl.metadata (32 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.2331347Z Collecting ruff>=0.8 (from proofdeploy==0.1.0)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.3010344Z   Downloading ruff-0.17.1-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (20 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.4153782Z Collecting mypy>=1.10 (from proofdeploy==0.1.0)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.4169091Z   Using cached mypy-2.4.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.4387901Z Collecting types-PyYAML>=6.0 (from proofdeploy==0.1.0)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.4401792Z   Using cached types_pyyaml-6.0.12.20260906-py3-none-any.whl.metadata (1.8 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.4614584Z Collecting typing_extensions>=4.6.0 (from mypy>=1.10->proofdeploy==0.1.0)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.4626970Z   Using cached typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.4775441Z Collecting mypy_extensions>=1.0.0 (from mypy>=1.10->proofdeploy==0.1.0)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.4787896Z   Using cached mypy_extensions-1.1.0-py3-none-any.whl.metadata (1.1 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.4947273Z Collecting pathspec>=1.0.0 (from mypy>=1.10->proofdeploy==0.1.0)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.4959941Z   Using cached pathspec-1.1.1-py3-none-any.whl.metadata (14 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.6270579Z Collecting librt>=0.16.0 (from mypy>=1.10->proofdeploy==0.1.0)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.6285989Z   Using cached librt-0.16.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (1.3 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.7002732Z Collecting ast-serialize<1.0.0,>=0.11.2 (from mypy>=1.10->proofdeploy==0.1.0)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.7101144Z   Downloading ast_serialize-0.13.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.4 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.7307210Z Collecting iniconfig>=1.0.1 (from pytest>=8->proofdeploy==0.1.0)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.7320256Z   Using cached iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.7501854Z Collecting packaging>=22 (from pytest>=8->proofdeploy==0.1.0)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.7514364Z   Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.7686676Z Collecting pluggy<2,>=1.5 (from pytest>=8->proofdeploy==0.1.0)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.7864560Z   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.8095265Z Collecting pygments>=2.7.2 (from pytest>=8->proofdeploy==0.1.0)
+verify	Install package and dev dependencies	2026-10-17T19:23:27.8107634Z   Using cached pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:28.2366327Z Collecting coverage>=7.10.6 (from coverage[toml]>=7.10.6->pytest-cov>=5->proofdeploy==0.1.0)
+verify	Install package and dev dependencies	2026-10-17T19:23:28.2381904Z   Using cached coverage-7.16.2-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (8.2 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:28.2467657Z Using cached mypy-2.4.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (15.6 MB)
+verify	Install package and dev dependencies	2026-10-17T19:23:28.2699285Z Downloading ast_serialize-0.13.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.3 MB)
+verify	Install package and dev dependencies	2026-10-17T19:23:29.1053795Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 1.3 MB/s  0:00:00
+verify	Install package and dev dependencies	2026-10-17T19:23:29.1069019Z Using cached librt-0.16.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (531 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:29.1083227Z Using cached mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:29.1094487Z Using cached pathspec-1.1.1-py3-none-any.whl (57 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:29.1105929Z Using cached pytest-9.1.1-py3-none-any.whl (386 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:29.1326162Z Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:29.2025112Z Using cached iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:29.2035927Z Using cached packaging-26.3-py3-none-any.whl (129 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:29.2047727Z Using cached pygments-2.21.0-py3-none-any.whl (1.3 MB)
+verify	Install package and dev dependencies	2026-10-17T19:23:29.2064082Z Using cached pytest_cov-7.1.0-py3-none-any.whl (22 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:29.2075995Z Using cached coverage-7.16.2-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (258 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:29.2088251Z Using cached pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:29.2197263Z Downloading ruff-0.17.1-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (10.4 MB)
+verify	Install package and dev dependencies	2026-10-17T19:23:29.3104348Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.4/10.4 MB 114.5 MB/s  0:00:00
+verify	Install package and dev dependencies	2026-10-17T19:23:29.3117087Z Using cached types_pyyaml-6.0.12.20260906-py3-none-any.whl (21 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:29.3129605Z Using cached typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+verify	Install package and dev dependencies	2026-10-17T19:23:29.3802569Z Building wheels for collected packages: proofdeploy
+verify	Install package and dev dependencies	2026-10-17T19:23:29.3812106Z   Building editable for proofdeploy (pyproject.toml): started
+verify	Install package and dev dependencies	2026-10-17T19:23:29.6236352Z   Building editable for proofdeploy (pyproject.toml): finished with status 'done'
+verify	Install package and dev dependencies	2026-10-17T19:23:29.6245422Z   Created wheel for proofdeploy: filename=proofdeploy-0.1.0-0.editable-py3-none-any.whl size=6175 sha256=ce4fa95d40fc708a737d7239b832cb672e8fe208d9dfdc874d729697ebffd8f7
+verify	Install package and dev dependencies	2026-10-17T19:23:29.6247976Z   Stored in directory: /tmp/pip-ephem-wheel-cache-hjnfjw7p/wheels/9a/73/f6/d95220d5eb7b2490401f2b7b70bac6d3505c67ed8468209e66
+verify	Install package and dev dependencies	2026-10-17T19:23:29.6277515Z Successfully built proofdeploy
+verify	Install package and dev dependencies	2026-10-17T19:23:29.6756254Z Installing collected packages: typing_extensions, types-PyYAML, ruff, pyyaml, pygments, pluggy, pathspec, packaging, mypy_extensions, librt, iniconfig, coverage, ast-serialize, pytest, proofdeploy, mypy, pytest-cov
+verify	Install package and dev dependencies	2026-10-17T19:23:32.8344567Z 
+verify	Install package and dev dependencies	2026-10-17T19:23:32.8367206Z Successfully installed ast-serialize-0.13.1 coverage-7.16.2 iniconfig-2.3.1 librt-0.16.0 mypy-2.4.0 mypy_extensions-1.1.0 packaging-26.3 pathspec-1.1.1 pluggy-1.7.0 proofdeploy-0.1.0 pygments-2.21.0 pytest-9.1.1 pytest-cov-7.1.0 pyyaml-6.0.3 ruff-0.17.1 types-PyYAML-6.0.12.20260906 typing_extensions-4.16.0
+verify	Measurement gate (fail closed on an incapable host)	﻿2026-10-17T19:23:32.9516324Z ##[group]Run python -c "from proofdeploy.sandbox import assert_measurement_gate; assert_measurement_gate(); print('measurement gate: capable')"
+verify	Measurement gate (fail closed on an incapable host)	2026-10-17T19:23:32.9517501Z ^[[36;1mpython -c "from proofdeploy.sandbox import assert_measurement_gate; assert_measurement_gate(); print('measurement gate: capable')"^[[0m
+verify	Measurement gate (fail closed on an incapable host)	2026-10-17T19:23:32.9582577Z shell: /usr/bin/bash -e {0}
+verify	Measurement gate (fail closed on an incapable host)	2026-10-17T19:23:32.9582851Z env:
+verify	Measurement gate (fail closed on an incapable host)	2026-10-17T19:23:32.9583129Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Measurement gate (fail closed on an incapable host)	2026-10-17T19:23:32.9583584Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+verify	Measurement gate (fail closed on an incapable host)	2026-10-17T19:23:32.9584031Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Measurement gate (fail closed on an incapable host)	2026-10-17T19:23:32.9584424Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Measurement gate (fail closed on an incapable host)	2026-10-17T19:23:32.9584831Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Measurement gate (fail closed on an incapable host)	2026-10-17T19:23:32.9585263Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+verify	Measurement gate (fail closed on an incapable host)	2026-10-17T19:23:32.9585623Z ##[endgroup]
+verify	Measurement gate (fail closed on an incapable host)	2026-10-17T19:24:19.0964600Z measurement gate: capable
+verify	Verify (python-flask-sqlite, fix change, pinned model)	﻿2026-10-17T19:24:19.1142249Z ##[group]Run set +e
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1142570Z ^[[36;1mset +e^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1143034Z ^[[36;1mpython - <<'PYEOF' 2>&1 | tee verify-run.log^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1143352Z ^[[36;1mimport json^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1143572Z ^[[36;1mimport os^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1143802Z ^[[36;1mfrom pathlib import Path^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1144060Z ^[[36;1m^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1144264Z ^[[36;1mfrom conformance import kit^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1144607Z ^[[36;1mfrom proofdeploy.cli import build_parser, cmd_verify^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1144948Z ^[[36;1m^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1145147Z ^[[36;1mapp = os.environ["APP"]^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1145415Z ^[[36;1mchange = os.environ["CHANGE"]^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1145707Z ^[[36;1mrepo = Path("/tmp/verify-repo")^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1146017Z ^[[36;1mshas = kit.materialize_golden(app, repo)^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1146432Z ^[[36;1mpair = ("fix-parent", "fix") if change == "fix" else ("base", "bug")^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1146843Z ^[[36;1margs = build_parser().parse_args(^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1147151Z ^[[36;1m    [^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1147362Z ^[[36;1m        "verify",^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1147605Z ^[[36;1m        "--repo", str(repo),^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1147889Z ^[[36;1m        "--from", shas[pair[0]],^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1148481Z ^[[36;1m        "--to", shas[pair[1]],^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1148760Z ^[[36;1m        "--format", "json",^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1149059Z ^[[36;1m        "--output", "verify-output.json",^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1149382Z ^[[36;1m        "--output-dir", "verify-records",^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1149696Z ^[[36;1m        "--workdir", "/tmp/verify-work",^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1149975Z ^[[36;1m    ]^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1150209Z ^[[36;1m)^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1150477Z ^[[36;1m# No model_runner: the pinned model client, for real.^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1150819Z ^[[36;1mcode = cmd_verify(args)^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1151216Z ^[[36;1mPath("verify-exit-code.txt").write_text(f"{code}\n", encoding="utf-8")^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1151721Z ^[[36;1mprint(Path("verify-output.json").read_text(encoding="utf-8"))^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1152123Z ^[[36;1mprint(f"verify exit code: {code}")^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1152408Z ^[[36;1mPYEOF^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1152685Z ^[[36;1m# The step itself never fails here: the artifact upload^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1153107Z ^[[36;1m# runs first, and the final step propagates verify's code.^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1153450Z ^[[36;1mtrue^[[0m
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1217769Z shell: /usr/bin/bash -e {0}
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1218269Z env:
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1218563Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1219026Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1219468Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1219861Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1220256Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1220651Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1221411Z   GROQ_API_KEY: ***
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1221647Z   APP: python-flask-sqlite
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1221888Z   CHANGE: fix
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:24:19.1222092Z ##[endgroup]
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8187075Z {
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8187542Z   "verify_output_version": "1.0.0",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8188267Z   "verdict": "PASS",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8188691Z   "exit_code": 0,
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8189083Z   "typed_reason": null,
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8189493Z   "cause": null,
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8189874Z   "detail": null,
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8190235Z   "probes": [
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8190539Z     {
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8190839Z       "schema_version": "1.6.0",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8191262Z       "probe_index": 0,
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8191648Z       "verdict": "pass",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8191999Z       "reason": null,
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8192330Z       "request": {
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8192662Z         "method": "GET",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8193107Z         "url": "http://127.0.0.1:32903/notes/1",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8194165Z         "headers": {
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8194942Z           "Authorization": "***"
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8195385Z         },
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8195709Z         "body": null
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8196064Z       },
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8196421Z       "setup_requests": [],
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8196841Z       "http_status": 200,
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8197276Z       "http_headers": {
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8197744Z         "server": "Werkzeug/3.1.3 Python/3.13.16",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8199089Z         "date": "Sat, 17 Oct 2026 19:26:10 GMT",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8199619Z         "content-type": "application/json",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8200123Z         "content-length": "49",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8200562Z         "connection": "close"
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8200955Z       },
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8201446Z       "http_body": "{\"done\":false,\"id\":1,\"title\":\"seeded open note\"}\n",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8202110Z       "http_body_truncated": false,
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8202395Z       "writes": [
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8202673Z         "write: POST http://127.0.0.1:32903/login -> 200"
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8202992Z       ],
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8203213Z       "details": [
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8203464Z         "credential provider: POST /login (login)",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8203813Z         "write: POST http://127.0.0.1:32903/login -> 200",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8204172Z         "credential provider: token acquired",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8204473Z         "act: GET /notes/1 -> 200",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8204765Z         "status: got 200, expected 200 -> PASS",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8205073Z         "body json_path: got False -> PASS"
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8205338Z       ],
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8205532Z       "sent": true,
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8205754Z       "assertions_evaluated": true
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8206002Z     },
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8206184Z     {
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8206375Z       "schema_version": "1.6.0",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8206625Z       "probe_index": 1,
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8206853Z       "verdict": "pass",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8207090Z       "reason": null,
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8207307Z       "request": {
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8207516Z         "method": "GET",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8207769Z         "url": "http://127.0.0.1:32903/notes/2",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8208280Z         "headers": {
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8208656Z           "Authorization": "***"
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8208923Z         },
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8209117Z         "body": null
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8209320Z       },
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8209512Z       "setup_requests": [],
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8209757Z       "http_status": 200,
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8209992Z       "http_headers": {
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8210249Z         "server": "Werkzeug/3.1.3 Python/3.13.16",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8210564Z         "date": "Sat, 17 Oct 2026 19:26:10 GMT",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8210865Z         "content-type": "application/json",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8211177Z         "content-length": "48",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8211516Z         "connection": "close"
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8211753Z       },
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8212037Z       "http_body": "{\"done\":true,\"id\":2,\"title\":\"seeded done note\"}\n",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8212465Z       "http_body_truncated": false,
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8212720Z       "writes": [
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8212978Z         "write: POST http://127.0.0.1:32903/login -> 200"
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8213286Z       ],
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8213468Z       "details": [
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8213708Z         "credential provider: POST /login (login)",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8214056Z         "write: POST http://127.0.0.1:32903/login -> 200",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8214390Z         "credential provider: token acquired",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8214685Z         "act: GET /notes/2 -> 200",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8214964Z         "status: got 200, expected 200 -> PASS",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8215274Z         "body json_path: got True -> PASS"
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8215871Z       ],
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8216202Z       "sent": true,
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8216621Z       "assertions_evaluated": true
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8217361Z     }
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8217923Z   ],
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8218468Z   "refs": {
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8218702Z     "repo": "/tmp/verify-repo",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8219029Z     "from_ref": "18b833d393bd5c2db89e5bbc83cb8d91671d2241",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8219405Z     "to_ref": "ae7e2b13d38bd39d4dcb649fdca1ccf13c223fd3",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8219779Z     "from_sha": "18b833d393bd5c2db89e5bbc83cb8d91671d2241",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8220143Z     "to_sha": "ae7e2b13d38bd39d4dcb649fdca1ccf13c223fd3"
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8220441Z   },
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8220646Z   "model": "openai/gpt-oss-120b",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8221065Z   "probe_set_sha256": "3ded2a9bb56f5dcedba2e9271a8a16f305c0e939b587907218a6950ddc494f3f",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8221524Z   "engine": "proofdeploy/0.1.0",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8221801Z   "isolation_mode": "none+socket",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8222060Z   "evidence_record": {
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8222305Z     "path": "verify-records/runs.jsonl",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8222624Z     "record_id": "696a0beea99a4ee98fedcb7e51175974"
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8222941Z   },
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8223136Z   "record_schema_version": "1.6.0",
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8223409Z   "timings": {
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8223608Z     "bundle_s": 0.02,
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8223824Z     "author_s": 1.644,
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8224045Z     "provision_s": 87.871,
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8224287Z     "execute_s": 0.009,
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8224504Z     "total_s": 123.403
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8224703Z   }
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8224881Z }
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8224977Z 
+verify	Verify (python-flask-sqlite, fix change, pinned model)	2026-10-17T19:26:22.8225068Z verify exit code: 0
+verify	Upload verify output, records and log	﻿2026-10-17T19:26:22.8434107Z ##[group]Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+verify	Upload verify output, records and log	2026-10-17T19:26:22.8434556Z with:
+verify	Upload verify output, records and log	2026-10-17T19:26:22.8434823Z   name: verify-python-flask-sqlite-fix-39061653324
+verify	Upload verify output, records and log	2026-10-17T19:26:22.8435292Z   path: verify-output.json
+verify	Upload verify output, records and log	verify-records/
+verify	Upload verify output, records and log	verify-run.log
+verify	Upload verify output, records and log	verify-exit-code.txt
+verify	Upload verify output, records and log	
+verify	Upload verify output, records and log	2026-10-17T19:26:22.8435715Z   retention-days: 14
+verify	Upload verify output, records and log	2026-10-17T19:26:22.8435939Z   if-no-files-found: warn
+verify	Upload verify output, records and log	2026-10-17T19:26:22.8436185Z   compression-level: 6
+verify	Upload verify output, records and log	2026-10-17T19:26:22.8436416Z   overwrite: false
+verify	Upload verify output, records and log	2026-10-17T19:26:22.8436640Z   include-hidden-files: false
+verify	Upload verify output, records and log	2026-10-17T19:26:22.8436890Z   archive: true
+verify	Upload verify output, records and log	2026-10-17T19:26:22.8437082Z env:
+verify	Upload verify output, records and log	2026-10-17T19:26:22.8437341Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Upload verify output, records and log	2026-10-17T19:26:22.8437788Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+verify	Upload verify output, records and log	2026-10-17T19:26:22.8438448Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Upload verify output, records and log	2026-10-17T19:26:22.8438841Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Upload verify output, records and log	2026-10-17T19:26:22.8439266Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Upload verify output, records and log	2026-10-17T19:26:22.8439663Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+verify	Upload verify output, records and log	2026-10-17T19:26:22.8439999Z ##[endgroup]
+verify	Upload verify output, records and log	2026-10-17T19:26:23.0009582Z Multiple search paths detected. Calculating the least common ancestor of all paths
+verify	Upload verify output, records and log	2026-10-17T19:26:23.0011803Z The least common ancestor is /home/runner/work/proofdeploy/proofdeploy. This will be the root directory of the artifact
+verify	Upload verify output, records and log	2026-10-17T19:26:23.0012910Z With the provided path, there will be 4 files uploaded
+verify	Upload verify output, records and log	2026-10-17T19:26:23.0013735Z Artifact name is valid!
+verify	Upload verify output, records and log	2026-10-17T19:26:23.0014146Z Root directory input is valid!
+verify	Upload verify output, records and log	2026-10-17T19:26:23.2096907Z Uploading artifact: verify-python-flask-sqlite-fix-39061653324.zip
+verify	Upload verify output, records and log	2026-10-17T19:26:23.2159093Z Beginning upload of artifact content to blob storage
+verify	Upload verify output, records and log	2026-10-17T19:26:23.2945775Z Uploaded bytes 10063
+verify	Upload verify output, records and log	2026-10-17T19:26:23.3064565Z Finished uploading artifact content to blob storage!
+verify	Upload verify output, records and log	2026-10-17T19:26:23.3066111Z SHA256 digest of uploaded artifact is a41c0496703edfd458a41faa36554d8b26c91580ebb970f642ae3a2952332ab4
+verify	Upload verify output, records and log	2026-10-17T19:26:23.3067480Z Finalizing artifact upload
+verify	Upload verify output, records and log	2026-10-17T19:26:23.5181886Z Artifact verify-python-flask-sqlite-fix-39061653324 successfully finalized. Artifact ID 12111388133
+verify	Upload verify output, records and log	2026-10-17T19:26:23.5183231Z Artifact verify-python-flask-sqlite-fix-39061653324 has been successfully uploaded! Final size is 10063 bytes. Artifact ID is 12111388133
+verify	Upload verify output, records and log	2026-10-17T19:26:23.5186140Z Artifact download URL: https://github.com/wally-dk24/proofdeploy/actions/runs/39061653324/artifacts/12111388133
+verify	Propagate verify's exit code	﻿2026-10-17T19:26:23.5306344Z ##[group]Run code=$(cat verify-exit-code.txt 2>/dev/null || echo 5)
+verify	Propagate verify's exit code	2026-10-17T19:26:23.5306877Z ^[[36;1mcode=$(cat verify-exit-code.txt 2>/dev/null || echo 5)^[[0m
+verify	Propagate verify's exit code	2026-10-17T19:26:23.5307252Z ^[[36;1mecho "verify exit code: $code"^[[0m
+verify	Propagate verify's exit code	2026-10-17T19:26:23.5307533Z ^[[36;1mexit "$code"^[[0m
+verify	Propagate verify's exit code	2026-10-17T19:26:23.5371215Z shell: /usr/bin/bash -e {0}
+verify	Propagate verify's exit code	2026-10-17T19:26:23.5371477Z env:
+verify	Propagate verify's exit code	2026-10-17T19:26:23.5371756Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Propagate verify's exit code	2026-10-17T19:26:23.5372231Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+verify	Propagate verify's exit code	2026-10-17T19:26:23.5372682Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Propagate verify's exit code	2026-10-17T19:26:23.5373079Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Propagate verify's exit code	2026-10-17T19:26:23.5373494Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+verify	Propagate verify's exit code	2026-10-17T19:26:23.5373915Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+verify	Propagate verify's exit code	2026-10-17T19:26:23.5374271Z ##[endgroup]
+verify	Propagate verify's exit code	2026-10-17T19:26:23.5469844Z verify exit code: 0
+verify	Post Set up Python	﻿2026-10-17T19:26:23.5548953Z Post job cleanup.
+verify	Post Set up Python	2026-10-17T19:26:23.6697923Z Cache hit occurred on the primary key setup-python-Linux-x64-24.04-Ubuntu-python-3.12.15-pip-937055db21854b88a010aadb872385f7f0011330da2ee4036f4940e224b4455f, not saving cache.
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	﻿2026-10-17T19:26:23.6827276Z Post job cleanup.
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.7789190Z [command]/usr/bin/git version
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.7844740Z git version 2.55.0
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.7919367Z Temporarily overriding HOME='/home/runner/work/_temp/1f97b13a-542c-4c02-b6f6-5628ee6d0307' before making global git config changes
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.7920952Z Adding repository directory to the temporary git global config as a safe directory
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.7922254Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/proofdeploy/proofdeploy
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.7959740Z Removing SSH command configuration
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.7961949Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.8021212Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.8381405Z Removing HTTP extra header
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.8395258Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.8460851Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.8775636Z Removing includeIf entries pointing to credentials config files
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.8793310Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.8837129Z includeif.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git.path
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.8838307Z includeif.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git/worktrees/*.path
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.8838828Z includeif.gitdir:/github/workspace/.git.path
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.8839224Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.8840224Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git.path
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.8864813Z /home/runner/work/_temp/git-credentials-c7d91873-0223-4236-add5-cf507fdfc553.config
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.8876730Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-c7d91873\-0223\-4236\-add5\-cf507fdfc553\.config
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.8918359Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git/worktrees/*.path
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.8952760Z /home/runner/work/_temp/git-credentials-c7d91873-0223-4236-add5-cf507fdfc553.config
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.8971140Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-c7d91873\-0223\-4236\-add5\-cf507fdfc553\.config
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.9013620Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.9041067Z /github/runner_temp/git-credentials-c7d91873-0223-4236-add5-cf507fdfc553.config
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.9050504Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-c7d91873\-0223\-4236\-add5\-cf507fdfc553\.config
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.9089098Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.9116260Z /github/runner_temp/git-credentials-c7d91873-0223-4236-add5-cf507fdfc553.config
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.9125695Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-c7d91873\-0223\-4236\-add5\-cf507fdfc553\.config
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.9166887Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-17T19:26:23.9391582Z Removing credentials config '/home/runner/work/_temp/git-credentials-c7d91873-0223-4236-add5-cf507fdfc553.config'
+verify	Complete job	﻿2026-10-17T19:26:23.9538503Z Cleaning up orphan processes
+verify	Complete job	2026-10-17T19:26:23.9971628Z Terminate orphan process: pid (2797) (catatonit)

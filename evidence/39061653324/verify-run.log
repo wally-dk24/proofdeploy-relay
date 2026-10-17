@@ -1,0 +1,111 @@
+{
+  "verify_output_version": "1.0.0",
+  "verdict": "PASS",
+  "exit_code": 0,
+  "typed_reason": null,
+  "cause": null,
+  "detail": null,
+  "probes": [
+    {
+      "schema_version": "1.6.0",
+      "probe_index": 0,
+      "verdict": "pass",
+      "reason": null,
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:32903/notes/1",
+        "headers": {
+          "Authorization": "Bearer ***REDACTED***"
+        },
+        "body": null
+      },
+      "setup_requests": [],
+      "http_status": 200,
+      "http_headers": {
+        "server": "Werkzeug/3.1.3 Python/3.13.16",
+        "date": "Sat, 17 Oct 2026 19:26:10 GMT",
+        "content-type": "application/json",
+        "content-length": "49",
+        "connection": "close"
+      },
+      "http_body": "{\"done\":false,\"id\":1,\"title\":\"seeded open note\"}\n",
+      "http_body_truncated": false,
+      "writes": [
+        "write: POST http://127.0.0.1:32903/login -> 200"
+      ],
+      "details": [
+        "credential provider: POST /login (login)",
+        "write: POST http://127.0.0.1:32903/login -> 200",
+        "credential provider: token acquired",
+        "act: GET /notes/1 -> 200",
+        "status: got 200, expected 200 -> PASS",
+        "body json_path: got False -> PASS"
+      ],
+      "sent": true,
+      "assertions_evaluated": true
+    },
+    {
+      "schema_version": "1.6.0",
+      "probe_index": 1,
+      "verdict": "pass",
+      "reason": null,
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:32903/notes/2",
+        "headers": {
+          "Authorization": "Bearer ***REDACTED***"
+        },
+        "body": null
+      },
+      "setup_requests": [],
+      "http_status": 200,
+      "http_headers": {
+        "server": "Werkzeug/3.1.3 Python/3.13.16",
+        "date": "Sat, 17 Oct 2026 19:26:10 GMT",
+        "content-type": "application/json",
+        "content-length": "48",
+        "connection": "close"
+      },
+      "http_body": "{\"done\":true,\"id\":2,\"title\":\"seeded done note\"}\n",
+      "http_body_truncated": false,
+      "writes": [
+        "write: POST http://127.0.0.1:32903/login -> 200"
+      ],
+      "details": [
+        "credential provider: POST /login (login)",
+        "write: POST http://127.0.0.1:32903/login -> 200",
+        "credential provider: token acquired",
+        "act: GET /notes/2 -> 200",
+        "status: got 200, expected 200 -> PASS",
+        "body json_path: got True -> PASS"
+      ],
+      "sent": true,
+      "assertions_evaluated": true
+    }
+  ],
+  "refs": {
+    "repo": "/tmp/verify-repo",
+    "from_ref": "18b833d393bd5c2db89e5bbc83cb8d91671d2241",
+    "to_ref": "ae7e2b13d38bd39d4dcb649fdca1ccf13c223fd3",
+    "from_sha": "18b833d393bd5c2db89e5bbc83cb8d91671d2241",
+    "to_sha": "ae7e2b13d38bd39d4dcb649fdca1ccf13c223fd3"
+  },
+  "model": "openai/gpt-oss-120b",
+  "probe_set_sha256": "3ded2a9bb56f5dcedba2e9271a8a16f305c0e939b587907218a6950ddc494f3f",
+  "engine": "proofdeploy/0.1.0",
+  "isolation_mode": "none+socket",
+  "evidence_record": {
+    "path": "verify-records/runs.jsonl",
+    "record_id": "696a0beea99a4ee98fedcb7e51175974"
+  },
+  "record_schema_version": "1.6.0",
+  "timings": {
+    "bundle_s": 0.02,
+    "author_s": 1.644,
+    "provision_s": 87.871,
+    "execute_s": 0.009,
+    "total_s": 123.403
+  }
+}
+
+verify exit code: 0
