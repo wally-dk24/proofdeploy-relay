@@ -1,0 +1,8 @@
+{
+ "kind": "readiness",
+ "repo": "paperless-ngx/paperless-ngx",
+ "attempt": 2,
+ "network_mode": "none+socket",
+ "rows": [],
+ "regd_summaries": []
+}
