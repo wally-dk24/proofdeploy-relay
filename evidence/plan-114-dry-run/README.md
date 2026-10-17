@@ -145,5 +145,6 @@ snapshot comparison, one step before the dry-run stop.
 None. The captured outputs were scanned for credential material
 (Groq key patterns, bearer tokens, api-key/password/secret
 strings): no matches. No credential was present in any run's
-environment (GROQ_API_KEY unset). Files: 39, all < 1 MB, no
-trims.
+environment (GROQ_API_KEY unset). Files: 43 in this pack
+(40 per-unit outputs, predictions.md, runs.jsonl, this README),
+all < 1 MB, no trims.
