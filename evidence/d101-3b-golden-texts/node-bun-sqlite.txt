@@ -1,4 +1,4 @@
-Repository: node-pnpm-sqlite
+Repository: node-bun-sqlite
 Seed data: seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)
 Authentication: Bearer token from POST /register or /login in the Authorization header. Your token: ${AUTH_TOKEN}.
 Token scope: a regular user token belonging to seeduser, obtained by signing in as seeduser. No other users, roles, or credentials exist beyond what the seed creates.
