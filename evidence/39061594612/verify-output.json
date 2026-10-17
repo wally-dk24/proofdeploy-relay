@@ -1,0 +1,165 @@
+{
+  "verify_output_version": "1.0.0",
+  "verdict": "PASS",
+  "exit_code": 0,
+  "typed_reason": null,
+  "cause": null,
+  "detail": null,
+  "probes": [
+    {
+      "schema_version": "1.6.0",
+      "probe_index": 0,
+      "verdict": "pass",
+      "reason": null,
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:39839/notes/1",
+        "headers": {
+          "Authorization": "Bearer ***REDACTED***"
+        },
+        "body": null
+      },
+      "setup_requests": [],
+      "http_status": 200,
+      "http_headers": {
+        "x-powered-by": "Express",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "48",
+        "etag": "W/\"30-BNn+zUC3bb8xxcWfLLTlas0wn+8\"",
+        "date": "Sat, 17 Oct 2026 19:21:04 GMT",
+        "connection": "close"
+      },
+      "http_body": "{\"id\":1,\"title\":\"seeded open note\",\"done\":false}",
+      "http_body_truncated": false,
+      "writes": [
+        "write: POST http://127.0.0.1:39839/login -> 200"
+      ],
+      "details": [
+        "credential provider: POST /login (login)",
+        "write: POST http://127.0.0.1:39839/login -> 200",
+        "credential provider: token acquired",
+        "act: GET /notes/1 -> 200",
+        "status: got 200, expected 200 -> PASS",
+        "body json_path: got False -> PASS"
+      ],
+      "sent": true,
+      "assertions_evaluated": true
+    },
+    {
+      "schema_version": "1.6.0",
+      "probe_index": 1,
+      "verdict": "pass",
+      "reason": null,
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:39839/notes/2",
+        "headers": {
+          "Authorization": "Bearer ***REDACTED***"
+        },
+        "body": null
+      },
+      "setup_requests": [],
+      "http_status": 200,
+      "http_headers": {
+        "x-powered-by": "Express",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "47",
+        "etag": "W/\"2f-ZyxMIrGMpC5bspAvkb2Dhp5poT0\"",
+        "date": "Sat, 17 Oct 2026 19:21:04 GMT",
+        "connection": "close"
+      },
+      "http_body": "{\"id\":2,\"title\":\"seeded done note\",\"done\":true}",
+      "http_body_truncated": false,
+      "writes": [
+        "write: POST http://127.0.0.1:39839/login -> 200"
+      ],
+      "details": [
+        "credential provider: POST /login (login)",
+        "write: POST http://127.0.0.1:39839/login -> 200",
+        "credential provider: token acquired",
+        "act: GET /notes/2 -> 200",
+        "status: got 200, expected 200 -> PASS",
+        "body json_path: got True -> PASS"
+      ],
+      "sent": true,
+      "assertions_evaluated": true
+    },
+    {
+      "schema_version": "1.6.0",
+      "probe_index": 2,
+      "verdict": "pass",
+      "reason": null,
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:39839/notes/3",
+        "headers": {
+          "Authorization": "Bearer ***REDACTED***"
+        },
+        "body": null
+      },
+      "setup_requests": [
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1:39839/notes",
+          "headers": {
+            "Authorization": "Bearer ***REDACTED***",
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "title": "probe note"
+          }
+        }
+      ],
+      "http_status": 200,
+      "http_headers": {
+        "x-powered-by": "Express",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "42",
+        "etag": "W/\"2a-HzPH3pRefzXEIGxBKJUapyD+UAI\"",
+        "date": "Sat, 17 Oct 2026 19:21:04 GMT",
+        "connection": "close"
+      },
+      "http_body": "{\"id\":3,\"title\":\"probe note\",\"done\":false}",
+      "http_body_truncated": false,
+      "writes": [
+        "write: POST http://127.0.0.1:39839/login -> 200",
+        "write: POST http://127.0.0.1:39839/notes -> 200"
+      ],
+      "details": [
+        "credential provider: POST /login (login)",
+        "write: POST http://127.0.0.1:39839/login -> 200",
+        "credential provider: token acquired",
+        "write: POST http://127.0.0.1:39839/notes -> 200",
+        "setup[0]: captured ['NOTE_ID']",
+        "act: GET /notes/3 -> 200",
+        "status: got 200, expected 200 -> PASS",
+        "body json_path: got False -> PASS"
+      ],
+      "sent": true,
+      "assertions_evaluated": true
+    }
+  ],
+  "refs": {
+    "repo": "/tmp/verify-repo",
+    "from_ref": "0dabb2988e82fe81dd2d87a123a6c1e995522b1d",
+    "to_ref": "caef23927264a2f0b5a909a888c88634419fdd31",
+    "from_sha": "0dabb2988e82fe81dd2d87a123a6c1e995522b1d",
+    "to_sha": "caef23927264a2f0b5a909a888c88634419fdd31"
+  },
+  "model": "openai/gpt-oss-120b",
+  "probe_set_sha256": "772d2a03c028262c53bd800e0bba7420c22be223d36efeac0b6d4dfd05331777",
+  "engine": "proofdeploy/0.1.0",
+  "isolation_mode": "none+socket",
+  "evidence_record": {
+    "path": "verify-records/runs.jsonl",
+    "record_id": "2cf3a0126b574dbbb77181cf0bed9b03"
+  },
+  "record_schema_version": "1.6.0",
+  "timings": {
+    "bundle_s": 0.014,
+    "author_s": 2.629,
+    "provision_s": 84.77,
+    "execute_s": 0.022,
+    "total_s": 118.587
+  }
+}
