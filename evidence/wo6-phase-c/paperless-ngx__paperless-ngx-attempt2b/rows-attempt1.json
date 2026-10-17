@@ -1,0 +1,45 @@
+{
+ "kind": "readiness",
+ "repo": "paperless-ngx/paperless-ngx",
+ "attempt": 1,
+ "network_mode": "none+socket",
+ "rows": [
+  {
+   "kind": "readiness",
+   "unit": "WO6-C1",
+   "repo": "paperless-ngx/paperless-ngx",
+   "role": "C",
+   "registered_sha": "0cb2cdbfdd91a2078236f8851cd310261284591c",
+   "harness_sha": "342e18a97dae70ec09ca487532e909a5376e08dd",
+   "declared_runtime": ">=3.11",
+   "selected_runtime": "python",
+   "runtime_version": "3.14.8",
+   "package_manager": "uv",
+   "app_path": null,
+   "app_port": null,
+   "workspace_root": null,
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "READY",
+   "typed_reason": null,
+   "last_error": null,
+   "install_plan_sha256": "e64bcb869b9d52e4348e0a429b062f370a6abc93e5036ba29e21df4267293871",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": [],
+   "fixture_template": "fixture_template_nocredential.txt",
+   "fixture_render_sha256": null,
+   "fixture_render_error": "fixture render failed: fixture mapping missing fields: repo_name, seed_note, auth_mechanism, flags_note (our gap)"
+  }
+ ],
+ "regd_summaries": []
+}
