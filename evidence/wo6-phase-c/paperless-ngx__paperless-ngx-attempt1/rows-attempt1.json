@@ -1,0 +1,41 @@
+{
+ "kind": "readiness",
+ "repo": "paperless-ngx/paperless-ngx",
+ "attempt": 1,
+ "network_mode": "none+socket",
+ "rows": [
+  {
+   "kind": "readiness",
+   "unit": "WO6-C1",
+   "repo": "paperless-ngx/paperless-ngx",
+   "role": "C",
+   "registered_sha": "0cb2cdbfdd91a2078236f8851cd310261284591c",
+   "harness_sha": "ece451b24ac78ded07f85a01e0bd15484696c6a4",
+   "declared_runtime": ">=3.11",
+   "selected_runtime": "python",
+   "runtime_version": "3.14.8",
+   "package_manager": "uv",
+   "app_path": null,
+   "workspace_root": null,
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "BUILD_FAILED",
+   "typed_reason": "sandbox install failed: SystemCheckError: System check identified some issues:",
+   "last_error": "sandbox install failed: SystemCheckError: System check identified some issues:",
+   "install_plan_sha256": "d86406bbe7697035c89c5dfe41b10ba9402379fb0a55bdab05fa52c94f1f74b2",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": []
+  }
+ ],
+ "regd_summaries": []
+}
