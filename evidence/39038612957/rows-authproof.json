@@ -1,0 +1,143 @@
+{
+ "kind": "auth-proof",
+ "repo": "paperless-ngx/paperless-ngx",
+ "attempt": 1,
+ "network_mode": "none+socket",
+ "rows": [
+  {
+   "kind": "auth-proof",
+   "unit": "WO6-C1",
+   "repo": "paperless-ngx/paperless-ngx",
+   "role": "C",
+   "registered_sha": "0cb2cdbfdd91a2078236f8851cd310261284591c",
+   "harness_sha": "9b00685f2c46c87553686314a36209ae797b024e",
+   "declared_runtime": ">=3.11",
+   "selected_runtime": "python",
+   "runtime_version": "3.14.8",
+   "package_manager": "uv",
+   "app_path": null,
+   "app_port": null,
+   "workspace_root": null,
+   "npm_flags": [],
+   "regd": {
+    "applied": false,
+    "sample_path": null,
+    "cutoff": null,
+    "command": null,
+    "tree_sha256": null,
+    "tree_artifact": null,
+    "tree_error": null,
+    "tree_npm_version": null
+   },
+   "status": "READY",
+   "typed_reason": null,
+   "last_error": null,
+   "install_plan_sha256": "a24e4754225e65240decfe5622c44cd6af35e2e26aa919e777c1e25c8eab02a7",
+   "network_mode": "none+socket",
+   "attempt": 1,
+   "submodules": [],
+   "fixture_template": "fixture_template.txt",
+   "fixture_render_sha256": "4731c82a8ec34bb84eef78ac8f1e0b884c3a35d7c4fa88f650981497cb43c281",
+   "fixture_render_error": null,
+   "seed": {
+    "key_file_present": null,
+    "key_file": null,
+    "sqlite_files": []
+   },
+   "auth": {
+    "endpoint": "/api/profile/",
+    "method": "GET",
+    "status": "PROVEN",
+    "reason": null,
+    "requests": [
+     {
+      "method": "GET",
+      "path": "/api/profile/",
+      "authorization": "Token <redacted:acquired_token>",
+      "http_status": 200,
+      "body": {
+       "email": "root@localhost",
+       "password": "*****************************************************************************************",
+       "first_name": "",
+       "last_name": "",
+       "auth_token": "<redacted:acquired_token>",
+       "social_accounts": [],
+       "has_usable_password": true,
+       "is_mfa_enabled": false
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 1,
+      "acquisition_kinds": {
+       "login": 1
+      },
+      "details": [
+       "credential provider: POST /api/token/ (login)",
+       "write: POST http://127.0.0.1:46671/api/token/ -> 200",
+       "credential provider: token acquired",
+       "act: GET /api/profile/ -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "GET",
+      "path": "/api/profile/",
+      "authorization": "Token <redacted:acquired_token>",
+      "http_status": 200,
+      "body": {
+       "email": "root@localhost",
+       "password": "*****************************************************************************************",
+       "first_name": "",
+       "last_name": "",
+       "auth_token": "<redacted:acquired_token>",
+       "social_accounts": [],
+       "has_usable_password": true,
+       "is_mfa_enabled": false
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 1,
+      "acquisition_kinds": {
+       "login": 1
+      },
+      "details": [
+       "credential provider: POST /api/token/ (login)",
+       "write: POST http://127.0.0.1:46671/api/token/ -> 200",
+       "credential provider: token acquired",
+       "act: GET /api/profile/ -> 200",
+       "status: got 200, expected 200 -> PASS"
+      ]
+     },
+     {
+      "method": "GET",
+      "path": "/api/profile/",
+      "authorization": null,
+      "http_status": 401,
+      "body": {
+       "detail": "Authentication credentials were not provided."
+      },
+      "verdict": "pass",
+      "reason": null,
+      "acquisitions": 0,
+      "acquisition_kinds": {},
+      "details": [
+       "act: GET /api/profile/ -> 401",
+       "status: got 401, expected 401 -> PASS"
+      ]
+     }
+    ],
+    "acquisitions_after_two_authenticated": 2,
+    "acquisition_kinds": {
+     "login": 2
+    },
+    "passed": true
+   },
+   "redactions": {
+    "key_file": 0,
+    "bootstrap_value": 0,
+    "acquired_token": 2,
+    "jwt_shape": 0
+   }
+  }
+ ]
+}
