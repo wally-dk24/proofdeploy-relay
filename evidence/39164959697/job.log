@@ -1,0 +1,498 @@
+measure	Set up job	﻿2026-10-18T20:48:48.4172821Z Current runner version: '2.337.0'
+measure	Set up job	2026-10-18T20:48:48.4200810Z ##[group]Runner Image Provisioner
+measure	Set up job	2026-10-18T20:48:48.4201679Z Hosted Compute Agent
+measure	Set up job	2026-10-18T20:48:48.4202804Z Version: 20261012.601
+measure	Set up job	2026-10-18T20:48:48.4203507Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+measure	Set up job	2026-10-18T20:48:48.4204363Z Build Date: 2026-10-12T17:48:21Z
+measure	Set up job	2026-10-18T20:48:48.4205121Z Worker ID: {21dd8234-4cdf-4adc-b3f3-e1d9eec2b11a}
+measure	Set up job	2026-10-18T20:48:48.4205905Z Region: eastus
+measure	Set up job	2026-10-18T20:48:48.4206470Z Cloud: Azure
+measure	Set up job	2026-10-18T20:48:48.4207002Z ##[endgroup]
+measure	Set up job	2026-10-18T20:48:48.4208582Z ##[group]Operating System
+measure	Set up job	2026-10-18T20:48:48.4209289Z Ubuntu
+measure	Set up job	2026-10-18T20:48:48.4209796Z 24.04.5
+measure	Set up job	2026-10-18T20:48:48.4210457Z LTS
+measure	Set up job	2026-10-18T20:48:48.4210977Z ##[endgroup]
+measure	Set up job	2026-10-18T20:48:48.4211683Z ##[group]Runner Image
+measure	Set up job	2026-10-18T20:48:48.4212517Z Image: ubuntu-24.04
+measure	Set up job	2026-10-18T20:48:48.4213104Z Version: 20261012.334.1
+measure	Set up job	2026-10-18T20:48:48.4214300Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+measure	Set up job	2026-10-18T20:48:48.4216271Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+measure	Set up job	2026-10-18T20:48:48.4217270Z ##[endgroup]
+measure	Set up job	2026-10-18T20:48:48.4218466Z ##[group]GITHUB_TOKEN Permissions
+measure	Set up job	2026-10-18T20:48:48.4220722Z Contents: write
+measure	Set up job	2026-10-18T20:48:48.4221486Z Metadata: read
+measure	Set up job	2026-10-18T20:48:48.4222297Z ##[endgroup]
+measure	Set up job	2026-10-18T20:48:48.4224961Z Secret source: Actions
+measure	Set up job	2026-10-18T20:48:48.4226087Z Cache mode: write
+measure	Set up job	2026-10-18T20:48:48.4226777Z Prepare workflow directory
+measure	Set up job	2026-10-18T20:48:48.4568731Z Prepare all required actions
+measure	Set up job	2026-10-18T20:48:48.4617645Z Getting action download info
+measure	Set up job	2026-10-18T20:48:48.6656084Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+measure	Set up job	2026-10-18T20:48:48.7580385Z Download action repository 'actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97' (SHA:5fda3b95a4ea91299a34e894583c3862153e4b97)
+measure	Set up job	2026-10-18T20:48:48.9471325Z Complete job name: measure
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	﻿2026-10-18T20:48:49.0294326Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.0295409Z with:
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.0295868Z   persist-credentials: false
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.0296430Z   repository: wally-dk24/proofdeploy
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.0300106Z   token: ***
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.0300542Z   ssh-strict: true
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.0300997Z   ssh-user: git
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.0301416Z   clean: true
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.0301869Z   sparse-checkout-cone-mode: true
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.0302679Z   fetch-depth: 1
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.0303126Z   fetch-tags: false
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.0303569Z   show-progress: true
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.0304018Z   lfs: false
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.0304437Z   submodules: false
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.0304884Z   set-safe-directory: true
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.0305392Z   allow-unsafe-pr-checkout: false
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.0306171Z ##[endgroup]
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1299123Z Syncing repository: wally-dk24/proofdeploy
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1301727Z ##[group]Getting Git version info
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1303355Z Working directory is '/home/runner/work/proofdeploy/proofdeploy'
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1305128Z [command]/usr/bin/git version
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1355872Z git version 2.55.0
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1378019Z ##[endgroup]
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1388687Z Temporarily overriding HOME='/home/runner/work/_temp/da787992-3127-4780-b3a7-f10d6574ce71' before making global git config changes
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1391148Z Adding repository directory to the temporary git global config as a safe directory
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1395487Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/proofdeploy/proofdeploy
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1452466Z Deleting the contents of '/home/runner/work/proofdeploy/proofdeploy'
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1457149Z ##[group]Determining repository object format
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1458706Z ##[endgroup]
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1459963Z ##[group]Initializing the repository
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1463529Z [command]/usr/bin/git init /home/runner/work/proofdeploy/proofdeploy
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1555938Z hint: Using 'master' as the name for the initial branch. This default branch name
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1557777Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1559489Z hint: to use in all of your new repositories, which will suppress this warning,
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1561186Z hint: call:
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1562480Z hint:
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1563720Z hint: 	git config --global init.defaultBranch <name>
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1564959Z hint:
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1566298Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1568086Z hint: 'development'. The just-created branch can be renamed via this command:
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1569509Z hint:
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1570419Z hint: 	git branch -m <name>
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1571733Z hint:
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1573235Z hint: Disable this message with "git config set advice.defaultBranchName false"
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1575133Z Initialized empty Git repository in /home/runner/work/proofdeploy/proofdeploy/.git/
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1578119Z [command]/usr/bin/git remote add origin https://github.com/wally-dk24/proofdeploy
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1623863Z ##[endgroup]
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1625252Z ##[group]Disabling automatic garbage collection
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1628173Z [command]/usr/bin/git config --local gc.auto 0
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1662341Z ##[endgroup]
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1663994Z ##[group]Setting up auth
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1665127Z Removing SSH command configuration
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1669008Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.1712974Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.2070192Z Removing HTTP extra header
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.2074862Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.2114607Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.2341187Z Removing includeIf entries pointing to credentials config files
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.2342787Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.2377262Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.2610035Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-1f482142-63c4-4c39-b790-6bdc300ec8dd.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.2653455Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git.path /home/runner/work/_temp/git-credentials-1f482142-63c4-4c39-b790-6bdc300ec8dd.config
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.2770840Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-1f482142-63c4-4c39-b790-6bdc300ec8dd.config
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.2797008Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-1f482142-63c4-4c39-b790-6bdc300ec8dd.config
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.2803026Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-1f482142-63c4-4c39-b790-6bdc300ec8dd.config
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.2816950Z ##[endgroup]
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.2818736Z ##[group]Fetching the repository
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.2824256Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e8bf530bd2a3df06286d23f305966aa59a23a121:refs/remotes/origin/main
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.6968620Z From https://github.com/wally-dk24/proofdeploy
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.6971211Z  * [new ref]         e8bf530bd2a3df06286d23f305966aa59a23a121 -> origin/main
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.6979530Z [command]/usr/bin/git branch --list --remote origin/main
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.7009225Z   origin/main
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.7017892Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.7044959Z e8bf530bd2a3df06286d23f305966aa59a23a121
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.7050011Z ##[endgroup]
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.7051423Z ##[group]Determining the checkout info
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.7053393Z ##[endgroup]
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.7054378Z [command]/usr/bin/git sparse-checkout disable
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.7105917Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.7139386Z ##[group]Checking out the ref
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.7143943Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.7621872Z Switched to a new branch 'main'
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.7626871Z branch 'main' set up to track 'origin/main'.
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.7637642Z ##[endgroup]
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.7686774Z [command]/usr/bin/git log -1 --format=%H
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.7717624Z e8bf530bd2a3df06286d23f305966aa59a23a121
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.7727076Z ##[group]Removing auth
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.7727776Z Removing SSH command configuration
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.7731432Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.7770594Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8007778Z Removing HTTP extra header
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8012325Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8050956Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8277169Z Removing includeIf entries pointing to credentials config files
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8280112Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8312553Z includeif.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git.path
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8314670Z includeif.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git/worktrees/*.path
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8316828Z includeif.gitdir:/github/workspace/.git.path
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8318101Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8321507Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git.path
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8349017Z /home/runner/work/_temp/git-credentials-1f482142-63c4-4c39-b790-6bdc300ec8dd.config
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8359995Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-1f482142\-63c4\-4c39\-b790\-6bdc300ec8dd\.config
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8398288Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git/worktrees/*.path
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8455423Z /home/runner/work/_temp/git-credentials-1f482142-63c4-4c39-b790-6bdc300ec8dd.config
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8465748Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-1f482142\-63c4\-4c39\-b790\-6bdc300ec8dd\.config
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8503596Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8564648Z /github/runner_temp/git-credentials-1f482142-63c4-4c39-b790-6bdc300ec8dd.config
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8576046Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-1f482142\-63c4\-4c39\-b790\-6bdc300ec8dd\.config
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8623456Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8649320Z /github/runner_temp/git-credentials-1f482142-63c4-4c39-b790-6bdc300ec8dd.config
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8657470Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-1f482142\-63c4\-4c39\-b790\-6bdc300ec8dd\.config
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8696072Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8914835Z Removing credentials config '/home/runner/work/_temp/git-credentials-1f482142-63c4-4c39-b790-6bdc300ec8dd.config'
+measure	Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:48:49.8924225Z ##[endgroup]
+measure	Set up Python	﻿2026-10-18T20:48:49.9340063Z ##[group]Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+measure	Set up Python	2026-10-18T20:48:49.9341617Z with:
+measure	Set up Python	2026-10-18T20:48:49.9342705Z   python-version: 3.12
+measure	Set up Python	2026-10-18T20:48:49.9343581Z   check-latest: false
+measure	Set up Python	2026-10-18T20:48:49.9352710Z   token: ***
+measure	Set up Python	2026-10-18T20:48:49.9353528Z   update-environment: true
+measure	Set up Python	2026-10-18T20:48:49.9354471Z   allow-prereleases: false
+measure	Set up Python	2026-10-18T20:48:49.9355394Z   freethreaded: false
+measure	Set up Python	2026-10-18T20:48:49.9356220Z ##[endgroup]
+measure	Set up Python	2026-10-18T20:48:50.0515082Z ##[group]Installed versions
+measure	Set up Python	2026-10-18T20:48:50.0598474Z Successfully set up CPython (3.12.15)
+measure	Set up Python	2026-10-18T20:48:50.0601091Z ##[endgroup]
+measure	Install podman	﻿2026-10-18T20:48:50.0779532Z ##[group]Run sudo apt-get update
+measure	Install podman	2026-10-18T20:48:50.0780661Z ^[[36;1msudo apt-get update^[[0m
+measure	Install podman	2026-10-18T20:48:50.0781657Z ^[[36;1msudo apt-get install -y podman^[[0m
+measure	Install podman	2026-10-18T20:48:50.1099937Z shell: /usr/bin/bash -e {0}
+measure	Install podman	2026-10-18T20:48:50.1100997Z env:
+measure	Install podman	2026-10-18T20:48:50.1102145Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Install podman	2026-10-18T20:48:50.1103861Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+measure	Install podman	2026-10-18T20:48:50.1105494Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Install podman	2026-10-18T20:48:50.1107014Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Install podman	2026-10-18T20:48:50.1108474Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Install podman	2026-10-18T20:48:50.1109961Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+measure	Install podman	2026-10-18T20:48:50.1111198Z ##[endgroup]
+measure	Install podman	2026-10-18T20:48:50.1943345Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+measure	Install podman	2026-10-18T20:48:50.2217459Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+measure	Install podman	2026-10-18T20:48:50.2397222Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+measure	Install podman	2026-10-18T20:48:50.2429964Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+measure	Install podman	2026-10-18T20:48:50.2479784Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+measure	Install podman	2026-10-18T20:48:50.2507337Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+measure	Install podman	2026-10-18T20:48:50.3000211Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [557 kB]
+measure	Install podman	2026-10-18T20:48:50.3247617Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [618 kB]
+measure	Install podman	2026-10-18T20:48:50.3306720Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.4 kB]
+measure	Install podman	2026-10-18T20:48:50.4255595Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1397 kB]
+measure	Install podman	2026-10-18T20:48:50.4334605Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [308 kB]
+measure	Install podman	2026-10-18T20:48:50.4358104Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1704 kB]
+measure	Install podman	2026-10-18T20:48:50.4459088Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [342 kB]
+measure	Install podman	2026-10-18T20:48:50.4485094Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1805 kB]
+measure	Install podman	2026-10-18T20:48:50.4600670Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [411 kB]
+measure	Install podman	2026-10-18T20:48:50.5334570Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1144 kB]
+measure	Install podman	2026-10-18T20:48:50.5389760Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [231 kB]
+measure	Install podman	2026-10-18T20:48:50.5407348Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1222 kB]
+measure	Install podman	2026-10-18T20:48:50.5463141Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [246 kB]
+measure	Install podman	2026-10-18T20:48:50.5915243Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1713 kB]
+measure	Install podman	2026-10-18T20:48:50.6027310Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [392 kB]
+measure	Install podman	2026-10-18T20:48:53.5919770Z Fetched 12.5 MB in 1s (9686 kB/s)
+measure	Install podman	2026-10-18T20:48:54.5286292Z Reading package lists...
+measure	Install podman	2026-10-18T20:48:54.5586608Z Reading package lists...
+measure	Install podman	2026-10-18T20:48:54.7774023Z Building dependency tree...
+measure	Install podman	2026-10-18T20:48:54.7781051Z Reading state information...
+measure	Install podman	2026-10-18T20:48:54.9385627Z podman is already the newest version (4.9.3+ds1-1ubuntu0.2).
+measure	Install podman	2026-10-18T20:48:54.9386330Z 0 upgraded, 0 newly installed, 0 to remove and 44 not upgraded.
+measure	Install package	﻿2026-10-18T20:48:54.9447148Z ##[group]Run python -m pip install --upgrade pip
+measure	Install package	2026-10-18T20:48:54.9447656Z ^[[36;1mpython -m pip install --upgrade pip^[[0m
+measure	Install package	2026-10-18T20:48:54.9448029Z ^[[36;1mpip install -e .^[[0m
+measure	Install package	2026-10-18T20:48:54.9513696Z shell: /usr/bin/bash -e {0}
+measure	Install package	2026-10-18T20:48:54.9514018Z env:
+measure	Install package	2026-10-18T20:48:54.9514353Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Install package	2026-10-18T20:48:54.9514848Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+measure	Install package	2026-10-18T20:48:54.9515349Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Install package	2026-10-18T20:48:54.9515841Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Install package	2026-10-18T20:48:54.9516284Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Install package	2026-10-18T20:48:54.9516742Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+measure	Install package	2026-10-18T20:48:54.9517156Z ##[endgroup]
+measure	Install package	2026-10-18T20:48:55.6183208Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages (26.2.1)
+measure	Install package	2026-10-18T20:48:56.2418159Z Obtaining file:///home/runner/work/proofdeploy/proofdeploy
+measure	Install package	2026-10-18T20:48:56.2435119Z   Installing build dependencies: started
+measure	Install package	2026-10-18T20:48:57.4491218Z   Installing build dependencies: finished with status 'done'
+measure	Install package	2026-10-18T20:48:57.4497835Z   Checking if build backend supports build_editable: started
+measure	Install package	2026-10-18T20:48:57.7695073Z   Checking if build backend supports build_editable: finished with status 'done'
+measure	Install package	2026-10-18T20:48:57.7703023Z   Getting requirements to build editable: started
+measure	Install package	2026-10-18T20:48:58.1196717Z   Getting requirements to build editable: finished with status 'done'
+measure	Install package	2026-10-18T20:48:58.1206567Z   Preparing editable metadata (pyproject.toml): started
+measure	Install package	2026-10-18T20:48:58.3283876Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+measure	Install package	2026-10-18T20:48:58.5544628Z Collecting pyyaml>=6.0 (from proofdeploy==0.1.0)
+measure	Install package	2026-10-18T20:48:58.6516355Z   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+measure	Install package	2026-10-18T20:48:58.6765856Z Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+measure	Install package	2026-10-18T20:48:58.7840375Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 11.5 MB/s  0:00:00
+measure	Install package	2026-10-18T20:48:58.7906404Z Building wheels for collected packages: proofdeploy
+measure	Install package	2026-10-18T20:48:58.7915475Z   Building editable for proofdeploy (pyproject.toml): started
+measure	Install package	2026-10-18T20:48:59.0185482Z   Building editable for proofdeploy (pyproject.toml): finished with status 'done'
+measure	Install package	2026-10-18T20:48:59.0203446Z   Created wheel for proofdeploy: filename=proofdeploy-0.1.0-0.editable-py3-none-any.whl size=6175 sha256=0ab1309f8f0ff2e32a24d72281d6fe822891cf5dcf1117ec9b426e66414b47e4
+measure	Install package	2026-10-18T20:48:59.0204773Z   Stored in directory: /tmp/pip-ephem-wheel-cache-c2anwgnw/wheels/9a/73/f6/d95220d5eb7b2490401f2b7b70bac6d3505c67ed8468209e66
+measure	Install package	2026-10-18T20:48:59.0222879Z Successfully built proofdeploy
+measure	Install package	2026-10-18T20:48:59.0361506Z Installing collected packages: pyyaml, proofdeploy
+measure	Install package	2026-10-18T20:48:59.1018911Z 
+measure	Install package	2026-10-18T20:48:59.1029157Z Successfully installed proofdeploy-0.1.0 pyyaml-6.0.3
+measure	Validate public env keys (D203, fail closed)	﻿2026-10-18T20:48:59.1645229Z ##[group]Run python - <<'PY'
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1645578Z ^[[36;1mpython - <<'PY'^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1645819Z ^[[36;1mimport os^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1646029Z ^[[36;1mimport sys^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1646230Z ^[[36;1m^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1646439Z ^[[36;1mfrom proofdeploy.cli import (^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1646738Z ^[[36;1m    contract_bootstrap_env_names,^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1647031Z ^[[36;1m    validate_public_env_keys,^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1647285Z ^[[36;1m)^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1647464Z ^[[36;1m^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1647711Z ^[[36;1mkeys = os.environ["PUBLIC_ENV_KEYS"].split()^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1648059Z ^[[36;1mbootstrap = contract_bootstrap_env_names(^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1648417Z ^[[36;1m    os.environ.get("UNIT_REPO") or None,^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1648742Z ^[[36;1m    os.environ.get("TARGET_REPO") or None,^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1649028Z ^[[36;1m)^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1649233Z ^[[36;1mif bootstrap is None:^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1649473Z ^[[36;1m    print(^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1649810Z ^[[36;1m        "public_env_keys: the dispatched unit's contract "^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1650212Z ^[[36;1m        "could not be resolved; refusing to validate",^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1650539Z ^[[36;1m        file=sys.stderr,^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1650786Z ^[[36;1m    )^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1650990Z ^[[36;1m    sys.exit(1)^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1651215Z ^[[36;1mtry:^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1651440Z ^[[36;1m    accepted = validate_public_env_keys(^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1651771Z ^[[36;1m        keys, bootstrap_env_names=bootstrap^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1652384Z ^[[36;1m    )^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1652728Z ^[[36;1mexcept ValueError as exc:^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1653065Z ^[[36;1m    print(f"public_env_keys: {exc}", file=sys.stderr)^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1653395Z ^[[36;1m    sys.exit(1)^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1653688Z ^[[36;1mprint("public env keys accepted:", " ".join(accepted))^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1654010Z ^[[36;1mPY^[[0m
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1717774Z shell: /usr/bin/bash -e {0}
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1718046Z env:
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1718329Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1718776Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1719225Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1719617Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1719999Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1720385Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1720822Z   PUBLIC_ENV_KEYS: PAPERLESS_CHANNELS_BACKEND PAPERLESS_CACHE_BACKEND
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1721186Z   UNIT_REPO: 
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1721489Z   TARGET_REPO: https://github.com/paperless-ngx/paperless-ngx
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.1721848Z ##[endgroup]
+measure	Validate public env keys (D203, fail closed)	2026-10-18T20:48:59.2447725Z public env keys accepted: PAPERLESS_CHANNELS_BACKEND PAPERLESS_CACHE_BACKEND
+measure	Check out target repo	﻿2026-10-18T20:48:59.2571876Z ##[group]Run # Quote the input via env to avoid shell injection.
+measure	Check out target repo	2026-10-18T20:48:59.2572664Z ^[[36;1m# Quote the input via env to avoid shell injection.^[[0m
+measure	Check out target repo	2026-10-18T20:48:59.2573052Z ^[[36;1mgit clone "$TARGET_REPO" /tmp/target-repo^[[0m
+measure	Check out target repo	2026-10-18T20:48:59.2635342Z shell: /usr/bin/bash -e {0}
+measure	Check out target repo	2026-10-18T20:48:59.2635597Z env:
+measure	Check out target repo	2026-10-18T20:48:59.2635862Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Check out target repo	2026-10-18T20:48:59.2636306Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+measure	Check out target repo	2026-10-18T20:48:59.2636746Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Check out target repo	2026-10-18T20:48:59.2637128Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Check out target repo	2026-10-18T20:48:59.2637684Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Check out target repo	2026-10-18T20:48:59.2638105Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+measure	Check out target repo	2026-10-18T20:48:59.2638540Z   TARGET_REPO: https://github.com/paperless-ngx/paperless-ngx
+measure	Check out target repo	2026-10-18T20:48:59.2638879Z ##[endgroup]
+measure	Check out target repo	2026-10-18T20:48:59.2732148Z Cloning into '/tmp/target-repo'...
+measure	Capability probe (fail-closed gate)	﻿2026-10-18T20:49:12.1236602Z ##[group]Run python -c "
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:12.1236919Z ^[[36;1mpython -c "^[[0m
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:12.1237234Z ^[[36;1mfrom proofdeploy.sandbox import assert_measurement_gate^[[0m
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:12.1237701Z ^[[36;1m# Fail-closed: raises if the host cannot meet the requirements.^[[0m
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:12.1238146Z ^[[36;1m# No config arg needed; uses defaults. This step fails the^[[0m
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:12.1238523Z ^[[36;1m# workflow if the gate fails. No fallback.^[[0m
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:12.1238843Z ^[[36;1mprobe = assert_measurement_gate()^[[0m
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:12.1239131Z ^[[36;1mprint('GATE PASSED')^[[0m
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:12.1239373Z ^[[36;1mimport json^[[0m
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:12.1239636Z ^[[36;1mprint(json.dumps(probe, indent=2))^[[0m
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:12.1239907Z ^[[36;1m"^[[0m
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:12.1300477Z shell: /usr/bin/bash -e {0}
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:12.1300726Z env:
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:12.1301002Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:12.1301444Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:12.1301908Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:12.1302432Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:12.1302831Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:12.1303225Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:12.1303552Z ##[endgroup]
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:57.0313530Z GATE PASSED
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:57.0313919Z {
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:57.0314203Z   "podman": true,
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:57.0314611Z   "podman_version": "podman version 4.9.3",
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:57.0315133Z   "isolated_network": false,
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:57.0315519Z   "build_network": true,
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:57.0315876Z   "userns_remap": true,
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:57.0316811Z   "reason": "isolated network unavailable: container has IP 10.89.0.2 but the host cannot reach it: 8 connect attempts over 10 s, last error: timed out"
+measure	Capability probe (fail-closed gate)	2026-10-18T20:49:57.0317783Z }
+measure	Run measured unit	﻿2026-10-18T20:49:57.0508577Z ##[group]Run # The key is available to `proofdeploy measure` on the host only.
+measure	Run measured unit	2026-10-18T20:49:57.0509219Z ^[[36;1m# The key is available to `proofdeploy measure` on the host only.^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0509691Z ^[[36;1m# It never enters containers, never appears in prompts, and is^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0510071Z ^[[36;1m# redacted by value in records.^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0510421Z ^[[36;1m# Use set +e: if measure fails, we still write the SHAs (which^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0510832Z ^[[36;1m# may be empty) to GITHUB_OUTPUT, then exit with the code.^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0511158Z ^[[36;1mset +e^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0511408Z ^[[36;1mmkdir -p /tmp/workdir /tmp/output^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0511781Z ^[[36;1m# Provenance goes to `measure` itself via --provenance-* args,^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0512536Z ^[[36;1m# so the evidence record carries them (not via GITHUB_ENV after).^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0513228Z ^[[36;1mPROV_ARGS="--provenance-run-url $RUN_URL --provenance-run-id $RUN_ID --provenance-runner-image $ImageOS-$ImageVersion"^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0513844Z ^[[36;1mif [ "$ARM" = "skill" ]; then^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0514191Z ^[[36;1m  # The skill arm uses the registered skill file from the repo.^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0514690Z ^[[36;1m  SKILL_ARGS="--skill $GITHUB_WORKSPACE/docs/evaluation/skill/skill-author.md"^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0515090Z ^[[36;1melse^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0515294Z ^[[36;1m  SKILL_ARGS="--no-skill"^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0515532Z ^[[36;1mfi^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0515819Z ^[[36;1m# D154: --unit-repo names the contract-store slug. Empty for^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0516249Z ^[[36;1m# real-repo runs, which leaves their command line unchanged.^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0516781Z ^[[36;1mif [ -n "$UNIT_REPO" ]; then^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0517057Z ^[[36;1m  UNIT_ARGS="--unit-repo $UNIT_REPO"^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0517328Z ^[[36;1melse^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0517528Z ^[[36;1m  UNIT_ARGS=""^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0517744Z ^[[36;1mfi^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0518016Z ^[[36;1m# D203: --public-env-key for each dispatched key. The keys^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0518452Z ^[[36;1m# were validated fail-closed by the step above (a bad key^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0518863Z ^[[36;1m# already failed the job); empty input expands to nothing^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0519224Z ^[[36;1m# and leaves the command line unchanged.^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0519541Z ^[[36;1mPUBLIC_ENV_ARGS=""^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0519799Z ^[[36;1mfor key in $PUBLIC_ENV_KEYS; do^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0520150Z ^[[36;1m  PUBLIC_ENV_ARGS="$PUBLIC_ENV_ARGS --public-env-key $key"^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0520491Z ^[[36;1mdone^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0520759Z ^[[36;1m# D221: the provision rehearsal flag. "none" (the default)^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0521173Z ^[[36;1m# expands to nothing and leaves the command line a plain^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0521505Z ^[[36;1m# measured run.^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0521754Z ^[[36;1mif [ "$DRY_RUN" = "provision" ]; then^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0522309Z ^[[36;1m  DRY_RUN_ARGS="--dry-run-provision"^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0522592Z ^[[36;1melse^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0522786Z ^[[36;1m  DRY_RUN_ARGS=""^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0523014Z ^[[36;1mfi^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0523212Z ^[[36;1mif [ -n "$BUG_ID" ]; then^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0523511Z ^[[36;1m  OUTPUT=$(python -m proofdeploy.cli measure \^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0523843Z ^[[36;1m    --repo /tmp/target-repo \^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0524114Z ^[[36;1m    --workdir /tmp/workdir \^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0524386Z ^[[36;1m    --output-dir /tmp/output \^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0524659Z ^[[36;1m    $SKILL_ARGS \^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0524882Z ^[[36;1m    $UNIT_ARGS \^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0525113Z ^[[36;1m    $PUBLIC_ENV_ARGS \^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0525356Z ^[[36;1m    $DRY_RUN_ARGS \^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0525587Z ^[[36;1m    --bug-id "$BUG_ID" \^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0525833Z ^[[36;1m    --base "$BASE" \^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0526073Z ^[[36;1m    --bug "$BUG" \^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0526303Z ^[[36;1m    --fix "$FIX" \^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0526526Z ^[[36;1m    $PROV_ARGS 2>&1)^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0526919Z ^[[36;1melse^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0527165Z ^[[36;1m  OUTPUT=$(python -m proofdeploy.cli measure \^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0527510Z ^[[36;1m    --repo /tmp/target-repo \^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0527834Z ^[[36;1m    --workdir /tmp/workdir \^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0528105Z ^[[36;1m    --output-dir /tmp/output \^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0528367Z ^[[36;1m    $SKILL_ARGS \^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0528594Z ^[[36;1m    $UNIT_ARGS \^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0528826Z ^[[36;1m    $PUBLIC_ENV_ARGS \^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0529073Z ^[[36;1m    $DRY_RUN_ARGS \^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0529313Z ^[[36;1m    --clean-id "$CLEAN_ID" \^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0529587Z ^[[36;1m    --clean "$CLEAN" \^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0529825Z ^[[36;1m    $PROV_ARGS 2>&1)^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0530051Z ^[[36;1mfi^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0530237Z ^[[36;1mCODE=$?^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0530438Z ^[[36;1mecho "$OUTPUT"^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0530743Z ^[[36;1m# Take the evidence and score SHAs from measure's own output.^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0531201Z ^[[36;1m# Always write them (even if empty) so the push step can decide.^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0531734Z ^[[36;1mEVIDENCE_SHA=$(echo "$OUTPUT" | grep -oP 'evidence committed: \K[0-9a-f]{40}' | head -1)^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0532581Z ^[[36;1mSCORE_SHA=$(echo "$OUTPUT" | grep -oP 'score committed: \K[0-9a-f]{40}' | head -1)^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0533061Z ^[[36;1mecho "evidence_sha=$EVIDENCE_SHA" >> "$GITHUB_OUTPUT"^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0533434Z ^[[36;1mecho "score_sha=$SCORE_SHA" >> "$GITHUB_OUTPUT"^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0533739Z ^[[36;1mexit $CODE^[[0m
+measure	Run measured unit	2026-10-18T20:49:57.0596155Z shell: /usr/bin/bash -e {0}
+measure	Run measured unit	2026-10-18T20:49:57.0596559Z env:
+measure	Run measured unit	2026-10-18T20:49:57.0596830Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Run measured unit	2026-10-18T20:49:57.0597272Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+measure	Run measured unit	2026-10-18T20:49:57.0597700Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Run measured unit	2026-10-18T20:49:57.0598085Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Run measured unit	2026-10-18T20:49:57.0598485Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Run measured unit	2026-10-18T20:49:57.0598868Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+measure	Run measured unit	2026-10-18T20:49:57.0599469Z   GROQ_API_KEY: ***
+measure	Run measured unit	2026-10-18T20:49:57.0599682Z   ARM: skill
+measure	Run measured unit	2026-10-18T20:49:57.0599869Z   UNIT_REPO: 
+measure	Run measured unit	2026-10-18T20:49:57.0600076Z   BUG_ID: wo6-paperless-371c4f57
+measure	Run measured unit	2026-10-18T20:49:57.0600358Z   BASE: 3a34bdc7b078486bc85a97ce309a1c8180cdfc88
+measure	Run measured unit	2026-10-18T20:49:57.0600682Z   BUG: 7dca0bfa6af103b76185aada3ce736b0ac1abc01
+measure	Run measured unit	2026-10-18T20:49:57.0600993Z   FIX: 371c4f57d3ab208fc261e159fa86ca1dc80cb334
+measure	Run measured unit	2026-10-18T20:49:57.0601275Z   CLEAN_ID: 
+measure	Run measured unit	2026-10-18T20:49:57.0601454Z   CLEAN: 
+measure	Run measured unit	2026-10-18T20:49:57.0601735Z   PUBLIC_ENV_KEYS: PAPERLESS_CHANNELS_BACKEND PAPERLESS_CACHE_BACKEND
+measure	Run measured unit	2026-10-18T20:49:57.0602430Z   DRY_RUN: none
+measure	Run measured unit	2026-10-18T20:49:57.0602784Z   RUN_URL: https://github.com/wally-dk24/proofdeploy/actions/runs/39164959697
+measure	Run measured unit	2026-10-18T20:49:57.0603186Z   RUN_ID: 39164959697
+measure	Run measured unit	2026-10-18T20:49:57.0603415Z ##[endgroup]
+measure	Run measured unit	2026-10-18T20:56:08.9259109Z {
+measure	Run measured unit	2026-10-18T20:56:08.9259590Z   "run_kind": "bug",
+measure	Run measured unit	2026-10-18T20:56:08.9260039Z   "bug_id": "wo6-paperless-371c4f57",
+measure	Run measured unit	2026-10-18T20:56:08.9260629Z   "evidence_record_id": "c22c5eb2bdea433c865afcec0e266f2c",
+measure	Run measured unit	2026-10-18T20:56:08.9261299Z   "evidence_commit": "80816db85d2d6fb8642fe9239253040780c9ad4e",
+measure	Run measured unit	2026-10-18T20:56:08.9262260Z   "score_commit": "0b15436586d8e62dd8e41ee968d4a6141217b12d",
+measure	Run measured unit	2026-10-18T20:56:08.9262870Z   "score_path": "/tmp/output/runs.jsonl",
+measure	Run measured unit	2026-10-18T20:56:08.9263360Z   "verdict": "no_catch",
+measure	Run measured unit	2026-10-18T20:56:08.9263703Z   "candidate_catch": [],
+measure	Run measured unit	2026-10-18T20:56:08.9263971Z   "probe_count": 8,
+measure	Run measured unit	2026-10-18T20:56:08.9264195Z   "parent_ready": true,
+measure	Run measured unit	2026-10-18T20:56:08.9264411Z   "fix_ready": true
+measure	Run measured unit	2026-10-18T20:56:08.9264604Z }
+measure	Push records to durable branch	﻿2026-10-18T20:56:08.9378543Z ##[group]Run # Push the evidence commit first, then the score commit, as two
+measure	Push records to durable branch	2026-10-18T20:56:08.9379123Z ^[[36;1m# Push the evidence commit first, then the score commit, as two^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9379580Z ^[[36;1m# separate pushes to the records branch. The runner's disk is^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9380009Z ^[[36;1m# wiped after the run; the branch is the durable store.^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9380466Z ^[[36;1m# Use an explicit token URL (checkout used persist-credentials: false).^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9380942Z ^[[36;1m# Never push an empty source: `git push <url> ":refs/heads/…"`^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9381310Z ^[[36;1m# DELETES the branch.^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9381580Z ^[[36;1mRECORDS_BRANCH="records/run-$RUN_ID"^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9381869Z ^[[36;1mcd /tmp/output^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9382578Z ^[[36;1mgit config user.name "proofdeploy-measure"^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9383022Z ^[[36;1mgit config user.email "proofdeploy-measure@users.noreply.github.com"^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9383609Z ^[[36;1mREPO_URL="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9384126Z ^[[36;1mif [ -n "$EVIDENCE_SHA" ]; then^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9384491Z ^[[36;1m  git push "$REPO_URL" "$EVIDENCE_SHA:refs/heads/$RECORDS_BRANCH"^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9384927Z ^[[36;1m  echo "Pushed evidence $EVIDENCE_SHA to $RECORDS_BRANCH"^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9385346Z ^[[36;1melif git rev-parse --verify HEAD >/dev/null 2>&1; then^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9385752Z ^[[36;1m  echo "WARNING: no evidence SHA parsed; pushing HEAD"^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9386140Z ^[[36;1m  git push "$REPO_URL" "HEAD:refs/heads/$RECORDS_BRANCH"^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9386458Z ^[[36;1melse^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9386744Z ^[[36;1m  echo "WARNING: no evidence SHA and no HEAD; nothing to push"^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9387275Z ^[[36;1mfi^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9387481Z ^[[36;1mif [ -n "$SCORE_SHA" ]; then^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9387820Z ^[[36;1m  git push "$REPO_URL" "$SCORE_SHA:refs/heads/$RECORDS_BRANCH"^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9388224Z ^[[36;1m  echo "Pushed score $SCORE_SHA to $RECORDS_BRANCH"^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9388531Z ^[[36;1melse^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9388801Z ^[[36;1m  echo "WARNING: no score SHA parsed; skipping score push"^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9389134Z ^[[36;1mfi^[[0m
+measure	Push records to durable branch	2026-10-18T20:56:08.9454929Z shell: /usr/bin/bash -e {0}
+measure	Push records to durable branch	2026-10-18T20:56:08.9455184Z env:
+measure	Push records to durable branch	2026-10-18T20:56:08.9455456Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Push records to durable branch	2026-10-18T20:56:08.9455907Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+measure	Push records to durable branch	2026-10-18T20:56:08.9456331Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Push records to durable branch	2026-10-18T20:56:08.9456706Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Push records to durable branch	2026-10-18T20:56:08.9457083Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+measure	Push records to durable branch	2026-10-18T20:56:08.9457471Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+measure	Push records to durable branch	2026-10-18T20:56:08.9460111Z   GH_TOKEN: ***
+measure	Push records to durable branch	2026-10-18T20:56:08.9460330Z   RUN_ID: 39164959697
+measure	Push records to durable branch	2026-10-18T20:56:08.9460544Z   EVIDENCE_SHA: 
+measure	Push records to durable branch	2026-10-18T20:56:08.9460743Z   SCORE_SHA: 
+measure	Push records to durable branch	2026-10-18T20:56:08.9460940Z ##[endgroup]
+measure	Push records to durable branch	2026-10-18T20:56:08.9589910Z WARNING: no evidence SHA parsed; pushing HEAD
+measure	Push records to durable branch	2026-10-18T20:56:10.1153985Z remote: 
+measure	Push records to durable branch	2026-10-18T20:56:10.1154920Z remote: Create a pull request for 'records/run-39164959697' on GitHub by visiting:        
+measure	Push records to durable branch	2026-10-18T20:56:10.1156204Z remote:      https://github.com/wally-dk24/proofdeploy/pull/new/records/run-39164959697        
+measure	Push records to durable branch	2026-10-18T20:56:10.1156854Z remote: 
+measure	Push records to durable branch	2026-10-18T20:56:10.1172759Z To https://github.com/wally-dk24/proofdeploy.git
+measure	Push records to durable branch	2026-10-18T20:56:10.1173411Z  * [new branch]      HEAD -> records/run-39164959697
+measure	Push records to durable branch	2026-10-18T20:56:10.1215602Z WARNING: no score SHA parsed; skipping score push
+measure	Post Set up Python	﻿2026-10-18T20:56:10.1313777Z Post job cleanup.
+measure	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	﻿2026-10-18T20:56:10.2708738Z Post job cleanup.
+measure	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:56:10.3654318Z [command]/usr/bin/git version
+measure	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:56:10.3718660Z git version 2.55.0
+measure	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:56:10.3803260Z Temporarily overriding HOME='/home/runner/work/_temp/20e59f60-be37-49ae-8ed3-4845df0b1c88' before making global git config changes
+measure	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:56:10.3804922Z Adding repository directory to the temporary git global config as a safe directory
+measure	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:56:10.3806252Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/proofdeploy/proofdeploy
+measure	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:56:10.3833273Z Removing SSH command configuration
+measure	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:56:10.3835516Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+measure	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:56:10.3875346Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+measure	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:56:10.4127758Z Removing HTTP extra header
+measure	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:56:10.4133658Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+measure	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:56:10.4175324Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+measure	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:56:10.4424367Z Removing includeIf entries pointing to credentials config files
+measure	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:56:10.4434149Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+measure	Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1	2026-10-18T20:56:10.4472716Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+measure	Complete job	﻿2026-10-18T20:56:10.4858167Z Cleaning up orphan processes
+measure	Complete job	2026-10-18T20:56:10.5160400Z Terminate orphan process: pid (2878) (catatonit)

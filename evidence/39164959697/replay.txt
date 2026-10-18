@@ -1,0 +1,3 @@
+stored score verdict: no_catch
+replay verdict: no_catch
+REPRODUCES: True
