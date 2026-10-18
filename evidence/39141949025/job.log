@@ -1,0 +1,455 @@
+﻿2026-10-18T16:30:27.4261766Z Current runner version: '2.337.0'
+2026-10-18T16:30:27.4290396Z ##[group]Runner Image Provisioner
+2026-10-18T16:30:27.4291402Z Hosted Compute Agent
+2026-10-18T16:30:27.4292221Z Version: 20261012.601
+2026-10-18T16:30:27.4293227Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-18T16:30:27.4294458Z Build Date: 2026-10-12T17:48:21Z
+2026-10-18T16:30:27.4295219Z Worker ID: {eac21c69-a647-45fb-ad30-a988109cea2b}
+2026-10-18T16:30:27.4295939Z Region: westus
+2026-10-18T16:30:27.4296604Z Cloud: Azure
+2026-10-18T16:30:27.4297206Z ##[endgroup]
+2026-10-18T16:30:27.4298884Z ##[group]Operating System
+2026-10-18T16:30:27.4299576Z Ubuntu
+2026-10-18T16:30:27.4300098Z 24.04.5
+2026-10-18T16:30:27.4300751Z LTS
+2026-10-18T16:30:27.4301300Z ##[endgroup]
+2026-10-18T16:30:27.4301982Z ##[group]Runner Image
+2026-10-18T16:30:27.4302837Z Image: ubuntu-24.04
+2026-10-18T16:30:27.4303435Z Version: 20261012.334.1
+2026-10-18T16:30:27.4304905Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-18T16:30:27.4306562Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-18T16:30:27.4307576Z ##[endgroup]
+2026-10-18T16:30:27.4308836Z ##[group]GITHUB_TOKEN Permissions
+2026-10-18T16:30:27.4311355Z Contents: write
+2026-10-18T16:30:27.4312350Z Metadata: read
+2026-10-18T16:30:27.4313300Z ##[endgroup]
+2026-10-18T16:30:27.4315665Z Secret source: Actions
+2026-10-18T16:30:27.4316794Z Cache mode: write
+2026-10-18T16:30:27.4317601Z Prepare workflow directory
+2026-10-18T16:30:27.4697069Z Prepare all required actions
+2026-10-18T16:30:27.4750553Z Getting action download info
+2026-10-18T16:30:27.8281794Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-18T16:30:27.9310477Z Download action repository 'actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97' (SHA:5fda3b95a4ea91299a34e894583c3862153e4b97)
+2026-10-18T16:30:28.1179366Z Complete job name: measure
+2026-10-18T16:30:28.2140838Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-10-18T16:30:28.2142073Z with:
+2026-10-18T16:30:28.2142770Z   persist-credentials: false
+2026-10-18T16:30:28.2143331Z   repository: wally-dk24/proofdeploy
+2026-10-18T16:30:28.2147496Z   token: ***
+2026-10-18T16:30:28.2147939Z   ssh-strict: true
+2026-10-18T16:30:28.2148384Z   ssh-user: git
+2026-10-18T16:30:28.2148806Z   clean: true
+2026-10-18T16:30:28.2149249Z   sparse-checkout-cone-mode: true
+2026-10-18T16:30:28.2149790Z   fetch-depth: 1
+2026-10-18T16:30:28.2150220Z   fetch-tags: false
+2026-10-18T16:30:28.2150674Z   show-progress: true
+2026-10-18T16:30:28.2151119Z   lfs: false
+2026-10-18T16:30:28.2151579Z   submodules: false
+2026-10-18T16:30:28.2152051Z   set-safe-directory: true
+2026-10-18T16:30:28.2152722Z   allow-unsafe-pr-checkout: false
+2026-10-18T16:30:28.2153594Z ##[endgroup]
+2026-10-18T16:30:28.3211038Z Syncing repository: wally-dk24/proofdeploy
+2026-10-18T16:30:28.3214067Z ##[group]Getting Git version info
+2026-10-18T16:30:28.3215566Z Working directory is '/home/runner/work/proofdeploy/proofdeploy'
+2026-10-18T16:30:28.3216844Z [command]/usr/bin/git version
+2026-10-18T16:30:28.3312163Z git version 2.55.0
+2026-10-18T16:30:28.3349767Z ##[endgroup]
+2026-10-18T16:30:28.3357860Z Temporarily overriding HOME='/home/runner/work/_temp/6c7c98aa-d91c-4443-995f-ee44dc8e30ed' before making global git config changes
+2026-10-18T16:30:28.3359469Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-18T16:30:28.3362910Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/proofdeploy/proofdeploy
+2026-10-18T16:30:28.3474690Z Deleting the contents of '/home/runner/work/proofdeploy/proofdeploy'
+2026-10-18T16:30:28.3478846Z ##[group]Determining repository object format
+2026-10-18T16:30:28.3481534Z ##[endgroup]
+2026-10-18T16:30:28.3482965Z ##[group]Initializing the repository
+2026-10-18T16:30:28.3488190Z [command]/usr/bin/git init /home/runner/work/proofdeploy/proofdeploy
+2026-10-18T16:30:28.3609344Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-18T16:30:28.3611718Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-18T16:30:28.3614229Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-18T16:30:28.3616033Z hint: call:
+2026-10-18T16:30:28.3616941Z hint:
+2026-10-18T16:30:28.3617758Z hint: 	git config --global init.defaultBranch <name>
+2026-10-18T16:30:28.3618635Z hint:
+2026-10-18T16:30:28.3619450Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-18T16:30:28.3620671Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-18T16:30:28.3621682Z hint:
+2026-10-18T16:30:28.3622372Z hint: 	git branch -m <name>
+2026-10-18T16:30:28.3623815Z hint:
+2026-10-18T16:30:28.3625327Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-18T16:30:28.3626827Z Initialized empty Git repository in /home/runner/work/proofdeploy/proofdeploy/.git/
+2026-10-18T16:30:28.3629166Z [command]/usr/bin/git remote add origin https://github.com/wally-dk24/proofdeploy
+2026-10-18T16:30:28.3691262Z ##[endgroup]
+2026-10-18T16:30:28.3693015Z ##[group]Disabling automatic garbage collection
+2026-10-18T16:30:28.3695808Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-18T16:30:28.3738702Z ##[endgroup]
+2026-10-18T16:30:28.3740461Z ##[group]Setting up auth
+2026-10-18T16:30:28.3741437Z Removing SSH command configuration
+2026-10-18T16:30:28.3746783Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-18T16:30:28.3790399Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-18T16:30:28.4229402Z Removing HTTP extra header
+2026-10-18T16:30:28.4235799Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-18T16:30:28.4274287Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-18T16:30:28.4504222Z Removing includeIf entries pointing to credentials config files
+2026-10-18T16:30:28.4509530Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-18T16:30:28.4549438Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-18T16:30:28.4798574Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-5729ab05-6f09-482e-a272-3e717d486620.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-18T16:30:28.4850936Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git.path /home/runner/work/_temp/git-credentials-5729ab05-6f09-482e-a272-3e717d486620.config
+2026-10-18T16:30:28.4896286Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-5729ab05-6f09-482e-a272-3e717d486620.config
+2026-10-18T16:30:28.4947890Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-5729ab05-6f09-482e-a272-3e717d486620.config
+2026-10-18T16:30:28.4996107Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-5729ab05-6f09-482e-a272-3e717d486620.config
+2026-10-18T16:30:28.5037599Z ##[endgroup]
+2026-10-18T16:30:28.5039393Z ##[group]Fetching the repository
+2026-10-18T16:30:28.5044803Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e07d8b63b091cd29ded520f24838de810342b188:refs/remotes/origin/feat/d216-skill-v4
+2026-10-18T16:30:29.6156822Z From https://github.com/wally-dk24/proofdeploy
+2026-10-18T16:30:29.6159234Z  * [new ref]         e07d8b63b091cd29ded520f24838de810342b188 -> origin/feat/d216-skill-v4
+2026-10-18T16:30:29.6162085Z [command]/usr/bin/git branch --list --remote origin/feat/d216-skill-v4
+2026-10-18T16:30:29.6183142Z   origin/feat/d216-skill-v4
+2026-10-18T16:30:29.6225574Z [command]/usr/bin/git rev-parse refs/remotes/origin/feat/d216-skill-v4
+2026-10-18T16:30:29.6255909Z e07d8b63b091cd29ded520f24838de810342b188
+2026-10-18T16:30:29.6267899Z ##[endgroup]
+2026-10-18T16:30:29.6269187Z ##[group]Determining the checkout info
+2026-10-18T16:30:29.6270684Z ##[endgroup]
+2026-10-18T16:30:29.6273672Z [command]/usr/bin/git sparse-checkout disable
+2026-10-18T16:30:29.6338773Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-18T16:30:29.6379884Z ##[group]Checking out the ref
+2026-10-18T16:30:29.6384469Z [command]/usr/bin/git checkout --progress --force -B feat/d216-skill-v4 refs/remotes/origin/feat/d216-skill-v4
+2026-10-18T16:30:29.6884334Z Switched to a new branch 'feat/d216-skill-v4'
+2026-10-18T16:30:29.6891010Z branch 'feat/d216-skill-v4' set up to track 'origin/feat/d216-skill-v4'.
+2026-10-18T16:30:29.6903909Z ##[endgroup]
+2026-10-18T16:30:29.6956417Z [command]/usr/bin/git log -1 --format=%H
+2026-10-18T16:30:29.6989455Z e07d8b63b091cd29ded520f24838de810342b188
+2026-10-18T16:30:29.6999239Z ##[group]Removing auth
+2026-10-18T16:30:29.7000671Z Removing SSH command configuration
+2026-10-18T16:30:29.7003587Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-18T16:30:29.7046079Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-18T16:30:29.7291486Z Removing HTTP extra header
+2026-10-18T16:30:29.7295881Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-18T16:30:29.7340254Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-18T16:30:29.7576235Z Removing includeIf entries pointing to credentials config files
+2026-10-18T16:30:29.7580553Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-18T16:30:29.7615828Z includeif.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git.path
+2026-10-18T16:30:29.7619005Z includeif.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git/worktrees/*.path
+2026-10-18T16:30:29.7621951Z includeif.gitdir:/github/workspace/.git.path
+2026-10-18T16:30:29.7624304Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-18T16:30:29.7629436Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git.path
+2026-10-18T16:30:29.7658327Z /home/runner/work/_temp/git-credentials-5729ab05-6f09-482e-a272-3e717d486620.config
+2026-10-18T16:30:29.7685666Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-5729ab05\-6f09\-482e\-a272\-3e717d486620\.config
+2026-10-18T16:30:29.7726867Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git/worktrees/*.path
+2026-10-18T16:30:29.7758481Z /home/runner/work/_temp/git-credentials-5729ab05-6f09-482e-a272-3e717d486620.config
+2026-10-18T16:30:29.7770470Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/proofdeploy/proofdeploy/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-5729ab05\-6f09\-482e\-a272\-3e717d486620\.config
+2026-10-18T16:30:29.7815069Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-18T16:30:29.7886234Z /github/runner_temp/git-credentials-5729ab05-6f09-482e-a272-3e717d486620.config
+2026-10-18T16:30:29.7899579Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-5729ab05\-6f09\-482e\-a272\-3e717d486620\.config
+2026-10-18T16:30:29.7945722Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-18T16:30:29.7973103Z /github/runner_temp/git-credentials-5729ab05-6f09-482e-a272-3e717d486620.config
+2026-10-18T16:30:29.7985223Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-5729ab05\-6f09\-482e\-a272\-3e717d486620\.config
+2026-10-18T16:30:29.8029712Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-18T16:30:29.8268370Z Removing credentials config '/home/runner/work/_temp/git-credentials-5729ab05-6f09-482e-a272-3e717d486620.config'
+2026-10-18T16:30:29.8277238Z ##[endgroup]
+2026-10-18T16:30:29.8725640Z ##[group]Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+2026-10-18T16:30:29.8727495Z with:
+2026-10-18T16:30:29.8728421Z   python-version: 3.12
+2026-10-18T16:30:29.8729482Z   check-latest: false
+2026-10-18T16:30:29.8740393Z   token: ***
+2026-10-18T16:30:29.8741395Z   update-environment: true
+2026-10-18T16:30:29.8742693Z   allow-prereleases: false
+2026-10-18T16:30:29.8743815Z   freethreaded: false
+2026-10-18T16:30:29.8744813Z ##[endgroup]
+2026-10-18T16:30:30.0007815Z ##[group]Installed versions
+2026-10-18T16:30:30.0104985Z Successfully set up CPython (3.12.15)
+2026-10-18T16:30:30.0108180Z ##[endgroup]
+2026-10-18T16:30:30.0315294Z ##[group]Run sudo apt-get update
+2026-10-18T16:30:30.0316656Z [36;1msudo apt-get update[0m
+2026-10-18T16:30:30.0317827Z [36;1msudo apt-get install -y podman[0m
+2026-10-18T16:30:30.0648285Z shell: /usr/bin/bash -e {0}
+2026-10-18T16:30:30.0649603Z env:
+2026-10-18T16:30:30.0650859Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:30:30.0653195Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-18T16:30:30.0655287Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:30:30.0657150Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:30:30.0658846Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:30:30.0660535Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-18T16:30:30.0661971Z ##[endgroup]
+2026-10-18T16:30:30.1644287Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-10-18T16:30:30.1853656Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-10-18T16:30:30.2010952Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2026-10-18T16:30:30.2027311Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-10-18T16:30:30.2074951Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-10-18T16:30:30.2098181Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-10-18T16:30:30.2748640Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [618 kB]
+2026-10-18T16:30:30.2996529Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [557 kB]
+2026-10-18T16:30:30.3060351Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.4 kB]
+2026-10-18T16:30:30.3982019Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1397 kB]
+2026-10-18T16:30:30.4050769Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [308 kB]
+2026-10-18T16:30:30.4071547Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1704 kB]
+2026-10-18T16:30:30.4154302Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [342 kB]
+2026-10-18T16:30:30.4177365Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1805 kB]
+2026-10-18T16:30:30.4275565Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [411 kB]
+2026-10-18T16:30:30.5165281Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1144 kB]
+2026-10-18T16:30:30.5225883Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [231 kB]
+2026-10-18T16:30:30.5243022Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1222 kB]
+2026-10-18T16:30:30.5303224Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [246 kB]
+2026-10-18T16:30:30.5737348Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1713 kB]
+2026-10-18T16:30:30.5818240Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [392 kB]
+2026-10-18T16:30:34.1303068Z Fetched 12.5 MB in 1s (9595 kB/s)
+2026-10-18T16:30:35.1757735Z Reading package lists...
+2026-10-18T16:30:35.2071066Z Reading package lists...
+2026-10-18T16:30:35.4653051Z Building dependency tree...
+2026-10-18T16:30:35.4664172Z Reading state information...
+2026-10-18T16:30:35.8025525Z podman is already the newest version (4.9.3+ds1-1ubuntu0.2).
+2026-10-18T16:30:35.8026423Z 0 upgraded, 0 newly installed, 0 to remove and 44 not upgraded.
+2026-10-18T16:30:35.8142118Z ##[group]Run python -m pip install --upgrade pip
+2026-10-18T16:30:35.8142939Z [36;1mpython -m pip install --upgrade pip[0m
+2026-10-18T16:30:35.8143323Z [36;1mpip install -e .[0m
+2026-10-18T16:30:35.8225748Z shell: /usr/bin/bash -e {0}
+2026-10-18T16:30:35.8226292Z env:
+2026-10-18T16:30:35.8226728Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:30:35.8227207Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-18T16:30:35.8227665Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:30:35.8228080Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:30:35.8228488Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:30:35.8228953Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-18T16:30:35.8229592Z ##[endgroup]
+2026-10-18T16:30:37.8597698Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages (26.2.1)
+2026-10-18T16:30:38.4137917Z Obtaining file:///home/runner/work/proofdeploy/proofdeploy
+2026-10-18T16:30:38.4173712Z   Installing build dependencies: started
+2026-10-18T16:30:39.1609887Z   Installing build dependencies: finished with status 'done'
+2026-10-18T16:30:39.1617036Z   Checking if build backend supports build_editable: started
+2026-10-18T16:30:39.5061542Z   Checking if build backend supports build_editable: finished with status 'done'
+2026-10-18T16:30:39.5071367Z   Getting requirements to build editable: started
+2026-10-18T16:30:39.8826910Z   Getting requirements to build editable: finished with status 'done'
+2026-10-18T16:30:39.8836873Z   Preparing editable metadata (pyproject.toml): started
+2026-10-18T16:30:40.0988161Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+2026-10-18T16:30:40.1985453Z Collecting pyyaml>=6.0 (from proofdeploy==0.1.0)
+2026-10-18T16:30:40.2469765Z   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-10-18T16:30:40.2549257Z Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+2026-10-18T16:30:40.2860067Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 86.5 MB/s  0:00:00
+2026-10-18T16:30:40.2925025Z Building wheels for collected packages: proofdeploy
+2026-10-18T16:30:40.2933819Z   Building editable for proofdeploy (pyproject.toml): started
+2026-10-18T16:30:40.5320828Z   Building editable for proofdeploy (pyproject.toml): finished with status 'done'
+2026-10-18T16:30:40.5329284Z   Created wheel for proofdeploy: filename=proofdeploy-0.1.0-0.editable-py3-none-any.whl size=6175 sha256=d91bec11ed3b96605d70f6be3eb86b3837893460628e8f77ac53e79fbada822b
+2026-10-18T16:30:40.5331403Z   Stored in directory: /tmp/pip-ephem-wheel-cache-7fl2p3xq/wheels/9a/73/f6/d95220d5eb7b2490401f2b7b70bac6d3505c67ed8468209e66
+2026-10-18T16:30:40.5351816Z Successfully built proofdeploy
+2026-10-18T16:30:40.5507791Z Installing collected packages: pyyaml, proofdeploy
+2026-10-18T16:30:40.6197930Z 
+2026-10-18T16:30:40.6224062Z Successfully installed proofdeploy-0.1.0 pyyaml-6.0.3
+2026-10-18T16:30:40.7053478Z ##[group]Run python - <<'PY'
+2026-10-18T16:30:40.7053835Z [36;1mpython - <<'PY'[0m
+2026-10-18T16:30:40.7054081Z [36;1mimport os[0m
+2026-10-18T16:30:40.7054318Z [36;1mfrom pathlib import Path[0m
+2026-10-18T16:30:40.7054583Z [36;1m[0m
+2026-10-18T16:30:40.7054843Z [36;1mfrom conformance.kit import materialize_golden[0m
+2026-10-18T16:30:40.7055163Z [36;1m[0m
+2026-10-18T16:30:40.7055428Z [36;1mapp = os.environ["UNIT_REPO"].removeprefix("golden/")[0m
+2026-10-18T16:30:40.7055872Z [36;1mshas = materialize_golden(app, Path("/tmp/target-repo"))[0m
+2026-10-18T16:30:40.7056377Z [36;1mwith open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as fh:[0m
+2026-10-18T16:30:40.7056826Z [36;1m    for name in ("base", "bug", "fix", "clean"):[0m
+2026-10-18T16:30:40.7057191Z [36;1m        print(f"{name}={shas[name]}", file=fh)[0m
+2026-10-18T16:30:40.7057500Z [36;1mPY[0m
+2026-10-18T16:30:40.7121054Z shell: /usr/bin/bash -e {0}
+2026-10-18T16:30:40.7121335Z env:
+2026-10-18T16:30:40.7121670Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:30:40.7122150Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-18T16:30:40.7122823Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:30:40.7123239Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:30:40.7123657Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:30:40.7124076Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-18T16:30:40.7124465Z   UNIT_REPO: golden/python-flask-sqlite
+2026-10-18T16:30:40.7124751Z ##[endgroup]
+2026-10-18T16:30:40.8599173Z ##[group]Run python -c "
+2026-10-18T16:30:40.8599483Z [36;1mpython -c "[0m
+2026-10-18T16:30:40.8599808Z [36;1mfrom proofdeploy.sandbox import assert_measurement_gate[0m
+2026-10-18T16:30:40.8600287Z [36;1m# Fail-closed: raises if the host cannot meet the requirements.[0m
+2026-10-18T16:30:40.8600767Z [36;1m# No config arg needed; uses defaults. This step fails the[0m
+2026-10-18T16:30:40.8601168Z [36;1m# workflow if the gate fails. No fallback.[0m
+2026-10-18T16:30:40.8601497Z [36;1mprobe = assert_measurement_gate()[0m
+2026-10-18T16:30:40.8601795Z [36;1mprint('GATE PASSED')[0m
+2026-10-18T16:30:40.8602037Z [36;1mimport json[0m
+2026-10-18T16:30:40.8602287Z [36;1mprint(json.dumps(probe, indent=2))[0m
+2026-10-18T16:30:40.8602934Z [36;1m"[0m
+2026-10-18T16:30:40.8666677Z shell: /usr/bin/bash -e {0}
+2026-10-18T16:30:40.8666951Z env:
+2026-10-18T16:30:40.8667232Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:30:40.8667765Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-18T16:30:40.8668233Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:30:40.8668633Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:30:40.8669036Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:30:40.8669448Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-18T16:30:40.8669783Z ##[endgroup]
+2026-10-18T16:31:29.1798784Z GATE PASSED
+2026-10-18T16:31:29.1799147Z {
+2026-10-18T16:31:29.1799477Z   "podman": true,
+2026-10-18T16:31:29.1799916Z   "podman_version": "podman version 4.9.3",
+2026-10-18T16:31:29.1800463Z   "isolated_network": false,
+2026-10-18T16:31:29.1800906Z   "build_network": true,
+2026-10-18T16:31:29.1801296Z   "userns_remap": true,
+2026-10-18T16:31:29.1802329Z   "reason": "isolated network unavailable: container has IP 10.89.0.2 but the host cannot reach it: 8 connect attempts over 10 s, last error: timed out"
+2026-10-18T16:31:29.1804205Z }
+2026-10-18T16:31:29.2020984Z ##[group]Run # The key is available to `proofdeploy measure` on the host only.
+2026-10-18T16:31:29.2041036Z [36;1m# The key is available to `proofdeploy measure` on the host only.[0m
+2026-10-18T16:31:29.2041549Z [36;1m# It never enters containers, never appears in prompts, and is[0m
+2026-10-18T16:31:29.2041939Z [36;1m# redacted by value in records.[0m
+2026-10-18T16:31:29.2042296Z [36;1m# Use set +e: if measure fails, we still write the SHAs (which[0m
+2026-10-18T16:31:29.2043054Z [36;1m# may be empty) to GITHUB_OUTPUT, then exit with the code.[0m
+2026-10-18T16:31:29.2043403Z [36;1mset +e[0m
+2026-10-18T16:31:29.2043639Z [36;1mmkdir -p /tmp/workdir /tmp/output[0m
+2026-10-18T16:31:29.2044030Z [36;1m# Provenance goes to `measure` itself via --provenance-* args,[0m
+2026-10-18T16:31:29.2044490Z [36;1m# so the evidence record carries them (not via GITHUB_ENV after).[0m
+2026-10-18T16:31:29.2045260Z [36;1mPROV_ARGS="--provenance-run-url $RUN_URL --provenance-run-id $RUN_ID --provenance-runner-image $ImageOS-$ImageVersion"[0m
+2026-10-18T16:31:29.2045864Z [36;1mif [ "$ARM" = "skill" ]; then[0m
+2026-10-18T16:31:29.2046228Z [36;1m  # The skill arm uses the registered skill file from the repo.[0m
+2026-10-18T16:31:29.2046747Z [36;1m  SKILL_ARGS="--skill $GITHUB_WORKSPACE/docs/evaluation/skill/skill-author.md"[0m
+2026-10-18T16:31:29.2047159Z [36;1melse[0m
+2026-10-18T16:31:29.2047364Z [36;1m  SKILL_ARGS="--no-skill"[0m
+2026-10-18T16:31:29.2047616Z [36;1mfi[0m
+2026-10-18T16:31:29.2047896Z [36;1m# D154: --unit-repo names the contract-store slug. Empty for[0m
+2026-10-18T16:31:29.2048583Z [36;1m# real-repo runs, which leaves their command line unchanged.[0m
+2026-10-18T16:31:29.2048948Z [36;1mif [ -n "$UNIT_REPO" ]; then[0m
+2026-10-18T16:31:29.2049237Z [36;1m  UNIT_ARGS="--unit-repo $UNIT_REPO"[0m
+2026-10-18T16:31:29.2049516Z [36;1melse[0m
+2026-10-18T16:31:29.2049717Z [36;1m  UNIT_ARGS=""[0m
+2026-10-18T16:31:29.2049946Z [36;1mfi[0m
+2026-10-18T16:31:29.2050231Z [36;1m# D203: --public-env-key for each dispatched key. The keys[0m
+2026-10-18T16:31:29.2050668Z [36;1m# were validated fail-closed by the step above (a bad key[0m
+2026-10-18T16:31:29.2051091Z [36;1m# already failed the job); empty input expands to nothing[0m
+2026-10-18T16:31:29.2051467Z [36;1m# and leaves the command line unchanged.[0m
+2026-10-18T16:31:29.2051780Z [36;1mPUBLIC_ENV_ARGS=""[0m
+2026-10-18T16:31:29.2052038Z [36;1mfor key in $PUBLIC_ENV_KEYS; do[0m
+2026-10-18T16:31:29.2052393Z [36;1m  PUBLIC_ENV_ARGS="$PUBLIC_ENV_ARGS --public-env-key $key"[0m
+2026-10-18T16:31:29.2052874Z [36;1mdone[0m
+2026-10-18T16:31:29.2053074Z [36;1mif [ -n "$BUG_ID" ]; then[0m
+2026-10-18T16:31:29.2053384Z [36;1m  OUTPUT=$(python -m proofdeploy.cli measure \[0m
+2026-10-18T16:31:29.2053713Z [36;1m    --repo /tmp/target-repo \[0m
+2026-10-18T16:31:29.2053994Z [36;1m    --workdir /tmp/workdir \[0m
+2026-10-18T16:31:29.2054273Z [36;1m    --output-dir /tmp/output \[0m
+2026-10-18T16:31:29.2054552Z [36;1m    $SKILL_ARGS \[0m
+2026-10-18T16:31:29.2054787Z [36;1m    $UNIT_ARGS \[0m
+2026-10-18T16:31:29.2055025Z [36;1m    $PUBLIC_ENV_ARGS \[0m
+2026-10-18T16:31:29.2055277Z [36;1m    --bug-id "$BUG_ID" \[0m
+2026-10-18T16:31:29.2055527Z [36;1m    --base "$BASE" \[0m
+2026-10-18T16:31:29.2055766Z [36;1m    --bug "$BUG" \[0m
+2026-10-18T16:31:29.2055996Z [36;1m    --fix "$FIX" \[0m
+2026-10-18T16:31:29.2056230Z [36;1m    $PROV_ARGS 2>&1)[0m
+2026-10-18T16:31:29.2056448Z [36;1melse[0m
+2026-10-18T16:31:29.2056704Z [36;1m  OUTPUT=$(python -m proofdeploy.cli measure \[0m
+2026-10-18T16:31:29.2057028Z [36;1m    --repo /tmp/target-repo \[0m
+2026-10-18T16:31:29.2057299Z [36;1m    --workdir /tmp/workdir \[0m
+2026-10-18T16:31:29.2057575Z [36;1m    --output-dir /tmp/output \[0m
+2026-10-18T16:31:29.2057848Z [36;1m    $SKILL_ARGS \[0m
+2026-10-18T16:31:29.2058073Z [36;1m    $UNIT_ARGS \[0m
+2026-10-18T16:31:29.2058306Z [36;1m    $PUBLIC_ENV_ARGS \[0m
+2026-10-18T16:31:29.2058962Z [36;1m    --clean-id "$CLEAN_ID" \[0m
+2026-10-18T16:31:29.2059245Z [36;1m    --clean "$CLEAN" \[0m
+2026-10-18T16:31:29.2059491Z [36;1m    $PROV_ARGS 2>&1)[0m
+2026-10-18T16:31:29.2059754Z [36;1mfi[0m
+2026-10-18T16:31:29.2060004Z [36;1mCODE=$?[0m
+2026-10-18T16:31:29.2060211Z [36;1mecho "$OUTPUT"[0m
+2026-10-18T16:31:29.2060526Z [36;1m# Take the evidence and score SHAs from measure's own output.[0m
+2026-10-18T16:31:29.2060994Z [36;1m# Always write them (even if empty) so the push step can decide.[0m
+2026-10-18T16:31:29.2061550Z [36;1mEVIDENCE_SHA=$(echo "$OUTPUT" | grep -oP 'evidence committed: \K[0-9a-f]{40}' | head -1)[0m
+2026-10-18T16:31:29.2062149Z [36;1mSCORE_SHA=$(echo "$OUTPUT" | grep -oP 'score committed: \K[0-9a-f]{40}' | head -1)[0m
+2026-10-18T16:31:29.2062801Z [36;1mecho "evidence_sha=$EVIDENCE_SHA" >> "$GITHUB_OUTPUT"[0m
+2026-10-18T16:31:29.2063190Z [36;1mecho "score_sha=$SCORE_SHA" >> "$GITHUB_OUTPUT"[0m
+2026-10-18T16:31:29.2063511Z [36;1mexit $CODE[0m
+2026-10-18T16:31:29.2126747Z shell: /usr/bin/bash -e {0}
+2026-10-18T16:31:29.2127035Z env:
+2026-10-18T16:31:29.2127328Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:31:29.2127800Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-18T16:31:29.2128271Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:31:29.2128720Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:31:29.2129137Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:31:29.2129541Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-18T16:31:29.2130250Z   GROQ_API_KEY: ***
+2026-10-18T16:31:29.2130470Z   ARM: skill
+2026-10-18T16:31:29.2130697Z   UNIT_REPO: golden/python-flask-sqlite
+2026-10-18T16:31:29.2131035Z   BUG_ID: skillv4-gate-python-flask-sqlite-bug-r2
+2026-10-18T16:31:29.2131380Z   BASE: b4ef25909d7e946a2564b3cbc9d9c1b39d09da4c
+2026-10-18T16:31:29.2131702Z   BUG: fe9d1d2274b306428e068b1b7417e360d3fa9460
+2026-10-18T16:31:29.2132028Z   FIX: 4c22a5bd037f7a6c6db9a694e0efb2c0aa8e3bdf
+2026-10-18T16:31:29.2132308Z   CLEAN_ID: 
+2026-10-18T16:31:29.2132748Z   CLEAN: c4cf47d1a76a2ed93540b7edc5b3df8537398e35
+2026-10-18T16:31:29.2133069Z   PUBLIC_ENV_KEYS: 
+2026-10-18T16:31:29.2133420Z   RUN_URL: https://github.com/wally-dk24/proofdeploy/actions/runs/39141949025
+2026-10-18T16:31:29.2133819Z   RUN_ID: 39141949025
+2026-10-18T16:31:29.2134034Z ##[endgroup]
+2026-10-18T16:35:43.6054568Z {
+2026-10-18T16:35:43.6057013Z   "run_kind": "bug",
+2026-10-18T16:35:43.6058585Z   "bug_id": "skillv4-gate-python-flask-sqlite-bug-r2",
+2026-10-18T16:35:43.6060512Z   "evidence_record_id": "39a56bd2eef941d0b54abce8631e9fdb",
+2026-10-18T16:35:43.6062297Z   "evidence_commit": "9e00b88a926c75ecd3a3a44f722fb5e06bd5e26d",
+2026-10-18T16:35:43.6064353Z   "score_commit": "84e43d86bb7116df6256d8b04beee2432d16adb2",
+2026-10-18T16:35:43.6065571Z   "score_path": "/tmp/output/runs.jsonl",
+2026-10-18T16:35:43.6066696Z   "verdict": "candidate_catch",
+2026-10-18T16:35:43.6067691Z   "candidate_catch": [
+2026-10-18T16:35:43.6068640Z     0,
+2026-10-18T16:35:43.6070085Z     1
+2026-10-18T16:35:43.6070447Z   ],
+2026-10-18T16:35:43.6070772Z   "probe_count": 2,
+2026-10-18T16:35:43.6071150Z   "parent_ready": true,
+2026-10-18T16:35:43.6071523Z   "fix_ready": true
+2026-10-18T16:35:43.6071863Z }
+2026-10-18T16:35:43.6137656Z ##[group]Run # Push the evidence commit first, then the score commit, as two
+2026-10-18T16:35:43.6138265Z [36;1m# Push the evidence commit first, then the score commit, as two[0m
+2026-10-18T16:35:43.6138760Z [36;1m# separate pushes to the records branch. The runner's disk is[0m
+2026-10-18T16:35:43.6139219Z [36;1m# wiped after the run; the branch is the durable store.[0m
+2026-10-18T16:35:43.6139709Z [36;1m# Use an explicit token URL (checkout used persist-credentials: false).[0m
+2026-10-18T16:35:43.6140233Z [36;1m# Never push an empty source: `git push <url> ":refs/heads/…"`[0m
+2026-10-18T16:35:43.6140626Z [36;1m# DELETES the branch.[0m
+2026-10-18T16:35:43.6141110Z [36;1mRECORDS_BRANCH="records/run-$RUN_ID"[0m
+2026-10-18T16:35:43.6141425Z [36;1mcd /tmp/output[0m
+2026-10-18T16:35:43.6141722Z [36;1mgit config user.name "proofdeploy-measure"[0m
+2026-10-18T16:35:43.6142192Z [36;1mgit config user.email "proofdeploy-measure@users.noreply.github.com"[0m
+2026-10-18T16:35:43.6143192Z [36;1mREPO_URL="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"[0m
+2026-10-18T16:35:43.6143712Z [36;1mif [ -n "$EVIDENCE_SHA" ]; then[0m
+2026-10-18T16:35:43.6144103Z [36;1m  git push "$REPO_URL" "$EVIDENCE_SHA:refs/heads/$RECORDS_BRANCH"[0m
+2026-10-18T16:35:43.6144567Z [36;1m  echo "Pushed evidence $EVIDENCE_SHA to $RECORDS_BRANCH"[0m
+2026-10-18T16:35:43.6145008Z [36;1melif git rev-parse --verify HEAD >/dev/null 2>&1; then[0m
+2026-10-18T16:35:43.6145432Z [36;1m  echo "WARNING: no evidence SHA parsed; pushing HEAD"[0m
+2026-10-18T16:35:43.6145847Z [36;1m  git push "$REPO_URL" "HEAD:refs/heads/$RECORDS_BRANCH"[0m
+2026-10-18T16:35:43.6146198Z [36;1melse[0m
+2026-10-18T16:35:43.6146507Z [36;1m  echo "WARNING: no evidence SHA and no HEAD; nothing to push"[0m
+2026-10-18T16:35:43.6146876Z [36;1mfi[0m
+2026-10-18T16:35:43.6147097Z [36;1mif [ -n "$SCORE_SHA" ]; then[0m
+2026-10-18T16:35:43.6147473Z [36;1m  git push "$REPO_URL" "$SCORE_SHA:refs/heads/$RECORDS_BRANCH"[0m
+2026-10-18T16:35:43.6147907Z [36;1m  echo "Pushed score $SCORE_SHA to $RECORDS_BRANCH"[0m
+2026-10-18T16:35:43.6148238Z [36;1melse[0m
+2026-10-18T16:35:43.6148539Z [36;1m  echo "WARNING: no score SHA parsed; skipping score push"[0m
+2026-10-18T16:35:43.6148898Z [36;1mfi[0m
+2026-10-18T16:35:43.6216479Z shell: /usr/bin/bash -e {0}
+2026-10-18T16:35:43.6216755Z env:
+2026-10-18T16:35:43.6217049Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:35:43.6217529Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-18T16:35:43.6218007Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:35:43.6218437Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:35:43.6218850Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-18T16:35:43.6219263Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-18T16:35:43.6222281Z   GH_TOKEN: ***
+2026-10-18T16:35:43.6222765Z   RUN_ID: 39141949025
+2026-10-18T16:35:43.6223023Z   EVIDENCE_SHA: 
+2026-10-18T16:35:43.6223245Z   SCORE_SHA: 
+2026-10-18T16:35:43.6223455Z ##[endgroup]
+2026-10-18T16:35:43.6358871Z WARNING: no evidence SHA parsed; pushing HEAD
+2026-10-18T16:35:45.0217957Z remote: 
+2026-10-18T16:35:45.0219263Z remote: Create a pull request for 'records/run-39141949025' on GitHub by visiting:        
+2026-10-18T16:35:45.0220676Z remote:      https://github.com/wally-dk24/proofdeploy/pull/new/records/run-39141949025        
+2026-10-18T16:35:45.0221678Z remote: 
+2026-10-18T16:35:45.0230061Z To https://github.com/wally-dk24/proofdeploy.git
+2026-10-18T16:35:45.0231031Z  * [new branch]      HEAD -> records/run-39141949025
+2026-10-18T16:35:45.0269864Z WARNING: no score SHA parsed; skipping score push
+2026-10-18T16:35:45.0373998Z Post job cleanup.
+2026-10-18T16:35:45.1861610Z Post job cleanup.
+2026-10-18T16:35:45.2844634Z [command]/usr/bin/git version
+2026-10-18T16:35:45.2913877Z git version 2.55.0
+2026-10-18T16:35:45.2960353Z Temporarily overriding HOME='/home/runner/work/_temp/cd157a72-b11e-4f21-bf98-b4cc00ddca2b' before making global git config changes
+2026-10-18T16:35:45.2961714Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-18T16:35:45.2963802Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/proofdeploy/proofdeploy
+2026-10-18T16:35:45.3002185Z Removing SSH command configuration
+2026-10-18T16:35:45.3010699Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-18T16:35:45.3053627Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-18T16:35:45.3326021Z Removing HTTP extra header
+2026-10-18T16:35:45.3334402Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-18T16:35:45.3378112Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-18T16:35:45.3660573Z Removing includeIf entries pointing to credentials config files
+2026-10-18T16:35:45.3668059Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-18T16:35:45.3728003Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-18T16:35:45.4138675Z Cleaning up orphan processes
+2026-10-18T16:35:45.4479566Z Terminate orphan process: pid (2807) (catatonit)
