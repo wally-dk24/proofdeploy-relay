@@ -17,3 +17,6 @@ Stop rules (D258): paperless bug reachable over HTTP but never executed; > 1 fal
 4. Paperless clean: 0 FAIL most likely; unit 2ab1ac7c (570 source files) most likely INCONCLUSIVE `change_not_exercised`. False-alarm criterion met.
 5. Tokens: every unit well under 10,000; no provider refusals (calls are small).
 Overall lean: criteria 1, 4 and 5 met; 2 at risk; 3 informative. If 2 fails, that is a stop-rule-adjacent result to report honestly, with its causes classified (unobservable vs no authority vs judged wrong).
+
+## Addendum — re-dispatch (D265), committed before the re-dispatch
+Run 1 (`39501135862`, golden) failed at startup on `import coverage` (a missing runtime dependency; no unit ran, no model call). The queued mutants/paperless runs were cancelled before approval. Fixed by PR #166 (`coverage==7.16.2` runtime dependency, import guard test, runtime-install CI smoke), merged as `ecc967aee44c1d38b259d1de380c4b894bf6f9aa`. No pipeline logic changed; units, criteria and every prediction above stand unchanged. Re-dispatched from `ecc967ae` as the same three runs.
