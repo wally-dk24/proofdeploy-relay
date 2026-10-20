@@ -1,0 +1,252 @@
+{
+  "calls": [
+    {
+      "attempts": [
+        "attempt_1: model_transport: model API call failed: HTTP 429: {\"message\":\"Requests per minute limit exceeded - too many requests sent.\",\"type\":\"too_many_requests_error\",\"param\":\"quota\",\"code\":\"request_quota_exceeded\"}",
+        "attempt_2: model_transport: model API call failed: HTTP 429: {\"message\":\"Requests per minute limit exceeded - too many requests sent.\",\"type\":\"too_many_requests_error\",\"param\":\"quota\",\"code\":\"request_quota_exceeded\"}"
+      ],
+      "error_cause": "model_transport",
+      "index": 0,
+      "raw_content": "",
+      "status": "error",
+      "tokens": 0,
+      "tokens_estimated": false,
+      "usage": null
+    }
+  ],
+  "groups": [
+    {
+      "group": {
+        "after": "seeded open note",
+        "before": false,
+        "field_path": "notes[].done",
+        "index": 1,
+        "kind": "changed",
+        "method": "GET",
+        "path_template": "/notes",
+        "request_ids": [
+          "5f2df8ddd8ea:1"
+        ],
+        "sample_path": "/notes",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": "environment:model_transport",
+        "check": {
+          "ok": false,
+          "passed": [],
+          "reason": "environment:model_transport"
+        },
+        "evidence_source": null,
+        "expected_value": null,
+        "group": 1,
+        "model_verdict": null,
+        "question": "Is the new value of notes[].done on GET /notes (\"seeded open note\", was false) intended? (environment:model_transport)",
+        "quote": null,
+        "verdict": "unclear"
+      }
+    },
+    {
+      "group": {
+        "after": false,
+        "before": "seeded open note",
+        "field_path": "notes[].title",
+        "index": 2,
+        "kind": "changed",
+        "method": "GET",
+        "path_template": "/notes",
+        "request_ids": [
+          "5f2df8ddd8ea:1"
+        ],
+        "sample_path": "/notes",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": "environment:model_transport",
+        "check": {
+          "ok": false,
+          "passed": [],
+          "reason": "environment:model_transport"
+        },
+        "evidence_source": null,
+        "expected_value": null,
+        "group": 2,
+        "model_verdict": null,
+        "question": "Is the new value of notes[].title on GET /notes (false, was \"seeded open note\") intended? (environment:model_transport)",
+        "quote": null,
+        "verdict": "unclear"
+      }
+    },
+    {
+      "group": {
+        "after": "seeded done note",
+        "before": true,
+        "field_path": "notes[].done",
+        "index": 3,
+        "kind": "changed",
+        "method": "GET",
+        "path_template": "/notes",
+        "request_ids": [
+          "5f2df8ddd8ea:1"
+        ],
+        "sample_path": "/notes",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": "environment:model_transport",
+        "check": {
+          "ok": false,
+          "passed": [],
+          "reason": "environment:model_transport"
+        },
+        "evidence_source": null,
+        "expected_value": null,
+        "group": 3,
+        "model_verdict": null,
+        "question": "Is the new value of notes[].done on GET /notes (\"seeded done note\", was true) intended? (environment:model_transport)",
+        "quote": null,
+        "verdict": "unclear"
+      }
+    },
+    {
+      "group": {
+        "after": true,
+        "before": "seeded done note",
+        "field_path": "notes[].title",
+        "index": 4,
+        "kind": "changed",
+        "method": "GET",
+        "path_template": "/notes",
+        "request_ids": [
+          "5f2df8ddd8ea:1"
+        ],
+        "sample_path": "/notes",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": "environment:model_transport",
+        "check": {
+          "ok": false,
+          "passed": [],
+          "reason": "environment:model_transport"
+        },
+        "evidence_source": null,
+        "expected_value": null,
+        "group": 4,
+        "model_verdict": null,
+        "question": "Is the new value of notes[].title on GET /notes (true, was \"seeded done note\") intended? (environment:model_transport)",
+        "quote": null,
+        "verdict": "unclear"
+      }
+    }
+  ],
+  "inputs": {
+    "context": {
+      "changed_hunks": "diff --git a/app.py b/app.py\nindex 6679fb9..cd6b43f 100644\n--- a/app.py\n+++ b/app.py\n@@ -95,7 +95,7 @@ def list_notes():\n     ).fetchall()\n     return jsonify({\n         \"notes\": [\n-            {\"id\": r[\"id\"], \"title\": r[\"title\"], \"done\": r[\"done\"] == 1}\n+            {\"id\": r[\"id\"], \"title\": r[\"done\"] == 1, \"done\": r[\"title\"]}\n             for r in rows\n         ]\n     })\n",
+      "field_descriptions": {},
+      "intent": "no behaviour change intended",
+      "seed_facts": [
+        "seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)"
+      ]
+    },
+    "differences": [
+      {
+        "after": "seeded open note",
+        "before": false,
+        "field_path": "notes[].done",
+        "kind": "changed",
+        "method": "GET",
+        "path": "/notes",
+        "request_body": null,
+        "request_id": "5f2df8ddd8ea:1"
+      },
+      {
+        "after": false,
+        "before": "seeded open note",
+        "field_path": "notes[].title",
+        "kind": "changed",
+        "method": "GET",
+        "path": "/notes",
+        "request_body": null,
+        "request_id": "5f2df8ddd8ea:1"
+      },
+      {
+        "after": "seeded done note",
+        "before": true,
+        "field_path": "notes[].done",
+        "kind": "changed",
+        "method": "GET",
+        "path": "/notes",
+        "request_body": null,
+        "request_id": "5f2df8ddd8ea:1"
+      },
+      {
+        "after": true,
+        "before": "seeded done note",
+        "field_path": "notes[].title",
+        "kind": "changed",
+        "method": "GET",
+        "path": "/notes",
+        "request_body": null,
+        "request_id": "5f2df8ddd8ea:1"
+      }
+    ],
+    "flaky_hard_failures": [],
+    "hard_failures": [],
+    "observable": true,
+    "prompt_cap": 3000,
+    "templates": [
+      "/health",
+      "/login",
+      "/notes",
+      "/notes/{note_id}",
+      "/register"
+    ],
+    "token_budget": 10000,
+    "unexercised_lines": []
+  },
+  "prompts_sha256": [
+    "b6998f51ec42a6f0aec2c88963b8bb9c0a463134eb131ffdaf436089f0e4904d"
+  ],
+  "total_tokens": 0,
+  "verdict": {
+    "cause": "environment",
+    "details": {
+      "questions": [
+        {
+          "cause": "environment:model_transport",
+          "group": 1,
+          "question": "Is the new value of notes[].done on GET /notes (\"seeded open note\", was false) intended? (environment:model_transport)",
+          "request_ids": [
+            "5f2df8ddd8ea:1"
+          ]
+        },
+        {
+          "cause": "environment:model_transport",
+          "group": 2,
+          "question": "Is the new value of notes[].title on GET /notes (false, was \"seeded open note\") intended? (environment:model_transport)",
+          "request_ids": [
+            "5f2df8ddd8ea:1"
+          ]
+        },
+        {
+          "cause": "environment:model_transport",
+          "group": 3,
+          "question": "Is the new value of notes[].done on GET /notes (\"seeded done note\", was true) intended? (environment:model_transport)",
+          "request_ids": [
+            "5f2df8ddd8ea:1"
+          ]
+        },
+        {
+          "cause": "environment:model_transport",
+          "group": 4,
+          "question": "Is the new value of notes[].title on GET /notes (true, was \"seeded done note\") intended? (environment:model_transport)",
+          "request_ids": [
+            "5f2df8ddd8ea:1"
+          ]
+        }
+      ]
+    },
+    "status": "INCONCLUSIVE"
+  }
+}

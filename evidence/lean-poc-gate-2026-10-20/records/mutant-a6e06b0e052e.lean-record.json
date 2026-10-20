@@ -1,0 +1,175 @@
+{
+  "calls": [
+    {
+      "attempts": [
+        "attempt_1: success"
+      ],
+      "error_cause": null,
+      "index": 0,
+      "raw_content": "[\n  {\n    \"group\": 1,\n    \"verdict\": \"regression\",\n    \"expected_value\": true,\n    \"evidence\": {\n      \"source\": \"intent\",\n      \"quote\": \"no behaviour change intended\"\n    }\n  },\n  {\n    \"group\": 2,\n    \"verdict\": \"regression\",\n    \"expected_value\": 3,\n    \"evidence\": {\n      \"source\": \"intent\",\n      \"quote\": \"no behaviour change intended\"\n    }\n  }\n]",
+      "status": "ok",
+      "tokens": 1374,
+      "tokens_estimated": false,
+      "usage": {
+        "completion_tokens": 837,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "reasoning_tokens": 720,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens": 537,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 1374
+      }
+    }
+  ],
+  "groups": [
+    {
+      "group": {
+        "after": 3,
+        "before": true,
+        "field_path": "done",
+        "index": 1,
+        "kind": "changed",
+        "method": "GET",
+        "path_template": "/notes/{note_id}",
+        "request_ids": [
+          "4f6ce8d10d25:2"
+        ],
+        "sample_path": "/notes/3",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": "evidence_rejected:quote_lacks_expected_value",
+        "check": {
+          "ok": false,
+          "passed": [
+            "verbatim_in_source",
+            "not_self_justifying",
+            "not_ambiguous",
+            "expected_differs_from_after"
+          ],
+          "reason": "quote_lacks_expected_value"
+        },
+        "evidence_source": "intent",
+        "expected_value": true,
+        "group": 1,
+        "model_verdict": "regression",
+        "question": "Is the new value of done on GET /notes/{note_id} (3, was true) intended? (evidence_rejected:quote_lacks_expected_value)",
+        "quote": "no behaviour change intended",
+        "verdict": "unclear"
+      }
+    },
+    {
+      "group": {
+        "after": true,
+        "before": 3,
+        "field_path": "id",
+        "index": 2,
+        "kind": "changed",
+        "method": "GET",
+        "path_template": "/notes/{note_id}",
+        "request_ids": [
+          "4f6ce8d10d25:2"
+        ],
+        "sample_path": "/notes/3",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": "evidence_rejected:quote_lacks_expected_value",
+        "check": {
+          "ok": false,
+          "passed": [
+            "verbatim_in_source",
+            "not_self_justifying",
+            "not_ambiguous",
+            "expected_differs_from_after"
+          ],
+          "reason": "quote_lacks_expected_value"
+        },
+        "evidence_source": "intent",
+        "expected_value": 3,
+        "group": 2,
+        "model_verdict": "regression",
+        "question": "Is the new value of id on GET /notes/{note_id} (true, was 3) intended? (evidence_rejected:quote_lacks_expected_value)",
+        "quote": "no behaviour change intended",
+        "verdict": "unclear"
+      }
+    }
+  ],
+  "inputs": {
+    "context": {
+      "changed_hunks": "diff --git a/app.py b/app.py\nindex 6679fb9..f8eef83 100644\n--- a/app.py\n+++ b/app.py\n@@ -113,9 +113,9 @@ def get_note(note_id):\n     if row is None:\n         return jsonify({\"error\": \"not found\"}), 404\n     return jsonify({\n-        \"id\": row[\"id\"],\n+        \"id\": row['done'] != 1,\n         \"title\": row[\"title\"],\n-        \"done\": row['done'] != 1,\n+        \"done\": row[\"id\"],\n \n     })\n \n",
+      "field_descriptions": {},
+      "intent": "no behaviour change intended",
+      "seed_facts": [
+        "seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)"
+      ]
+    },
+    "differences": [
+      {
+        "after": 3,
+        "before": true,
+        "field_path": "done",
+        "kind": "changed",
+        "method": "GET",
+        "path": "/notes/3",
+        "request_body": null,
+        "request_id": "4f6ce8d10d25:2"
+      },
+      {
+        "after": true,
+        "before": 3,
+        "field_path": "id",
+        "kind": "changed",
+        "method": "GET",
+        "path": "/notes/3",
+        "request_body": null,
+        "request_id": "4f6ce8d10d25:2"
+      }
+    ],
+    "flaky_hard_failures": [],
+    "hard_failures": [],
+    "observable": true,
+    "prompt_cap": 3000,
+    "templates": [
+      "/health",
+      "/login",
+      "/notes",
+      "/notes/{note_id}",
+      "/register"
+    ],
+    "token_budget": 10000,
+    "unexercised_lines": []
+  },
+  "prompts_sha256": [
+    "4610d0d2dd4b32daa43fd04f7ed6e45d19ecd3461a4520567e9e52bdc2dff188"
+  ],
+  "total_tokens": 1374,
+  "verdict": {
+    "cause": "needs_information",
+    "details": {
+      "questions": [
+        {
+          "cause": "evidence_rejected:quote_lacks_expected_value",
+          "group": 1,
+          "question": "Is the new value of done on GET /notes/{note_id} (3, was true) intended? (evidence_rejected:quote_lacks_expected_value)",
+          "request_ids": [
+            "4f6ce8d10d25:2"
+          ]
+        },
+        {
+          "cause": "evidence_rejected:quote_lacks_expected_value",
+          "group": 2,
+          "question": "Is the new value of id on GET /notes/{note_id} (true, was 3) intended? (evidence_rejected:quote_lacks_expected_value)",
+          "request_ids": [
+            "4f6ce8d10d25:2"
+          ]
+        }
+      ]
+    },
+    "status": "INCONCLUSIVE"
+  }
+}

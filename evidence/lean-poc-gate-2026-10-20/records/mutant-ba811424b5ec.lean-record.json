@@ -1,0 +1,121 @@
+{
+  "calls": [
+    {
+      "attempts": [
+        "attempt_1: success"
+      ],
+      "error_cause": null,
+      "index": 0,
+      "raw_content": "[{\"group\":1,\"verdict\":\"regression\",\"expected_value\":false,\"evidence\":{\"source\":\"intent\",\"quote\":\"no behaviour change intended\"},\"question\":null}]",
+      "status": "ok",
+      "tokens": 717,
+      "tokens_estimated": false,
+      "usage": {
+        "completion_tokens": 239,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "reasoning_tokens": 193,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens": 478,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 717
+      }
+    }
+  ],
+  "groups": [
+    {
+      "group": {
+        "after": true,
+        "before": false,
+        "field_path": "done",
+        "index": 1,
+        "kind": "changed",
+        "method": "POST",
+        "path_template": "/notes",
+        "request_ids": [
+          "8fd229495e28:1"
+        ],
+        "sample_path": "/notes",
+        "sample_request_body": {}
+      },
+      "judgment": {
+        "cause": "evidence_rejected:quote_lacks_expected_value",
+        "check": {
+          "ok": false,
+          "passed": [
+            "verbatim_in_source",
+            "not_self_justifying",
+            "not_ambiguous",
+            "expected_differs_from_after"
+          ],
+          "reason": "quote_lacks_expected_value"
+        },
+        "evidence_source": "intent",
+        "expected_value": false,
+        "group": 1,
+        "model_verdict": "regression",
+        "question": "Is the new value of done on POST /notes (true, was false) intended? (evidence_rejected:quote_lacks_expected_value)",
+        "quote": "no behaviour change intended",
+        "verdict": "unclear"
+      }
+    }
+  ],
+  "inputs": {
+    "context": {
+      "changed_hunks": "diff --git a/app.py b/app.py\nindex 6679fb9..1017c7f 100644\n--- a/app.py\n+++ b/app.py\n@@ -81,7 +81,7 @@ def create_note():\n         (user_id, data.get(\"title\", \"\")),\n     )\n     db().commit()\n-    return jsonify({\"id\": cur.lastrowid, \"title\": data.get(\"title\", \"\"), \"done\": False})\n+    return jsonify({\"id\": cur.lastrowid, \"title\": data.get(\"title\", \"\"), \"done\": True})\n \n \n @app.get(\"/notes\")\n",
+      "field_descriptions": {},
+      "intent": "no behaviour change intended",
+      "seed_facts": [
+        "seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)"
+      ]
+    },
+    "differences": [
+      {
+        "after": true,
+        "before": false,
+        "field_path": "done",
+        "kind": "changed",
+        "method": "POST",
+        "path": "/notes",
+        "request_body": {},
+        "request_id": "8fd229495e28:1"
+      }
+    ],
+    "flaky_hard_failures": [],
+    "hard_failures": [],
+    "observable": true,
+    "prompt_cap": 3000,
+    "templates": [
+      "/health",
+      "/login",
+      "/notes",
+      "/notes/{note_id}",
+      "/register"
+    ],
+    "token_budget": 10000,
+    "unexercised_lines": []
+  },
+  "prompts_sha256": [
+    "de4de278a757b1438c3c55d3a1927a1c0818618ad5518403dc526756a763e5f5"
+  ],
+  "total_tokens": 717,
+  "verdict": {
+    "cause": "needs_information",
+    "details": {
+      "questions": [
+        {
+          "cause": "evidence_rejected:quote_lacks_expected_value",
+          "group": 1,
+          "question": "Is the new value of done on POST /notes (true, was false) intended? (evidence_rejected:quote_lacks_expected_value)",
+          "request_ids": [
+            "8fd229495e28:1"
+          ]
+        }
+      ]
+    },
+    "status": "INCONCLUSIVE"
+  }
+}

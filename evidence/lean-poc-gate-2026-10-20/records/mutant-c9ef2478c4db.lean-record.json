@@ -1,0 +1,35 @@
+{
+  "calls": [],
+  "groups": [],
+  "inputs": {
+    "context": {
+      "changed_hunks": "diff --git a/app.py b/app.py\nindex 6679fb9..86b3415 100644\n--- a/app.py\n+++ b/app.py\n@@ -60,7 +60,7 @@ def register():\n \n @app.post(\"/login\")\n def login():\n-    data = request.get_json(force=True, silent=True) or {}\n+    data = request.get_json(force=True, silent=False) or {}\n     row = db().execute(\n         \"SELECT id FROM users WHERE username = ? AND password = ?\",\n         (data.get(\"username\"), data.get(\"password\")),\n",
+      "field_descriptions": {},
+      "intent": "no behaviour change intended",
+      "seed_facts": [
+        "seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)"
+      ]
+    },
+    "differences": [],
+    "flaky_hard_failures": [],
+    "hard_failures": [],
+    "observable": true,
+    "prompt_cap": 3000,
+    "templates": [
+      "/health",
+      "/login",
+      "/notes",
+      "/notes/{note_id}",
+      "/register"
+    ],
+    "token_budget": 10000,
+    "unexercised_lines": []
+  },
+  "prompts_sha256": [],
+  "total_tokens": 0,
+  "verdict": {
+    "cause": "no_regression_found",
+    "details": {},
+    "status": "PASS"
+  }
+}

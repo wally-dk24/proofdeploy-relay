@@ -1,0 +1,154 @@
+{
+  "calls": [
+    {
+      "attempts": [
+        "attempt_1: model_transport: model API call failed: HTTP 429: {\"message\":\"Requests per minute limit exceeded - too many requests sent.\",\"type\":\"too_many_requests_error\",\"param\":\"quota\",\"code\":\"request_quota_exceeded\"}",
+        "attempt_2: model_transport: model API call failed: HTTP 429: {\"message\":\"Requests per minute limit exceeded - too many requests sent.\",\"type\":\"too_many_requests_error\",\"param\":\"quota\",\"code\":\"request_quota_exceeded\"}"
+      ],
+      "error_cause": "model_transport",
+      "index": 0,
+      "raw_content": "",
+      "status": "error",
+      "tokens": 0,
+      "tokens_estimated": false,
+      "usage": null
+    }
+  ],
+  "groups": [
+    {
+      "group": {
+        "after": "",
+        "before": true,
+        "field_path": "done",
+        "index": 1,
+        "kind": "changed",
+        "method": "GET",
+        "path_template": "/notes/{note_id}",
+        "request_ids": [
+          "4f6ce8d10d25:2"
+        ],
+        "sample_path": "/notes/3",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": "environment:model_transport",
+        "check": {
+          "ok": false,
+          "passed": [],
+          "reason": "environment:model_transport"
+        },
+        "evidence_source": null,
+        "expected_value": null,
+        "group": 1,
+        "model_verdict": null,
+        "question": "Is the new value of done on GET /notes/{note_id} (\"\", was true) intended? (environment:model_transport)",
+        "quote": null,
+        "verdict": "unclear"
+      }
+    },
+    {
+      "group": {
+        "after": true,
+        "before": "",
+        "field_path": "title",
+        "index": 2,
+        "kind": "changed",
+        "method": "GET",
+        "path_template": "/notes/{note_id}",
+        "request_ids": [
+          "4f6ce8d10d25:2"
+        ],
+        "sample_path": "/notes/3",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": "environment:model_transport",
+        "check": {
+          "ok": false,
+          "passed": [],
+          "reason": "environment:model_transport"
+        },
+        "evidence_source": null,
+        "expected_value": null,
+        "group": 2,
+        "model_verdict": null,
+        "question": "Is the new value of title on GET /notes/{note_id} (true, was \"\") intended? (environment:model_transport)",
+        "quote": null,
+        "verdict": "unclear"
+      }
+    }
+  ],
+  "inputs": {
+    "context": {
+      "changed_hunks": "diff --git a/app.py b/app.py\nindex 6679fb9..494f8b4 100644\n--- a/app.py\n+++ b/app.py\n@@ -114,8 +114,8 @@ def get_note(note_id):\n         return jsonify({\"error\": \"not found\"}), 404\n     return jsonify({\n         \"id\": row[\"id\"],\n-        \"title\": row[\"title\"],\n-        \"done\": row['done'] != 1,\n+        \"title\": row['done'] != 1,\n+        \"done\": row[\"title\"],\n \n     })\n \n",
+      "field_descriptions": {},
+      "intent": "no behaviour change intended",
+      "seed_facts": [
+        "seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)"
+      ]
+    },
+    "differences": [
+      {
+        "after": "",
+        "before": true,
+        "field_path": "done",
+        "kind": "changed",
+        "method": "GET",
+        "path": "/notes/3",
+        "request_body": null,
+        "request_id": "4f6ce8d10d25:2"
+      },
+      {
+        "after": true,
+        "before": "",
+        "field_path": "title",
+        "kind": "changed",
+        "method": "GET",
+        "path": "/notes/3",
+        "request_body": null,
+        "request_id": "4f6ce8d10d25:2"
+      }
+    ],
+    "flaky_hard_failures": [],
+    "hard_failures": [],
+    "observable": true,
+    "prompt_cap": 3000,
+    "templates": [
+      "/health",
+      "/login",
+      "/notes",
+      "/notes/{note_id}",
+      "/register"
+    ],
+    "token_budget": 10000,
+    "unexercised_lines": []
+  },
+  "prompts_sha256": [
+    "046a6e27b2031d4cd10b96fee30a30abdfc5a4ffc5c3d3bd23e71b26bffe62eb"
+  ],
+  "total_tokens": 0,
+  "verdict": {
+    "cause": "environment",
+    "details": {
+      "questions": [
+        {
+          "cause": "environment:model_transport",
+          "group": 1,
+          "question": "Is the new value of done on GET /notes/{note_id} (\"\", was true) intended? (environment:model_transport)",
+          "request_ids": [
+            "4f6ce8d10d25:2"
+          ]
+        },
+        {
+          "cause": "environment:model_transport",
+          "group": 2,
+          "question": "Is the new value of title on GET /notes/{note_id} (true, was \"\") intended? (environment:model_transport)",
+          "request_ids": [
+            "4f6ce8d10d25:2"
+          ]
+        }
+      ]
+    },
+    "status": "INCONCLUSIVE"
+  }
+}

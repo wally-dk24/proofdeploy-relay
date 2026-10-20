@@ -1,0 +1,102 @@
+{
+  "calls": [],
+  "groups": [
+    {
+      "group": {
+        "after": 500,
+        "before": 200,
+        "field_path": "$status",
+        "index": 1,
+        "kind": "status_changed",
+        "method": "GET",
+        "path_template": "/health",
+        "request_ids": [
+          "f7f5cb002518:1"
+        ],
+        "sample_path": "/health",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": "hard_oracle_short_circuit",
+        "check": {
+          "ok": false,
+          "passed": [],
+          "reason": "not_judged"
+        },
+        "evidence_source": null,
+        "expected_value": null,
+        "group": 1,
+        "model_verdict": null,
+        "question": "",
+        "quote": null,
+        "verdict": "unjudged"
+      }
+    }
+  ],
+  "inputs": {
+    "context": {
+      "changed_hunks": "diff --git a/app.py b/app.py\nindex 6679fb9..e82df75 100644\n--- a/app.py\n+++ b/app.py\n@@ -38,7 +38,7 @@ def auth_user():\n \n @app.get(\"/health\")\n def health():\n-    return jsonify({\"ok\": True})\n+    pass\n \n \n @app.post(\"/register\")\n",
+      "field_descriptions": {},
+      "intent": "no behaviour change intended",
+      "seed_facts": [
+        "seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)"
+      ]
+    },
+    "differences": [
+      {
+        "after": 500,
+        "before": 200,
+        "field_path": "$status",
+        "kind": "status_changed",
+        "method": "GET",
+        "path": "/health",
+        "request_body": null,
+        "request_id": "f7f5cb002518:1"
+      }
+    ],
+    "flaky_hard_failures": [],
+    "hard_failures": [
+      {
+        "detail": "head answered HTTP 500 (base 200) at GET /health",
+        "kind": "5xx",
+        "request_id": "f7f5cb002518:1"
+      },
+      {
+        "detail": "new traceback in head's server log: TypeError: The view function for 'health' did not return a valid response. The function either returned None or ended without a return statement.",
+        "kind": "new_exception",
+        "request_id": "server_log"
+      }
+    ],
+    "observable": true,
+    "prompt_cap": 3000,
+    "templates": [
+      "/health",
+      "/login",
+      "/notes",
+      "/notes/{note_id}",
+      "/register"
+    ],
+    "token_budget": 10000,
+    "unexercised_lines": []
+  },
+  "prompts_sha256": [],
+  "total_tokens": 0,
+  "verdict": {
+    "cause": "hard_oracle",
+    "details": {
+      "hard_failures": [
+        {
+          "detail": "head answered HTTP 500 (base 200) at GET /health",
+          "kind": "5xx",
+          "request_id": "f7f5cb002518:1"
+        },
+        {
+          "detail": "new traceback in head's server log: TypeError: The view function for 'health' did not return a valid response. The function either returned None or ended without a return statement.",
+          "kind": "new_exception",
+          "request_id": "server_log"
+        }
+      ]
+    },
+    "status": "FAIL"
+  }
+}

@@ -1,0 +1,285 @@
+{
+ "compared": {
+  "differences": 0,
+  "exchanges": 0,
+  "fields": 0
+ },
+ "coverage": {
+  "base": {
+   "budget_exhausted": true,
+   "budget_requests": 200,
+   "covered": false,
+   "impact_scenarios": [],
+   "load_only_declarations": [],
+   "requests_to_cover": null,
+   "requests_used": 200,
+   "scenarios_run": 200,
+   "unexercised": {
+    "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.html": {
+     "added": [],
+     "removed": [
+      8,
+      22
+     ]
+    }
+   }
+  },
+  "head": {
+   "budget_exhausted": true,
+   "budget_requests": 200,
+   "covered": false,
+   "impact_scenarios": [],
+   "load_only_declarations": [],
+   "requests_to_cover": null,
+   "requests_used": 200,
+   "scenarios_run": 200,
+   "unexercised": {
+    "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.html": {
+     "added": [
+      5,
+      6,
+      10,
+      11,
+      12,
+      13,
+      28
+     ],
+     "removed": []
+    },
+    "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.spec.ts": {
+     "added": [
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      41,
+      43,
+      44,
+      47,
+      48,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      58,
+      90
+     ],
+     "removed": []
+    },
+    "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.ts": {
+     "added": [
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78
+     ],
+     "removed": []
+    }
+   }
+  }
+ },
+ "executable_changed_lines": 43,
+ "flaky_hard_failures": [],
+ "hard_failures": [],
+ "impact_scenarios": [],
+ "impacted_operations_head": {},
+ "index": {
+  "base": {
+   "kind": "openapi",
+   "sha256": "305519e8d19c78fa1a6d8a20fa28cd27071bfed7657781c4db8c6221242d6df8"
+  },
+  "head": {
+   "kind": "openapi",
+   "sha256": "320c5bbb79f44eba035531c5aad68c80fe67b2f2a0a347379a345e47e2dcbdf1"
+  }
+ },
+ "inputs": {
+  "base": "17dc482872cf62e12965f6207772c83d1deb651b",
+  "budget_requests": 200,
+  "budget_tokens": 10000,
+  "contract_file": "/home/runner/work/proofdeploy/proofdeploy/readiness/contracts/paperless-ngx__paperless-ngx.yml",
+  "contract_sha256": "eb60559b9fdd879e5cb8ca30d16c7cbfb1cea356e9385b8e367a249ab7c19e6a",
+  "diff_sha256": "9d884240831a61d81ad9f00becd41949020b60b6f7aa30ef9a2a10650e144a85",
+  "django_overlay": {
+   "CELERY_TASK_ALWAYS_EAGER": "True"
+  },
+  "flask_target": "app",
+  "head": "aa67fd3aefa6489984fc15a5c32c1ad2b16ac23a",
+  "intent_sha256": "980ada1c074abf3f559464f063c367abdf42f9d10a8d330076a8338fbb33c03f",
+  "intent_source": "head_commit_message",
+  "openapi_path": "/api/schema/"
+ },
+ "judge": {
+  "calls": 0,
+  "model_used": false,
+  "total_tokens": 0
+ },
+ "kind": "lean-verify",
+ "measured_result": false,
+ "mode": "sandbox",
+ "noise": [],
+ "noise_fields": [],
+ "observable": false,
+ "pass_basis": null,
+ "runs": {
+  "base": {
+   "2xx": 0,
+   "4xx": 0,
+   "5xx": 0,
+   "no_response": 0,
+   "requests": 0
+  },
+  "base2": {
+   "2xx": 0,
+   "4xx": 0,
+   "5xx": 0,
+   "no_response": 0,
+   "requests": 0
+  },
+  "head": {
+   "2xx": 0,
+   "4xx": 0,
+   "5xx": 0,
+   "no_response": 0,
+   "requests": 0
+  },
+  "head2": {
+   "2xx": 0,
+   "4xx": 0,
+   "5xx": 0,
+   "no_response": 0,
+   "requests": 0
+  }
+ },
+ "sandboxed": true,
+ "sides": {
+  "base": {
+   "app_cwd": "",
+   "db_snapshot_sha256": "b5798557bf4a135affbd0caada5076d1492768824644395029b6831116ef8057",
+   "env": {
+    "PYTHONHASHSEED": "0",
+    "TZ": "UTC"
+   },
+   "frozen_clock": {
+    "reason": "libfaketime not in the image",
+    "used": false
+   },
+   "image_digest": "sha256:7ee7e4d4fb42c3ad45b8fdc473b64ec69c3cf6e80ae5d52f6fa55f77fac29027",
+   "mode": "sandbox",
+   "pdcov_setup_exit": 0,
+   "sandbox_evidence": {
+    "app_network_mode": "none+socket",
+    "app_uid": 0,
+    "install_ca_used": false,
+    "install_network": "bridge:pd-build",
+    "userns_mode": "userns-remap",
+    "userns_opt_out": false
+   },
+   "sandboxed": true,
+   "sha": "17dc482872cf62e12965f6207772c83d1deb651b",
+   "starts": 0
+  },
+  "head": {
+   "app_cwd": "",
+   "db_snapshot_sha256": "b7876b0a203c22acf1e57eabc80a1800ff46bf53cbfd363c9aebbbb3dbed896f",
+   "env": {
+    "PYTHONHASHSEED": "0",
+    "TZ": "UTC"
+   },
+   "frozen_clock": {
+    "reason": "libfaketime not in the image",
+    "used": false
+   },
+   "image_digest": "sha256:7ee7e4d4fb42c3ad45b8fdc473b64ec69c3cf6e80ae5d52f6fa55f77fac29027",
+   "mode": "sandbox",
+   "pdcov_setup_exit": 0,
+   "sandbox_evidence": {
+    "app_network_mode": "none+socket",
+    "app_uid": 0,
+    "install_ca_used": false,
+    "install_network": "bridge:pd-build",
+    "userns_mode": "userns-remap",
+    "userns_opt_out": false
+   },
+   "sandboxed": true,
+   "sha": "aa67fd3aefa6489984fc15a5c32c1ad2b16ac23a",
+   "starts": 0
+  }
+ },
+ "timings_seconds": {
+  "compare": 0.0,
+  "cover_base": 144.29,
+  "cover_head": 144.938,
+  "diff": 0.005,
+  "index_base": 0.807,
+  "index_head": 0.802,
+  "judge": 0.0,
+  "provision_base": 148.15,
+  "provision_head": 140.426
+ },
+ "unexercised_lines": [
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.html:5 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.html:6 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.html:10 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.html:11 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.html:12 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.html:13 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.html:28 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.spec.ts:33 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.spec.ts:34 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.spec.ts:35 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.spec.ts:36 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.spec.ts:37 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.spec.ts:38 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.spec.ts:39 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.spec.ts:41 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.spec.ts:43 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.spec.ts:44 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.spec.ts:47 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.spec.ts:48 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.spec.ts:50 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.spec.ts:51 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.spec.ts:52 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.spec.ts:53 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.spec.ts:54 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.spec.ts:55 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.spec.ts:58 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.spec.ts:90 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.ts:65 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.ts:66 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.ts:67 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.ts:68 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.ts:69 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.ts:70 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.ts:71 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.ts:72 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.ts:73 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.ts:74 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.ts:75 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.ts:76 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.ts:77 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.ts:78 (added)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.html:8 (removed)",
+  "src-ui/src/app/components/common/suggestions-dropdown/suggestions-dropdown.component.html:22 (removed)"
+ ],
+ "verdict": {
+  "cause": "not_observable_over_http",
+  "details": {},
+  "status": "INCONCLUSIVE"
+ }
+}

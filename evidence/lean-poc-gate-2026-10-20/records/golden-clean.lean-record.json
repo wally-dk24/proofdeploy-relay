@@ -1,0 +1,162 @@
+{
+  "calls": [
+    {
+      "attempts": [
+        "attempt_1: success"
+      ],
+      "error_cause": null,
+      "index": 0,
+      "raw_content": "[\n  {\n    \"group\": 1,\n    \"verdict\": \"correct\",\n    \"expected_value\": true,\n    \"evidence\": {\n      \"source\": \"facts\",\n      \"quote\": \"- seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)\"\n    }\n  },\n  {\n    \"group\": 2,\n    \"verdict\": \"correct\",\n    \"expected_value\": \"general\",\n    \"evidence\": {\n      \"source\": \"intent\",\n      \"quote\": \"add a tag field to note responses\"\n    }\n  }\n]",
+      "status": "ok",
+      "tokens": 1489,
+      "tokens_estimated": false,
+      "usage": {
+        "completion_tokens": 970,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "reasoning_tokens": 829,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens": 519,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 1489
+      }
+    }
+  ],
+  "groups": [
+    {
+      "group": {
+        "after": false,
+        "before": true,
+        "field_path": "done",
+        "index": 1,
+        "kind": "changed",
+        "method": "GET",
+        "path_template": "/notes/{note_id}",
+        "request_ids": [
+          "4f6ce8d10d25:2"
+        ],
+        "sample_path": "/notes/3",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": "evidence_rejected:quote_not_in_source",
+        "check": {
+          "ok": false,
+          "passed": [],
+          "reason": "quote_not_in_source"
+        },
+        "evidence_source": "facts",
+        "expected_value": true,
+        "group": 1,
+        "model_verdict": "correct",
+        "question": "Is the new value of done on GET /notes/{note_id} (false, was true) intended? (evidence_rejected:quote_not_in_source)",
+        "quote": "- seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)",
+        "verdict": "unclear"
+      }
+    },
+    {
+      "group": {
+        "after": "general",
+        "before": null,
+        "field_path": "tag",
+        "index": 2,
+        "kind": "added_field",
+        "method": "GET",
+        "path_template": "/notes/{note_id}",
+        "request_ids": [
+          "4f6ce8d10d25:2"
+        ],
+        "sample_path": "/notes/3",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": null,
+        "check": {
+          "ok": true,
+          "passed": [
+            "verbatim_in_source",
+            "not_self_justifying",
+            "not_ambiguous",
+            "quote_names_after_or_field"
+          ],
+          "reason": null
+        },
+        "evidence_source": "intent",
+        "expected_value": "general",
+        "group": 2,
+        "model_verdict": "correct",
+        "question": "",
+        "quote": "add a tag field to note responses",
+        "verdict": "correct"
+      }
+    }
+  ],
+  "inputs": {
+    "context": {
+      "changed_hunks": "diff --git a/app.py b/app.py\nindex 6679fb9..b0129b2 100644\n--- a/app.py\n+++ b/app.py\n@@ -115,8 +115,8 @@ def get_note(note_id):\n     return jsonify({\n         \"id\": row[\"id\"],\n         \"title\": row[\"title\"],\n-        \"done\": row['done'] != 1,\n-\n+        \"done\": row['done'] == 1,\n+        \"tag\": \"general\",\n     })\n \n \n",
+      "field_descriptions": {},
+      "intent": "add a tag field to note responses",
+      "seed_facts": [
+        "seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)"
+      ]
+    },
+    "differences": [
+      {
+        "after": false,
+        "before": true,
+        "field_path": "done",
+        "kind": "changed",
+        "method": "GET",
+        "path": "/notes/3",
+        "request_body": null,
+        "request_id": "4f6ce8d10d25:2"
+      },
+      {
+        "after": "general",
+        "before": null,
+        "field_path": "tag",
+        "kind": "added_field",
+        "method": "GET",
+        "path": "/notes/3",
+        "request_body": null,
+        "request_id": "4f6ce8d10d25:2"
+      }
+    ],
+    "flaky_hard_failures": [],
+    "hard_failures": [],
+    "observable": true,
+    "prompt_cap": 3000,
+    "templates": [
+      "/health",
+      "/login",
+      "/notes",
+      "/notes/{note_id}",
+      "/register"
+    ],
+    "token_budget": 10000,
+    "unexercised_lines": []
+  },
+  "prompts_sha256": [
+    "911e39f677609c1aa1fb6f81506278415e34dfafe6f4407402449767b541f854"
+  ],
+  "total_tokens": 1489,
+  "verdict": {
+    "cause": "needs_information",
+    "details": {
+      "questions": [
+        {
+          "cause": "evidence_rejected:quote_not_in_source",
+          "group": 1,
+          "question": "Is the new value of done on GET /notes/{note_id} (false, was true) intended? (evidence_rejected:quote_not_in_source)",
+          "request_ids": [
+            "4f6ce8d10d25:2"
+          ]
+        }
+      ]
+    },
+    "status": "INCONCLUSIVE"
+  }
+}

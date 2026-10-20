@@ -1,0 +1,105 @@
+{
+  "calls": [
+    {
+      "attempts": [
+        "attempt_1: model_transport: model API call failed: HTTP 429: {\"message\":\"Requests per minute limit exceeded - too many requests sent.\",\"type\":\"too_many_requests_error\",\"param\":\"quota\",\"code\":\"request_quota_exceeded\"}",
+        "attempt_2: model_transport: model API call failed: HTTP 429: {\"message\":\"Requests per minute limit exceeded - too many requests sent.\",\"type\":\"too_many_requests_error\",\"param\":\"quota\",\"code\":\"request_quota_exceeded\"}"
+      ],
+      "error_cause": "model_transport",
+      "index": 0,
+      "raw_content": "",
+      "status": "error",
+      "tokens": 0,
+      "tokens_estimated": false,
+      "usage": null
+    }
+  ],
+  "groups": [
+    {
+      "group": {
+        "after": false,
+        "before": true,
+        "field_path": "ok",
+        "index": 1,
+        "kind": "changed",
+        "method": "GET",
+        "path_template": "/health",
+        "request_ids": [
+          "f7f5cb002518:1"
+        ],
+        "sample_path": "/health",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": "environment:model_transport",
+        "check": {
+          "ok": false,
+          "passed": [],
+          "reason": "environment:model_transport"
+        },
+        "evidence_source": null,
+        "expected_value": null,
+        "group": 1,
+        "model_verdict": null,
+        "question": "Is the new value of ok on GET /health (false, was true) intended? (environment:model_transport)",
+        "quote": null,
+        "verdict": "unclear"
+      }
+    }
+  ],
+  "inputs": {
+    "context": {
+      "changed_hunks": "diff --git a/app.py b/app.py\nindex 6679fb9..c9a05a5 100644\n--- a/app.py\n+++ b/app.py\n@@ -38,7 +38,7 @@ def auth_user():\n \n @app.get(\"/health\")\n def health():\n-    return jsonify({\"ok\": True})\n+    return jsonify({\"ok\": False})\n \n \n @app.post(\"/register\")\n",
+      "field_descriptions": {},
+      "intent": "no behaviour change intended",
+      "seed_facts": [
+        "seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)"
+      ]
+    },
+    "differences": [
+      {
+        "after": false,
+        "before": true,
+        "field_path": "ok",
+        "kind": "changed",
+        "method": "GET",
+        "path": "/health",
+        "request_body": null,
+        "request_id": "f7f5cb002518:1"
+      }
+    ],
+    "flaky_hard_failures": [],
+    "hard_failures": [],
+    "observable": true,
+    "prompt_cap": 3000,
+    "templates": [
+      "/health",
+      "/login",
+      "/notes",
+      "/notes/{note_id}",
+      "/register"
+    ],
+    "token_budget": 10000,
+    "unexercised_lines": []
+  },
+  "prompts_sha256": [
+    "baa26bd309a6abf08bc628f5ffa427de5faaa948156773a0313e786053444c39"
+  ],
+  "total_tokens": 0,
+  "verdict": {
+    "cause": "environment",
+    "details": {
+      "questions": [
+        {
+          "cause": "environment:model_transport",
+          "group": 1,
+          "question": "Is the new value of ok on GET /health (false, was true) intended? (environment:model_transport)",
+          "request_ids": [
+            "f7f5cb002518:1"
+          ]
+        }
+      ]
+    },
+    "status": "INCONCLUSIVE"
+  }
+}

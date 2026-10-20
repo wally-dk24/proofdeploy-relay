@@ -1,0 +1,105 @@
+{
+  "calls": [
+    {
+      "attempts": [
+        "attempt_1: model_transport: model API call failed: HTTP 429: {\"message\":\"Requests per minute limit exceeded - too many requests sent.\",\"type\":\"too_many_requests_error\",\"param\":\"quota\",\"code\":\"request_quota_exceeded\"}",
+        "attempt_2: model_transport: model API call failed: HTTP 429: {\"message\":\"Requests per minute limit exceeded - too many requests sent.\",\"type\":\"too_many_requests_error\",\"param\":\"quota\",\"code\":\"request_quota_exceeded\"}"
+      ],
+      "error_cause": "model_transport",
+      "index": 0,
+      "raw_content": "",
+      "status": "error",
+      "tokens": 0,
+      "tokens_estimated": false,
+      "usage": null
+    }
+  ],
+  "groups": [
+    {
+      "group": {
+        "after": false,
+        "before": true,
+        "field_path": "notes[].done",
+        "index": 1,
+        "kind": "changed",
+        "method": "GET",
+        "path_template": "/notes",
+        "request_ids": [
+          "5f2df8ddd8ea:1"
+        ],
+        "sample_path": "/notes",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": "environment:model_transport",
+        "check": {
+          "ok": false,
+          "passed": [],
+          "reason": "environment:model_transport"
+        },
+        "evidence_source": null,
+        "expected_value": null,
+        "group": 1,
+        "model_verdict": null,
+        "question": "Is the new value of notes[].done on GET /notes (false, was true) intended? (environment:model_transport)",
+        "quote": null,
+        "verdict": "unclear"
+      }
+    }
+  ],
+  "inputs": {
+    "context": {
+      "changed_hunks": "diff --git a/app.py b/app.py\nindex 6679fb9..b631781 100644\n--- a/app.py\n+++ b/app.py\n@@ -95,7 +95,7 @@ def list_notes():\n     ).fetchall()\n     return jsonify({\n         \"notes\": [\n-            {\"id\": r[\"id\"], \"title\": r[\"title\"], \"done\": r[\"done\"] == 1}\n+            {\"id\": r[\"id\"], \"title\": r[\"title\"], \"done\": r[\"done\"] == 2}\n             for r in rows\n         ]\n     })\n",
+      "field_descriptions": {},
+      "intent": "no behaviour change intended",
+      "seed_facts": [
+        "seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)"
+      ]
+    },
+    "differences": [
+      {
+        "after": false,
+        "before": true,
+        "field_path": "notes[].done",
+        "kind": "changed",
+        "method": "GET",
+        "path": "/notes",
+        "request_body": null,
+        "request_id": "5f2df8ddd8ea:1"
+      }
+    ],
+    "flaky_hard_failures": [],
+    "hard_failures": [],
+    "observable": true,
+    "prompt_cap": 3000,
+    "templates": [
+      "/health",
+      "/login",
+      "/notes",
+      "/notes/{note_id}",
+      "/register"
+    ],
+    "token_budget": 10000,
+    "unexercised_lines": []
+  },
+  "prompts_sha256": [
+    "ca4205d5294e5b0aad1e6624305230fbb11ebee5c5bc22ff04309c4cd11c40b7"
+  ],
+  "total_tokens": 0,
+  "verdict": {
+    "cause": "environment",
+    "details": {
+      "questions": [
+        {
+          "cause": "environment:model_transport",
+          "group": 1,
+          "question": "Is the new value of notes[].done on GET /notes (false, was true) intended? (environment:model_transport)",
+          "request_ids": [
+            "5f2df8ddd8ea:1"
+          ]
+        }
+      ]
+    },
+    "status": "INCONCLUSIVE"
+  }
+}

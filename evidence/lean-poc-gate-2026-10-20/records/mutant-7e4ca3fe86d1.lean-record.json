@@ -1,0 +1,283 @@
+{
+  "calls": [
+    {
+      "attempts": [
+        "attempt_1: success"
+      ],
+      "error_cause": null,
+      "index": 0,
+      "raw_content": "[\n  {\n    \"group\": 1,\n    \"verdict\": \"regression\",\n    \"expected_value\": 1,\n    \"evidence\": {\n      \"source\": \"intent\",\n      \"quote\": \"no behaviour change intended\"\n    }\n  },\n  {\n    \"group\": 2,\n    \"verdict\": \"regression\",\n    \"expected_value\": \"seeded open note\",\n    \"evidence\": {\n      \"source\": \"intent\",\n      \"quote\": \"no behaviour change intended\"\n    }\n  },\n  {\n    \"group\": 3,\n    \"verdict\": \"regression\",\n    \"expected_value\": 2,\n    \"evidence\": {\n      \"source\": \"intent\",\n      \"quote\": \"no behaviour change intended\"\n    }\n  },\n  {\n    \"group\": 4,\n    \"verdict\": \"regression\",\n    \"expected_value\": \"seeded done note\",\n    \"evidence\": {\n      \"source\": \"intent\",\n      \"quote\": \"no behaviour change intended\"\n    }\n  }\n]",
+      "status": "ok",
+      "tokens": 1419,
+      "tokens_estimated": false,
+      "usage": {
+        "completion_tokens": 789,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "reasoning_tokens": 559,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens": 630,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 1419
+      }
+    }
+  ],
+  "groups": [
+    {
+      "group": {
+        "after": "seeded open note",
+        "before": 1,
+        "field_path": "notes[].id",
+        "index": 1,
+        "kind": "changed",
+        "method": "GET",
+        "path_template": "/notes",
+        "request_ids": [
+          "5f2df8ddd8ea:1"
+        ],
+        "sample_path": "/notes",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": "evidence_rejected:quote_lacks_expected_value",
+        "check": {
+          "ok": false,
+          "passed": [
+            "verbatim_in_source",
+            "not_self_justifying",
+            "not_ambiguous",
+            "expected_differs_from_after"
+          ],
+          "reason": "quote_lacks_expected_value"
+        },
+        "evidence_source": "intent",
+        "expected_value": 1,
+        "group": 1,
+        "model_verdict": "regression",
+        "question": "Is the new value of notes[].id on GET /notes (\"seeded open note\", was 1) intended? (evidence_rejected:quote_lacks_expected_value)",
+        "quote": "no behaviour change intended",
+        "verdict": "unclear"
+      }
+    },
+    {
+      "group": {
+        "after": 1,
+        "before": "seeded open note",
+        "field_path": "notes[].title",
+        "index": 2,
+        "kind": "changed",
+        "method": "GET",
+        "path_template": "/notes",
+        "request_ids": [
+          "5f2df8ddd8ea:1"
+        ],
+        "sample_path": "/notes",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": "evidence_rejected:quote_lacks_expected_value",
+        "check": {
+          "ok": false,
+          "passed": [
+            "verbatim_in_source",
+            "not_self_justifying",
+            "not_ambiguous",
+            "expected_differs_from_after"
+          ],
+          "reason": "quote_lacks_expected_value"
+        },
+        "evidence_source": "intent",
+        "expected_value": "seeded open note",
+        "group": 2,
+        "model_verdict": "regression",
+        "question": "Is the new value of notes[].title on GET /notes (1, was \"seeded open note\") intended? (evidence_rejected:quote_lacks_expected_value)",
+        "quote": "no behaviour change intended",
+        "verdict": "unclear"
+      }
+    },
+    {
+      "group": {
+        "after": "seeded done note",
+        "before": 2,
+        "field_path": "notes[].id",
+        "index": 3,
+        "kind": "changed",
+        "method": "GET",
+        "path_template": "/notes",
+        "request_ids": [
+          "5f2df8ddd8ea:1"
+        ],
+        "sample_path": "/notes",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": "evidence_rejected:quote_lacks_expected_value",
+        "check": {
+          "ok": false,
+          "passed": [
+            "verbatim_in_source",
+            "not_self_justifying",
+            "not_ambiguous",
+            "expected_differs_from_after"
+          ],
+          "reason": "quote_lacks_expected_value"
+        },
+        "evidence_source": "intent",
+        "expected_value": 2,
+        "group": 3,
+        "model_verdict": "regression",
+        "question": "Is the new value of notes[].id on GET /notes (\"seeded done note\", was 2) intended? (evidence_rejected:quote_lacks_expected_value)",
+        "quote": "no behaviour change intended",
+        "verdict": "unclear"
+      }
+    },
+    {
+      "group": {
+        "after": 2,
+        "before": "seeded done note",
+        "field_path": "notes[].title",
+        "index": 4,
+        "kind": "changed",
+        "method": "GET",
+        "path_template": "/notes",
+        "request_ids": [
+          "5f2df8ddd8ea:1"
+        ],
+        "sample_path": "/notes",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": "evidence_rejected:quote_lacks_expected_value",
+        "check": {
+          "ok": false,
+          "passed": [
+            "verbatim_in_source",
+            "not_self_justifying",
+            "not_ambiguous",
+            "expected_differs_from_after"
+          ],
+          "reason": "quote_lacks_expected_value"
+        },
+        "evidence_source": "intent",
+        "expected_value": "seeded done note",
+        "group": 4,
+        "model_verdict": "regression",
+        "question": "Is the new value of notes[].title on GET /notes (2, was \"seeded done note\") intended? (evidence_rejected:quote_lacks_expected_value)",
+        "quote": "no behaviour change intended",
+        "verdict": "unclear"
+      }
+    }
+  ],
+  "inputs": {
+    "context": {
+      "changed_hunks": "diff --git a/app.py b/app.py\nindex 6679fb9..33489e8 100644\n--- a/app.py\n+++ b/app.py\n@@ -95,7 +95,7 @@ def list_notes():\n     ).fetchall()\n     return jsonify({\n         \"notes\": [\n-            {\"id\": r[\"id\"], \"title\": r[\"title\"], \"done\": r[\"done\"] == 1}\n+            {\"id\": r[\"title\"], \"title\": r[\"id\"], \"done\": r[\"done\"] == 1}\n             for r in rows\n         ]\n     })\n",
+      "field_descriptions": {},
+      "intent": "no behaviour change intended",
+      "seed_facts": [
+        "seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)"
+      ]
+    },
+    "differences": [
+      {
+        "after": "seeded open note",
+        "before": 1,
+        "field_path": "notes[].id",
+        "kind": "changed",
+        "method": "GET",
+        "path": "/notes",
+        "request_body": null,
+        "request_id": "5f2df8ddd8ea:1"
+      },
+      {
+        "after": 1,
+        "before": "seeded open note",
+        "field_path": "notes[].title",
+        "kind": "changed",
+        "method": "GET",
+        "path": "/notes",
+        "request_body": null,
+        "request_id": "5f2df8ddd8ea:1"
+      },
+      {
+        "after": "seeded done note",
+        "before": 2,
+        "field_path": "notes[].id",
+        "kind": "changed",
+        "method": "GET",
+        "path": "/notes",
+        "request_body": null,
+        "request_id": "5f2df8ddd8ea:1"
+      },
+      {
+        "after": 2,
+        "before": "seeded done note",
+        "field_path": "notes[].title",
+        "kind": "changed",
+        "method": "GET",
+        "path": "/notes",
+        "request_body": null,
+        "request_id": "5f2df8ddd8ea:1"
+      }
+    ],
+    "flaky_hard_failures": [],
+    "hard_failures": [],
+    "observable": true,
+    "prompt_cap": 3000,
+    "templates": [
+      "/health",
+      "/login",
+      "/notes",
+      "/notes/{note_id}",
+      "/register"
+    ],
+    "token_budget": 10000,
+    "unexercised_lines": []
+  },
+  "prompts_sha256": [
+    "b35f2961f510e466e453648b36af0261c330163556ce1fdb1f6087d55e158be7"
+  ],
+  "total_tokens": 1419,
+  "verdict": {
+    "cause": "needs_information",
+    "details": {
+      "questions": [
+        {
+          "cause": "evidence_rejected:quote_lacks_expected_value",
+          "group": 1,
+          "question": "Is the new value of notes[].id on GET /notes (\"seeded open note\", was 1) intended? (evidence_rejected:quote_lacks_expected_value)",
+          "request_ids": [
+            "5f2df8ddd8ea:1"
+          ]
+        },
+        {
+          "cause": "evidence_rejected:quote_lacks_expected_value",
+          "group": 2,
+          "question": "Is the new value of notes[].title on GET /notes (1, was \"seeded open note\") intended? (evidence_rejected:quote_lacks_expected_value)",
+          "request_ids": [
+            "5f2df8ddd8ea:1"
+          ]
+        },
+        {
+          "cause": "evidence_rejected:quote_lacks_expected_value",
+          "group": 3,
+          "question": "Is the new value of notes[].id on GET /notes (\"seeded done note\", was 2) intended? (evidence_rejected:quote_lacks_expected_value)",
+          "request_ids": [
+            "5f2df8ddd8ea:1"
+          ]
+        },
+        {
+          "cause": "evidence_rejected:quote_lacks_expected_value",
+          "group": 4,
+          "question": "Is the new value of notes[].title on GET /notes (2, was \"seeded done note\") intended? (evidence_rejected:quote_lacks_expected_value)",
+          "request_ids": [
+            "5f2df8ddd8ea:1"
+          ]
+        }
+      ]
+    },
+    "status": "INCONCLUSIVE"
+  }
+}

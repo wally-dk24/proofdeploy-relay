@@ -1,0 +1,102 @@
+{
+  "complete": true,
+  "criteria": {
+    "1": {
+      "missing": [
+        "golden-bug",
+        "golden-clean"
+      ],
+      "status": "NOT_RUN"
+    },
+    "2": {
+      "caught": 4,
+      "caught_percent": 23.5,
+      "errors": [],
+      "mutants_run": 20,
+      "observable": 17,
+      "ratio_criterion_met": false,
+      "status": "FAIL",
+      "uncaught_observable": [
+        "mutant-13c18f349fc1",
+        "mutant-33e10c06c92f",
+        "mutant-4351e00b3552",
+        "mutant-4bac3ccb1313",
+        "mutant-4cb814960e5c",
+        "mutant-650da0680d77",
+        "mutant-7303292711b9",
+        "mutant-74d3159a3173",
+        "mutant-7e4ca3fe86d1",
+        "mutant-8d5ad03af8e1",
+        "mutant-a6e06b0e052e",
+        "mutant-ae04924df7c1",
+        "mutant-ba811424b5ec"
+      ],
+      "unobservable": [
+        "mutant-4b824aab7f73",
+        "mutant-b1c2d654301d",
+        "mutant-c9ef2478c4db"
+      ],
+      "violations": []
+    },
+    "3": {
+      "missing": [
+        "paperless-bug"
+      ],
+      "required": false,
+      "status": "NOT_RUN"
+    },
+    "4": {
+      "missing": [
+        "golden-clean"
+      ],
+      "status": "NOT_RUN"
+    },
+    "5": {
+      "max_tokens": 1419,
+      "over_cap": [],
+      "provider_failures": {
+        "mutant-13c18f349fc1": [
+          "model_transport"
+        ],
+        "mutant-33e10c06c92f": [
+          "model_transport"
+        ],
+        "mutant-4bac3ccb1313": [
+          "model_transport"
+        ],
+        "mutant-4cb814960e5c": [
+          "model_transport"
+        ],
+        "mutant-650da0680d77": [
+          "model_transport"
+        ]
+      },
+      "status": "PASS",
+      "total_tokens": 7340,
+      "units_with_provider_failures": [
+        "mutant-13c18f349fc1",
+        "mutant-33e10c06c92f",
+        "mutant-4bac3ccb1313",
+        "mutant-4cb814960e5c",
+        "mutant-650da0680d77"
+      ]
+    }
+  },
+  "criteria_text": {
+    "1": "golden-bug verdict FAIL; golden-clean verdict PASS.",
+    "2": "mutants: caught = verdict FAIL; observable = observable flag true; criterion >= 70% of observable mutants caught; unobservable mutants must never be PASS when they have unexercised executable changed lines (report any violation).",
+    "3": "paperless bug: a real verdict (any verdict whose cause is not an environment/provider/error cause); caught = FAIL AND confirmed - reported, not required.",
+    "4": "false alarms: a FAIL verdict on a clean unit; 0 on golden-clean, <= 1 across the 3 paperless clean units. INCONCLUSIVE on clean units is reported as its own count (not an alarm in this PoC).",
+    "5": "cost: every unit <= 10,000 AI tokens; any provider rate-limit/transport failure is reported."
+  },
+  "errors": [],
+  "measured_result": false,
+  "units_expected": 20,
+  "units_run": 20,
+  "verdict_counts": {
+    "FAIL": 4,
+    "INCONCLUSIVE": 13,
+    "PASS": 3
+  },
+  "wall_seconds": 49.1
+}
