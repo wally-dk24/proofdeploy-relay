@@ -1,0 +1,116 @@
+{
+  "complete": true,
+  "criteria": {
+    "1": {
+      "missing": [
+        "golden-bug",
+        "golden-clean"
+      ],
+      "status": "NOT_RUN"
+    },
+    "2": {
+      "missing": [
+        "mutant-*"
+      ],
+      "status": "NOT_RUN"
+    },
+    "3": {
+      "required": false,
+      "status": "PASS",
+      "units": {
+        "paperless-bug-371c4f57": {
+          "caught": false,
+          "cause": "not_observable_over_http",
+          "confirmed": null,
+          "error": false,
+          "real_verdict": true,
+          "status": "PASS",
+          "verdict": "INCONCLUSIVE"
+        },
+        "paperless-bug-b992f9fc": {
+          "caught": false,
+          "cause": "change_not_exercised",
+          "confirmed": null,
+          "error": false,
+          "real_verdict": true,
+          "status": "PASS",
+          "verdict": "INCONCLUSIVE"
+        },
+        "paperless-bug-d3710856": {
+          "caught": false,
+          "cause": "not_observable_over_http",
+          "confirmed": null,
+          "error": false,
+          "real_verdict": true,
+          "status": "PASS",
+          "verdict": "INCONCLUSIVE"
+        }
+      }
+    },
+    "4": {
+      "missing": [
+        "golden-clean"
+      ],
+      "status": "NOT_RUN"
+    },
+    "5": {
+      "max_tokens": 5817,
+      "over_cap": [],
+      "provider_failures": {},
+      "status": "PASS",
+      "total_tokens": 7487,
+      "units_with_provider_failures": []
+    }
+  },
+  "criteria_text": {
+    "1": "golden-bug verdict FAIL; golden-clean verdict PASS.",
+    "2": "mutants: caught = verdict FAIL; observable = observable flag true; criterion >= 70% of observable mutants caught; unobservable mutants must never be PASS when they have unexercised executable changed lines (report any violation).",
+    "3": "paperless bug: a real verdict (any verdict whose cause is not an environment/provider/error cause); caught = FAIL AND confirmed - reported, not required.",
+    "4": "false alarms: a FAIL verdict on a clean unit; 0 on golden-clean, <= 1 across the 3 paperless clean units. INCONCLUSIVE on clean units is reported as its own count (not an alarm in this PoC).",
+    "5": "cost: every unit <= 10,000 AI tokens; any provider rate-limit/transport failure is reported."
+  },
+  "errors": [],
+  "measured_result": false,
+  "round4": {
+    "bug_units": {
+      "paperless-bug-371c4f57": {
+        "cause": "not_observable_over_http",
+        "confirmed": null,
+        "differences_found": 0,
+        "differences_judged": 0,
+        "executable_changed_lines": null,
+        "lines_reached": null,
+        "requests_hitting_changed_code": 0,
+        "verdict": "INCONCLUSIVE"
+      },
+      "paperless-bug-b992f9fc": {
+        "cause": "change_not_exercised",
+        "confirmed": null,
+        "differences_found": 2,
+        "differences_judged": 2,
+        "executable_changed_lines": 4448,
+        "lines_reached": 527,
+        "requests_hitting_changed_code": 143,
+        "verdict": "INCONCLUSIVE"
+      },
+      "paperless-bug-d3710856": {
+        "cause": "not_observable_over_http",
+        "confirmed": null,
+        "differences_found": 0,
+        "differences_judged": 0,
+        "executable_changed_lines": null,
+        "lines_reached": null,
+        "requests_hitting_changed_code": 0,
+        "verdict": "INCONCLUSIVE"
+      }
+    },
+    "bug_units_missing": []
+  },
+  "units_expected": 6,
+  "units_run": 6,
+  "verdict_counts": {
+    "FAIL": 1,
+    "INCONCLUSIVE": 5
+  },
+  "wall_seconds": 3256.4
+}
