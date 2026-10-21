@@ -1,0 +1,35 @@
+{
+  "calls": [],
+  "groups": [],
+  "inputs": {
+    "context": {
+      "changed_hunks": "diff --git a/app.py b/app.py\nindex fbfd266..3262deb 100644\n--- a/app.py\n+++ b/app.py\n@@ -54,7 +54,7 @@ def register():\n         )\n         db().commit()\n     except sqlite3.IntegrityError:\n-        return jsonify({\"error\": \"user exists\"}), 409\n+        return jsonify({\"error\": \"user exists\"}), 408\n     return jsonify({\"token\": issue_token(cur.lastrowid)})\n \n \n",
+      "field_descriptions": {},
+      "intent": "no behaviour change intended",
+      "seed_facts": [
+        "seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)"
+      ]
+    },
+    "differences": [],
+    "flaky_hard_failures": [],
+    "hard_failures": [],
+    "observable": true,
+    "prompt_cap": 3000,
+    "templates": [
+      "/health",
+      "/login",
+      "/notes",
+      "/notes/{note_id}",
+      "/register"
+    ],
+    "token_budget": 10000,
+    "unexercised_lines": []
+  },
+  "prompts_sha256": [],
+  "total_tokens": 0,
+  "verdict": {
+    "cause": "no_regression_found",
+    "details": {},
+    "status": "PASS"
+  }
+}

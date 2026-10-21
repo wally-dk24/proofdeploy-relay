@@ -1,0 +1,160 @@
+{
+  "calls": [],
+  "groups": [
+    {
+      "group": {
+        "after": "seeded open note",
+        "before": false,
+        "exchanges": [],
+        "field_path": "done",
+        "index": 1,
+        "kind": "changed",
+        "method": "GET",
+        "path_template": "/notes/{note_id}",
+        "request_ids": [
+          "e2b7f7395c6e:1"
+        ],
+        "sample_path": "/notes/1",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": null,
+        "check": {
+          "ok": true,
+          "passed": [
+            "declared_no_behaviour_change"
+          ],
+          "reason": null,
+          "rule": "declared_no_behaviour_change"
+        },
+        "evidence_source": "intent",
+        "expected_value": false,
+        "group": 1,
+        "model_verdict": null,
+        "question": "",
+        "quote": "no behaviour change intended",
+        "verdict": "regression"
+      }
+    },
+    {
+      "group": {
+        "after": false,
+        "before": "seeded open note",
+        "exchanges": [],
+        "field_path": "title",
+        "index": 2,
+        "kind": "changed",
+        "method": "GET",
+        "path_template": "/notes/{note_id}",
+        "request_ids": [
+          "e2b7f7395c6e:1"
+        ],
+        "sample_path": "/notes/1",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": null,
+        "check": {
+          "ok": true,
+          "passed": [
+            "declared_no_behaviour_change"
+          ],
+          "reason": null,
+          "rule": "declared_no_behaviour_change"
+        },
+        "evidence_source": "intent",
+        "expected_value": "seeded open note",
+        "group": 2,
+        "model_verdict": null,
+        "question": "",
+        "quote": "no behaviour change intended",
+        "verdict": "regression"
+      }
+    }
+  ],
+  "inputs": {
+    "context": {
+      "changed_hunks": "diff --git a/app.py b/app.py\nindex fbfd266..69306a3 100644\n--- a/app.py\n+++ b/app.py\n@@ -114,8 +114,8 @@ def get_note(note_id):\n         return jsonify({\"error\": \"not found\"}), 404\n     return jsonify({\n         \"id\": row[\"id\"],\n-        \"title\": row[\"title\"],\n-        \"done\": row['done'] == 1,\n+        \"title\": row['done'] == 1,\n+        \"done\": row[\"title\"],\n \n     })\n \n",
+      "field_descriptions": {},
+      "intent": "no behaviour change intended",
+      "seed_facts": [
+        "seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)"
+      ]
+    },
+    "differences": [
+      {
+        "after": "seeded open note",
+        "before": false,
+        "exchanges": [],
+        "field_path": "done",
+        "kind": "changed",
+        "method": "GET",
+        "path": "/notes/1",
+        "request_body": null,
+        "request_id": "e2b7f7395c6e:1"
+      },
+      {
+        "after": false,
+        "before": "seeded open note",
+        "exchanges": [],
+        "field_path": "title",
+        "kind": "changed",
+        "method": "GET",
+        "path": "/notes/1",
+        "request_body": null,
+        "request_id": "e2b7f7395c6e:1"
+      }
+    ],
+    "flaky_hard_failures": [],
+    "hard_failures": [],
+    "observable": true,
+    "prompt_cap": 3000,
+    "templates": [
+      "/health",
+      "/login",
+      "/notes",
+      "/notes/{note_id}",
+      "/register"
+    ],
+    "token_budget": 10000,
+    "unexercised_lines": []
+  },
+  "prompts_sha256": [],
+  "total_tokens": 0,
+  "verdict": {
+    "cause": "judged_regression",
+    "details": {
+      "regressions": [
+        {
+          "after": "seeded open note",
+          "expected_value": false,
+          "field_path": "done",
+          "group": 1,
+          "method": "GET",
+          "path": "/notes/{note_id}",
+          "quote": "no behaviour change intended",
+          "request_ids": [
+            "e2b7f7395c6e:1"
+          ],
+          "rule": "declared_no_behaviour_change",
+          "source": "intent"
+        },
+        {
+          "after": false,
+          "expected_value": "seeded open note",
+          "field_path": "title",
+          "group": 2,
+          "method": "GET",
+          "path": "/notes/{note_id}",
+          "quote": "no behaviour change intended",
+          "request_ids": [
+            "e2b7f7395c6e:1"
+          ],
+          "rule": "declared_no_behaviour_change",
+          "source": "intent"
+        }
+      ]
+    },
+    "status": "FAIL"
+  }
+}

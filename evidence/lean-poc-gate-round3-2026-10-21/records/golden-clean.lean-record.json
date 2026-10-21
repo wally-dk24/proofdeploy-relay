@@ -1,0 +1,117 @@
+{
+  "calls": [
+    {
+      "attempts": [
+        "attempt_1: success"
+      ],
+      "correction_prompt_sha256": null,
+      "correction_raw": null,
+      "correction_used": false,
+      "error_cause": null,
+      "index": 0,
+      "raw_content": "[{\"group\": 1, \"verdict\": \"correct\", \"expected_value\": null, \"evidence\": {\"source\": \"intent\", \"quote\": \"add a tag field to note responses\"}}]",
+      "status": "ok",
+      "tokens": 1799,
+      "tokens_estimated": false,
+      "usage": {
+        "completion_tokens": 828,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "reasoning_tokens": 775,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens": 971,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 1799
+      },
+      "waited_seconds": 0.0
+    }
+  ],
+  "groups": [
+    {
+      "group": {
+        "after": "general",
+        "before": null,
+        "exchanges": [],
+        "field_path": "tag",
+        "index": 1,
+        "kind": "added_field",
+        "method": "GET",
+        "path_template": "/notes/{note_id}",
+        "request_ids": [
+          "e2b7f7395c6e:1"
+        ],
+        "sample_path": "/notes/1",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": null,
+        "check": {
+          "ok": true,
+          "passed": [
+            "verbatim_in_source",
+            "not_self_justifying",
+            "not_ambiguous",
+            "quote_names_after_or_field",
+            "not_contradicted_by_data"
+          ],
+          "reason": null
+        },
+        "evidence_source": "intent",
+        "expected_value": null,
+        "group": 1,
+        "model_verdict": "correct",
+        "question": "",
+        "quote": "add a tag field to note responses",
+        "verdict": "correct"
+      }
+    }
+  ],
+  "inputs": {
+    "context": {
+      "changed_hunks": "diff --git a/app.py b/app.py\nindex fbfd266..b0129b2 100644\n--- a/app.py\n+++ b/app.py\n@@ -116,7 +116,7 @@ def get_note(note_id):\n         \"id\": row[\"id\"],\n         \"title\": row[\"title\"],\n         \"done\": row['done'] == 1,\n-\n+        \"tag\": \"general\",\n     })\n \n \n",
+      "field_descriptions": {},
+      "intent": "add a tag field to note responses",
+      "seed_facts": [
+        "seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)"
+      ]
+    },
+    "differences": [
+      {
+        "after": "general",
+        "before": null,
+        "exchanges": [],
+        "field_path": "tag",
+        "kind": "added_field",
+        "method": "GET",
+        "path": "/notes/1",
+        "request_body": null,
+        "request_id": "e2b7f7395c6e:1"
+      }
+    ],
+    "flaky_hard_failures": [],
+    "hard_failures": [],
+    "observable": true,
+    "prompt_cap": 3000,
+    "templates": [
+      "/health",
+      "/login",
+      "/notes",
+      "/notes/{note_id}",
+      "/register"
+    ],
+    "token_budget": 10000,
+    "unexercised_lines": []
+  },
+  "prompts_sha256": [
+    "82a2c928851a39fb14b7506c822d9c60e9a833253aac47486f108ecb647197ff"
+  ],
+  "total_tokens": 1799,
+  "verdict": {
+    "cause": "no_regression_found",
+    "details": {},
+    "status": "PASS"
+  }
+}

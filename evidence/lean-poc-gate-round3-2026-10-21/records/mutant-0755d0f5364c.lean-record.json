@@ -1,0 +1,110 @@
+{
+  "calls": [],
+  "groups": [
+    {
+      "group": {
+        "after": 500,
+        "before": 200,
+        "exchanges": [],
+        "field_path": "$status",
+        "index": 1,
+        "kind": "status_changed",
+        "method": "POST",
+        "path_template": "/register",
+        "request_ids": [
+          "9dca1c4defa5:1"
+        ],
+        "sample_path": "/register",
+        "sample_request_body": {
+          "password": "pd-password",
+          "username": "pd-username"
+        }
+      },
+      "judgment": {
+        "cause": "hard_oracle_short_circuit",
+        "check": {
+          "ok": false,
+          "passed": [],
+          "reason": "not_judged"
+        },
+        "evidence_source": null,
+        "expected_value": null,
+        "group": 1,
+        "model_verdict": null,
+        "question": "",
+        "quote": null,
+        "verdict": "unjudged"
+      }
+    }
+  ],
+  "inputs": {
+    "context": {
+      "changed_hunks": "diff --git a/app.py b/app.py\nindex fbfd266..54e12d2 100644\n--- a/app.py\n+++ b/app.py\n@@ -55,7 +55,6 @@ def register():\n         db().commit()\n     except sqlite3.IntegrityError:\n         return jsonify({\"error\": \"user exists\"}), 409\n-    return jsonify({\"token\": issue_token(cur.lastrowid)})\n \n \n @app.post(\"/login\")\n",
+      "field_descriptions": {},
+      "intent": "no behaviour change intended",
+      "seed_facts": [
+        "seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)"
+      ]
+    },
+    "differences": [
+      {
+        "after": 500,
+        "before": 200,
+        "exchanges": [],
+        "field_path": "$status",
+        "kind": "status_changed",
+        "method": "POST",
+        "path": "/register",
+        "request_body": {
+          "password": "pd-password",
+          "username": "pd-username"
+        },
+        "request_id": "9dca1c4defa5:1"
+      }
+    ],
+    "flaky_hard_failures": [],
+    "hard_failures": [
+      {
+        "detail": "head answered HTTP 500 (base 200) at POST /register",
+        "kind": "5xx",
+        "request_id": "9dca1c4defa5:1"
+      },
+      {
+        "detail": "new traceback in head's server log: TypeError: The view function for 'register' did not return a valid response. The function either returned None or ended without a return statement.",
+        "kind": "new_exception",
+        "request_id": "server_log"
+      }
+    ],
+    "observable": true,
+    "prompt_cap": 3000,
+    "templates": [
+      "/health",
+      "/login",
+      "/notes",
+      "/notes/{note_id}",
+      "/register"
+    ],
+    "token_budget": 10000,
+    "unexercised_lines": []
+  },
+  "prompts_sha256": [],
+  "total_tokens": 0,
+  "verdict": {
+    "cause": "hard_oracle",
+    "details": {
+      "hard_failures": [
+        {
+          "detail": "head answered HTTP 500 (base 200) at POST /register",
+          "kind": "5xx",
+          "request_id": "9dca1c4defa5:1"
+        },
+        {
+          "detail": "new traceback in head's server log: TypeError: The view function for 'register' did not return a valid response. The function either returned None or ended without a return statement.",
+          "kind": "new_exception",
+          "request_id": "server_log"
+        }
+      ]
+    },
+    "status": "FAIL"
+  }
+}

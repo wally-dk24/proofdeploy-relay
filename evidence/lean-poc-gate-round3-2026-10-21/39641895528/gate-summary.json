@@ -1,0 +1,57 @@
+{
+  "complete": true,
+  "criteria": {
+    "1": {
+      "missing": [
+        "golden-bug",
+        "golden-clean"
+      ],
+      "status": "NOT_RUN"
+    },
+    "2": {
+      "missing": [
+        "mutant-*"
+      ],
+      "status": "NOT_RUN"
+    },
+    "3": {
+      "caught": false,
+      "cause": "change_not_exercised",
+      "confirmed": null,
+      "error": false,
+      "real_verdict": true,
+      "required": false,
+      "status": "PASS",
+      "verdict": "INCONCLUSIVE"
+    },
+    "4": {
+      "missing": [
+        "golden-clean"
+      ],
+      "status": "NOT_RUN"
+    },
+    "5": {
+      "max_tokens": 0,
+      "over_cap": [],
+      "provider_failures": {},
+      "status": "PASS",
+      "total_tokens": 0,
+      "units_with_provider_failures": []
+    }
+  },
+  "criteria_text": {
+    "1": "golden-bug verdict FAIL; golden-clean verdict PASS.",
+    "2": "mutants: caught = verdict FAIL; observable = observable flag true; criterion >= 70% of observable mutants caught; unobservable mutants must never be PASS when they have unexercised executable changed lines (report any violation).",
+    "3": "paperless bug: a real verdict (any verdict whose cause is not an environment/provider/error cause); caught = FAIL AND confirmed - reported, not required.",
+    "4": "false alarms: a FAIL verdict on a clean unit; 0 on golden-clean, <= 1 across the 3 paperless clean units. INCONCLUSIVE on clean units is reported as its own count (not an alarm in this PoC).",
+    "5": "cost: every unit <= 10,000 AI tokens; any provider rate-limit/transport failure is reported."
+  },
+  "errors": [],
+  "measured_result": false,
+  "units_expected": 4,
+  "units_run": 4,
+  "verdict_counts": {
+    "INCONCLUSIVE": 4
+  },
+  "wall_seconds": 2656.6
+}

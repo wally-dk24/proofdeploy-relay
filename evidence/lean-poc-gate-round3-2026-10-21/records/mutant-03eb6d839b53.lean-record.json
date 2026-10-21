@@ -1,0 +1,100 @@
+{
+  "calls": [],
+  "groups": [
+    {
+      "group": {
+        "after": 409,
+        "before": 400,
+        "exchanges": [],
+        "field_path": "$status",
+        "index": 1,
+        "kind": "status_changed",
+        "method": "POST",
+        "path_template": "/register",
+        "request_ids": [
+          "48569ba428e5:1"
+        ],
+        "sample_path": "/register",
+        "sample_request_body": {}
+      },
+      "judgment": {
+        "cause": null,
+        "check": {
+          "ok": true,
+          "passed": [
+            "declared_no_behaviour_change"
+          ],
+          "reason": null,
+          "rule": "declared_no_behaviour_change"
+        },
+        "evidence_source": "intent",
+        "expected_value": 400,
+        "group": 1,
+        "model_verdict": null,
+        "question": "",
+        "quote": "no behaviour change intended",
+        "verdict": "regression"
+      }
+    }
+  ],
+  "inputs": {
+    "context": {
+      "changed_hunks": "diff --git a/app.py b/app.py\nindex fbfd266..8af9790 100644\n--- a/app.py\n+++ b/app.py\n@@ -46,7 +46,7 @@ def register():\n     data = request.get_json(force=True, silent=True) or {}\n     username, password = data.get(\"username\"), data.get(\"password\")\n     if not username or not password:\n-        return jsonify({\"error\": \"username and password required\"}), 400\n+        pass\n     try:\n         cur = db().execute(\n             \"INSERT INTO users (username, password) VALUES (?, ?)\",\n",
+      "field_descriptions": {},
+      "intent": "no behaviour change intended",
+      "seed_facts": [
+        "seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)"
+      ]
+    },
+    "differences": [
+      {
+        "after": 409,
+        "before": 400,
+        "exchanges": [],
+        "field_path": "$status",
+        "kind": "status_changed",
+        "method": "POST",
+        "path": "/register",
+        "request_body": {},
+        "request_id": "48569ba428e5:1"
+      }
+    ],
+    "flaky_hard_failures": [],
+    "hard_failures": [],
+    "observable": true,
+    "prompt_cap": 3000,
+    "templates": [
+      "/health",
+      "/login",
+      "/notes",
+      "/notes/{note_id}",
+      "/register"
+    ],
+    "token_budget": 10000,
+    "unexercised_lines": []
+  },
+  "prompts_sha256": [],
+  "total_tokens": 0,
+  "verdict": {
+    "cause": "judged_regression",
+    "details": {
+      "regressions": [
+        {
+          "after": 409,
+          "expected_value": 400,
+          "field_path": "$status",
+          "group": 1,
+          "method": "POST",
+          "path": "/register",
+          "quote": "no behaviour change intended",
+          "request_ids": [
+            "48569ba428e5:1"
+          ],
+          "rule": "declared_no_behaviour_change",
+          "source": "intent"
+        }
+      ]
+    },
+    "status": "FAIL"
+  }
+}

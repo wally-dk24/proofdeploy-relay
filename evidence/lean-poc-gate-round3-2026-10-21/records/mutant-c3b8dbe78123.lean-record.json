@@ -1,0 +1,100 @@
+{
+  "calls": [],
+  "groups": [
+    {
+      "group": {
+        "after": true,
+        "before": false,
+        "exchanges": [],
+        "field_path": "done",
+        "index": 1,
+        "kind": "changed",
+        "method": "POST",
+        "path_template": "/notes",
+        "request_ids": [
+          "8fd229495e28:1"
+        ],
+        "sample_path": "/notes",
+        "sample_request_body": {}
+      },
+      "judgment": {
+        "cause": null,
+        "check": {
+          "ok": true,
+          "passed": [
+            "declared_no_behaviour_change"
+          ],
+          "reason": null,
+          "rule": "declared_no_behaviour_change"
+        },
+        "evidence_source": "intent",
+        "expected_value": false,
+        "group": 1,
+        "model_verdict": null,
+        "question": "",
+        "quote": "no behaviour change intended",
+        "verdict": "regression"
+      }
+    }
+  ],
+  "inputs": {
+    "context": {
+      "changed_hunks": "diff --git a/app.py b/app.py\nindex fbfd266..b12e3f1 100644\n--- a/app.py\n+++ b/app.py\n@@ -81,7 +81,7 @@ def create_note():\n         (user_id, data.get(\"title\", \"\")),\n     )\n     db().commit()\n-    return jsonify({\"id\": cur.lastrowid, \"title\": data.get(\"title\", \"\"), \"done\": False})\n+    return jsonify({\"id\": cur.lastrowid, \"title\": data.get(\"title\", \"\"), \"done\": True})\n \n \n @app.get(\"/notes\")\n",
+      "field_descriptions": {},
+      "intent": "no behaviour change intended",
+      "seed_facts": [
+        "seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)"
+      ]
+    },
+    "differences": [
+      {
+        "after": true,
+        "before": false,
+        "exchanges": [],
+        "field_path": "done",
+        "kind": "changed",
+        "method": "POST",
+        "path": "/notes",
+        "request_body": {},
+        "request_id": "8fd229495e28:1"
+      }
+    ],
+    "flaky_hard_failures": [],
+    "hard_failures": [],
+    "observable": true,
+    "prompt_cap": 3000,
+    "templates": [
+      "/health",
+      "/login",
+      "/notes",
+      "/notes/{note_id}",
+      "/register"
+    ],
+    "token_budget": 10000,
+    "unexercised_lines": []
+  },
+  "prompts_sha256": [],
+  "total_tokens": 0,
+  "verdict": {
+    "cause": "judged_regression",
+    "details": {
+      "regressions": [
+        {
+          "after": true,
+          "expected_value": false,
+          "field_path": "done",
+          "group": 1,
+          "method": "POST",
+          "path": "/notes",
+          "quote": "no behaviour change intended",
+          "request_ids": [
+            "8fd229495e28:1"
+          ],
+          "rule": "declared_no_behaviour_change",
+          "source": "intent"
+        }
+      ]
+    },
+    "status": "FAIL"
+  }
+}
