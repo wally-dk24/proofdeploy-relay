@@ -1,0 +1,117 @@
+{
+  "calls": [
+    {
+      "attempts": [
+        "attempt_1: success"
+      ],
+      "error_cause": null,
+      "index": 0,
+      "raw_content": "[\n  {\n    \"group\": 1,\n    \"verdict\": \"unclear\",\n    \"expected_value\": null,\n    \"evidence\": null,\n    \"question\": \"What should the default value of the tag field be for notes that do not have an explicit tag?\"\n  }\n]",
+      "status": "ok",
+      "tokens": 949,
+      "tokens_estimated": false,
+      "usage": {
+        "completion_tokens": 496,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "reasoning_tokens": 425,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens": 453,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 949
+      },
+      "waited_seconds": 0.0
+    }
+  ],
+  "groups": [
+    {
+      "group": {
+        "after": "general",
+        "before": null,
+        "field_path": "tag",
+        "index": 1,
+        "kind": "added_field",
+        "method": "GET",
+        "path_template": "/notes/{note_id}",
+        "request_ids": [
+          "4f6ce8d10d25:2"
+        ],
+        "sample_path": "/notes/3",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": "model_unclear",
+        "check": {
+          "ok": true,
+          "passed": [],
+          "reason": null
+        },
+        "evidence_source": null,
+        "expected_value": null,
+        "group": 1,
+        "model_verdict": "unclear",
+        "question": "What should the default value of the tag field be for notes that do not have an explicit tag?",
+        "quote": null,
+        "verdict": "unclear"
+      }
+    }
+  ],
+  "inputs": {
+    "context": {
+      "changed_hunks": "diff --git a/app.py b/app.py\nindex fbfd266..b0129b2 100644\n--- a/app.py\n+++ b/app.py\n@@ -116,7 +116,7 @@ def get_note(note_id):\n         \"id\": row[\"id\"],\n         \"title\": row[\"title\"],\n         \"done\": row['done'] == 1,\n-\n+        \"tag\": \"general\",\n     })\n \n \n",
+      "field_descriptions": {},
+      "intent": "add a tag field to note responses",
+      "seed_facts": [
+        "seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)"
+      ]
+    },
+    "differences": [
+      {
+        "after": "general",
+        "before": null,
+        "field_path": "tag",
+        "kind": "added_field",
+        "method": "GET",
+        "path": "/notes/3",
+        "request_body": null,
+        "request_id": "4f6ce8d10d25:2"
+      }
+    ],
+    "flaky_hard_failures": [],
+    "hard_failures": [],
+    "observable": true,
+    "prompt_cap": 3000,
+    "templates": [
+      "/health",
+      "/login",
+      "/notes",
+      "/notes/{note_id}",
+      "/register"
+    ],
+    "token_budget": 10000,
+    "unexercised_lines": []
+  },
+  "prompts_sha256": [
+    "ceb23683cec6cd79d5a52c5039ae470282d7c0efbfc57d30482fc348bebf3c12"
+  ],
+  "total_tokens": 949,
+  "verdict": {
+    "cause": "needs_information",
+    "details": {
+      "questions": [
+        {
+          "cause": "model_unclear",
+          "group": 1,
+          "question": "What should the default value of the tag field be for notes that do not have an explicit tag?",
+          "request_ids": [
+            "4f6ce8d10d25:2"
+          ]
+        }
+      ]
+    },
+    "status": "INCONCLUSIVE"
+  }
+}

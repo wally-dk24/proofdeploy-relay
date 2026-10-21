@@ -1,0 +1,68 @@
+{
+  "complete": true,
+  "criteria": {
+    "1": {
+      "missing": [
+        "golden-bug",
+        "golden-clean"
+      ],
+      "status": "NOT_RUN"
+    },
+    "2": {
+      "caught": 15,
+      "caught_percent": 100.0,
+      "errors": [],
+      "mutants_run": 20,
+      "observable": 15,
+      "ratio_criterion_met": true,
+      "status": "PASS",
+      "uncaught_observable": [],
+      "unobservable": [
+        "mutant-20f54c390322",
+        "mutant-24d93c6b0531",
+        "mutant-5be3e14562f1",
+        "mutant-b1e7840badca",
+        "mutant-c6cc26acd22a"
+      ],
+      "violations": []
+    },
+    "3": {
+      "missing": [
+        "paperless-bug"
+      ],
+      "required": false,
+      "status": "NOT_RUN"
+    },
+    "4": {
+      "missing": [
+        "golden-clean"
+      ],
+      "status": "NOT_RUN"
+    },
+    "5": {
+      "max_tokens": 0,
+      "over_cap": [],
+      "provider_failures": {},
+      "status": "PASS",
+      "total_tokens": 0,
+      "units_with_provider_failures": []
+    }
+  },
+  "criteria_text": {
+    "1": "golden-bug verdict FAIL; golden-clean verdict PASS.",
+    "2": "mutants: caught = verdict FAIL; observable = observable flag true; criterion >= 70% of observable mutants caught; unobservable mutants must never be PASS when they have unexercised executable changed lines (report any violation).",
+    "3": "paperless bug: a real verdict (any verdict whose cause is not an environment/provider/error cause); caught = FAIL AND confirmed - reported, not required.",
+    "4": "false alarms: a FAIL verdict on a clean unit; 0 on golden-clean, <= 1 across the 3 paperless clean units. INCONCLUSIVE on clean units is reported as its own count (not an alarm in this PoC).",
+    "5": "cost: every unit <= 10,000 AI tokens; any provider rate-limit/transport failure is reported."
+  },
+  "errors": [],
+  "measured_result": false,
+  "units_expected": 20,
+  "units_run": 20,
+  "verdict_counts": {
+    "FAIL": 15,
+    "INCONCLUSIVE": 2,
+    "PASS": 3
+  },
+  "wall_seconds": 61.4
+}

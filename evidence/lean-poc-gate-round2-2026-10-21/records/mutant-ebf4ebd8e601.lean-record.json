@@ -1,0 +1,98 @@
+{
+  "calls": [],
+  "groups": [
+    {
+      "group": {
+        "after": false,
+        "before": true,
+        "field_path": "ok",
+        "index": 1,
+        "kind": "changed",
+        "method": "GET",
+        "path_template": "/health",
+        "request_ids": [
+          "f7f5cb002518:1"
+        ],
+        "sample_path": "/health",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": null,
+        "check": {
+          "ok": true,
+          "passed": [
+            "declared_no_behaviour_change"
+          ],
+          "reason": null,
+          "rule": "declared_no_behaviour_change"
+        },
+        "evidence_source": "intent",
+        "expected_value": true,
+        "group": 1,
+        "model_verdict": null,
+        "question": "",
+        "quote": "no behaviour change intended",
+        "verdict": "regression"
+      }
+    }
+  ],
+  "inputs": {
+    "context": {
+      "changed_hunks": "diff --git a/app.py b/app.py\nindex fbfd266..583d319 100644\n--- a/app.py\n+++ b/app.py\n@@ -38,7 +38,7 @@ def auth_user():\n \n @app.get(\"/health\")\n def health():\n-    return jsonify({\"ok\": True})\n+    return jsonify({\"ok\": False})\n \n \n @app.post(\"/register\")\n",
+      "field_descriptions": {},
+      "intent": "no behaviour change intended",
+      "seed_facts": [
+        "seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)"
+      ]
+    },
+    "differences": [
+      {
+        "after": false,
+        "before": true,
+        "field_path": "ok",
+        "kind": "changed",
+        "method": "GET",
+        "path": "/health",
+        "request_body": null,
+        "request_id": "f7f5cb002518:1"
+      }
+    ],
+    "flaky_hard_failures": [],
+    "hard_failures": [],
+    "observable": true,
+    "prompt_cap": 3000,
+    "templates": [
+      "/health",
+      "/login",
+      "/notes",
+      "/notes/{note_id}",
+      "/register"
+    ],
+    "token_budget": 10000,
+    "unexercised_lines": []
+  },
+  "prompts_sha256": [],
+  "total_tokens": 0,
+  "verdict": {
+    "cause": "judged_regression",
+    "details": {
+      "regressions": [
+        {
+          "after": false,
+          "expected_value": true,
+          "field_path": "ok",
+          "group": 1,
+          "method": "GET",
+          "path": "/health",
+          "quote": "no behaviour change intended",
+          "request_ids": [
+            "f7f5cb002518:1"
+          ],
+          "rule": "declared_no_behaviour_change",
+          "source": "intent"
+        }
+      ]
+    },
+    "status": "FAIL"
+  }
+}

@@ -1,0 +1,272 @@
+{
+  "calls": [],
+  "groups": [
+    {
+      "group": {
+        "after": "seeded open note",
+        "before": 1,
+        "field_path": "notes[].id",
+        "index": 1,
+        "kind": "changed",
+        "method": "GET",
+        "path_template": "/notes",
+        "request_ids": [
+          "5f2df8ddd8ea:1"
+        ],
+        "sample_path": "/notes",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": null,
+        "check": {
+          "ok": true,
+          "passed": [
+            "declared_no_behaviour_change"
+          ],
+          "reason": null,
+          "rule": "declared_no_behaviour_change"
+        },
+        "evidence_source": "intent",
+        "expected_value": 1,
+        "group": 1,
+        "model_verdict": null,
+        "question": "",
+        "quote": "no behaviour change intended",
+        "verdict": "regression"
+      }
+    },
+    {
+      "group": {
+        "after": 1,
+        "before": "seeded open note",
+        "field_path": "notes[].title",
+        "index": 2,
+        "kind": "changed",
+        "method": "GET",
+        "path_template": "/notes",
+        "request_ids": [
+          "5f2df8ddd8ea:1"
+        ],
+        "sample_path": "/notes",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": null,
+        "check": {
+          "ok": true,
+          "passed": [
+            "declared_no_behaviour_change"
+          ],
+          "reason": null,
+          "rule": "declared_no_behaviour_change"
+        },
+        "evidence_source": "intent",
+        "expected_value": "seeded open note",
+        "group": 2,
+        "model_verdict": null,
+        "question": "",
+        "quote": "no behaviour change intended",
+        "verdict": "regression"
+      }
+    },
+    {
+      "group": {
+        "after": "seeded done note",
+        "before": 2,
+        "field_path": "notes[].id",
+        "index": 3,
+        "kind": "changed",
+        "method": "GET",
+        "path_template": "/notes",
+        "request_ids": [
+          "5f2df8ddd8ea:1"
+        ],
+        "sample_path": "/notes",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": null,
+        "check": {
+          "ok": true,
+          "passed": [
+            "declared_no_behaviour_change"
+          ],
+          "reason": null,
+          "rule": "declared_no_behaviour_change"
+        },
+        "evidence_source": "intent",
+        "expected_value": 2,
+        "group": 3,
+        "model_verdict": null,
+        "question": "",
+        "quote": "no behaviour change intended",
+        "verdict": "regression"
+      }
+    },
+    {
+      "group": {
+        "after": 2,
+        "before": "seeded done note",
+        "field_path": "notes[].title",
+        "index": 4,
+        "kind": "changed",
+        "method": "GET",
+        "path_template": "/notes",
+        "request_ids": [
+          "5f2df8ddd8ea:1"
+        ],
+        "sample_path": "/notes",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": null,
+        "check": {
+          "ok": true,
+          "passed": [
+            "declared_no_behaviour_change"
+          ],
+          "reason": null,
+          "rule": "declared_no_behaviour_change"
+        },
+        "evidence_source": "intent",
+        "expected_value": "seeded done note",
+        "group": 4,
+        "model_verdict": null,
+        "question": "",
+        "quote": "no behaviour change intended",
+        "verdict": "regression"
+      }
+    }
+  ],
+  "inputs": {
+    "context": {
+      "changed_hunks": "diff --git a/app.py b/app.py\nindex fbfd266..53ac96f 100644\n--- a/app.py\n+++ b/app.py\n@@ -95,7 +95,7 @@ def list_notes():\n     ).fetchall()\n     return jsonify({\n         \"notes\": [\n-            {\"id\": r[\"id\"], \"title\": r[\"title\"], \"done\": r[\"done\"] == 1}\n+            {\"id\": r[\"title\"], \"title\": r[\"id\"], \"done\": r[\"done\"] == 1}\n             for r in rows\n         ]\n     })\n",
+      "field_descriptions": {},
+      "intent": "no behaviour change intended",
+      "seed_facts": [
+        "seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)"
+      ]
+    },
+    "differences": [
+      {
+        "after": "seeded open note",
+        "before": 1,
+        "field_path": "notes[].id",
+        "kind": "changed",
+        "method": "GET",
+        "path": "/notes",
+        "request_body": null,
+        "request_id": "5f2df8ddd8ea:1"
+      },
+      {
+        "after": 1,
+        "before": "seeded open note",
+        "field_path": "notes[].title",
+        "kind": "changed",
+        "method": "GET",
+        "path": "/notes",
+        "request_body": null,
+        "request_id": "5f2df8ddd8ea:1"
+      },
+      {
+        "after": "seeded done note",
+        "before": 2,
+        "field_path": "notes[].id",
+        "kind": "changed",
+        "method": "GET",
+        "path": "/notes",
+        "request_body": null,
+        "request_id": "5f2df8ddd8ea:1"
+      },
+      {
+        "after": 2,
+        "before": "seeded done note",
+        "field_path": "notes[].title",
+        "kind": "changed",
+        "method": "GET",
+        "path": "/notes",
+        "request_body": null,
+        "request_id": "5f2df8ddd8ea:1"
+      }
+    ],
+    "flaky_hard_failures": [],
+    "hard_failures": [],
+    "observable": true,
+    "prompt_cap": 3000,
+    "templates": [
+      "/health",
+      "/login",
+      "/notes",
+      "/notes/{note_id}",
+      "/register"
+    ],
+    "token_budget": 10000,
+    "unexercised_lines": []
+  },
+  "prompts_sha256": [],
+  "total_tokens": 0,
+  "verdict": {
+    "cause": "judged_regression",
+    "details": {
+      "regressions": [
+        {
+          "after": "seeded open note",
+          "expected_value": 1,
+          "field_path": "notes[].id",
+          "group": 1,
+          "method": "GET",
+          "path": "/notes",
+          "quote": "no behaviour change intended",
+          "request_ids": [
+            "5f2df8ddd8ea:1"
+          ],
+          "rule": "declared_no_behaviour_change",
+          "source": "intent"
+        },
+        {
+          "after": 1,
+          "expected_value": "seeded open note",
+          "field_path": "notes[].title",
+          "group": 2,
+          "method": "GET",
+          "path": "/notes",
+          "quote": "no behaviour change intended",
+          "request_ids": [
+            "5f2df8ddd8ea:1"
+          ],
+          "rule": "declared_no_behaviour_change",
+          "source": "intent"
+        },
+        {
+          "after": "seeded done note",
+          "expected_value": 2,
+          "field_path": "notes[].id",
+          "group": 3,
+          "method": "GET",
+          "path": "/notes",
+          "quote": "no behaviour change intended",
+          "request_ids": [
+            "5f2df8ddd8ea:1"
+          ],
+          "rule": "declared_no_behaviour_change",
+          "source": "intent"
+        },
+        {
+          "after": 2,
+          "expected_value": "seeded done note",
+          "field_path": "notes[].title",
+          "group": 4,
+          "method": "GET",
+          "path": "/notes",
+          "quote": "no behaviour change intended",
+          "request_ids": [
+            "5f2df8ddd8ea:1"
+          ],
+          "rule": "declared_no_behaviour_change",
+          "source": "intent"
+        }
+      ]
+    },
+    "status": "FAIL"
+  }
+}

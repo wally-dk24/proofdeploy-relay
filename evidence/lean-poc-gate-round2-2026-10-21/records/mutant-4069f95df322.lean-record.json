@@ -1,0 +1,102 @@
+{
+  "calls": [],
+  "groups": [
+    {
+      "group": {
+        "after": 500,
+        "before": 401,
+        "field_path": "$status",
+        "index": 1,
+        "kind": "status_changed",
+        "method": "POST",
+        "path_template": "/notes",
+        "request_ids": [
+          "c68600fe6171:0"
+        ],
+        "sample_path": "/notes",
+        "sample_request_body": {}
+      },
+      "judgment": {
+        "cause": "hard_oracle_short_circuit",
+        "check": {
+          "ok": false,
+          "passed": [],
+          "reason": "not_judged"
+        },
+        "evidence_source": null,
+        "expected_value": null,
+        "group": 1,
+        "model_verdict": null,
+        "question": "",
+        "quote": null,
+        "verdict": "unjudged"
+      }
+    }
+  ],
+  "inputs": {
+    "context": {
+      "changed_hunks": "diff --git a/app.py b/app.py\nindex fbfd266..8491cb3 100644\n--- a/app.py\n+++ b/app.py\n@@ -73,8 +73,6 @@ def login():\n @app.post(\"/notes\")\n def create_note():\n     user_id = auth_user()\n-    if user_id is None:\n-        return jsonify({\"error\": \"unauthorized\"}), 401\n     data = request.get_json(force=True, silent=True) or {}\n     cur = db().execute(\n         \"INSERT INTO notes (user_id, title, done) VALUES (?, ?, 0)\",\n",
+      "field_descriptions": {},
+      "intent": "no behaviour change intended",
+      "seed_facts": [
+        "seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)"
+      ]
+    },
+    "differences": [
+      {
+        "after": 500,
+        "before": 401,
+        "field_path": "$status",
+        "kind": "status_changed",
+        "method": "POST",
+        "path": "/notes",
+        "request_body": {},
+        "request_id": "c68600fe6171:0"
+      }
+    ],
+    "flaky_hard_failures": [],
+    "hard_failures": [
+      {
+        "detail": "head answered HTTP 500 (base 401) at POST /notes",
+        "kind": "5xx",
+        "request_id": "c68600fe6171:0"
+      },
+      {
+        "detail": "new traceback in head's server log: sqlite3.IntegrityError: NOT NULL constraint failed: notes.user_id",
+        "kind": "new_exception",
+        "request_id": "server_log"
+      }
+    ],
+    "observable": true,
+    "prompt_cap": 3000,
+    "templates": [
+      "/health",
+      "/login",
+      "/notes",
+      "/notes/{note_id}",
+      "/register"
+    ],
+    "token_budget": 10000,
+    "unexercised_lines": []
+  },
+  "prompts_sha256": [],
+  "total_tokens": 0,
+  "verdict": {
+    "cause": "hard_oracle",
+    "details": {
+      "hard_failures": [
+        {
+          "detail": "head answered HTTP 500 (base 401) at POST /notes",
+          "kind": "5xx",
+          "request_id": "c68600fe6171:0"
+        },
+        {
+          "detail": "new traceback in head's server log: sqlite3.IntegrityError: NOT NULL constraint failed: notes.user_id",
+          "kind": "new_exception",
+          "request_id": "server_log"
+        }
+      ]
+    },
+    "status": "FAIL"
+  }
+}

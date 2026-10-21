@@ -1,0 +1,98 @@
+{
+  "calls": [],
+  "groups": [
+    {
+      "group": {
+        "after": 200,
+        "before": 401,
+        "field_path": "$status",
+        "index": 1,
+        "kind": "status_changed",
+        "method": "GET",
+        "path_template": "/notes",
+        "request_ids": [
+          "06a22ed6eb7c:0"
+        ],
+        "sample_path": "/notes",
+        "sample_request_body": null
+      },
+      "judgment": {
+        "cause": null,
+        "check": {
+          "ok": true,
+          "passed": [
+            "declared_no_behaviour_change"
+          ],
+          "reason": null,
+          "rule": "declared_no_behaviour_change"
+        },
+        "evidence_source": "intent",
+        "expected_value": 401,
+        "group": 1,
+        "model_verdict": null,
+        "question": "",
+        "quote": "no behaviour change intended",
+        "verdict": "regression"
+      }
+    }
+  ],
+  "inputs": {
+    "context": {
+      "changed_hunks": "diff --git a/app.py b/app.py\nindex fbfd266..1ec8b7e 100644\n--- a/app.py\n+++ b/app.py\n@@ -88,7 +88,7 @@ def create_note():\n def list_notes():\n     user_id = auth_user()\n     if user_id is None:\n-        return jsonify({\"error\": \"unauthorized\"}), 401\n+        pass\n     rows = db().execute(\n         \"SELECT id, title, done FROM notes WHERE user_id = ? ORDER BY id\",\n         (user_id,),\n",
+      "field_descriptions": {},
+      "intent": "no behaviour change intended",
+      "seed_facts": [
+        "seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)"
+      ]
+    },
+    "differences": [
+      {
+        "after": 200,
+        "before": 401,
+        "field_path": "$status",
+        "kind": "status_changed",
+        "method": "GET",
+        "path": "/notes",
+        "request_body": null,
+        "request_id": "06a22ed6eb7c:0"
+      }
+    ],
+    "flaky_hard_failures": [],
+    "hard_failures": [],
+    "observable": true,
+    "prompt_cap": 3000,
+    "templates": [
+      "/health",
+      "/login",
+      "/notes",
+      "/notes/{note_id}",
+      "/register"
+    ],
+    "token_budget": 10000,
+    "unexercised_lines": []
+  },
+  "prompts_sha256": [],
+  "total_tokens": 0,
+  "verdict": {
+    "cause": "judged_regression",
+    "details": {
+      "regressions": [
+        {
+          "after": 200,
+          "expected_value": 401,
+          "field_path": "$status",
+          "group": 1,
+          "method": "GET",
+          "path": "/notes",
+          "quote": "no behaviour change intended",
+          "request_ids": [
+            "06a22ed6eb7c:0"
+          ],
+          "rule": "declared_no_behaviour_change",
+          "source": "intent"
+        }
+      ]
+    },
+    "status": "FAIL"
+  }
+}

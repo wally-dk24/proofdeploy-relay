@@ -1,0 +1,104 @@
+{
+  "calls": [],
+  "groups": [
+    {
+      "group": {
+        "after": null,
+        "before": "<redacted:token>",
+        "field_path": "token",
+        "index": 1,
+        "kind": "changed",
+        "method": "POST",
+        "path_template": "/login",
+        "request_ids": [
+          "f7f5cb002518:0"
+        ],
+        "sample_path": "/login",
+        "sample_request_body": {
+          "password": "seedpass",
+          "username": "seeduser"
+        }
+      },
+      "judgment": {
+        "cause": null,
+        "check": {
+          "ok": true,
+          "passed": [
+            "declared_no_behaviour_change"
+          ],
+          "reason": null,
+          "rule": "declared_no_behaviour_change"
+        },
+        "evidence_source": "intent",
+        "expected_value": "<redacted:token>",
+        "group": 1,
+        "model_verdict": null,
+        "question": "",
+        "quote": "no behaviour change intended",
+        "verdict": "regression"
+      }
+    }
+  ],
+  "inputs": {
+    "context": {
+      "changed_hunks": "diff --git a/app.py b/app.py\nindex fbfd266..0f797d2 100644\n--- a/app.py\n+++ b/app.py\n@@ -27,7 +27,6 @@ def _close(exc):\n def issue_token(user_id):\n     token = \"pdcanary-\" + secrets.token_hex(8)\n     TOKENS[token] = user_id\n-    return token\n \n \n def auth_user():\n",
+      "field_descriptions": {},
+      "intent": "no behaviour change intended",
+      "seed_facts": [
+        "seed user seeduser/seedpass owns two notes after seed: id 1 (done=false) and id 2 (done=true)"
+      ]
+    },
+    "differences": [
+      {
+        "after": null,
+        "before": "<redacted:token>",
+        "field_path": "token",
+        "kind": "changed",
+        "method": "POST",
+        "path": "/login",
+        "request_body": {
+          "password": "seedpass",
+          "username": "seeduser"
+        },
+        "request_id": "f7f5cb002518:0"
+      }
+    ],
+    "flaky_hard_failures": [],
+    "hard_failures": [],
+    "observable": true,
+    "prompt_cap": 3000,
+    "templates": [
+      "/health",
+      "/login",
+      "/notes",
+      "/notes/{note_id}",
+      "/register"
+    ],
+    "token_budget": 10000,
+    "unexercised_lines": []
+  },
+  "prompts_sha256": [],
+  "total_tokens": 0,
+  "verdict": {
+    "cause": "judged_regression",
+    "details": {
+      "regressions": [
+        {
+          "after": null,
+          "expected_value": "<redacted:token>",
+          "field_path": "token",
+          "group": 1,
+          "method": "POST",
+          "path": "/login",
+          "quote": "no behaviour change intended",
+          "request_ids": [
+            "f7f5cb002518:0"
+          ],
+          "rule": "declared_no_behaviour_change",
+          "source": "intent"
+        }
+      ]
+    },
+    "status": "FAIL"
+  }
+}
