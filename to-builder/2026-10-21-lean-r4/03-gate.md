@@ -1,0 +1,10 @@
+# WO-R4-B: the gate reuses the bugs already found (Master: "reuse the bugs we found")
+Worktree `/home/claude/wt-r4-gate`, branch `fix/lean-r4-gate`. Files: `experiments/lean-poc/gate.py`, `experiments/lean-poc/paperless-bug-units.json` (new), `experiments/lean-poc/write_bug_unit.py` only if needed, tests. Do not touch `proofdeploy/lean/`.
+
+1. **Three paperless bug units**, replacing the single `paperless-bug-unit.json` (keep the loader's validation; same 7 keys per unit plus `id` and `note`):
+   - `paperless-bug-371c4f57`: fix `371c4f57d3ab208fc261e159fa86ca1dc80cb334`, fix^ `5569447ea00c50de8c0c1c75136418bb3343dad6`, B `7dca0bfa6af103b76185aada3ce736b0ac1abc01`, B^ `3a34bdc7b078486bc85a97ce309a1c8180cdfc88`; record relay `selection/wo6-bug-selection-record.json` (sha256 `6dd2956a100e79d39a2957fa55993f511fe8c9157836b183b32d1681eb2d318d`); note "upgrade-path only (D229); expected not observable over HTTP".
+   - `paperless-bug-d3710856`: fix `d3710856992a91783783819217b43392aab73e00`, fix^ `14b6a41b88e75fb7d35aa84b33986870bfd1aa69`, B `aa67fd3aefa6489984fc15a5c32c1ad2b16ac23a`, B^ `17dc482872cf62e12965f6207772c83d1deb651b`; record relay `selection/wo6-c4-2026-10-20/wo6-bug-selection-record.json` (sha256 `cd5b78361b8829d4…` — compute the full value from the file); note "frontend-only B (round 1); expected not observable over HTTP".
+   - `paperless-bug-b992f9fc`: the current `paperless-bug-unit.json` values.
+   Verify every parent relation with `git rev-parse <sha>^1` on a paperless clone (IDs only; never log, show or diff) and report it.
+2. Unit ids, the confirm step (per unit, its own fix^/fix), rehearsal and `--list` cover all three. Criterion 3 is computed per bug unit and reported per unit; the gate summary keeps the pre-registered criteria text and adds a `round4` block: for each bug unit — verdict, cause, confirmed, executable changed lines, lines reached, requests hitting changed code, differences found, differences judged.
+3. Tests for the three-unit load and validation, per-unit confirm sides, the round4 block. Plants: confirm using another unit's fix; a unit dropped from --list — each caught.

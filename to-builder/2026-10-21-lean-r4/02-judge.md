@@ -1,0 +1,7 @@
+# WO-R4-J: budget scales with the change; the judge sees only the code that ran
+Worktree `/home/claude/wt-r4-judge`, branch `fix/lean-r4-judge`. Files: `proofdeploy/lean/pipeline.py`, `proofdeploy/lean/judge.py` (prompt assembly only: the CHANGED CODE section; Part A and every rule untouched), `proofdeploy/lean/run.py` (config only), tests. Register: R3, R7.
+
+1. **Request budget scales.** `budget_requests` default: 200 if executable changed lines ≤ 100; else min(1000, 200 + 2 × lines). An explicit CLI/config value still wins. Recorded in the manifest with the rule.
+2. **Judge sees only executed code.** For each group, the CHANGED CODE section shows only the hunks containing changed lines that the group's first request executed (from its coverage context; head side for added lines, base side for removed lines), each hunk trimmed to ±3 context lines; if none executed, show `(no changed line ran in this request)`. Never the whole diff. Record per group which hunks were shown. Replay rebuilds exactly the same prompt (store the per-group hunk selection in the record inputs).
+3. **Tests:** the round-3 paperless shape (synthetic: a 4,000-line diff, one difference whose request executed 2 changed lines) → one call, prompt ≤ 3K tokens, group judged (not `ai_budget`); golden-bug prompt still contains the `done` hunk; replay identical; budget rule boundaries (100/101 lines, cap 1000).
+Plants: whole diff restored; executed-hunk filter ignoring the request's context; budget rule ignored — each caught.
