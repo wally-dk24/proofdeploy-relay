@@ -1,0 +1,17 @@
+# WO-R2-W: implement R-LEAN-SEL in the selection walk (signed 2026-10-20)
+Plan line 0.4. Decisions D169, D242 (R-SEL), D255 (R-SIZE A1), D267, R-LEAN-SEL (signed). Worktree `/home/claude/wt-r2-walk`, branch `feature/lean-sel-walk`, from origin/main `ecc967ae`. Follow 00-common.md, EXCEPT the file list: you may change `scripts/wo6/regc_bug_select.py`, add `docs/registration/r-lean-sel.md`, add `experiments/lean-poc/write_bug_unit.py`, and tests. Do NOT touch `proofdeploy/lean/`, `experiments/lean-poc/gate.py` or `mutants.json` (an open train owns them).
+
+1. **Registered text.** Copy `/home/claude/proofdeploy-relay/signed/2026-10-20-r-lean-sel/r-lean-sel.md` byte-for-byte to `docs/registration/r-lean-sel.md`; its sha256 must be `abc78a10fb5fa3af21b88ed2f43e58cbb8c374a0b1550c30ec8bc830f0aaa3ce` (a test asserts it).
+2. **A lean mode, default unchanged.** New CLI option `--rule {regc,lean}` (default `regc`: today's behaviour byte-for-byte, every existing test unchanged). `--rule lean` requires `--lean-language`, and only `python` is accepted (anything else → usage error exit, refusal text "not defined yet (R-LEAN-SEL 4)").
+3. **Lean checks, in order:** (a), (b) with R-SEL, (c) exactly as today; **R-SIZE (e) skipped** (never called; journal says so); **new check L** from changed-path lists only, using the script's own D169 `classify_path` and R-SEL migration test plus the language extension set `{".py"}` for python:
+   - L1: B^..B changes ≥ 1 backend source file, else rejected `L1: no backend source in B`;
+   - L2: fix^..fix changes ≥ 1 backend source file, else rejected `L2: no backend source in fix`.
+   Paths come from `git diff --name-only -z --no-renames` (never a diff body, message or test content). The journal records per commit the check letters and, for L, only counts per class (no paths).
+4. **Check (d) extended:** with the existing ready-pair checker (the GitHub checker in the live run), the B pair (B^, B) first, then (fix^, fix). Both must be READY; the D177/D190 classification, retries and stop rules apply to each pair unchanged; each pair's run ID is journaled.
+5. **Stop at 200 walked** with no selection: exit with outcome `no_unit_selected`, no fallback.
+6. **Record:** the selection record names the rule (`R-LEAN-SEL`), the registered text's sha256, the language, and the four SHAs `b_parent`, `b`, `fix_parent`, `fix`, plus the tag and dates as today. Nothing else new.
+7. **`experiments/lean-poc/write_bug_unit.py <record.json> <relay-path>`** writes `experiments/lean-poc/paperless-bug-unit.json` with exactly the 7 keys `unit_repo, b_parent, b, fix_parent, fix, selection_record, selection_record_sha256` (sha256 of the record file's bytes), refusing a record whose rule is not `R-LEAN-SEL` or whose outcome is not `selected`. Never prints commit subjects.
+8. **Tests** with temp git repos and fakes (no network): a frontend-only B (`.ts`/`.html` only) → L1 rejection; backend B but frontend-only fix → L2 rejection; migration-only B → L1; `--rule regc` path still calls the size check and never L; lean mode never calls the size check; (d) checks the B pair before the fix pair and a non-READY B pair rejects/stops per the existing classes; 200-walk stop; record fields; write_bug_unit refusals; registered-text sha256. Plant each and show it caught.
+
+## Done when
+Tests pass (`tests/test_wo6_bug_select.py` plus new ones), plants caught, manifest OK (new test file into the shard that lists `tests/test_wo6_bug_select.py`), ruff/mypy clean. Report per 00-common.md item 9.
