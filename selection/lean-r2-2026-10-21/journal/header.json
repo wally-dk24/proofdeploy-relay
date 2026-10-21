@@ -1,0 +1,9 @@
+{
+ "format": 1,
+ "script_sha256": "68ea7e68473b57d286bdae498a914aae5bc9eadc19109255af7cc45812ca2f26",
+ "main_sha": "a1028582e3dd2d3aad3fd9caf78d34d0197e75cb",
+ "app_repo": "paperless-ngx/paperless-ngx",
+ "app_head_sha": "0cb2cdbfdd91a2078236f8851cd310261284591c",
+ "rule": "R-LEAN-SEL",
+ "language": "python"
+}
