@@ -1,0 +1,10 @@
+# WO-R5-L: linkding setup proposal (REPORT ONLY; no code, no commits to the code repo)
+Draft from upstream source at linkding's default-branch HEAD only (no fix, issue, commit message or diff). Clone `https://github.com/sissbruecker/linkding` into `/home/claude/r5-linkding` (full history not needed; record the HEAD SHA). Write the proposal to the relay as `proposals/linkding-contract-proposal-2026-10-21.md` and push. Cite every claim with file + line at that SHA.
+
+1. **Contract** (same shape as `readiness/contracts/paperless-ngx__paperless-ngx.yml` on main): runtime and the frozen install (uv.lock), build steps needed for the API to run (are frontend assets needed for the API? cite), migrate, seed, start (single process, no watcher; listen on `$PORT`), readiness path, env (SQLite under the checkout data dir, secret key, any setting needed to run in a sandbox with no network), `app.path`.
+2. **Sign-in:** how an API client authenticates (cite `bookmarks/api/auth.py` and settings). The lean tool drives only `mode: login` (POST credentials → token from JSON or a header). If linkding has no such endpoint, say so and propose the least-invasive generic option (e.g. the seed writes a token to a key file, as the Ghost contract did with `key_file`), with what it would need in the lean http layer. Generated credentials only (D8).
+3. **Seed:** the app's own commands to create one user and its token (cite).
+4. **Fixture values** (repo_name, seed_note, auth_mechanism in the fixed form "the token is presented in the Authorization header in the form '<Scheme> <token>'", auth_scope, flags_note): literally true, neutral, no feature list.
+5. **Sign-in proof:** an authenticated GET that needs a token (expected 2xx) and its unauthenticated status.
+6. **Network:** anything that reaches the internet on normal API calls (e.g. fetching a page title or favicon when a bookmark is created) and the setting that turns it off, if one exists.
+Report back: the relay commit, the proposal's sha256, and every open question.
