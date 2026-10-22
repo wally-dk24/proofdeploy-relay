@@ -1,0 +1,14 @@
+{
+ "format": 1,
+ "script_sha256": "fbb3099164863ba16f1c9cb4d5d4f3352523e24660b6df7eaa73b9d1fa572725",
+ "main_sha": "d780068d98202056b89aa633636e740b75f1b6b1",
+ "app_repo": "sissbruecker/linkding",
+ "app_head_sha": "27b7303baf41bb28babc610ac8eaa486e1ddfab5",
+ "rule": "R-LEAN-SEL",
+ "language": "python",
+ "layout_files": [
+  "bookmarks/settings/prod.py",
+  "pyproject.toml",
+  "uv.lock"
+ ]
+}
