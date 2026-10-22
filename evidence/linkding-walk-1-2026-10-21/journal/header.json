@@ -1,0 +1,9 @@
+{
+ "format": 1,
+ "script_sha256": "68ea7e68473b57d286bdae498a914aae5bc9eadc19109255af7cc45812ca2f26",
+ "main_sha": "b4b3b09a0fa9bb84e7c54a3c2eb5098a3355a96b",
+ "app_repo": "sissbruecker/linkding",
+ "app_head_sha": "27b7303baf41bb28babc610ac8eaa486e1ddfab5",
+ "rule": "R-LEAN-SEL",
+ "language": "python"
+}
